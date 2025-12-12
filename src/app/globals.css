@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 :root {
+  --kshatra-white: #FFFFF7;
+  --kshatra-black: #1D1D1B;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1D1D1B;
 }
 
 @theme inline {
+  --color-kshatra-white: #FFFFF7;
+  --color-kshatra-black: #1D1D1B;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-space-grotesk: var(--font-space-grotesk);
+  --font-inter: var(--font-inter);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom breakpoint for design width */
+  --breakpoint-2xl: 1440px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
