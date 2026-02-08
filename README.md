@@ -10,22 +10,6 @@ Kshatra Labs represents the pinnacle of autonomous systems engineering. We build
 
 ---
 
-## 📽️ Mission Briefing
-![Kshatra Labs Platform Architecture](public/video/demo.mp4)
-*Video: Simulation and Deployment of the Multi-Domain Robotics Platform.*
-
----
-
-## 🛡️ Core Platforms
-
-| System | Classification | Mission Profile | Image |
-| :--- | :--- | :--- | :--- |
-| **Apex Predator** | Heavy-Lift UAS | Multi-role endurance, precision strike, and logistical support. | ![Apex](public/apex.png) |
-| **Hawkeye** | Reconnaissance | Ultra-long-range surveillance and electronic warfare. | ![Hawkeye](public/hawkeye.png) |
-| **Hawk** | Tactical UAS | Rapid deployment agile response system. | ![Hawk](public/hawk.png) |
-
----
-
 ## ⚡ Technology Stack
 
 Our platform is built on a high-concurrency, low-latency stack designed for real-time telemetry and 3D visualization.
