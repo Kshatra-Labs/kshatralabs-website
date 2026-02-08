@@ -39,9 +39,11 @@ npm install
 
 ### 3. Execution
 ```bash
-npm run dev
-```
 
+npm run dev
+
+```
+------------------------------------------------
 The system will be accessible at [http://localhost:3000](http://localhost:3000).
 
 ---
