@@ -1,5 +1,9 @@
 'use client'
 
+import { useState } from 'react'
+import { useIsMobile } from '@/hooks/use-is-mobile'
+import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
+
 import { HeroSection } from "@/components/blocks/hero-section";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { DynamicFrameLayout } from "@/components/blocks/dynamic-frame-layout";
@@ -129,6 +133,17 @@ const demoFrames = [
 ]
 
 export default function Home() {
+  const isMobile = useIsMobile()
+  const [isMailModalOpen, setIsMailModalOpen] = useState(false)
+
+  const handleContactClick = () => {
+    if (isMobile) {
+      window.location.href = 'mailto:contact@kshatralabs.in'
+    } else {
+      setIsMailModalOpen(true)
+    }
+  }
+
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-white/20">
 
@@ -195,19 +210,32 @@ export default function Home() {
               Deploy systems that adapt, learn, and overcome in the world's most challenging environments.
             </p>
             <div className="flex flex-col items-center gap-6">
-              <a href="mailto:contact@kshatralabs.in" className="px-8 py-3 bg-white text-black font-mono font-semibold hover:bg-neutral-200 transition-colors inline-block">
+              <button
+                onClick={handleContactClick}
+                className="px-8 py-3 bg-white text-black font-mono font-semibold hover:bg-neutral-200 transition-colors inline-block cursor-pointer"
+              >
                 REQUEST A BRIEFING →
-              </a>
+              </button>
               <div className="flex flex-col md:flex-row items-center gap-4 text-neutral-500 font-mono text-sm">
                 <a href="tel:+919730458528" className="hover:text-white transition-colors">+91 9730458528</a>
                 <span className="hidden md:inline">•</span>
-                <a href="mailto:contact@kshatralabs.in" className="hover:text-white transition-colors">contact@kshatralabs.in</a>
+                <button
+                  onClick={handleContactClick}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  contact@kshatralabs.in
+                </button>
               </div>
             </div>
           </div>
         </section>
 
         <Footer4Col />
+        <MailChoiceModal
+          isOpen={isMailModalOpen}
+          onClose={() => setIsMailModalOpen(false)}
+          email="contact@kshatralabs.in"
+        />
       </div>
     </div>
   );

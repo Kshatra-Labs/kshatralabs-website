@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const galleryImages = [
-     { src: '/styles/1.jpg', alt: 'Air Domain - Autonomous Drone' },
      { src: '/styles/2.png', alt: 'Kshatra Labs Platform' },
      { src: '/styles/3.png', alt: 'Land Domain - Ground Systems' },
      { src: '/styles/4.png', alt: 'Multi-Domain Operations' },
@@ -136,8 +135,8 @@ export function PlatformGallery() {
                                    key={index}
                                    onClick={() => handleThumbnailClick(index)}
                                    className={`relative h-32 overflow-hidden border transition-all duration-500 ${index === activeIndex
-                                             ? 'border-blue-500/50 ring-1 ring-blue-500/30'
-                                             : 'border-white/[0.06] hover:border-white/20'
+                                        ? 'border-blue-500/50 ring-1 ring-blue-500/30'
+                                        : 'border-white/[0.06] hover:border-white/20'
                                         }`}
                               >
                                    <Image
@@ -148,8 +147,8 @@ export function PlatformGallery() {
                                    />
                                    {/* Overlay */}
                                    <div className={`absolute inset-0 transition-all duration-500 ${index === activeIndex
-                                             ? 'bg-blue-500/10'
-                                             : 'bg-black/40 hover:bg-black/20'
+                                        ? 'bg-blue-500/10'
+                                        : 'bg-black/40 hover:bg-black/20'
                                         }`}></div>
 
                                    {/* Active Indicator */}

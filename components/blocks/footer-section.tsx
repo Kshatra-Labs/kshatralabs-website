@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 import {
      Dribbble,
      Facebook,
@@ -67,7 +70,7 @@ const serviceLinks = [
 
 const helpfulLinks = [
      { text: 'Contact Support', href: data.help.support },
-     { text: 'Request Briefing', href: '#contact' },
+     { text: 'Request Briefing', href: 'mailto:contact@kshatralabs.in' },
 ];
 
 const contactInfo = [
@@ -77,8 +80,22 @@ const contactInfo = [
 ];
 
 export default function Footer4Col() {
+     const [isMailModalOpen, setIsMailModalOpen] = useState(false)
+
+     const handleLinkClick = (e: React.MouseEvent, href: string) => {
+          if (href === 'mailto:contact@kshatralabs.in') {
+               e.preventDefault()
+               setIsMailModalOpen(true)
+          }
+     }
+
      return (
           <footer id="contact" className="bg-black border-t border-white/10 w-full rounded-t-xl z-20 relative">
+               <MailChoiceModal
+                    isOpen={isMailModalOpen}
+                    onClose={() => setIsMailModalOpen(false)}
+                    email="contact@kshatralabs.in"
+               />
                <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                          <div>
@@ -150,7 +167,8 @@ export default function Footer4Col() {
                                              <li key={text}>
                                                   <a
                                                        href={href}
-                                                       className="text-neutral-400 hover:text-white transition"
+                                                       onClick={(e) => handleLinkClick(e, href)}
+                                                       className="text-neutral-400 hover:text-white transition cursor-pointer"
                                                   >
                                                        {text}
                                                   </a>
@@ -165,8 +183,9 @@ export default function Footer4Col() {
                                         {contactInfo.map(({ icon: Icon, text, isAddress, href }) => (
                                              <li key={text}>
                                                   <a
-                                                       className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition"
+                                                       className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition cursor-pointer"
                                                        href={href}
+                                                       onClick={(e) => handleLinkClick(e, href)}
                                                   >
                                                        <Icon className="size-4 shrink-0" />
                                                        {isAddress ? (

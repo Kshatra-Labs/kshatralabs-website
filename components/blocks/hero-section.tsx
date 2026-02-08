@@ -8,14 +8,27 @@ import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { cn } from '@/lib/utils'
 import { Menu, X, ChevronRight, ArrowRight, Phone, Mail } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
+import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 export function HeroSection() {
+     const isMobile = useIsMobile()
+     const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
+
+     const handleContactClick = () => {
+          if (isMobile) {
+               window.location.href = 'mailto:contact@kshatralabs.in'
+          } else {
+               setIsMailModalOpen(true)
+          }
+     }
+
      return (
           <>
                <HeroHeader />
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
-                         <div className="absolute inset-0 z-0">
+                         <div className="absolute inset-0 z-0 pointer-events-none">
                               <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-80">
                                    <source src="/video/main-video.mp4" type="video/mp4" />
                               </video>
@@ -47,7 +60,10 @@ export function HeroSection() {
                                                   <strong className="text-white font-medium">Kshatra Labs</strong> engineers AI-native robotic systems that sense, reason, and act in real time across air, land, sea, and space — starting with autonomous aerial defense.
                                              </p>
 
-                                             <Link href="#contact" className="group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-black/40 px-8 py-4 font-mono text-sm tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:bg-defense-accent/10 hover:text-defense-accent border border-white/10 hover:border-defense-accent/50">
+                                             <button
+                                                  onClick={handleContactClick}
+                                                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-black/40 px-8 py-4 font-mono text-sm tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:bg-defense-accent/10 hover:text-defense-accent border border-white/10 hover:border-defense-accent/50 cursor-pointer"
+                                             >
                                                   {/* Crosshair corners */}
                                                   <span className="absolute left-0 top-0 h-2 w-2 border-l-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
                                                   <span className="absolute right-0 top-0 h-2 w-2 border-r-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
@@ -58,7 +74,13 @@ export function HeroSection() {
                                                        REQUEST A BRIEFING
                                                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                                                   </span>
-                                             </Link>
+                                             </button>
+
+                                             <MailChoiceModal
+                                                  isOpen={isMailModalOpen}
+                                                  onClose={() => setIsMailModalOpen(false)}
+                                                  email="contact@kshatralabs.in"
+                                             />
 
                                              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-[11px] font-mono text-white/80 uppercase tracking-widest font-bold drop-shadow-sm">
                                                   <div className="flex items-center gap-2">
@@ -122,6 +144,8 @@ const HeroHeader = () => {
      const [menuState, setMenuState] = React.useState(false)
      const [scrolled, setScrolled] = React.useState(false)
      const { scrollYProgress } = useScroll()
+     const isMobile = useIsMobile()
+     const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
 
      React.useEffect(() => {
           const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -206,16 +230,24 @@ const HeroHeader = () => {
                                                   <span>+91 9730458528</span>
                                              </a>
                                              <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
-                                             <a href="mailto:contact@kshatralabs.in" className="hover:text-defense-accent transition-colors flex items-center gap-2">
+                                             <button
+                                                  onClick={() => !isMobile ? setIsMailModalOpen(true) : window.location.href = 'mailto:contact@kshatralabs.in'}
+                                                  className="hover:text-defense-accent transition-colors flex items-center gap-2 cursor-pointer"
+                                             >
                                                   <Mail className="w-3 h-3" />
                                                   <span>contact@kshatralabs.in</span>
-                                             </a>
+                                             </button>
                                         </div>
                                    </div>
                               </div>
                          </div>
                     </div>
                </nav>
+               <MailChoiceModal
+                    isOpen={isMailModalOpen}
+                    onClose={() => setIsMailModalOpen(false)}
+                    email="contact@kshatralabs.in"
+               />
           </header>
      )
 }
