@@ -34,9 +34,9 @@ const data = {
           livechat: '#',
      },
      contact: {
-          email: 'contact@kshatralabs.com',
-          phone: '',
-          address: 'Bangalore, India',
+          email: 'contact@kshatralabs.in',
+          phone: '+91 9730458528',
+          address: 'Bharat',
      },
      company: {
           name: 'Kshatra Labs',
@@ -71,14 +71,14 @@ const helpfulLinks = [
 ];
 
 const contactInfo = [
-     { icon: Mail, text: data.contact.email },
-     // { icon: Phone, text: data.contact.phone },
-     { icon: MapPin, text: data.contact.address, isAddress: true },
+     { icon: Mail, text: data.contact.email, isAddress: false, href: `mailto:${data.contact.email}` },
+     { icon: Phone, text: data.contact.phone, isAddress: false, href: `tel:${data.contact.phone.replace(/\s/g, '')}` },
+     { icon: MapPin, text: data.contact.address, isAddress: true, href: '#' },
 ];
 
 export default function Footer4Col() {
      return (
-          <footer className="bg-black border-t border-white/10 w-full rounded-t-xl z-20 relative">
+          <footer id="contact" className="bg-black border-t border-white/10 w-full rounded-t-xl z-20 relative">
                <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                          <div>
@@ -162,11 +162,11 @@ export default function Footer4Col() {
                               <div className="text-center sm:text-left">
                                    <p className="text-lg font-medium text-white">Contact</p>
                                    <ul className="mt-8 space-y-4">
-                                        {contactInfo.map(({ icon: Icon, text, isAddress }) => (
+                                        {contactInfo.map(({ icon: Icon, text, isAddress, href }) => (
                                              <li key={text}>
                                                   <a
                                                        className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition"
-                                                       href="#"
+                                                       href={href}
                                                   >
                                                        <Icon className="size-4 shrink-0" />
                                                        {isAddress ? (

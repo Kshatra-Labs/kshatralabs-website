@@ -6,7 +6,7 @@ import { TechButton } from '@/components/ui/tech-button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { cn } from '@/lib/utils'
-import { Menu, X, ChevronRight, ArrowRight } from 'lucide-react'
+import { Menu, X, ChevronRight, ArrowRight, Phone, Mail } from 'lucide-react'
 import { useScroll, motion } from 'motion/react'
 
 export function HeroSection() {
@@ -131,10 +131,25 @@ const HeroHeader = () => {
      }, [scrollYProgress])
 
      return (
-          <header>
+          <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/5' : ''}`}>
+               {/* Contact Top Bar */}
+               <div className="w-full bg-black/40 border-b border-white/5 backdrop-blur-sm">
+                    <div className="mx-auto max-w-7xl px-6 lg:px-12 flex justify-end items-center py-2 gap-6 text-[10px] font-mono tracking-widest uppercase">
+                         <a href="tel:+919730458528" className="hover:text-defense-accent transition-colors flex items-center gap-2 text-white/70">
+                              <Phone className="w-3 h-3" />
+                              <span>+91 9730458528</span>
+                         </a>
+                         <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
+                         <a href="mailto:contact@kshatralabs.in" className="hover:text-defense-accent transition-colors flex items-center gap-2 text-white/70">
+                              <Mail className="w-3 h-3" />
+                              <span>contact@kshatralabs.in</span>
+                         </a>
+                    </div>
+               </div>
+
                <nav
                     data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300"
+                    className="w-full"
                >
                     <div className="mx-auto max-w-7xl px-6 lg:px-12">
                          <div className="relative flex flex-wrap items-center justify-between gap-6 py-4">
