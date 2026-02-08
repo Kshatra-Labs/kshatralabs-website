@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <img src="public/logo.png" width="40" height="40" valign="middle"> KSHATRA LABS
 
-## Getting Started
+### ENGINEERING THE UNMANNED FUTURE
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](LICENSE)
 
+Kshatra Labs represents the pinnacle of autonomous systems engineering. We build intelligent platforms that operate across **Air, Land, Sea, and Space**, bridging the gap between physical intelligence and mission-critical execution.
+
+---
+
+## 📽️ Mission Briefing
+![Kshatra Labs Platform Architecture](public/video/demo.mp4)
+*Video: Simulation and Deployment of the Multi-Domain Robotics Platform.*
+
+---
+
+## 🛡️ Core Platforms
+
+| System | Classification | Mission Profile | Image |
+| :--- | :--- | :--- | :--- |
+| **Apex Predator** | Heavy-Lift UAS | Multi-role endurance, precision strike, and logistical support. | ![Apex](public/apex.png) |
+| **Hawkeye** | Reconnaissance | Ultra-long-range surveillance and electronic warfare. | ![Hawkeye](public/hawkeye.png) |
+| **Hawk** | Tactical UAS | Rapid deployment agile response system. | ![Hawk](public/hawk.png) |
+
+---
+
+## ⚡ Technology Stack
+
+Our platform is built on a high-concurrency, low-latency stack designed for real-time telemetry and 3D visualization.
+
+- **Frontend**: [Next.js 15](https://nextjs.org/) (App Router) for high-performance rendering.
+- **Design System**: [Tailwind CSS](https://tailwindcss.com/) with custom Glassmorphism components.
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) & [Aceternity UI](https://ui.aceternity.com/).
+- **3D Visualization**: [Spline](https://spline.design/) for interactive mission control dashboards.
+- **Visual Effects**: Custom shaders for radar sweeps and holographic HUDs.
+
+---
+
+## 🚀 Getting Started
+
+To deploy the mission control dashboard locally:
+
+### 1. Requirements
+- Node.js 18.x or higher
+- npm / yarn / pnpm
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Kshatra-Labs/kshatralabs-website.git
+cd kshatralabs-website
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Execution
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The system will be accessible at [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌐 Vision
 
-To learn more about Next.js, take a look at the following resources:
+Kshatra Labs is building general-purpose physical intelligence. Our systems are designed to adapt, learn, and overcome in the world's most challenging environments, ensuring safety and precision in every mission.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<div align="center">
+  <p>© 2026 KSHATRA LABS | MISSION CRITICAL SOLUTIONS</p>
+</div>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
