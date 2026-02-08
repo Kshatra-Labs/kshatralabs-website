@@ -131,25 +131,10 @@ const HeroHeader = () => {
      }, [scrollYProgress])
 
      return (
-          <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/5' : ''}`}>
-               {/* Contact Top Bar */}
-               <div className="w-full bg-black/40 border-b border-white/5 backdrop-blur-sm">
-                    <div className="mx-auto max-w-7xl px-6 lg:px-12 flex justify-end items-center py-2 gap-6 text-[10px] font-mono tracking-widest uppercase">
-                         <a href="tel:+919730458528" className="hover:text-defense-accent transition-colors flex items-center gap-2 text-white/70">
-                              <Phone className="w-3 h-3" />
-                              <span>+91 9730458528</span>
-                         </a>
-                         <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
-                         <a href="mailto:contact@kshatralabs.in" className="hover:text-defense-accent transition-colors flex items-center gap-2 text-white/70">
-                              <Mail className="w-3 h-3" />
-                              <span>contact@kshatralabs.in</span>
-                         </a>
-                    </div>
-               </div>
-
+          <header>
                <nav
                     data-state={menuState && 'active'}
-                    className="w-full"
+                    className="fixed z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300"
                >
                     <div className="mx-auto max-w-7xl px-6 lg:px-12">
                          <div className="relative flex flex-wrap items-center justify-between gap-6 py-4">
@@ -214,17 +199,18 @@ const HeroHeader = () => {
                                              ))}
                                         </ul>
                                    </div>
-                                   <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                        <Button
-                                             asChild
-                                             variant="outline"
-                                             size="sm"
-                                             className="rounded-full font-mono text-xs uppercase"
-                                        >
-                                             <Link href="#contact">
-                                                  <span>Contact Us</span>
-                                             </Link>
-                                        </Button>
+                                   <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-6 sm:space-y-0 md:w-fit items-center">
+                                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-[11px] font-mono tracking-widest uppercase text-white/70">
+                                             <a href="tel:+919730458528" className="hover:text-defense-accent transition-colors flex items-center gap-2">
+                                                  <Phone className="w-3 h-3" />
+                                                  <span>+91 9730458528</span>
+                                             </a>
+                                             <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
+                                             <a href="mailto:contact@kshatralabs.in" className="hover:text-defense-accent transition-colors flex items-center gap-2">
+                                                  <Mail className="w-3 h-3" />
+                                                  <span>contact@kshatralabs.in</span>
+                                             </a>
+                                        </div>
                                    </div>
                               </div>
                          </div>
