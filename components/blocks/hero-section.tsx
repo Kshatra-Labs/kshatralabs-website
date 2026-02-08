@@ -76,7 +76,7 @@ export function HeroSection() {
                                              </div>
                                         </div>
 
-                                        <div className="hidden md:block">
+                                        {/* <div className="hidden md:block">
                                              <div className="grid grid-cols-2 gap-8">
                                                   <div>
                                                        <div className="text-3xl font-heading font-bold text-white mb-1 drop-shadow-md">3</div>
@@ -87,7 +87,7 @@ export function HeroSection() {
                                                        <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest drop-shadow-sm">DECISION LATENCY<br />(EDGE COMPUTE)</div>
                                                   </div>
                                              </div>
-                                        </div>
+                                        </div> */}
                                    </div>
                               </div>
                          </div>
@@ -200,7 +200,7 @@ const HeroHeader = () => {
                                         </ul>
                                    </div>
                                    <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-6 sm:space-y-0 md:w-fit items-center">
-                                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-[11px] font-mono tracking-widest uppercase text-white/70">
+                                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-[11px] font-mono tracking-widest text-white/70">
                                              <a href="tel:+919730458528" className="hover:text-defense-accent transition-colors flex items-center gap-2">
                                                   <Phone className="w-3 h-3" />
                                                   <span>+91 9730458528</span>
