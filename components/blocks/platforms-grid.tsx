@@ -1,143 +1,142 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 
 const advantages = [
-     {
-          number: '01',
-          title: 'AI-Native',
-          description: 'Not retrofitted. Built from the ground up with neural networks at the core.',
-     },
-     {
-          number: '02',
-          title: 'Edge Intelligence',
-          description: 'Full autonomy onboard. No reliance on cloud connectivity or GPS.',
-     },
-     {
-          number: '03',
-          title: 'Swarm-First',
-          description: 'Designed for multi-agent coordination and distributed decision making.',
-     },
-     {
-          number: '04',
-          title: 'Cost Effective',
-          description: 'Asymmetric cost exchange. Neutralize threats at a fraction of the cost.',
-     },
-     {
-          number: '05',
-          title: 'Contested Ready',
-          description: 'Resilient to jamming, spoofing, and electronic warfare countermeasures.',
-     },
+  { number: '01', title: 'AI-Native', description: 'Built from neural networks at the core.' },
+  { number: '02', title: 'Edge Intelligence', description: 'Runs fully onboard. No cloud.' },
+  { number: '03', title: 'Swarm-First', description: 'Multi-agent coordination.' },
+  { number: '04', title: 'Cost Effective', description: 'Neutralize threats cheaply.' },
+  { number: '05', title: 'Contested Ready', description: 'Resistant to EW & jamming.' },
 ]
 
 export function PlatformsGrid() {
-     return (
-          <section className="relative py-32 bg-black overflow-hidden border-y border-white/[0.03]">
-               {/* Grid Background */}
-               <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+  const ref = useRef<HTMLDivElement>(null)
 
-               <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
 
-                    {/* Two Column Layout */}
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [60, -60])
 
-                         {/* Left: Text Content */}
-                         <div>
-                              {/* Header */}
-                              <div className="mb-12">
-                                   <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                                        Why Kshatra Labs?
-                                   </h2>
+  return (
+    <section ref={ref} className="relative py-24 md:py-32 bg-black overflow-hidden">
 
-                                   <p className="text-lg text-neutral-400 leading-relaxed">
-                                        We don't build toys. We build <span className="text-white font-medium">weapons-grade autonomy</span> for the modern battlefield.
-                                   </p>
-                              </div>
+      {/* Noise */}
+      <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise1.png')] pointer-events-none" />
 
-                              {/* Advantages List */}
-                              <div className="space-y-8">
-                                   {advantages.map((item, idx) => (
-                                        <motion.div
-                                             key={idx}
-                                             initial={{ opacity: 0, x: -20 }}
-                                             whileInView={{ opacity: 1, x: 0 }}
-                                             transition={{ delay: idx * 0.1, duration: 0.5 }}
-                                             viewport={{ once: true }}
-                                             className="group"
-                                        >
-                                             <div className="flex gap-6">
-                                                  {/* Number */}
-                                                  <div className="flex-shrink-0">
-                                                       <span className="text-4xl font-bold text-white/10 group-hover:text-blue-500/30 transition-colors duration-500">
-                                                            {item.number}
-                                                       </span>
-                                                  </div>
+      {/* Ambient light */}
+      <div
+        className="absolute left-1/2 top-24 -translate-x-1/2 w-[600px] md:w-[900px] h-[600px] md:h-[900px] blur-3xl pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.08) 25%, transparent 60%)',
+          maskImage:
+            'radial-gradient(circle, black 40%, transparent 70%)',
+          WebkitMaskImage:
+            'radial-gradient(circle, black 40%, transparent 70%)',
+        }}
+      />
 
-                                                  {/* Content */}
-                                                  <div className="flex-1 pt-1">
-                                                       <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
-                                                            {item.title}
-                                                       </h3>
-                                                       <p className="text-sm text-neutral-400 leading-relaxed">
-                                                            {item.description}
-                                                       </p>
-                                                  </div>
-                                             </div>
-                                        </motion.div>
-                                   ))}
-                              </div>
-                         </div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
 
-                         {/* Right: Floating Drone Image */}
-                         <div className="relative h-[600px] flex items-center justify-center">
-                              {/* Corner Brackets */}
-                              <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-white/20"></div>
-                              <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2 border-white/20"></div>
-                              <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-white/20"></div>
-                              <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-white/20"></div>
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
 
-                              {/* Labels */}
-                              <div className="absolute top-12 left-12 px-3 py-1 bg-black/80 border border-white/20 backdrop-blur-sm">
-                                   <span className="text-[10px] font-mono text-white tracking-wider">SEA</span>
-                              </div>
-                              <div className="absolute top-12 right-12 px-3 py-1 bg-black/80 border border-white/20 backdrop-blur-sm">
-                                   <span className="text-[10px] font-mono text-white tracking-wider">LAND</span>
-                              </div>
+          {/* LEFT */}
+          <div>
 
-                              {/* Floating Drone */}
-                              <motion.div
-                                   animate={{
-                                        y: [0, -15, 0],
-                                        rotateY: [0, 5, 0, -5, 0],
-                                   }}
-                                   transition={{
-                                        duration: 6,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                   }}
-                                   className="relative w-96 h-96"
-                              >
-                                   <Image
-                                        src="/hawk.png"
-                                        alt="Autonomous Drone"
-                                        fill
-                                        className="object-contain drop-shadow-2xl"
-                                   />
-                              </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
+              Why Kshatra Labs?
+            </h2>
 
-                              {/* Crosshair overlay */}
-                              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                   <div className="relative w-64 h-64">
-                                        <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-                                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent"></div>
-                                   </div>
-                              </div>
-                         </div>
+            <p className="mt-4 md:mt-6 text-neutral-400 max-w-xl">
+              Weapons-grade autonomy for the modern battlefield.
+            </p>
 
+            <div className="mt-8 md:mt-12 space-y-3 md:space-y-4">
+
+              {advantages.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * .08 }}
+                  viewport={{ once: true }}
+                  className="rounded-xl md:rounded-2xl p-4 md:p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
+                >
+                  <div className="flex gap-3 md:gap-4">
+                    <span className="text-xl md:text-3xl font-bold text-white/20">
+                      {item.number}
+                    </span>
+
+                    <div>
+                      <h3 className="text-sm md:text-base text-white">{item.title}</h3>
+                      <p className="text-xs md:text-sm text-neutral-400 mt-1">
+                        {item.description}
+                      </p>
                     </div>
-               </div>
-          </section>
-     )
+                  </div>
+                </motion.div>
+              ))}
+
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <motion.div
+            style={{ y: parallaxY }}
+            className="relative h-[360px] md:h-[520px] flex items-center justify-center"
+          >
+            <Drone />
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ================= DRONE ================= */
+
+function Drone() {
+  return (
+    <motion.div
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 5, repeat: Infinity }}
+      className="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl
+      shadow-[0_30px_80px_-30px_rgba(59,130,246,.6)]"
+    >
+
+      {/* Soft frame */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-blue-500/20 opacity-40" />
+      <div className="absolute inset-0 rounded-3xl border border-white/5" />
+
+      <Image
+        src="/hawkimg.png"
+        alt="Drone"
+        fill
+        className="object-contain p-4 md:p-6-2xl"
+      />
+
+      {/* Crosshair */}
+      <motion.div
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
+        <div className="relative w-40 h-40 md:w-72 md:h-72 opacity-80">
+          <Image
+            src="/realcross.png"
+            alt="Target Lock"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </motion.div>
+
+    </motion.div>
+  )
 }
