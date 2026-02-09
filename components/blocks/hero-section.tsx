@@ -16,6 +16,16 @@ import { Header } from './header'
 export function HeroSection() {
      const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
+     const videoRef = React.useRef<HTMLVideoElement>(null)
+
+     React.useEffect(() => {
+          if (videoRef.current) {
+               videoRef.current.playbackRate = 0.75
+               videoRef.current.play().catch(error => {
+                    console.log("Video play failed", error)
+               })
+          }
+     }, [])
 
      const handleContactClick = () => {
           if (isMobile) {
@@ -31,7 +41,16 @@ export function HeroSection() {
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
                          <div className="absolute inset-0 z-0 pointer-events-none">
-                              <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-80">
+                              <video
+                                   ref={videoRef}
+                                   autoPlay
+                                   muted
+                                   loop
+                                   playsInline
+                                   preload="auto"
+                                   className="absolute inset-0 w-full h-full object-cover opacity-80"
+                                   style={{ pointerEvents: 'none' }} // Ensure no interaction blocks it
+                              >
                                    <source src="/video/main-video.mp4" type="video/mp4" />
                               </video>
                               <div className="absolute inset-0 bg-defense-dark -z-10"></div>
@@ -95,7 +114,7 @@ export function HeroSection() {
                                                   </div>
                                                   <div className="flex items-center gap-2">
                                                        <div className="w-1 h-1 bg-defense-accent rounded-full"></div>
-                                                       <span>Engineered for Kinetic Agility</span>
+                                                       <span>Deployed at machine speed</span>
                                                   </div>
                                              </div>
                                         </div>
