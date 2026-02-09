@@ -39,7 +39,7 @@ const data = {
      contact: {
           email: 'contact@kshatralabs.in',
           phone: '+91 9730458528',
-          address: 'Bharat',
+          address: 'Bangalore',
      },
      company: {
           name: 'Kshatra Labs',
@@ -65,7 +65,7 @@ const serviceLinks = [
      { text: 'Aerial Interceptors', href: data.services.platforms },
      { text: 'Sensor Fusion', href: data.services.technology },
      { text: 'Swarm Intelligence', href: data.services.technology },
-     { text: 'Defense Solutions', href: data.services.defense },
+     { text: 'Optical Tracker', href: data.services.defense },
 ];
 
 const helpfulLinks = [
@@ -127,23 +127,7 @@ export default function Footer4Col() {
                               </ul>
                          </div>
 
-                         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2 font-mono text-sm">
-                              <div className="text-center sm:text-left">
-                                   <p className="text-lg font-medium text-white">About</p>
-                                   <ul className="mt-8 space-y-4">
-                                        {aboutLinks.map(({ text, href }) => (
-                                             <li key={text}>
-                                                  <a
-                                                       className="text-neutral-400 hover:text-white transition"
-                                                       href={href}
-                                                  >
-                                                       {text}
-                                                  </a>
-                                             </li>
-                                        ))}
-                                   </ul>
-                              </div>
-
+                         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2 font-mono text-sm">
                               <div className="text-center sm:text-left">
                                    <p className="text-lg font-medium text-white">Technology</p>
                                    <ul className="mt-8 space-y-4">

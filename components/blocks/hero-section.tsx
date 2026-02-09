@@ -137,7 +137,6 @@ const menuItems = [
      { name: 'Platforms', href: '#platforms' },
      { name: 'Technology', href: '#technology' },
      { name: 'Vision', href: '#vision' },
-     { name: 'About', href: '#about' },
 ]
 
 const HeroHeader = () => {
