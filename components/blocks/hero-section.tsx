@@ -6,10 +6,12 @@ import { TechButton } from '@/components/ui/tech-button'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 import { cn } from '@/lib/utils'
-import { Menu, X, ChevronRight, ArrowRight, Phone, Mail } from 'lucide-react'
-import { useScroll, motion } from 'motion/react'
+import { ArrowRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
+import { Header } from './header'
+
 
 export function HeroSection() {
      const isMobile = useIsMobile()
@@ -25,7 +27,7 @@ export function HeroSection() {
 
      return (
           <>
-               <HeroHeader />
+               <Header />
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
                          <div className="absolute inset-0 z-0 pointer-events-none">
@@ -130,124 +132,5 @@ export function HeroSection() {
                     </section>
                </main>
           </>
-     )
-}
-
-const menuItems = [
-     { name: 'Platforms', href: '#platforms' },
-     { name: 'Technology', href: '#technology' },
-     { name: 'Vision', href: '#vision' },
-     { name: 'About', href: '#about' },
-]
-
-const HeroHeader = () => {
-     const [menuState, setMenuState] = React.useState(false)
-     const [scrolled, setScrolled] = React.useState(false)
-     const { scrollYProgress } = useScroll()
-     const isMobile = useIsMobile()
-     const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
-
-     React.useEffect(() => {
-          const unsubscribe = scrollYProgress.on('change', (latest) => {
-               setScrolled(latest > 0.05)
-          })
-          return () => unsubscribe()
-     }, [scrollYProgress])
-
-     return (
-          <header>
-               <nav
-                    data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300"
-               >
-                    <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                         <div className="relative flex flex-wrap items-center justify-between gap-6 py-4">
-                              <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                                   <Link
-                                        href="/"
-                                        aria-label="home"
-                                        className="group block"
-                                   >
-                                        <div
-                                             className="h-6 w-[177px] bg-white group-hover:bg-defense-accent transition-colors duration-300"
-                                             style={{
-                                                  maskImage: 'url(/logo.svg)',
-                                                  maskSize: 'contain',
-                                                  maskRepeat: 'no-repeat',
-                                                  maskPosition: 'center left',
-                                                  WebkitMaskImage: 'url(/logo.svg)',
-                                                  WebkitMaskSize: 'contain',
-                                                  WebkitMaskRepeat: 'no-repeat',
-                                                  WebkitMaskPosition: 'center left'
-                                             }}
-                                        />
-                                   </Link>
-
-                                   <button
-                                        onClick={() => setMenuState(!menuState)}
-                                        aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                        className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                                   >
-                                        <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                        <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                                   </button>
-
-                                   <div className="hidden lg:block">
-                                        <ul className="flex gap-8 text-sm font-mono tracking-wide uppercase">
-                                             {menuItems.map((item, index) => (
-                                                  <li key={index}>
-                                                       <Link
-                                                            href={item.href}
-                                                            className="text-muted-foreground hover:text-white duration-150"
-                                                       >
-                                                            <span>{item.name}</span>
-                                                       </Link>
-                                                  </li>
-                                             ))}
-                                        </ul>
-                                   </div>
-                              </div>
-
-                              <div className="bg-black/90 group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-white/10 p-6 shadow-2xl md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
-                                   <div className="lg:hidden">
-                                        <ul className="space-y-6 text-base font-mono">
-                                             {menuItems.map((item, index) => (
-                                                  <li key={index}>
-                                                       <Link
-                                                            href={item.href}
-                                                            className="text-muted-foreground hover:text-white block duration-150"
-                                                       >
-                                                            <span>{item.name}</span>
-                                                       </Link>
-                                                  </li>
-                                             ))}
-                                        </ul>
-                                   </div>
-                                   <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-6 sm:space-y-0 md:w-fit items-center">
-                                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-[11px] font-mono tracking-widest text-white/70">
-                                             <a href="tel:+919730458528" className="hover:text-defense-accent transition-colors flex items-center gap-2">
-                                                  <Phone className="w-3 h-3" />
-                                                  <span>+91 9730458528</span>
-                                             </a>
-                                             <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
-                                             <button
-                                                  onClick={() => !isMobile ? setIsMailModalOpen(true) : window.location.href = 'mailto:contact@kshatralabs.in'}
-                                                  className="hover:text-defense-accent transition-colors flex items-center gap-2 cursor-pointer"
-                                             >
-                                                  <Mail className="w-3 h-3" />
-                                                  <span>contact@kshatralabs.in</span>
-                                             </button>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-               </nav>
-               <MailChoiceModal
-                    isOpen={isMailModalOpen}
-                    onClose={() => setIsMailModalOpen(false)}
-                    email="contact@kshatralabs.in"
-               />
-          </header>
      )
 }
