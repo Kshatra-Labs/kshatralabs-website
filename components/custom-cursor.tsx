@@ -1,11 +1,33 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function CustomCursor() {
      const cursorRef = useRef<HTMLDivElement>(null)
+     const [showCustomCursor, setShowCustomCursor] = useState(false)
 
      useEffect(() => {
+          // Check if device has a fine pointer (mouse/trackpad)
+          const mediaQuery = window.matchMedia('(pointer: fine)')
+
+          const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
+               setShowCustomCursor(e.matches)
+          }
+
+          // Initial check
+          handleMediaChange(mediaQuery)
+
+          // Listen for changes
+          mediaQuery.addEventListener('change', handleMediaChange)
+
+          return () => {
+               mediaQuery.removeEventListener('change', handleMediaChange)
+          }
+     }, [])
+
+     useEffect(() => {
+          if (!showCustomCursor) return
+
           // Disable right-click context menu
           const handleContextMenu = (e: MouseEvent) => {
                e.preventDefault()
@@ -27,7 +49,9 @@ export function CustomCursor() {
                document.removeEventListener('contextmenu', handleContextMenu)
                document.removeEventListener('mousemove', handleMouseMove)
           }
-     }, [])
+     }, [showCustomCursor])
+
+     if (!showCustomCursor) return null
 
      return (
           <>
@@ -43,7 +67,7 @@ export function CustomCursor() {
                     <div className="w-4 h-4 bg-white rounded-full" />
                </div>
 
-               {/* Hide default cursor */}
+               {/* Hide default cursor only when custom cursor is active */}
                <style jsx global>{`
         * {
           cursor: none !important;
