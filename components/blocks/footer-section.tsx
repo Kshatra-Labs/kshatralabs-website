@@ -19,7 +19,7 @@ const data = {
      facebookLink: '#',
      instaLink: '#',
      twitterLink: '#',
-     githubLink: '#',
+     githubLink: 'https://github.com/Kshatra-Labs',
      dribbbleLink: '#',
      services: {
           platforms: '#platforms',
