@@ -1,1 +1,93 @@
-{}
+{
+  "[project]/components/blocks/hero-section.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/hero-section.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_9d07f727._.js",
+      "static/chunks/_e757d3c7._.js",
+      "static/chunks/components_blocks_hero-section_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/ui/background-paths.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/ui/background-paths.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_ui_background-paths_tsx_12771ec1._.js",
+      "static/chunks/components_ui_background-paths_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/spline-scene.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/spline-scene.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_ui_honeycomb-loader_module_364c1aa0.css",
+      "static/chunks/node_modules_@splinetool_react-spline_dist_react-spline_d41e7053.js",
+      "static/chunks/_59175cf7._.js",
+      "static/chunks/components_blocks_spline-scene_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/FPSMeter.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/FPSMeter.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_35928eb2._.js",
+      "static/chunks/components_FPSMeter_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/ui/card.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/ui/card.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_223386db._.js",
+      "static/chunks/_c64c1862._.js",
+      "static/chunks/components_ui_card_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/ui/spotlight.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/ui/spotlight.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_223386db._.js",
+      "static/chunks/_dbcdfad5._.js",
+      "static/chunks/components_ui_spotlight_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/footer-section.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/footer-section.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_d45120f6._.js",
+      "static/chunks/components_blocks_footer-section_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/capabilities.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/capabilities.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_9d1f511a._.js",
+      "static/chunks/components_blocks_capabilities_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/platforms-grid.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/platforms-grid.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_f5dc1f52._.js",
+      "static/chunks/components_blocks_platforms-grid_tsx_15e5a55a._.js",
+      "static/chunks/components_blocks_platforms-grid_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/platform-gallery.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/platform-gallery.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_94def4aa._.js",
+      "static/chunks/components_blocks_platform-gallery_tsx_2cafb7b2._.js",
+      "static/chunks/components_blocks_platform-gallery_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/philosophy-card.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/philosophy-card.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_blocks_philosophy-card_tsx_ec125ccd._.js",
+      "static/chunks/components_blocks_philosophy-card_tsx_072e193f._.js"
+    ]
+  },
+  "[project]/components/blocks/threat-analysis.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/blocks/threat-analysis.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_blocks_threat-analysis_tsx_9dc848fd._.js",
+      "static/chunks/components_blocks_threat-analysis_tsx_072e193f._.js"
+    ]
+  }
+}

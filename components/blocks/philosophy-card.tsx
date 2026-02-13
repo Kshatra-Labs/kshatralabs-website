@@ -28,7 +28,7 @@ export function PhilosophyCard() {
                               <div>
                                    <div className="mb-8">
                                         <span className="text-blue-400/80 font-mono text-[9px] tracking-[0.3em] uppercase font-medium">
-                  /// Core Philosophy
+                                             {"/// Core Philosophy"}
                                         </span>
                                    </div>
 
@@ -53,7 +53,7 @@ export function PhilosophyCard() {
                                         <div className="border-l-2 border-blue-500/30 pl-4">
                                              <div className="text-3xl font-bold text-white mb-1">Rapid Response</div>
                                              <div className="text-[10px] font-mono text-neutral-600 tracking-wider uppercase">
-                                                  
+
                                              </div>
                                         </div>
 

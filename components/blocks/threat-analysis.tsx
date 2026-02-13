@@ -2,7 +2,9 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Target, Crosshair, Wifi, AlertTriangle } from 'lucide-react'
+// import { Target, Crosshair, Wifi, AlertTriangle } from 'lucide-react'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { type ClassValue } from 'clsx'
 
 export function ThreatAnalysis() {
      const [activeTagIndex, setActiveTagIndex] = React.useState(0)
@@ -36,7 +38,7 @@ export function ThreatAnalysis() {
                               {/* Header */}
                               <div className="border-l-4 border-red-600 pl-6 space-y-4">
                                    <div className="text-red-500 text-xs font-mono tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
-                                        <span>/// THREAT VECTOR ANALYSIS</span>
+                                        <span>{"/// THREAT VECTOR ANALYSIS"}</span>
                                    </div>
                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none">
                                         ASYMMETRIC <span className="text-white/50">WARFARE</span>
@@ -122,15 +124,7 @@ export function ThreatAnalysis() {
                               <div className="relative w-full aspect-video bg-black/80 rounded-sm border border-white/10 overflow-hidden group">
 
                                    {/* Video Element */}
-                                   <video
-                                        autoPlay
-                                        muted
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen"
-                                   >
-                                        <source src="/video/demo.mp4" type="video/mp4" />
-                                   </video>
+                                   <LazyVideo />
 
                                    {/* HUD Overlay */}
                                    <div className="absolute inset-0 pointer-events-none p-4 md:p-8 flex flex-col justify-between">
@@ -162,8 +156,8 @@ export function ThreatAnalysis() {
                                         {/* Bottom Bar */}
                                         <div className="flex justify-between items-end text-[10px] font-mono tracking-widest text-white/30">
                                              <div className="space-y-1">
-                                                  <div>LAT 34°03'N</div>
-                                                  <div>LON 118°14'W</div>
+                                                  <div>LAT 34°03&apos;N</div>
+                                                  <div>LON 118°14&apos;W</div>
                                              </div>
                                         </div>
                                    </div>
@@ -175,7 +169,7 @@ export function ThreatAnalysis() {
 
                               {/* Decorative Background Decals */}
                               <div className="absolute -top-10 -right-10 text-white/5 font-black text-9xl pointer-events-none select-none z-0">
-              //
+                                   {"//"}
                               </div>
                               <div className="absolute -bottom-10 -left-10 text-white/5 font-black text-9xl pointer-events-none select-none z-0">
                                    +
@@ -185,5 +179,52 @@ export function ThreatAnalysis() {
                     </div>
                </div>
           </section>
+     )
+}
+
+function LazyVideo() {
+     const containerRef = React.useRef<HTMLDivElement>(null)
+     const videoRef = React.useRef<HTMLVideoElement>(null)
+     const [hasLoaded, setHasLoaded] = React.useState(false)
+
+     React.useEffect(() => {
+          const container = containerRef.current
+          if (!container) return
+
+          const observer = new IntersectionObserver(
+               ([entry]) => {
+                    if (entry.isIntersecting) {
+                         setHasLoaded(true)
+                         // Small timeout to allow the video element to mount if it wasn't already
+                         setTimeout(() => {
+                              videoRef.current?.play().catch(() => { })
+                         }, 0)
+                    } else {
+                         videoRef.current?.pause()
+                    }
+               },
+               { threshold: 0.1 }
+          )
+
+          observer.observe(container)
+
+          return () => observer.disconnect()
+     }, [])
+
+     return (
+          <div ref={containerRef} className="w-full h-full absolute inset-0">
+               {hasLoaded && (
+                    <video
+                         ref={videoRef}
+                         muted
+                         loop
+                         playsInline
+                         className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen"
+                    >
+                         <source src="/video/demo.webm" type="video/webm" />
+                         <source src="/video/demo.mp4" type="video/mp4" />
+                    </video>
+               )}
+          </div>
      )
 }

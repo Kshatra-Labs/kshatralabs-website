@@ -1,78 +1,115 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 
 export function CustomCursor() {
-     const cursorRef = useRef<HTMLDivElement>(null)
-     const [showCustomCursor, setShowCustomCursor] = useState(false)
+
+     const cursorX = useMotionValue(-100)
+     const cursorY = useMotionValue(-100)
+
+     const springConfig = { damping: 25, stiffness: 700, mass: 0.5 }
+     const cursorXSpring = useSpring(cursorX, springConfig)
+     const cursorYSpring = useSpring(cursorY, springConfig)
+
+     const [isVisible, setIsVisible] = useState(false)
+     const [isPointer, setIsPointer] = useState(false)
+     const [isDisabled, setIsDisabled] = useState(false)
 
      useEffect(() => {
-          // Check if device has a fine pointer (mouse/trackpad)
-          const mediaQuery = window.matchMedia('(pointer: fine)')
 
-          const handleMediaChange = (e: MediaQueryListEvent | MediaQueryList) => {
-               setShowCustomCursor(e.matches)
+          // 1. Check for Touch/Mobile/Low-Spec to disable completely
+          const isTouch = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+          const isLowPower = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          // If touch or low power preference, we disable the custom cursor logic entirely
+          // and rely on native behavior (CSS below will need to be conditional)
+          if (isTouch || isLowPower) {
+               // Defer state update to avoid synchronous render warning
+               setTimeout(() => setIsDisabled(true), 0);
+               return;
           }
 
-          // Initial check
-          handleMediaChange(mediaQuery)
 
-          // Listen for changes
-          mediaQuery.addEventListener('change', handleMediaChange)
+          let rafId: number;
+          let latestEvent: MouseEvent | null = null;
 
-          return () => {
-               mediaQuery.removeEventListener('change', handleMediaChange)
-          }
-     }, [])
+          // 2. Throttled Mouse Move Handler
+          const moveHandler = (e: MouseEvent) => {
+               latestEvent = e;
 
-     useEffect(() => {
-          if (!showCustomCursor) return
+               if (!rafId) {
+                    rafId = requestAnimationFrame(() => {
+                         if (latestEvent) {
+                              cursorX.set(latestEvent.clientX - 16)
+                              cursorY.set(latestEvent.clientY - 16)
 
-          // Disable right-click context menu
-          const handleContextMenu = (e: MouseEvent) => {
-               e.preventDefault()
-               return false
-          }
+                              const target = latestEvent.target as HTMLElement;
+                              if (target) {
+                                   setIsPointer(window.getComputedStyle(target).cursor === 'pointer');
+                              }
 
-          // Track mouse position with smooth animation
-          const handleMouseMove = (e: MouseEvent) => {
-               if (cursorRef.current) {
-                    // Use transform for better performance
-                    cursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+                              latestEvent = null;
+                         }
+                         rafId = 0;
+                    });
                }
           }
 
-          document.addEventListener('contextmenu', handleContextMenu)
-          document.addEventListener('mousemove', handleMouseMove)
+
+          const enterHandler = () => setIsVisible(true)
+          const leaveHandler = () => setIsVisible(false)
+
+          window.addEventListener('mousemove', moveHandler, { passive: true })
+          document.addEventListener('mouseenter', enterHandler)
+          document.addEventListener('mouseleave', leaveHandler)
+
+
+          setTimeout(() => setIsVisible(true), 0)
 
           return () => {
-               document.removeEventListener('contextmenu', handleContextMenu)
-               document.removeEventListener('mousemove', handleMouseMove)
-          }
-     }, [showCustomCursor])
 
-     if (!showCustomCursor) return null
+               window.removeEventListener('mousemove', moveHandler)
+               document.removeEventListener('mouseenter', enterHandler)
+               document.removeEventListener('mouseleave', leaveHandler)
+               if (rafId) cancelAnimationFrame(rafId);
+          }
+
+     }, [cursorX, cursorY])
+
+     if (isDisabled) return null;
 
      return (
           <>
-               {/* Custom cursor dot */}
-               <div
-                    ref={cursorRef}
-                    className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference -translate-x-1/2 -translate-y-1/2"
+
+
+               <motion.div
+                    className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center rounded-full bg-white"
                     style={{
-                         transition: 'transform 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-                         willChange: 'transform',
+                         x: cursorXSpring,
+                         y: cursorYSpring,
+                         opacity: isVisible ? 1 : 0,
+                    }}
+                    animate={{
+                         scale: isPointer ? 2.5 : 1,
+                    }}
+                    transition={{
+                         type: "spring",
+                         stiffness: 500,
+                         damping: 28
                     }}
                >
-                    <div className="w-4 h-4 bg-white rounded-full" />
-               </div>
 
-               {/* Hide default cursor only when custom cursor is active */}
+               </motion.div>
+
+
+               {/* Hide default cursor globally */}
                <style jsx global>{`
-        * {
-          cursor: none !important;
-        }
-      `}</style>
+        
+                    * {
+                         cursor: none !important;
+                    }
+               `}</style>
           </>
      )
-}
+}    

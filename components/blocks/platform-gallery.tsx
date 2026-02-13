@@ -86,6 +86,7 @@ export function PlatformGallery() {
                                              src={galleryImages[activeIndex].src}
                                              alt={galleryImages[activeIndex].alt}
                                              fill
+                                             sizes="(max-width: 1280px) 100vw, 1280px"
                                              className="object-cover"
                                              priority
                                         />
@@ -143,6 +144,7 @@ export function PlatformGallery() {
                                         src={image.src}
                                         alt={image.alt}
                                         fill
+                                        sizes="(max-width: 1280px) 25vw, 320px"
                                         className="object-cover transition-transform duration-500 hover:scale-110"
                                    />
                                    {/* Overlay */}
