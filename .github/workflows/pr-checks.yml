@@ -1,0 +1,110 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  pr-size-label:
+    name: PR Size Label
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: codelytv/pr-size-labeler@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          xs_label: 'size/XS'
+          xs_max_size: 10
+          s_label: 'size/S'
+          s_max_size: 50
+          m_label: 'size/M'
+          m_max_size: 200
+          l_label: 'size/L'
+          l_max_size: 500
+          xl_label: 'size/XL'
+          fail_if_xl: false
+          message_if_xl: >
+            ⚠️ This PR is very large. Consider breaking it into smaller PRs
+            for easier review.
+
+  changed-files:
+    name: Changed Files Analysis
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get changed files
+        id: changed
+        uses: tj-actions/changed-files@v45
+        with:
+          separator: '\n'
+      - name: Comment on PR
+        if: steps.changed.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = `${{ steps.changed.outputs.all_changed_files }}`.split('\n').filter(Boolean);
+            const categories = {
+              '🧩 Components': files.filter(f => f.includes('components/')),
+              '📄 Pages': files.filter(f => f.includes('app/')),
+              '🔧 Config': files.filter(f => f.match(/\.(json|yml|yaml|config\.|rc)/)),
+              '🧪 Tests': files.filter(f => f.match(/\.(test|spec)\./)),
+              '📦 Dependencies': files.filter(f => f.includes('package')),
+              '🎨 Styles': files.filter(f => f.match(/\.(css|scss)/)),
+              '📁 Other': files.filter(f => !f.match(/(components|app|\.json|\.yml|\.yaml|\.config\.|rc|test|spec|package|\.css|\.scss)/)),
+            };
+            let body = '### 📊 Changed Files Analysis\n\n';
+            body += `**${files.length} file(s) changed**\n\n`;
+            for (const [cat, catFiles] of Object.entries(categories)) {
+              if (catFiles.length > 0) {
+                body += `#### ${cat} (${catFiles.length})\n`;
+                catFiles.forEach(f => body += `- \`${f}\`\n`);
+                body += '\n';
+              }
+            }
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.data.find(c => c.body.includes('Changed Files Analysis'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  welcome:
+    name: Welcome New Contributors
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |
+            🎉 Welcome to BBD CollegePapers Studio! Thanks for your first PR!
+
+            Please make sure:
+            - [ ] Your code follows our linting rules
+            - [ ] You've added tests for new features
+            - [ ] Your commit messages follow conventional commits (`feat:`, `fix:`, `chore:`, etc.)
+
+            A maintainer will review your PR soon!

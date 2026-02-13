@@ -11,7 +11,8 @@ export function InitialLoader() {
           const hasLoaded = sessionStorage.getItem('kshatra-loaded');
 
           if (hasLoaded) {
-               setIsLoading(false);
+               // Defer state update to avoid synchronous set state in effect warning
+               setTimeout(() => setIsLoading(false), 0);
           } else {
                // Show loader for initial visit
                // Adjust timing to match animation cycles (approx 2-3s)
