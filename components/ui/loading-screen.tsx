@@ -27,7 +27,6 @@ export const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
                               transition={{ delay: 0.5 }}
                               className="text-white/50 font-mono text-sm tracking-widest uppercase"
                          >
-                              Initializing Systems
                          </motion.div>
                     </motion.div>
                )}
