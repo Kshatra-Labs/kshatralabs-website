@@ -63,12 +63,14 @@ export function Capabilities() {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Column({ title, items }: any) {
   return (
     <div>
       <h3 className="text-white mb-6 tracking-wider">{title}</h3>
 
       <div className="space-y-4">
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         {items.map((item: any, i: number) => (
           <Card key={i} {...item} delay={i * .08} />
         ))}
@@ -77,6 +79,7 @@ function Column({ title, items }: any) {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Card({ icon: Icon, title, code, featured, delay }: any) {
   return (
     <motion.div

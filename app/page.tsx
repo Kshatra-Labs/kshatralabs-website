@@ -1,136 +1,34 @@
-'use client'
+'use client';
 
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
-import { useIsMobile } from '@/hooks/use-is-mobile'
-import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
+// import { SplineCache } from "@/lib/spline-cache";
+import { useIsMobile } from "@/hooks/use-is-mobile"
+import { MailChoiceModal } from "@/components/ui/mail-choice-modal"
 
-import { HeroSection } from "@/components/blocks/hero-section";
-import { BackgroundPaths } from "@/components/ui/background-paths";
-import { DynamicFrameLayout } from "@/components/blocks/dynamic-frame-layout";
-import { SplineScene } from "@/components/blocks/spline-scene";
-import { Entropy } from "@/components/ui/entropy";
-import { Card } from "@/components/ui/card";
-import { Spotlight } from "@/components/ui/spotlight";
-import Footer4Col from "@/components/blocks/footer-section";
-import { Capabilities } from '@/components/blocks/capabilities'
-import { PlatformsGrid } from '@/components/blocks/platforms-grid'
-import { PlatformGallery } from '@/components/blocks/platform-gallery'
-import { PhilosophyCard } from '@/components/blocks/philosophy-card'
-import { VideoSection } from "@/components/blocks/video-section";
-import { EnvironmentSection } from "@/components/blocks/environment-section";
+const HeroSection = dynamic(() => import("@/components/blocks/hero-section").then(mod => mod.HeroSection))
+const BackgroundPaths = dynamic(() => import("@/components/ui/background-paths").then(mod => mod.BackgroundPaths), { ssr: false })
+// Reverted to SplineScene per user request (retaining optimizations)
+const SplineScene = dynamic(() => import("@/components/blocks/spline-scene").then(mod => mod.SplineScene), {
+  ssr: false,
+  loading: () => <div className="w-full h-full min-h-[500px] flex items-center justify-center text-white/20">Loading 3D Scene...</div>
+})
+// const SmartScene = dynamic(() => import("@/components/SmartScene").then(mod => mod.default), { ssr: false })
+const FPSMeter = dynamic(() => import("@/components/FPSMeter"), { ssr: false })
 
-import { ThreatAnalysis } from "@/components/blocks/threat-analysis";
+// const Entropy = dynamic(() => import("@/components/ui/entropy").then(mod => mod.Entropy))
+const Card = dynamic(() => import("@/components/ui/card").then(mod => mod.Card))
+const Spotlight = dynamic(() => import("@/components/ui/spotlight").then(mod => mod.Spotlight))
+const Footer4Col = dynamic(() => import("@/components/blocks/footer-section")) // Default export
+const Capabilities = dynamic(() => import('@/components/blocks/capabilities').then(mod => mod.Capabilities))
+const PlatformsGrid = dynamic(() => import('@/components/blocks/platforms-grid').then(mod => mod.PlatformsGrid))
+const PlatformGallery = dynamic(() => import('@/components/blocks/platform-gallery').then(mod => mod.PlatformGallery))
+const PhilosophyCard = dynamic(() => import('@/components/blocks/philosophy-card').then(mod => mod.PhilosophyCard))
+// const VideoSection = dynamic(() => import("@/components/blocks/video-section").then(mod => mod.VideoSection))
+// const EnvironmentSection = dynamic(() => import("@/components/blocks/environment-section").then(mod => mod.EnvironmentSection))
+const ThreatAnalysis = dynamic(() => import("@/components/blocks/threat-analysis").then(mod => mod.ThreatAnalysis))
 
-const demoFrames = [
-  {
-    id: 1,
-    image: "/styles/1.jpg",
-    defaultPos: { x: 0, y: 0, w: 4, h: 4 },
-    corner: "/corner-decor.svg",
-    edgeHorizontal: "/edge-h.svg",
-    edgeVertical: "/edge-v.svg",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 2,
-    image: "/styles/2.png",
-    defaultPos: { x: 4, y: 0, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 3,
-    image: "/styles/3.png",
-    defaultPos: { x: 8, y: 0, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 4,
-    image: "/styles/4.png",
-    defaultPos: { x: 0, y: 4, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 5,
-    image: "/styles/1.jpg",
-    defaultPos: { x: 4, y: 4, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 6,
-    image: "/styles/2.png",
-    defaultPos: { x: 8, y: 4, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 7,
-    image: "/styles/3.png",
-    defaultPos: { x: 0, y: 8, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 8,
-    image: "/styles/4.png",
-    defaultPos: { x: 4, y: 8, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-  {
-    id: 9,
-    image: "/styles/1.jpg",
-    defaultPos: { x: 8, y: 8, w: 4, h: 4 },
-    corner: "",
-    edgeHorizontal: "",
-    edgeVertical: "",
-    mediaSize: 1,
-    borderThickness: 2,
-    borderSize: 90,
-    isHovered: false,
-  },
-]
+// demoFrames data removed/commented out as unused
 
 export default function Home() {
   const isMobile = useIsMobile()
@@ -159,6 +57,7 @@ export default function Home() {
         {/* THREAT ANALYSIS SECTION */}
         {/* Updated for contact info visibility */}
         <ThreatAnalysis />
+        <FPSMeter />
 
         {/* VISION SECTION (Spline) */}
         <section id="vision" className="py-24 px-6 md:px-12 relative overflow-hidden">
@@ -207,7 +106,7 @@ export default function Home() {
               Ready for the <span className="text-blue-500">Autonomous Era?</span>
             </h2>
             <p className="text-neutral-400 text-lg mb-12 max-w-2xl mx-auto">
-              Deploy systems that adapt, learn, and overcome in the world's most challenging environments.
+              Deploy systems that adapt, learn, and overcome in the world&apos;s most challenging environments.
             </p>
             <div className="flex flex-col items-center gap-6">
               <button
@@ -240,3 +139,4 @@ export default function Home() {
     </div>
   );
 }
+

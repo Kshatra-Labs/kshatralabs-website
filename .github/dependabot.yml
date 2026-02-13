@@ -1,0 +1,50 @@
+version: 2
+updates:
+  # npm dependencies
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 2
+    reviewers:
+      - Tanay2920003
+    labels:
+      - dependencies
+      - automated
+    # Block all major version bumps — no breaking changes
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+    # Group PRs to reduce noise
+    groups:
+      production-dependencies:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      dev-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    commit-message:
+      prefix: 'chore(deps):'
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - ci
+      - automated
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major
+    commit-message:
+      prefix: 'ci(deps):'

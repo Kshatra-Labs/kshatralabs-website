@@ -1,4 +1,6 @@
-import { useState } from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
 import { useIsMobile } from '@/hooks/use-is-mobile';
 import {
@@ -17,7 +19,7 @@ const data = {
      facebookLink: '#',
      instaLink: '#',
      twitterLink: '#',
-     githubLink: '#',
+     githubLink: 'https://github.com/Kshatra-Labs',
      dribbbleLink: '#',
      services: {
           platforms: '#platforms',
