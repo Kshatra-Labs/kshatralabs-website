@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Rajdhani, Inter } from "next/font/google"; // Removed Geist as per new design
 import { SmoothScroll } from "@/components/smooth-scroll";
-import { CustomCursor } from "@/components/custom-cursor";
+import CustomCursor from "@/components/custom-cursor";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({

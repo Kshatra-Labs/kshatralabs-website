@@ -1,115 +1,143 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react';
 
-export function CustomCursor() {
-
-     const cursorX = useMotionValue(-100)
-     const cursorY = useMotionValue(-100)
-
-     const springConfig = { damping: 25, stiffness: 700, mass: 0.5 }
-     const cursorXSpring = useSpring(cursorX, springConfig)
-     const cursorYSpring = useSpring(cursorY, springConfig)
-
-     const [isVisible, setIsVisible] = useState(false)
-     const [isPointer, setIsPointer] = useState(false)
-     const [isDisabled, setIsDisabled] = useState(false)
+export default function CustomCursor() {
+     const cursorRef = useRef<HTMLDivElement>(null);
+     const [isDisabled, setIsDisabled] = useState(false);
 
      useEffect(() => {
-
-          // 1. Check for Touch/Mobile/Low-Spec to disable completely
-          const isTouch = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+          // 1. Feature Detection: Disable on touch or low-power mode
+          const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
           const isLowPower = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-          // If touch or low power preference, we disable the custom cursor logic entirely
-          // and rely on native behavior (CSS below will need to be conditional)
           if (isTouch || isLowPower) {
-               // Defer state update to avoid synchronous render warning
                setTimeout(() => setIsDisabled(true), 0);
                return;
           }
 
+          const cursor = cursorRef.current;
+          if (!cursor) return;
 
-          let rafId: number;
-          let latestEvent: MouseEvent | null = null;
+          let isVisible = false;
+          let isClicking = false;
+          let isHovering = false;
 
-          // 2. Throttled Mouse Move Handler
-          const moveHandler = (e: MouseEvent) => {
-               latestEvent = e;
+          // Use requestAnimationFrame for smooth visual updates if we added physics,
+          // but for "max responsiveness" we want 1:1 updates in the event handler 
+          // to minimize input latency. 
+          // However, rAF is roughly synchronized with repaint, which prevents tearing.
+          // Let's try direct updates first for raw speed.
 
-               if (!rafId) {
-                    rafId = requestAnimationFrame(() => {
-                         if (latestEvent) {
-                              cursorX.set(latestEvent.clientX - 16)
-                              cursorY.set(latestEvent.clientY - 16)
-
-                              const target = latestEvent.target as HTMLElement;
-                              if (target) {
-                                   setIsPointer(window.getComputedStyle(target).cursor === 'pointer');
-                              }
-
-                              latestEvent = null;
-                         }
-                         rafId = 0;
-                    });
+          const onMouseMove = (e: MouseEvent) => {
+               // Direct DOM update ensures the cursor moves INSTANTLY with the mouse frame,
+               // creating the illusion of 60fps even if the React tree is stuck re-rendering.
+               if (!isVisible) {
+                    cursor.style.opacity = '1';
+                    isVisible = true;
                }
-          }
 
+               // Hardware accelerated transform
+               // Centering the 16px cursor: -8px offset
+               const x = e.clientX - 8;
+               const y = e.clientY - 8;
+               cursor.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${isClicking ? 0.9 : (isHovering ? 1.5 : 1)})`;
 
-          const enterHandler = () => setIsVisible(true)
-          const leaveHandler = () => setIsVisible(false)
+               // Check for hover state periodically or on move?
+               // checking computed style on every move can be expensive (layout thrashing).
+               // Optimization: Only check tag names or specific classes if possible, 
+               // OR just accept the cost if it's not too high.
+               // Let's rely on standard event delegation for hover state to avoid layout thrashing in move.
+          };
 
-          window.addEventListener('mousemove', moveHandler, { passive: true })
-          document.addEventListener('mouseenter', enterHandler)
-          document.addEventListener('mouseleave', leaveHandler)
+          const onMouseDown = () => {
+               isClicking = true;
+               // Re-apply transform with new scale
+               // We read specific values from current transform or just rely on the next move?
+               // Better to just set a class or variable that the move handler uses, 
+               // BUT for instant feedback we should trigger a style update.
+               cursor.style.transition = 'transform 0.1s ease-out'; // add slight transition for scale only?
+               // Actually, let's keep it raw for position, maybe animate scale.
 
+               // We can use a CSS variable for scale to separate it from position transform!
+               cursor.style.setProperty('--cursor-scale', '0.8');
+          };
 
-          setTimeout(() => setIsVisible(true), 0)
+          const onMouseUp = () => {
+               isClicking = false;
+               cursor.style.setProperty('--cursor-scale', isHovering ? '1.5' : '1');
+          };
+
+          const onMouseEnter = () => {
+               cursor.style.opacity = '1';
+               isVisible = true;
+          };
+
+          const onMouseLeave = () => {
+               cursor.style.opacity = '0';
+               isVisible = false;
+          };
+
+          // Optimization: Use separate listeners for hover detection
+          // This is much cheaper than getComputedStyle() in mousemove
+          const onMouseOver = (e: MouseEvent) => {
+               const target = e.target as HTMLElement;
+               if (target.tagName === 'BUTTON' || target.tagName === 'A' || target.closest('a') || target.closest('button') || window.getComputedStyle(target).cursor === 'pointer') {
+                    isHovering = true;
+                    cursor.style.setProperty('--cursor-scale', '1.5');
+                    cursor.classList.add('mix-blend-difference');
+               } else {
+                    isHovering = false;
+                    cursor.style.setProperty('--cursor-scale', '1');
+               }
+          };
+
+          window.addEventListener('mousemove', onMouseMove, { passive: true });
+          window.addEventListener('mousedown', onMouseDown, { passive: true });
+          window.addEventListener('mouseup', onMouseUp, { passive: true });
+          window.addEventListener('mouseover', onMouseOver, { passive: true });
+          document.documentElement.addEventListener('mouseenter', onMouseEnter);
+          document.documentElement.addEventListener('mouseleave', onMouseLeave);
 
           return () => {
-
-               window.removeEventListener('mousemove', moveHandler)
-               document.removeEventListener('mouseenter', enterHandler)
-               document.removeEventListener('mouseleave', leaveHandler)
-               if (rafId) cancelAnimationFrame(rafId);
-          }
-
-     }, [cursorX, cursorY])
+               window.removeEventListener('mousemove', onMouseMove);
+               window.removeEventListener('mousedown', onMouseDown);
+               window.removeEventListener('mouseup', onMouseUp);
+               window.removeEventListener('mouseover', onMouseOver);
+               document.documentElement.removeEventListener('mouseenter', onMouseEnter);
+               document.documentElement.removeEventListener('mouseleave', onMouseLeave);
+          };
+     }, []);
 
      if (isDisabled) return null;
 
      return (
           <>
-
-
-               <motion.div
-                    className="fixed top-0 left-0 w-4 h-4 pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center rounded-full bg-white"
+               <div
+                    ref={cursorRef}
+                    className="fixed top-0 left-0 w-4 h-4 rounded-full bg-white pointer-events-none z-[9999] mix-blend-difference will-change-transform"
                     style={{
-                         x: cursorXSpring,
-                         y: cursorYSpring,
-                         opacity: isVisible ? 1 : 0,
+                         opacity: 0,
+                         // Initialize scale var
+                         // We apply translation in JS, scale via CSS var to avoid overwriting each other if we can,
+                         // BUT translate is also a transform. 
+                         // So in JS we must simply write the whole string: translate(...) scale(var(--scale))
+                         // For simplicity in the raw-performance version, we might just write it all in the move handler.
+                         // Let's stick to writing `transform` in JS for position, and we can include scale there.
+                         transition: 'opacity 0.2s',
                     }}
-                    animate={{
-                         scale: isPointer ? 2.5 : 1,
-                    }}
-                    transition={{
-                         type: "spring",
-                         stiffness: 500,
-                         damping: 28
-                    }}
-               >
-
-               </motion.div>
-
-
-               {/* Hide default cursor globally */}
+               />
                <style jsx global>{`
-        
-                    * {
-                         cursor: none !important;
-                    }
-               `}</style>
+        * {
+          cursor: none !important;
+        }
+        /* Mobile override */
+        @media (pointer: coarse) {
+          * {
+            cursor: auto !important;
+          }
+        }
+      `}</style>
           </>
-     )
-}    
+     );
+}

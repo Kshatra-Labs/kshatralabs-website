@@ -5,7 +5,7 @@ export function getGPUBudget(): Quality {
 
      // Fallback values if properties are missing (common in some browsers/TS configs)
      const cores = navigator.hardwareConcurrency || 4;
-     // @ts-ignore - deviceMemory is experimental but supported in Chrome-based browsers
+     // deviceMemory is experimental but supported in Chrome-based browsers
      const mem = (navigator as any).deviceMemory || 4;
 
      if (cores >= 8 && mem >= 8) return 'high';
@@ -18,7 +18,7 @@ export function checkSplineCompatibility(): boolean {
      if (typeof navigator === "undefined") return false;
 
      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-     // @ts-ignore
+
      const mem = (navigator as any).deviceMemory || 4;
      const cores = navigator.hardwareConcurrency || 4;
 

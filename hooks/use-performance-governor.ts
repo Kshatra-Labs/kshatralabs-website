@@ -17,10 +17,11 @@ export function usePerformanceGovernor(
 ) {
      const [quality, setQuality] = useState(1.0);
      const frameCount = useRef(0);
-     const lastTime = useRef(performance.now());
-     const requestRef = useRef<number>();
+     const lastTime = useRef(0);
+     const requestRef = useRef<number | undefined>(undefined);
 
      useEffect(() => {
+          lastTime.current = performance.now();
           const animate = (time: number) => {
                frameCount.current++;
 
