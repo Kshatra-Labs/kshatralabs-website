@@ -3,8 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Linkedin, Plus } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Linkedin } from "lucide-react";
 
 export interface TeamMember {
      name: string;
@@ -92,34 +91,34 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
      );
 }
 
-function JoinCard() {
-     return (
-          <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.3 }}
-               className="group relative flex flex-col items-center text-center p-8 rounded-[14px] bg-white/[0.02] border border-white/[0.08] border-dashed hover:border-defense-accent/30 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-          >
-               <div className="flex-1 flex flex-col items-center justify-center gap-6 min-h-[200px]">
-                    <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-defense-accent/10 transition-colors duration-300">
-                         <Plus className="w-8 h-8 text-white/40 group-hover:text-defense-accent transition-colors" />
-                    </div>
-                    <div className="space-y-2">
-                         <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-defense-accent transition-colors">
-                              Join the Mission
-                         </h3>
-                         <p className="text-sm text-[#9ca3af] max-w-[200px] mx-auto">
-                              Help us build the future of autonomous defense systems.
-                         </p>
-                    </div>
-               </div>
+// function JoinCard() {
+//      return (
+//           <motion.div
+//                initial={{ opacity: 0, y: 20 }}
+//                whileInView={{ opacity: 1, y: 0 }}
+//                viewport={{ once: true }}
+//                transition={{ duration: 0.5, delay: 0.3 }}
+//                className="group relative flex flex-col items-center text-center p-8 rounded-[14px] bg-white/[0.02] border border-white/[0.08] border-dashed hover:border-defense-accent/30 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+//           >
+//                <div className="flex-1 flex flex-col items-center justify-center gap-6 min-h-[200px]">
+//                     <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-defense-accent/10 transition-colors duration-300">
+//                          <Plus className="w-8 h-8 text-white/40 group-hover:text-defense-accent transition-colors" />
+//                     </div>
+//                     <div className="space-y-2">
+//                          <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-defense-accent transition-colors">
+//                               Join the Mission
+//                          </h3>
+//                          <p className="text-sm text-[#9ca3af] max-w-[200px] mx-auto">
+//                               Help us build the future of autonomous defense systems.
+//                          </p>
+//                     </div>
+//                </div>
 
-               <div className="w-full mt-6">
-                    <span className="flex items-center justify-center gap-2 w-full h-10 rounded-lg bg-white/5 group-hover:bg-defense-accent group-hover:text-black border border-white/10 group-hover:border-transparent transition-all duration-300 text-xs font-bold uppercase tracking-widest">
-                         View Openings
-                    </span>
-               </div>
-          </motion.div>
-     );
-}
+//                <div className="w-full mt-6">
+//                     <span className="flex items-center justify-center gap-2 w-full h-10 rounded-lg bg-white/5 group-hover:bg-defense-accent group-hover:text-black border border-white/10 group-hover:border-transparent transition-all duration-300 text-xs font-bold uppercase tracking-widest">
+//                          View Openings
+//                     </span>
+//                </div>
+//           </motion.div>
+//      );
+// }

@@ -49,6 +49,41 @@ const useOutsideClick = (
 };
 
 // ===== Components =====
+const CarouselItemWrapper = ({
+     item,
+     index,
+     handleCardClose,
+}: {
+     item: React.ReactElement<{ onCardClose?: () => void } & React.HTMLAttributes<HTMLDivElement>>;
+     index: number;
+     handleCardClose: (index: number) => void;
+}) => {
+     return (
+          <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                         duration: 0.5,
+                         delay: 0.1 * index,
+                         ease: "easeOut",
+                    },
+               }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               key={`card-${index}`}
+               className="rounded-3xl"
+          >
+               {React.cloneElement(item, {
+                    onCardClose: () => {
+                         return handleCardClose(index);
+                    },
+               })}
+          </motion.div>
+     );
+};
+
 const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
      const carouselRef = React.useRef<HTMLDivElement>(null);
      const [canScrollLeft, setCanScrollLeft] = React.useState(false);
@@ -74,7 +109,11 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
           }
      };
 
-     const handleCardClose = (index: number) => {
+     const isMobile = () => {
+          return typeof window !== "undefined" && window.innerWidth < 768;
+     };
+
+     const handleCardClose = React.useCallback((index: number) => {
           if (carouselRef.current) {
                const cardWidth = isMobile() ? 230 : 384;
                const gap = isMobile() ? 4 : 8;
@@ -84,11 +123,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
                     behavior: "smooth",
                });
           }
-     };
-
-     const isMobile = () => {
-          return typeof window !== "undefined" && window.innerWidth < 768;
-     };
+     }, []);
 
      useEffect(() => {
           if (carouselRef.current) {
@@ -110,32 +145,14 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
                               "max-w-5xl mx-auto",
                          )}
                     >
-                         {items.map((item, index) => {
-                              return (
-                                   <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{
-                                             opacity: 1,
-                                             y: 0,
-                                             transition: {
-                                                  duration: 0.5,
-                                                  delay: 0.1 * index,
-                                                  ease: "easeOut",
-                                             },
-                                        }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        key={`card-${index}`}
-                                        className="rounded-3xl"
-                                   >
-                                        {React.cloneElement(item, {
-                                             onCardClose: () => {
-                                                  return handleCardClose(index);
-                                             },
-                                        })}
-                                   </motion.div>
-                              );
-                         })}
+                         {items.map((item, index) => (
+                              <CarouselItemWrapper
+                                   key={`card-${index}`}
+                                   item={item}
+                                   index={index}
+                                   handleCardClose={handleCardClose}
+                              />
+                         ))}
                     </div>
                </div>
                <div className="flex justify-end gap-2 mt-4 pr-3">
@@ -160,7 +177,7 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
 
 const TestimonialCard = ({
      testimonial,
-     index,
+     // index,
      layout = false,
      onCardClose = () => { },
      backgroundImage = "https://images.unsplash.com/photo-1686806372726-388d03ff49c8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -177,10 +194,10 @@ const TestimonialCard = ({
      const handleExpand = () => {
           return setIsExpanded(true);
      };
-     const handleCollapse = () => {
+     const handleCollapse = React.useCallback(() => {
           setIsExpanded(false);
           onCardClose();
-     };
+     }, [onCardClose]);
 
      useEffect(() => {
           const handleEscapeKey = (event: KeyboardEvent) => {
@@ -209,7 +226,7 @@ const TestimonialCard = ({
           return () => {
                return window.removeEventListener("keydown", handleEscapeKey);
           };
-     }, [isExpanded]);
+     }, [isExpanded, handleCollapse]);
 
      useOutsideClick(containerRef, handleCollapse);
 

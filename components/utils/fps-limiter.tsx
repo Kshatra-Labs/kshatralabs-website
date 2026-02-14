@@ -1,6 +1,6 @@
 'use client';
 
-import { useThree, useFrame } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
 import { useEffect, useRef } from 'react';
 
 interface FPSLimiterProps {

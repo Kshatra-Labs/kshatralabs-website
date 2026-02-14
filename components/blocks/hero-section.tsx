@@ -1,13 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { TechButton } from '@/components/ui/tech-button'
-import { InfiniteSlider } from '@/components/ui/infinite-slider'
-import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import { cn } from '@/lib/utils'
-import { Menu, X, ChevronRight, ArrowRight, Phone, Mail } from 'lucide-react'
-import { useScroll, motion } from 'motion/react'
+import { ArrowRight, Menu, Mail, Phone, X } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
@@ -129,7 +123,6 @@ const menuItems = [
 
 const HeroHeader = ({ onEmailClick }: { onEmailClick: (e?: React.MouseEvent) => void }) => {
      const [menuState, setMenuState] = React.useState(false)
-     const { scrollYProgress } = useScroll()
 
      return (
           <header>

@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 
@@ -98,10 +100,11 @@ function FrameComponent({
                                         ref={videoRef}
                                    />
                               ) : image ? (
-                                   <img
-                                        className="w-full h-full object-cover"
+                                   <Image
+                                        className="object-cover"
                                         src={image}
                                         alt="frame content"
+                                        fill
                                    />
                               ) : null}
                          </div>

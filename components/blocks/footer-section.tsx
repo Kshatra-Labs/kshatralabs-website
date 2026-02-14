@@ -2,12 +2,8 @@
 
 import React, { useState } from 'react';
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
-import { useIsMobile } from '@/hooks/use-is-mobile';
 import {
-     Dribbble,
-     Facebook,
      Github,
-     Instagram,
      Mail,
      MapPin,
      Phone,
@@ -57,11 +53,7 @@ const socialLinks = [
      { icon: Mail, label: 'Email', href: `mailto:${data.contact.email}` },
 ];
 
-const aboutLinks = [
-     { text: 'Company History', href: data.about.history },
-     { text: 'Careers', href: data.about.careers },
-     { text: 'Legal', href: '#' },
-];
+
 
 const productLinks = [
      { name: 'Aerial Interceptors', href: '/products' },

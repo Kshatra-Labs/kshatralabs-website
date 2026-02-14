@@ -159,7 +159,7 @@ export default function AboutPage() {
      )
 }
 
-function ValueCard({ icon: Icon, title, description, delay }: { icon: any, title: string, description: string, delay: number }) {
+function ValueCard({ icon: Icon, title, description, delay }: { icon: React.ElementType<{ className?: string }>, title: string, description: string, delay: number }) {
      return (
           <motion.div
                initial={{ opacity: 0, y: 20 }}

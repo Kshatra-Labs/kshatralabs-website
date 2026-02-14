@@ -1,13 +1,12 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 
 export function VideoSection() {
      const videoRef = useRef<HTMLVideoElement>(null);
      const containerRef = useRef<HTMLDivElement>(null);
      const isInView = useInView(containerRef, { margin: "0px 0px -20% 0px" });
-     const [hasInteracted, setHasInteracted] = useState(false);
 
      useEffect(() => {
           if (isInView && videoRef.current) {
