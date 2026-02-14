@@ -3,7 +3,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { Menu, X, Phone, Mail, Github } from 'lucide-react'
-import { useScroll } from 'motion/react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
