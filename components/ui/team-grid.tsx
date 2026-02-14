@@ -20,11 +20,13 @@ interface TeamGridProps {
 
 export function TeamGrid({ members }: TeamGridProps) {
      return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-7xl mx-auto">
                {members.map((member, index) => (
-                    <TeamCard key={index} member={member} index={index} />
+                    <div key={index} className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.33%-2rem)] max-w-md">
+                         <TeamCard member={member} index={index} />
+                    </div>
                ))}
-               <JoinCard />
+               {/* <JoinCard /> */}
           </div>
      );
 }
@@ -82,9 +84,9 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                          null
                     )}
 
-                    <button className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+                    {/* <button className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
                          <ArrowUpRight className="w-4 h-4 text-white/60 hover:text-white transition-colors" />
-                    </button>
+                    </button> */}
                </div>
           </motion.div>
      );
