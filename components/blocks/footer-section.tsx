@@ -2,12 +2,8 @@
 
 import React, { useState } from 'react';
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
-import { useIsMobile } from '@/hooks/use-is-mobile';
 import {
-     Dribbble,
-     Facebook,
      Github,
-     Instagram,
      Mail,
      MapPin,
      Phone,
@@ -57,17 +53,13 @@ const socialLinks = [
      { icon: Mail, label: 'Email', href: `mailto:${data.contact.email}` },
 ];
 
-const aboutLinks = [
-     { text: 'Company History', href: data.about.history },
-     { text: 'Careers', href: data.about.careers },
-     { text: 'Legal', href: '#' },
-];
 
-const serviceLinks = [
-     { text: 'Aerial Interceptors', href: data.services.platforms },
-     { text: 'Sensor Fusion', href: data.services.technology },
-     { text: 'Swarm Intelligence', href: data.services.technology },
-     { text: 'Optical Tracker', href: data.services.defense },
+
+const productLinks = [
+     { name: 'Aerial Interceptors', href: '/products' },
+     { name: 'Sensor Fusion', href: '/products' },
+     { name: 'Swarm Intelligence', href: '/products' },
+     { name: 'Optical Tracker', href: '/products' },
 ];
 
 const helpfulLinks = [
@@ -78,7 +70,7 @@ const helpfulLinks = [
 const contactInfo = [
      { icon: Mail, text: data.contact.email, isAddress: false, href: `mailto:${data.contact.email}` },
      { icon: Phone, text: data.contact.phone, isAddress: false, href: `tel:${data.contact.phone.replace(/\s/g, '')}` },
-     { icon: MapPin, text: data.contact.address, isAddress: true, href: '#' },
+     { icon: MapPin, text: data.contact.address, isAddress: true, href: undefined },
 ];
 
 export default function Footer4Col() {
@@ -131,19 +123,21 @@ export default function Footer4Col() {
 
                          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:col-span-2 font-mono text-sm">
                               <div className="text-center sm:text-left">
-                                   <p className="text-lg font-medium text-white">Technology</p>
-                                   <ul className="mt-8 space-y-4">
-                                        {serviceLinks.map(({ text, href }) => (
-                                             <li key={text}>
-                                                  <a
-                                                       className="text-neutral-400 hover:text-white transition"
-                                                       href={href}
-                                                  >
-                                                       {text}
-                                                  </a>
-                                             </li>
-                                        ))}
-                                   </ul>
+                                   <div className="space-y-6">
+                                        <p className="text-lg font-medium text-white">Products</p>
+                                        <ul className="mt-8 space-y-4">
+                                             {productLinks.map((link) => (
+                                                  <li key={link.name}>
+                                                       <Link
+                                                            href={link.href}
+                                                            className="text-neutral-400 hover:text-white transition"
+                                                       >
+                                                            {link.name}
+                                                       </Link>
+                                                  </li>
+                                             ))}
+                                        </ul>
+                                   </div>
                               </div>
 
                               <div className="text-center sm:text-left">
@@ -166,13 +160,9 @@ export default function Footer4Col() {
                               <div className="text-center sm:text-left">
                                    <p className="text-lg font-medium text-white">Contact</p>
                                    <ul className="mt-8 space-y-4">
-                                        {contactInfo.map(({ icon: Icon, text, isAddress, href }) => (
-                                             <li key={text}>
-                                                  <a
-                                                       className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition cursor-pointer"
-                                                       href={href}
-                                                       onClick={(e) => handleLinkClick(e, href)}
-                                                  >
+                                        {contactInfo.map(({ icon: Icon, text, isAddress, href }) => {
+                                             const content = (
+                                                  <>
                                                        <Icon className="size-4 shrink-0" />
                                                        {isAddress ? (
                                                             <address className="not-italic">
@@ -183,9 +173,27 @@ export default function Footer4Col() {
                                                                  {text}
                                                             </span>
                                                        )}
-                                                  </a>
-                                             </li>
-                                        ))}
+                                                  </>
+                                             );
+
+                                             return (
+                                                  <li key={text}>
+                                                       {href ? (
+                                                            <a
+                                                                 className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition cursor-pointer"
+                                                                 href={href}
+                                                                 onClick={(e) => handleLinkClick(e, href)}
+                                                            >
+                                                                 {content}
+                                                            </a>
+                                                       ) : (
+                                                            <div className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400">
+                                                                 {content}
+                                                            </div>
+                                                       )}
+                                                  </li>
+                                             );
+                                        })}
                                    </ul>
                               </div>
                          </div>

@@ -1,18 +1,26 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { TechButton } from '@/components/ui/tech-button'
-import { InfiniteSlider } from '@/components/ui/infinite-slider'
-import { ProgressiveBlur } from '@/components/ui/progressive-blur'
-import { cn } from '@/lib/utils'
-import { Menu, X, ChevronRight, ArrowRight } from 'lucide-react'
-import { useScroll, motion } from 'motion/react'
+import { ArrowRight, Menu, Mail, Phone, X } from 'lucide-react'
+import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
+import { useIsMobile } from '@/hooks/use-is-mobile'
 
 export function HeroSection() {
+     const isMobile = useIsMobile()
+     const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
+
+     const handleContactClick = (e?: React.MouseEvent) => {
+          if (e) e.preventDefault()
+          if (isMobile) {
+               window.location.href = 'mailto:contact@kshatralabs.in'
+          } else {
+               setIsMailModalOpen(true)
+          }
+     }
+
      return (
           <>
-               <HeroHeader />
+               <HeroHeader onEmailClick={handleContactClick} />
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
                          <div className="absolute inset-0 z-0">
@@ -45,7 +53,10 @@ export function HeroSection() {
                                                   <strong className="text-white font-medium">Kshatra Labs</strong> engineers AI-native robotic systems that sense, reason, and act in real time across air, land, sea, and space — starting with autonomous aerial defense.
                                              </p>
 
-                                             <Link href="#contact" className="group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-black/40 px-8 py-4 font-mono text-sm tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:bg-defense-accent/10 hover:text-defense-accent border border-white/10 hover:border-defense-accent/50">
+                                             <button
+                                                  onClick={() => handleContactClick()}
+                                                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-black/40 px-8 py-4 font-mono text-sm tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:bg-defense-accent/10 hover:text-defense-accent border border-white/10 hover:border-defense-accent/50 cursor-pointer"
+                                             >
                                                   {/* Crosshair corners */}
                                                   <span className="absolute left-0 top-0 h-2 w-2 border-l-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
                                                   <span className="absolute right-0 top-0 h-2 w-2 border-r-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
@@ -56,7 +67,7 @@ export function HeroSection() {
                                                        REQUEST A BRIEFING
                                                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                                                   </span>
-                                             </Link>
+                                             </button>
 
                                              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-[11px] font-mono text-white/80 uppercase tracking-widest font-bold drop-shadow-sm">
                                                   <div className="flex items-center gap-2">
@@ -94,37 +105,33 @@ export function HeroSection() {
                          </div>
                     </section>
                </main>
+
+               <MailChoiceModal
+                    isOpen={isMailModalOpen}
+                    onClose={() => setIsMailModalOpen(false)}
+                    email="contact@kshatralabs.in"
+               />
           </>
      )
 }
 
 const menuItems = [
-     { name: 'Platforms', href: '#platforms' },
-     { name: 'Technology', href: '#technology' },
-     { name: 'Vision', href: '#vision' },
-     { name: 'About', href: '#about' },
+     { name: 'Home', href: '/' },
+     { name: 'Products', href: '/products' },
+     { name: 'About', href: '/about' },
 ]
 
-const HeroHeader = () => {
+const HeroHeader = ({ onEmailClick }: { onEmailClick: (e?: React.MouseEvent) => void }) => {
      const [menuState, setMenuState] = React.useState(false)
-     const [scrolled, setScrolled] = React.useState(false)
-     const { scrollYProgress } = useScroll()
-
-     React.useEffect(() => {
-          const unsubscribe = scrollYProgress.on('change', (latest) => {
-               setScrolled(latest > 0.05)
-          })
-          return () => unsubscribe()
-     }, [scrollYProgress])
 
      return (
           <header>
                <nav
                     data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md transition-all duration-300"
+                    className="fixed z-50 w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
                >
                     <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                         <div className="relative flex flex-wrap items-center justify-between gap-6 py-4">
+                         <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 md:py-6">
                               <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                                    <Link
                                         href="/"
@@ -132,7 +139,7 @@ const HeroHeader = () => {
                                         className="group block"
                                    >
                                         <div
-                                             className="h-6 w-[177px] bg-white group-hover:bg-defense-accent transition-colors duration-300"
+                                             className="h-10 md:h-12 w-[240px] md:w-[280px] bg-white group-hover:bg-defense-accent transition-colors duration-300"
                                              style={{
                                                   maskImage: 'url(/logo.svg)',
                                                   maskSize: 'contain',
@@ -156,12 +163,12 @@ const HeroHeader = () => {
                                    </button>
 
                                    <div className="hidden lg:block">
-                                        <ul className="flex gap-8 text-sm font-mono tracking-wide uppercase">
+                                        <ul className="flex gap-8 text-sm font-bold font-mono tracking-wide uppercase">
                                              {menuItems.map((item, index) => (
                                                   <li key={index}>
                                                        <Link
                                                             href={item.href}
-                                                            className="text-muted-foreground hover:text-white duration-150"
+                                                            className="text-white/70 hover:text-white duration-150"
                                                        >
                                                             <span>{item.name}</span>
                                                        </Link>
@@ -171,32 +178,49 @@ const HeroHeader = () => {
                                    </div>
                               </div>
 
-                              <div className="bg-black/90 group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-white/10 p-6 shadow-2xl md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none">
-                                   <div className="lg:hidden">
-                                        <ul className="space-y-6 text-base font-mono">
-                                             {menuItems.map((item, index) => (
-                                                  <li key={index}>
-                                                       <Link
-                                                            href={item.href}
-                                                            className="text-muted-foreground hover:text-white block duration-150"
-                                                       >
-                                                            <span>{item.name}</span>
-                                                       </Link>
-                                                  </li>
-                                             ))}
-                                        </ul>
-                                   </div>
-                                   <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                        <Button
-                                             asChild
-                                             variant="outline"
-                                             size="sm"
-                                             className="rounded-full font-mono text-xs uppercase"
+                              <div className="hidden lg:flex items-center gap-8 text-sm font-bold font-mono tracking-widest text-white">
+                                   <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
+                                        <Phone className="w-4 h-4" />
+                                        +91 9730458528
+                                   </a>
+
+                                   <button
+                                        onClick={onEmailClick}
+                                        className="flex items-center gap-2 hover:text-defense-accent transition-colors cursor-pointer"
+                                   >
+                                        <Mail className="w-4 h-4" />
+                                        contact@kshatralabs.in
+                                   </button>
+                              </div>
+
+                              {/* Mobile Menu */}
+                              <div className="bg-black/95 group-data-[state=active]:block hidden w-full mt-4 rounded-3xl border border-white/10 p-6 shadow-2xl lg:hidden">
+                                   <ul className="space-y-6 text-base font-bold font-mono text-white">
+                                        {menuItems.map((item, index) => (
+                                             <li key={index}>
+                                                  <Link
+                                                       href={item.href}
+                                                       className="hover:text-defense-accent block duration-150"
+                                                       onClick={() => setMenuState(false)}
+                                                  >
+                                                       <span>{item.name}</span>
+                                                  </Link>
+                                             </li>
+                                        ))}
+                                   </ul>
+                                   <div className="flex flex-col space-y-4 pt-8 mt-8 border-t border-white/10 text-sm font-bold font-mono text-white">
+                                        <a href="tel:+919730458528" className="flex items-center gap-2">
+                                             <Phone className="w-4 h-4" />
+                                             +91 9730458528
+                                        </a>
+
+                                        <button
+                                             onClick={onEmailClick}
+                                             className="flex items-center gap-2 text-left cursor-pointer"
                                         >
-                                             <Link href="#contact">
-                                                  <span>Contact Us</span>
-                                             </Link>
-                                        </Button>
+                                             <Mail className="w-4 h-4" />
+                                             contact@kshatralabs.in
+                                        </button>
                                    </div>
                               </div>
                          </div>

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useMemo } from "react";
-import { Button } from "@/components/ui/button";
 
 function FloatingPaths({ position }: { position: number }) {
      const paths = useMemo(() => Array.from({ length: 16 }, (_, i) => ({

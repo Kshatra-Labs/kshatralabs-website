@@ -2,21 +2,18 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail } from 'lucide-react'
-import { useScroll } from 'motion/react'
+import { Menu, X, Phone, Mail, Github } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
 const menuItems = [
-     { name: 'Platforms', href: '#platforms' },
-     { name: 'Technology', href: '#technology' },
-     { name: 'Vision', href: '#vision' },
-     // { name: 'About', href: '#about' },
+     { name: 'Home', href: '/' },
+     { name: 'Products', href: '/products' },
+     { name: 'About', href: '/about' },
 ]
 
 export function Header() {
      const [menuState, setMenuState] = React.useState(false)
-     const { scrollYProgress } = useScroll()
      const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
 
@@ -24,17 +21,16 @@ export function Header() {
           <header>
                <nav
                     data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl"
+                    className="fixed z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-2xl"
                >
                     <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-12">
                          <div className="relative flex flex-wrap items-center justify-between gap-4 py-4 md:py-6">
 
                               {/* Logo */}
                               <div className="flex w-full items-center justify-between lg:w-auto">
-
                                    <Link href="/" className="group">
                                         <div
-                                             className="h-8 md:h-10 w-[200px] md:w-[240px] bg-white group-hover:bg-defense-accent transition-colors"
+                                             className="h-10 md:h-12 w-[240px] md:w-[280px] bg-white group-hover:bg-defense-accent transition-colors"
                                              style={{
                                                   maskImage: 'url(/logo.svg)',
                                                   maskSize: 'contain',
@@ -57,10 +53,10 @@ export function Header() {
 
                               {/* Desktop Nav */}
                               <div className="hidden lg:block">
-                                   <ul className="flex gap-10 text-base md:text-lg font-mono uppercase tracking-wide text-neutral-300">
+                                   <ul className="flex gap-10 text-base md:text-lg font-bold font-mono uppercase tracking-wide text-white">
                                         {menuItems.map((item) => (
                                              <li key={item.name}>
-                                                  <Link href={item.href} className="hover:text-white transition">
+                                                  <Link href={item.href} className="hover:text-defense-accent transition-colors">
                                                        {item.name}
                                                   </Link>
                                              </li>
@@ -68,22 +64,42 @@ export function Header() {
                                    </ul>
                               </div>
 
+                              {/* Desktop Contact */}
+                              <div className="hidden lg:flex items-center gap-6 text-sm font-bold font-mono tracking-widest text-white">
+                                   <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
+                                        <Phone className="w-4 h-4" />
+                                        +91 9730458528
+                                   </a>
+
+                                   <button
+                                        onClick={() => setIsMailModalOpen(true)}
+                                        className="flex items-center gap-2 hover:text-defense-accent transition-colors"
+                                   >
+                                        <Mail className="w-4 h-4" />
+                                        contact@kshatralabs.in
+                                   </button>
+
+                                   <Link href="https://github.com/Kshatra-Labs" target="_blank" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
+                                        <Github className="w-4 h-4" />
+                                        GitHub
+                                   </Link>
+                              </div>
+
                               {/* Mobile Menu */}
                               {menuState && (
-                                   <div className="lg:hidden w-full mt-4 rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl p-6 space-y-8">
-
-                                        <ul className="space-y-5 text-lg font-mono text-white">
+                                   <div className="lg:hidden w-full mt-4 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl p-6 space-y-8">
+                                        <ul className="space-y-5 text-lg font-bold font-mono text-white">
                                              {menuItems.map((item) => (
                                                   <li key={item.name}>
-                                                       <Link onClick={() => setMenuState(false)} href={item.href}>
+                                                       <Link onClick={() => setMenuState(false)} href={item.href} className="hover:text-defense-accent transition-colors">
                                                             {item.name}
                                                        </Link>
                                                   </li>
                                              ))}
                                         </ul>
 
-                                        <div className="flex flex-col gap-4 text-xs font-mono tracking-widest text-white/70">
-                                             <a href="tel:+919730458528" className="flex items-center gap-2">
+                                        <div className="flex flex-col gap-6 text-sm font-bold font-mono tracking-widest text-white pt-6 border-t border-white/10">
+                                             <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
                                                   <Phone className="w-4 h-4" />
                                                   +91 9730458528
                                              </a>
@@ -94,31 +110,19 @@ export function Header() {
                                                             ? setIsMailModalOpen(true)
                                                             : (window.location.href = 'mailto:contact@kshatralabs.in')
                                                   }
-                                                  className="flex items-center gap-2"
+                                                  className="flex items-center gap-2 hover:text-defense-accent transition-colors"
                                              >
                                                   <Mail className="w-4 h-4" />
                                                   contact@kshatralabs.in
                                              </button>
+
+                                             <Link href="https://github.com/Kshatra-Labs" target="_blank" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
+                                                  <Github className="w-4 h-4" />
+                                                  GitHub
+                                             </Link>
                                         </div>
                                    </div>
                               )}
-
-                              {/* Desktop Contact */}
-                              <div className="hidden lg:flex items-center gap-6 text-xs font-mono tracking-widest text-white/70">
-                                   <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent">
-                                        <Phone className="w-3 h-3" />
-                                        +91 9730458528
-                                   </a>
-
-                                   <button
-                                        onClick={() => setIsMailModalOpen(true)}
-                                        className="flex items-center gap-2 hover:text-defense-accent"
-                                   >
-                                        <Mail className="w-3 h-3" />
-                                        contact@kshatralabs.in
-                                   </button>
-                              </div>
-
                          </div>
                     </div>
                </nav>
