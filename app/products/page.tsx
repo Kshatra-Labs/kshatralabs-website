@@ -1,11 +1,49 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Header } from '@/components/blocks/header'
 import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'motion/react'
+import { Volume2, VolumeX } from 'lucide-react'
 
 export default function ProductsPage() {
+     const videoRef = useRef<HTMLVideoElement>(null);
+     const [isMuted, setIsMuted] = useState(true);
+
+     useEffect(() => {
+          const video = videoRef.current;
+          if (!video) return;
+
+          // Set looping property explicitly
+          video.loop = true;
+
+          const handlePlay = () => {
+               if (video.paused) {
+                    video.play().catch(error => {
+                         console.log("Video auto-resume failed:", error);
+                    });
+               }
+          };
+
+          // Initial play
+          handlePlay();
+
+          // Continuous check for looping reliability
+          video.addEventListener('ended', handlePlay);
+          video.addEventListener('pause', handlePlay);
+
+          return () => {
+               video.removeEventListener('ended', handlePlay);
+               video.removeEventListener('pause', handlePlay);
+          };
+     }, []);
+
+     useEffect(() => {
+          if (videoRef.current) {
+               videoRef.current.muted = isMuted;
+          }
+     }, [isMuted]);
+
      return (
           <div className="relative min-h-screen bg-black text-white selection:bg-white/20 overflow-hidden">
                {/* Fixed Background */}
@@ -15,9 +53,10 @@ export default function ProductsPage() {
 
                <Header />
 
-               <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6">
+               <main className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pt-32">
                     <div className="max-w-4xl text-center space-y-8">
-                         <motion.div
+                         {/* Product Pipeline Active - Hidden */}
+                         {/* <motion.div
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -27,7 +66,7 @@ export default function ProductsPage() {
                               <span className="text-xs font-bold font-mono uppercase tracking-[0.2em] text-white/70">
                                    Product Pipeline Active
                               </span>
-                         </motion.div>
+                         </motion.div> */}
 
                          <motion.div
                               initial={{ opacity: 0, y: 20 }}
@@ -35,14 +74,32 @@ export default function ProductsPage() {
                               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                               className="relative"
                          >
-                              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter uppercase italic leading-none">
-                                   Advanced <br />
-                                   <span className="text-transparent bg-clip-text bg-gradient-to-tr from-white via-white to-white/20">
-                                        Products
-                                   </span>
-                              </h1>
-                              <div className="absolute -top-6 -right-6 hidden md:block opacity-20">
-                                   <div className="text-[100px] font-bold select-none leading-none">01</div>
+                              <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden border border-white/10 bg-black/50 shadow-2xl group/video">
+                                   <video
+                                        ref={videoRef}
+                                        autoPlay
+                                        muted={isMuted}
+                                        loop
+                                        playsInline
+                                        className="w-full h-full object-cover"
+                                        preload="auto"
+                                   >
+                                        <source src="/video/intercept.webm" type="video/webm" />
+                                   </video>
+                                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+
+                                   {/* Audio Toggle Button */}
+                                   <button
+                                        onClick={() => setIsMuted(!isMuted)}
+                                        className="absolute bottom-4 right-4 z-20 p-2.5 rounded-full bg-black/40 border border-white/10 backdrop-blur-md hover:bg-black/60 hover:border-defense-accent/50 transition-all duration-300 group/audio"
+                                        aria-label={isMuted ? "Unmute video" : "Mute video"}
+                                   >
+                                        {isMuted ? (
+                                             <VolumeX className="w-5 h-5 text-white/70 group-hover/audio:text-defense-accent transition-colors" />
+                                        ) : (
+                                             <Volume2 className="w-5 h-5 text-defense-accent transition-colors" />
+                                        )}
+                                   </button>
                               </div>
                          </motion.div>
 
