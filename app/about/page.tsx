@@ -144,7 +144,7 @@ export default function AboutPage() {
                                              We operate with agility and deep technical expertise to create solutions that improve operational efficiency and ensure mission success.
                                         </p>
                                         <p className="text-xl text-white leading-relaxed font-light border-l-2 border-white/10 pl-8">
-                                             "The future of conflict is autonomous. We are engineering the physical intelligence layer to amplify human potential."
+                                             &quot;The future of conflict is autonomous. We are engineering the physical intelligence layer to amplify human potential.&quot;
                                         </p>
                                    </div>
 

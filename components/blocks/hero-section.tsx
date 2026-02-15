@@ -1,8 +1,6 @@
 'use client'
 import React from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Mail, Phone } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 

@@ -69,7 +69,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 
                {/* Description */}
                <p className="text-base text-white leading-relaxed font-light mb-8 flex-1 text-center">
-                    "{member.description}"
+                    &quot;{member.description}&quot;
                </p>
 
                {/* Actions */}
