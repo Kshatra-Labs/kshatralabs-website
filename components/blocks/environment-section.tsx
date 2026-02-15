@@ -42,7 +42,6 @@ export function EnvironmentSection() {
                          <LabelBox label="SEA" x="15%" y="30%" align="right" delay={0.2} />
                          <LabelBox label="LAND" x="85%" y="25%" align="left" delay={0.4} />
                          <LabelBox label="AIR" x="20%" y="75%" align="right" delay={0.6} />
-                         <LabelBox label="SPACE" x="80%" y="80%" align="left" delay={0.8} />
 
                          {/* Connecting Lines (SVG Overlay) */}
                          <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">

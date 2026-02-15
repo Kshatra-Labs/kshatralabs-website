@@ -5,6 +5,7 @@ import { useState } from 'react'
 // import { SplineCache } from "@/lib/spline-cache";
 import { useIsMobile } from "@/hooks/use-is-mobile"
 import { MailChoiceModal } from "@/components/ui/mail-choice-modal"
+import { Header } from '@/components/blocks/header'
 
 const HeroSection = dynamic(() => import("@/components/blocks/hero-section").then(mod => mod.HeroSection))
 const BackgroundPaths = dynamic(() => import("@/components/ui/background-paths").then(mod => mod.BackgroundPaths), { ssr: false })
@@ -44,6 +45,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-black text-white selection:bg-white/20">
+      <Header />
 
       {/* Background Paths typically have their own container, we'll put them fixed behind */}
       <div className="fixed inset-0 z-0 opacity-40">
@@ -68,7 +70,7 @@ export default function Home() {
                 Our Vision
               </h2>
               <p className="mt-4 text-neutral-300 max-w-2xl text-lg">
-                Kshatra Labs is building intelligent autonomous systems that operate across air, land, sea, and space. Our vision is to create general-purpose physical intelligence that extends human capability while keeping people out of harm’s way.
+                Kshatra Labs is building intelligent autonomous systems that operate across air, land, and sea. Our vision is to create general-purpose physical intelligence that extends human capability while keeping people out of harm’s way.
               </p>
             </div>
 

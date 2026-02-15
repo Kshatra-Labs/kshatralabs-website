@@ -102,7 +102,7 @@ export default function Footer4Col() {
                                    </span>
                               </div>
 
-                              <p className="text-neutral-400 mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left font-mono text-sm">
+                              <p className="text-white mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left font-mono text-sm">
                                    {data.company.description}
                               </p>
 
@@ -111,7 +111,7 @@ export default function Footer4Col() {
                                         <li key={label}>
                                              <Link
                                                   href={href}
-                                                  className="text-neutral-400 hover:text-white transition"
+                                                  className="text-white/60 hover:text-white transition"
                                              >
                                                   <span className="sr-only">{label}</span>
                                                   <Icon className="size-5" />
@@ -130,7 +130,7 @@ export default function Footer4Col() {
                                                   <li key={link.name}>
                                                        <Link
                                                             href={link.href}
-                                                            className="text-neutral-400 hover:text-white transition"
+                                                            className="text-white/60 hover:text-white transition"
                                                        >
                                                             {link.name}
                                                        </Link>
@@ -148,7 +148,7 @@ export default function Footer4Col() {
                                                   <a
                                                        href={href}
                                                        onClick={(e) => handleLinkClick(e, href)}
-                                                       className="text-neutral-400 hover:text-white transition cursor-pointer"
+                                                       className="text-white/60 hover:text-white transition cursor-pointer"
                                                   >
                                                        {text}
                                                   </a>
@@ -180,14 +180,14 @@ export default function Footer4Col() {
                                                   <li key={text}>
                                                        {href ? (
                                                             <a
-                                                                 className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400 hover:text-white transition cursor-pointer"
+                                                                 className="flex items-center justify-center gap-2 sm:justify-start text-white/60 hover:text-white transition cursor-pointer"
                                                                  href={href}
                                                                  onClick={(e) => handleLinkClick(e, href)}
                                                             >
                                                                  {content}
                                                             </a>
                                                        ) : (
-                                                            <div className="flex items-center justify-center gap-2 sm:justify-start text-neutral-400">
+                                                            <div className="flex items-center justify-center gap-2 sm:justify-start text-white/40">
                                                                  {content}
                                                             </div>
                                                        )}
@@ -200,7 +200,7 @@ export default function Footer4Col() {
                     </div>
 
                     <div className="mt-12 border-t border-white/10 pt-6">
-                         <div className="text-center sm:flex sm:justify-between sm:text-left text-neutral-500 font-mono text-xs">
+                         <div className="text-center sm:flex sm:justify-between sm:text-left text-white/40 font-mono text-xs">
                               <p>
                                    <span className="block sm:inline">All Systems Nominal.</span>
                               </p>
