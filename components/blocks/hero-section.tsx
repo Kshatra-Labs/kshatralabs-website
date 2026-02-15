@@ -1,13 +1,16 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Menu, Mail, Phone, X } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
+import { MobileMenu } from '@/components/ui/mobile-menu'
 
 export function HeroSection() {
      const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
+     const [menuState, setMenuState] = React.useState(false)
 
      const handleContactClick = (e?: React.MouseEvent) => {
           if (e) e.preventDefault()
@@ -20,7 +23,17 @@ export function HeroSection() {
 
      return (
           <>
-               <HeroHeader onEmailClick={handleContactClick} />
+               <HeroHeader
+                    onEmailClick={handleContactClick}
+                    menuState={menuState}
+                    setMenuState={setMenuState}
+               />
+               <MobileMenu
+                    isOpen={menuState}
+                    onClose={() => setMenuState(false)}
+                    menuItems={menuItems}
+                    onEmailClick={handleContactClick}
+               />
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
                          <div className="absolute inset-0 z-0">
@@ -103,8 +116,8 @@ export function HeroSection() {
                               </div>
                               <div className="text-[10px] font-mono text-white/60 drop-shadow-sm font-medium">Swarm Operations <br /> <span className="hidden">Active Nodes: 128</span></div>
                          </div>
-                    </section>
-               </main>
+                    </section >
+               </main >
 
                <MailChoiceModal
                     isOpen={isMailModalOpen}
@@ -121,14 +134,21 @@ const menuItems = [
      { name: 'About', href: '/about' },
 ]
 
-const HeroHeader = ({ onEmailClick }: { onEmailClick: (e?: React.MouseEvent) => void }) => {
-     const [menuState, setMenuState] = React.useState(false)
+const HeroHeader = ({
+     onEmailClick,
+     menuState,
+     setMenuState
+}: {
+     onEmailClick: (e?: React.MouseEvent) => void
+     menuState: boolean
+     setMenuState: (state: boolean) => void
+}) => {
 
      return (
           <header>
                <nav
                     data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
+                    className="fixed z-[70] w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
                >
                     <div className="mx-auto max-w-7xl px-6 lg:px-12">
                          <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 md:py-6">
@@ -158,8 +178,29 @@ const HeroHeader = ({ onEmailClick }: { onEmailClick: (e?: React.MouseEvent) => 
                                         aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
                                         className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
                                    >
-                                        <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                        <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                        <AnimatePresence mode="wait">
+                                             {menuState ? (
+                                                  <motion.div
+                                                       key="close"
+                                                       initial={{ opacity: 0, rotate: -90 }}
+                                                       animate={{ opacity: 1, rotate: 0 }}
+                                                       exit={{ opacity: 0, rotate: 90 }}
+                                                       transition={{ duration: 0.2 }}
+                                                  >
+                                                       <X className="size-6" />
+                                                  </motion.div>
+                                             ) : (
+                                                  <motion.div
+                                                       key="menu"
+                                                       initial={{ opacity: 0, rotate: 90 }}
+                                                       animate={{ opacity: 1, rotate: 0 }}
+                                                       exit={{ opacity: 0, rotate: -90 }}
+                                                       transition={{ duration: 0.2 }}
+                                                  >
+                                                       <Menu className="size-6" />
+                                                  </motion.div>
+                                             )}
+                                        </AnimatePresence>
                                    </button>
 
                                    <div className="hidden lg:block">
@@ -193,36 +234,7 @@ const HeroHeader = ({ onEmailClick }: { onEmailClick: (e?: React.MouseEvent) => 
                                    </button>
                               </div>
 
-                              {/* Mobile Menu */}
-                              <div className="bg-black/95 group-data-[state=active]:block hidden w-full mt-4 rounded-3xl border border-white/10 p-6 shadow-2xl lg:hidden">
-                                   <ul className="space-y-6 text-base font-bold font-mono text-white">
-                                        {menuItems.map((item, index) => (
-                                             <li key={index}>
-                                                  <Link
-                                                       href={item.href}
-                                                       className="hover:text-defense-accent block duration-150"
-                                                       onClick={() => setMenuState(false)}
-                                                  >
-                                                       <span>{item.name}</span>
-                                                  </Link>
-                                             </li>
-                                        ))}
-                                   </ul>
-                                   <div className="flex flex-col space-y-4 pt-8 mt-8 border-t border-white/10 text-sm font-bold font-mono text-white">
-                                        <a href="tel:+919730458528" className="flex items-center gap-2">
-                                             <Phone className="w-4 h-4" />
-                                             +91 9730458528
-                                        </a>
 
-                                        <button
-                                             onClick={onEmailClick}
-                                             className="flex items-center gap-2 text-left cursor-pointer"
-                                        >
-                                             <Mail className="w-4 h-4" />
-                                             contact@kshatralabs.in
-                                        </button>
-                                   </div>
-                              </div>
                          </div>
                     </div>
                </nav>

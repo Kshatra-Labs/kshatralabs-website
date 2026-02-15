@@ -9,7 +9,8 @@ export interface TeamMember {
      name: string;
      role: string;
      description: string;
-     profileImage: string;
+
+     profileImage?: string;
      linkedin?: string;
 }
 
@@ -43,13 +44,16 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                {/* Avatar */}
-               <div className="relative w-24 h-24 mb-6 rounded-full overflow-hidden border border-white/10 group-hover:border-defense-accent/50 transition-colors duration-300">
-                    <Image
-                         src={member.profileImage}
-                         alt={member.name}
-                         fill
-                         className="object-cover"
-                    />
+               {/* Avatar */}
+               <div className="relative w-24 h-24 mb-6 rounded-full overflow-hidden border border-white/10 bg-white/5 group-hover:border-defense-accent/50 transition-colors duration-300">
+                    {member.profileImage && (
+                         <Image
+                              src={member.profileImage}
+                              alt={member.name}
+                              fill
+                              className="object-cover"
+                         />
+                    )}
                </div>
 
                {/* Content */}

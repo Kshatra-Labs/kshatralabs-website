@@ -20,7 +20,7 @@ const TEAM_MEMBERS: TeamMember[] = [
           name: "Daggupati Harshill",
           role: "Co-Founder",
           description: "Architecting autonomous systems and physical intelligence layers. Dedicated to eliminating decision latency in multi-domain kinetic scenarios.",
-          profileImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2574&auto=format&fit=crop",
+          profileImage: "https://static.vecteezy.com/system/resources/thumbnails/032/176/191/small/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg",
           linkedin: "https://www.linkedin.com/in/harshill-daggupati-416299231/"
      }
 ];
