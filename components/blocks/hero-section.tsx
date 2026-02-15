@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Menu, Mail, Phone, X } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
@@ -147,7 +148,7 @@ const HeroHeader = ({
           <header>
                <nav
                     data-state={menuState && 'active'}
-                    className="fixed z-50 w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
+                    className="fixed z-[70] w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
                >
                     <div className="mx-auto max-w-7xl px-6 lg:px-12">
                          <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 md:py-6">
@@ -177,8 +178,29 @@ const HeroHeader = ({
                                         aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
                                         className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
                                    >
-                                        <Menu className="group-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                        <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                        <AnimatePresence mode="wait">
+                                             {menuState ? (
+                                                  <motion.div
+                                                       key="close"
+                                                       initial={{ opacity: 0, rotate: -90 }}
+                                                       animate={{ opacity: 1, rotate: 0 }}
+                                                       exit={{ opacity: 0, rotate: 90 }}
+                                                       transition={{ duration: 0.2 }}
+                                                  >
+                                                       <X className="size-6" />
+                                                  </motion.div>
+                                             ) : (
+                                                  <motion.div
+                                                       key="menu"
+                                                       initial={{ opacity: 0, rotate: 90 }}
+                                                       animate={{ opacity: 1, rotate: 0 }}
+                                                       exit={{ opacity: 0, rotate: -90 }}
+                                                       transition={{ duration: 0.2 }}
+                                                  >
+                                                       <Menu className="size-6" />
+                                                  </motion.div>
+                                             )}
+                                        </AnimatePresence>
                                    </button>
 
                                    <div className="hidden lg:block">

@@ -66,19 +66,8 @@ export function MobileMenu({ isOpen, onClose, menuItems, onEmailClick }: MobileM
                          animate="open"
                          exit="closed"
                          variants={menuVariants}
-                         className="fixed inset-0 z-[60] flex flex-col bg-black/90 backdrop-blur-xl lg:hidden"
+                         className="fixed inset-0 z-[60] flex flex-col bg-black/90 backdrop-blur-xl lg:hidden pt-24"
                     >
-                         {/* Header Area for Close Button */}
-                         <div className="flex justify-end p-6 border-b border-white/10">
-                              <button
-                                   onClick={onClose}
-                                   className="p-2 rounded-full hover:bg-white/10 transition-colors group"
-                                   aria-label="Close Menu"
-                              >
-                                   <X className="w-8 h-8 text-white group-hover:rotate-90 transition-transform duration-300" />
-                              </button>
-                         </div>
-
                          <div className="flex-1 flex flex-col justify-center px-8 pb-12 overflow-y-auto">
                               {/* Navigation Links */}
                               <nav className="flex flex-col gap-6 mb-12">
