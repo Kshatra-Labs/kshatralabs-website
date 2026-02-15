@@ -14,7 +14,7 @@ const SplineScene = dynamic(() => import("@/components/blocks/spline-scene").the
   loading: () => <div className="w-full h-full min-h-[500px] flex items-center justify-center text-white/20">Loading 3D Scene...</div>
 })
 // const SmartScene = dynamic(() => import("@/components/SmartScene").then(mod => mod.default), { ssr: false })
-const FPSMeter = dynamic(() => import("@/components/FPSMeter"), { ssr: false })
+// const FPSMeter = dynamic(() => import("@/components/FPSMeter"), { ssr: false })
 
 // const Entropy = dynamic(() => import("@/components/ui/entropy").then(mod => mod.Entropy))
 const Card = dynamic(() => import("@/components/ui/card").then(mod => mod.Card))
@@ -57,7 +57,7 @@ export default function Home() {
         {/* THREAT ANALYSIS SECTION */}
         {/* Updated for contact info visibility */}
         <ThreatAnalysis />
-        <FPSMeter />
+        {/* <FPSMeter /> */}
 
         {/* VISION SECTION (Spline) */}
         <section id="vision" className="py-24 px-6 md:px-12 relative overflow-hidden">
