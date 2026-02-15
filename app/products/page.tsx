@@ -5,6 +5,7 @@ import { Header } from '@/components/blocks/header'
 import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'motion/react'
 import { Volume2, VolumeX } from 'lucide-react'
+import { ShinyButton } from '@/components/ui/shiny-button'
 
 export default function ProductsPage() {
      const videoRef = useRef<HTMLVideoElement>(null);
@@ -107,16 +108,11 @@ export default function ProductsPage() {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                              className="pt-12"
+                              className="pt-12 flex flex-col items-center"
                          >
-                              <div className="inline-block relative group">
-                                   <div className="absolute -inset-1 bg-gradient-to-r from-defense-accent/50 to-defense-accent/50 blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                                   <div className="relative px-12 py-6 bg-black border border-white/20 backdrop-blur-3xl">
-                                        <p className="text-2xl md:text-3xl font-bold font-mono uppercase tracking-widest text-white">
-                                             Coming Soon
-                                        </p>
-                                   </div>
-                              </div>
+                              <ShinyButton className="--shiny-cta-highlight: #ffffff; --shiny-cta-highlight-subtle: #a1a1a1;">
+                                   COMING SOON !
+                              </ShinyButton>
 
                               <p className="mt-12 max-w-xl mx-auto text-neutral-400 text-lg leading-relaxed font-light">
                                    We are engineering the next generation of autonomous physical intelligence. Our systems are currently in classified development and field testing.
