@@ -2,15 +2,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Menu, Mail, Phone, X } from 'lucide-react'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
-import { MobileMenu } from '@/components/ui/mobile-menu'
 
 export function HeroSection() {
      const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
-     const [menuState, setMenuState] = React.useState(false)
 
      const handleContactClick = (e?: React.MouseEvent) => {
           if (e) e.preventDefault()
@@ -23,17 +21,6 @@ export function HeroSection() {
 
      return (
           <>
-               <HeroHeader
-                    onEmailClick={handleContactClick}
-                    menuState={menuState}
-                    setMenuState={setMenuState}
-               />
-               <MobileMenu
-                    isOpen={menuState}
-                    onClose={() => setMenuState(false)}
-                    menuItems={menuItems}
-                    onEmailClick={handleContactClick}
-               />
                <main className="overflow-x-hidden relative">
                     <section className="relative h-screen min-h-[800px] w-full flex items-center justify-center overflow-hidden bg-defense-dark">
                          <div className="absolute inset-0 z-0">
@@ -128,119 +115,6 @@ export function HeroSection() {
      )
 }
 
-const menuItems = [
-     { name: 'Home', href: '/' },
-     { name: 'Products', href: '/products' },
-     { name: 'About', href: '/about' },
-]
-
-const HeroHeader = ({
-     onEmailClick,
-     menuState,
-     setMenuState
-}: {
-     onEmailClick: (e?: React.MouseEvent) => void
-     menuState: boolean
-     setMenuState: (state: boolean) => void
-}) => {
-
-     return (
-          <header>
-               <nav
-                    data-state={menuState && 'active'}
-                    className="fixed z-[70] w-full border-b border-white/10 bg-black/85 backdrop-blur-2xl transition-all duration-300"
-               >
-                    <div className="mx-auto max-w-7xl px-6 lg:px-12">
-                         <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 md:py-6">
-                              <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-                                   <Link
-                                        href="/"
-                                        aria-label="home"
-                                        className="group block"
-                                   >
-                                        <div
-                                             className="h-10 md:h-12 w-[240px] md:w-[280px] bg-white group-hover:bg-defense-accent transition-colors duration-300"
-                                             style={{
-                                                  maskImage: 'url(/logo.svg)',
-                                                  maskSize: 'contain',
-                                                  maskRepeat: 'no-repeat',
-                                                  maskPosition: 'center left',
-                                                  WebkitMaskImage: 'url(/logo.svg)',
-                                                  WebkitMaskSize: 'contain',
-                                                  WebkitMaskRepeat: 'no-repeat',
-                                                  WebkitMaskPosition: 'center left'
-                                             }}
-                                        />
-                                   </Link>
-
-                                   <button
-                                        onClick={() => setMenuState(!menuState)}
-                                        aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                        className="relative z-50 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                                   >
-                                        <AnimatePresence mode="wait">
-                                             {menuState ? (
-                                                  <motion.div
-                                                       key="close"
-                                                       initial={{ opacity: 0, rotate: -90 }}
-                                                       animate={{ opacity: 1, rotate: 0 }}
-                                                       exit={{ opacity: 0, rotate: 90 }}
-                                                       transition={{ duration: 0.2 }}
-                                                  >
-                                                       <X className="size-6" />
-                                                  </motion.div>
-                                             ) : (
-                                                  <motion.div
-                                                       key="menu"
-                                                       initial={{ opacity: 0, rotate: 90 }}
-                                                       animate={{ opacity: 1, rotate: 0 }}
-                                                       exit={{ opacity: 0, rotate: -90 }}
-                                                       transition={{ duration: 0.2 }}
-                                                  >
-                                                       <Menu className="size-6" />
-                                                  </motion.div>
-                                             )}
-                                        </AnimatePresence>
-                                   </button>
-
-                                   <div className="hidden lg:block">
-                                        <ul className="flex gap-8 text-sm font-bold font-mono tracking-wide uppercase">
-                                             {menuItems.map((item, index) => (
-                                                  <li key={index}>
-                                                       <Link
-                                                            href={item.href}
-                                                            className="text-white/70 hover:text-white duration-150"
-                                                       >
-                                                            <span>{item.name}</span>
-                                                       </Link>
-                                                  </li>
-                                             ))}
-                                        </ul>
-                                   </div>
-                              </div>
-
-                              <div className="hidden lg:flex items-center gap-8 text-sm font-bold font-mono tracking-widest text-white">
-                                   <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
-                                        <Phone className="w-4 h-4" />
-                                        +91 9730458528
-                                   </a>
-
-                                   <button
-                                        onClick={onEmailClick}
-                                        className="flex items-center gap-2 hover:text-defense-accent transition-colors cursor-pointer"
-                                   >
-                                        <Mail className="w-4 h-4" />
-                                        contact@kshatralabs.in
-                                   </button>
-                              </div>
-
-
-                         </div>
-                    </div>
-               </nav>
-          </header>
-     )
-}
 
 function HeroBackgroundVideo() {
      const videoRef = React.useRef<HTMLVideoElement>(null)
