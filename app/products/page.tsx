@@ -6,6 +6,7 @@ import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'motion/react'
 import { Volume2, VolumeX } from 'lucide-react'
 import { ShinyButton } from '@/components/ui/shiny-button'
+import FooterSection from '@/components/blocks/footer-section'
 
 export default function ProductsPage() {
      const videoRef = useRef<HTMLVideoElement>(null);
@@ -114,35 +115,18 @@ export default function ProductsPage() {
                                    COMING SOON !
                               </ShinyButton>
 
-                              <p className="mt-12 max-w-xl mx-auto text-neutral-400 text-lg leading-relaxed font-light">
+                              <p className="mt-12 max-w-xl mx-auto text-white text-lg leading-relaxed font-light">
                                    We are engineering the next generation of autonomous physical intelligence. Our systems are currently in classified development and field testing.
                               </p>
                          </motion.div>
 
-                         {/* Decorative HUD Elements */}
-                         <div className="pt-24 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40">
-                              <div className="space-y-2">
-                                   <div className="h-px w-full bg-white/20"></div>
-                                   <div className="text-[10px] font-mono uppercase tracking-widest">Air Domain</div>
-                              </div>
-                              <div className="space-y-2">
-                                   <div className="h-px w-full bg-white/20"></div>
-                                   <div className="text-[10px] font-mono uppercase tracking-widest">Land Systems</div>
-                              </div>
-                              <div className="space-y-2">
-                                   <div className="h-px w-full bg-white/20"></div>
-                                   <div className="text-[10px] font-mono uppercase tracking-widest">Maritime Ops</div>
-                              </div>
-                              <div className="space-y-2">
-                                   <div className="h-px w-full bg-white/20"></div>
-                                   <div className="text-[10px] font-mono uppercase tracking-widest">Edge Compute</div>
-                              </div>
-                         </div>
+
                     </div>
                </main>
 
                {/* Grid Overlay */}
                <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+               <FooterSection />
           </div>
      )
 }

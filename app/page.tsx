@@ -70,7 +70,7 @@ export default function Home() {
                 Our Vision
               </h2>
               <p className="mt-4 text-neutral-300 max-w-2xl text-lg">
-                Kshatra Labs is building intelligent autonomous systems that operate across air, land, sea, and space. Our vision is to create general-purpose physical intelligence that extends human capability while keeping people out of harm’s way.
+                Kshatra Labs is building intelligent autonomous systems that operate across air, land, and sea. Our vision is to create general-purpose physical intelligence that extends human capability while keeping people out of harm’s way.
               </p>
             </div>
 

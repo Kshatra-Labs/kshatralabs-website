@@ -22,7 +22,7 @@ export function TeamGrid({ members }: TeamGridProps) {
      return (
           <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-7xl mx-auto">
                {members.map((member, index) => (
-                    <div key={index} className="w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.33%-2rem)] max-w-md">
+                    <div key={index} className="flex w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.33%-2rem)] max-w-md">
                          <TeamCard member={member} index={index} />
                     </div>
                ))}
@@ -38,58 +38,55 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.5, delay: index * 0.1 }}
-               className="group relative flex flex-col items-center text-center p-8 rounded-[14px] bg-white/[0.04] border border-white/[0.08] backdrop-blur-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.6)] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.8)] transition-all duration-300 ease-out overflow-hidden"
+               className="group relative flex flex-col p-8 rounded-[2rem] bg-black border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
           >
-               {/* Focus Glow */}
-               <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-               {/* Avatar */}
-               {/* Avatar */}
-               <div className="relative w-24 h-24 mb-6 rounded-full overflow-hidden border border-white/10 bg-white/5 group-hover:border-defense-accent/50 transition-colors duration-300">
-                    {member.profileImage && (
-                         <Image
-                              src={member.profileImage}
-                              alt={member.name}
-                              fill
-                              className="object-cover"
-                         />
-                    )}
+               {/* Avatar Section */}
+               <div className="relative self-center mb-8">
+                    <div className="relative w-32 h-32 rounded-2xl overflow-hidden border border-white/10 bg-white/5 z-10 group-hover:border-emerald-500/30 transition-colors duration-500">
+                         {member.profileImage && (
+                              <Image
+                                   src={member.profileImage}
+                                   alt={member.name}
+                                   fill
+                                   className="object-cover group-hover:scale-105 transition-all duration-700"
+                              />
+                         )}
+                    </div>
                </div>
 
-               {/* Content */}
-               <div className="flex-1 flex flex-col items-center gap-2 mb-8">
-                    <h3 className="text-xl font-bold text-white tracking-tight">
-                         {member.name}
-                    </h3>
-                    <p className="text-sm font-medium text-[#00e5ff] tracking-wide uppercase">
+               {/* Identity Header */}
+               <div className="space-y-4 mb-8 text-center w-full">
+                    <div className="space-y-1">
+                         <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-emerald-50 transition-colors">
+                              {member.name}
+                         </h3>
+                    </div>
+
+                    <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-widest text-white/50 group-hover:text-white/80 group-hover:border-white/20 transition-all">
                          {member.role}
-                    </p>
-                    <p className="text-sm text-[#9ca3af] leading-relaxed mt-2 max-w-[280px]">
-                         {member.description}
-                    </p>
+                    </div>
                </div>
+
+               {/* Description */}
+               <p className="text-base text-white leading-relaxed font-light mb-8 flex-1 text-center">
+                    "{member.description}"
+               </p>
 
                {/* Actions */}
-               <div className="flex items-center gap-3 w-full mt-auto">
-                    {member.linkedin ? (
+               <div className="pt-6 border-t border-white/5 mt-auto">
+                    {member.linkedin && (
                          <a
                               href={member.linkedin}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex-1 flex items-center justify-center gap-2 h-10 rounded-lg bg-[#0077b5]/10 hover:bg-[#0077b5]/20 border border-[#0077b5]/20 hover:border-[#0077b5]/40 transition-all duration-200 group/btn"
+                              className="flex items-center justify-between group/link"
                          >
-                              <Linkedin className="w-4 h-4 text-[#0077b5] group-hover/btn:text-white transition-colors" />
-                              <span className="text-xs font-semibold text-[#0077b5] group-hover/btn:text-white transition-colors uppercase tracking-wider">
-                                   LinkedIn
-                              </span>
+                              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/30 group-hover/link:text-blue-400 transition-colors">Connect via LinkedIn</span>
+                              <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover/link:bg-blue-500 group-hover/link:border-transparent group-hover/link:text-black transition-all duration-300">
+                                   <Linkedin className="w-3.5 h-3.5" />
+                              </div>
                          </a>
-                    ) : (
-                         null
                     )}
-
-                    {/* <button className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
-                         <ArrowUpRight className="w-4 h-4 text-white/60 hover:text-white transition-colors" />
-                    </button> */}
                </div>
           </motion.div>
      );

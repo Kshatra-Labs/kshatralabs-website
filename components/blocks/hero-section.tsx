@@ -50,7 +50,7 @@ export function HeroSection() {
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
                                         <div className="space-y-8">
                                              <p className="text-lg text-gray-200 leading-relaxed font-light max-w-xl drop-shadow-md">
-                                                  <strong className="text-white font-medium">Kshatra Labs</strong> engineers AI-native robotic systems that sense, reason, and act in real time across air, land, sea, and space — starting with autonomous aerial defense.
+                                                  <strong className="text-white font-medium">Kshatra Labs</strong> engineers AI-native robotic systems that sense, reason, and act in real time across air, land, and sea — starting with autonomous aerial defense.
                                              </p>
 
                                              <button
