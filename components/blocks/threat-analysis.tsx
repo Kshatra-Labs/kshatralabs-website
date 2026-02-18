@@ -20,13 +20,13 @@ export function ThreatAnalysis() {
           <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-black text-white">
                {/* Background Image */}
                <div
-                    className="absolute inset-0 z-0 opacity-20 bg-cover bg-center bg-no-repeat"
+                    className="absolute inset-0 z-0 opacity-40 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
                     style={{ backgroundImage: "url('/bg/page2bg.png')" }}
                ></div>
 
                {/* Black Overlays: Vignette and Gradients to ensure full black corners */}
-               <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_40%,black_100%)]"></div>
-               <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+               <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)]"></div>
+               <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
                <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-transparent to-black"></div>
 
                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
@@ -121,7 +121,14 @@ export function ThreatAnalysis() {
 
                          {/* Right Column: HUD Video */}
                          <div className="relative">
-                              <div className="relative w-full aspect-video bg-black/80 rounded-sm border border-white/10 overflow-hidden group">
+                              {/* Background Glow */}
+                              <motion.div
+                                   animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.05, 1] }}
+                                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                   className="absolute -inset-10 bg-blue-500/20 blur-3xl rounded-full z-0 pointer-events-none"
+                              />
+
+                              <div className="relative z-10 w-full aspect-video bg-black/80 rounded-sm border border-white/10 overflow-hidden group">
 
                                    {/* Video Element */}
                                    <LazyVideo />
