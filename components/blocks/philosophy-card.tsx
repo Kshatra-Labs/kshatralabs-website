@@ -17,7 +17,7 @@ export function PhilosophyCard() {
                          whileInView={{ opacity: 1, y: 0 }}
                          transition={{ duration: 0.8 }}
                          viewport={{ once: true }}
-                         className="relative bg-gradient-to-br from-black to-neutral-950 border border-white/[0.08] p-12 md:p-16"
+                         className="relative bg-gradient-to-br from-black to-neutral-950 border border-white/[0.08] p-6 sm:p-10 md:p-16"
                     >
                          {/* Top accent line */}
                          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
@@ -32,7 +32,7 @@ export function PhilosophyCard() {
                                         </span>
                                    </div>
 
-                                   <h2 className="text-5xl md:text-6xl font-bold leading-[1.1] mb-2">
+                                   <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-2">
                                         <span className="text-white">WE BUILD</span>
                                         <br />
                                         <span className="text-neutral-500">WHAT OTHERS</span>
@@ -43,24 +43,24 @@ export function PhilosophyCard() {
 
                               {/* Right: Description & Stats */}
                               <div className="space-y-8">
-                                   <p className="text-base text-neutral-400 leading-relaxed">
+                                   <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
                                         Modern warfare demands systems that are not just automated, but truly <span className="text-white font-medium">autonomous</span>. We engineer intelligent machines capable of operating in highly contested, GPS-denied environments without human intervention.
                                    </p>
 
                                    {/* Stats Grid */}
-                                   <div className="grid grid-cols-2 gap-6">
+                                   <div className="grid grid-cols-2 gap-4 sm:gap-6">
                                         {/* Stat 1 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
-                                             <div className="text-3xl font-bold text-white mb-1">Rapid Response</div>
-                                             <div className="text-[10px] font-mono text-neutral-600 tracking-wider uppercase">
-
+                                             <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">Rapid Response</div>
+                                             <div className="text-[9px] sm:text-[10px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
+                                                  Interception
                                              </div>
                                         </div>
 
                                         {/* Stat 2 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
-                                             <div className="text-3xl font-bold text-white mb-1">100%</div>
-                                             <div className="text-[10px] font-bold text-white mb-1">
+                                             <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">100%</div>
+                                             <div className="text-[9px] sm:text-[10px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
                                                   Edge Compute (onboard)
                                              </div>
                                         </div>
