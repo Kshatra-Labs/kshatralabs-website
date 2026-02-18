@@ -14,6 +14,14 @@ const advantages = [
 
 export function PlatformsGrid() {
   const ref = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = React.useState(0)
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % advantages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -65,20 +73,35 @@ export function PlatformsGrid() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * .08 }}
                   viewport={{ once: true }}
-                  className="rounded-xl md:rounded-2xl p-4 md:p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
+                  className={`relative rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-700 border ${activeIndex === i
+                    ? 'bg-white/10 border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)]'
+                    : 'bg-white/5 border-white/10 grayscale-[0.5] opacity-60'
+                    } backdrop-blur-xl group hover:opacity-100 hover:grayscale-0`}
                 >
-                  <div className="flex gap-3 md:gap-4">
-                    <span className="text-xl md:text-3xl font-bold text-white/20">
+                  <div className="flex gap-4 md:gap-6 items-center">
+                    <span className={`text-3xl md:text-5xl font-black transition-colors duration-700 ${activeIndex === i ? 'text-blue-500' : 'text-white/20'
+                      }`}>
                       {item.number}
                     </span>
 
                     <div>
-                      <h3 className="text-sm md:text-base text-white">{item.title}</h3>
-                      <p className="text-xs md:text-sm text-neutral-400 mt-1">
+                      <h3 className={`text-base md:text-xl font-bold transition-colors duration-700 ${activeIndex === i ? 'text-white' : 'text-white/80'
+                        }`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-neutral-400 mt-1 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
                   </div>
+
+                  {/* Progress bar for active state */}
+                  {activeIndex === i && (
+                    <motion.div
+                      layoutId="active-marker"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-2xl"
+                    />
+                  )}
                 </motion.div>
               ))}
 
