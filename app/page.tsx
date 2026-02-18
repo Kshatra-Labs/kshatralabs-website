@@ -21,7 +21,7 @@ const SplineScene = dynamic(() => import("@/components/blocks/spline-scene").the
 const Card = dynamic(() => import("@/components/ui/card").then(mod => mod.Card))
 const Spotlight = dynamic(() => import("@/components/ui/spotlight").then(mod => mod.Spotlight))
 const Footer4Col = dynamic(() => import("@/components/blocks/footer-section")) // Default export
-const Capabilities = dynamic(() => import('@/components/blocks/capabilities').then(mod => mod.Capabilities))
+// const Capabilities = dynamic(() => import('@/components/blocks/capabilities').then(mod => mod.Capabilities))
 const PlatformsGrid = dynamic(() => import('@/components/blocks/platforms-grid').then(mod => mod.PlatformsGrid))
 const PlatformGallery = dynamic(() => import('@/components/blocks/platform-gallery').then(mod => mod.PlatformGallery))
 const PhilosophyCard = dynamic(() => import('@/components/blocks/philosophy-card').then(mod => mod.PhilosophyCard))
@@ -84,7 +84,7 @@ export default function Home() {
         </section>
 
         {/* MISSION CRITICAL SOLUTIONS */}
-        <Capabilities />
+        {/* <Capabilities /> */}
 
         {/* PRODUCT SYSTEMS GRID */}
         <PlatformsGrid />
@@ -141,4 +141,3 @@ export default function Home() {
     </div>
   );
 }
-
