@@ -5,11 +5,11 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 
 const advantages = [
-  { number: '01', title: 'AI-Native', description: 'Built from neural networks at the core.' },
-  { number: '02', title: 'Edge Intelligence', description: 'Runs fully onboard. No cloud.' },
-  { number: '03', title: 'Swarm-First', description: 'Multi-agent coordination.' },
-  { number: '04', title: 'Cost Effective', description: 'Neutralize threats cheaply.' },
-  { number: '05', title: 'Contested Ready', description: 'Resistant to EW & jamming.' },
+  { number: '01', title: 'AI-Native Interceptors', description: 'Designed from the core with neural networks — the autonomy isn’t added on later, it is the system.' },
+  { number: '02', title: 'Onboard Intelligence', description: 'All detection, decision-making, and action happens on the interceptor itself — no cloud-based latency, no external control.' },
+  { number: '03', title: 'Swarm + Multi-Agent Coordination', description: 'Interceptors can operate together, coordinating against complex threats.' },
+  { number: '04', title: 'Cost-Effective Defense', description: 'Designed to counter expensive threats cheaply and at scale — a low cost per interceptor.' },
+  { number: '05', title: 'Contest-Ready Autonomy', description: 'Built to operate in contested environments resistant to electronic warfare and jamming.' },
 ]
 
 export function PlatformsGrid() {
@@ -57,11 +57,12 @@ export function PlatformsGrid() {
           <div>
 
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
-              Why Kshatra Labs?
+              Why Kshatra Labs ?
             </h2>
 
             <p className="mt-4 md:mt-6 text-neutral-400 max-w-xl">
-              Weapons-grade autonomy for the modern battlefield.
+              Kshatra Labs builds real autonomous defense systems — not just drones.
+              Their focus is on autonomous aerial interceptors engineered to detect, pursue, and defeat hostile aerial threats, with AI running fully onboard.
             </p>
 
             <div className="mt-8 md:mt-12 space-y-3 md:space-y-4">
