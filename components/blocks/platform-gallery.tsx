@@ -178,12 +178,13 @@ export function PlatformGallery() {
                               {/* Feature Chips */}
                               <div className="flex flex-wrap gap-3 mt-5">
                                    {currentItem.features.map((feature, i) => (
-                                        <div
+                                        <motion.div
                                              key={i}
-                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[10px] md:text-sm border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium"
+                                             whileHover={{ scale: 1.05, filter: "brightness(1.2)", borderColor: "rgba(47,124,255,0.8)" }}
+                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[10px] md:text-sm border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium cursor-default transition-colors duration-300"
                                         >
                                              {feature}
-                                        </div>
+                                        </motion.div>
                                    ))}
                               </div>
                          </div>
@@ -240,6 +241,17 @@ export function PlatformGallery() {
                                    </div>
                               </div>
                          </div>
+                    </div>
+
+                    {/* Progress Bar (System Bar) */}
+                    <div className="mt-8 h-[2px] w-full bg-white/5 rounded-full overflow-hidden">
+                         <motion.div
+                              key={activeIndex}
+                              initial={{ width: "0%" }}
+                              animate={{ width: "100%" }}
+                              transition={{ duration: 6, ease: "linear" }}
+                              className="h-full bg-[#2f7cff] shadow-[0_0_15px_rgba(47,124,255,0.8)]"
+                         />
                     </div>
                </div>
           </section>
