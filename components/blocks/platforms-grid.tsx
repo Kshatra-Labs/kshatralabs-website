@@ -5,15 +5,23 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 
 const advantages = [
-  { number: '01', title: 'AI-Native', description: 'Built from neural networks at the core.' },
-  { number: '02', title: 'Edge Intelligence', description: 'Runs fully onboard. No cloud.' },
-  { number: '03', title: 'Swarm-First', description: 'Multi-agent coordination.' },
-  { number: '04', title: 'Cost Effective', description: 'Neutralize threats cheaply.' },
-  { number: '05', title: 'Contested Ready', description: 'Resistant to EW & jamming.' },
+  { number: '01', title: 'AI-Native Interceptors', description: 'Designed from the core with neural networks — the autonomy isn’t added on later, it is the system.' },
+  { number: '02', title: 'Onboard Intelligence', description: 'All detection, decision-making, and action happens on the interceptor itself — no cloud-based latency, no external control.' },
+  { number: '03', title: 'Swarm + Multi-Agent Coordination', description: 'Interceptors can operate together, coordinating against complex threats.' },
+  { number: '04', title: 'Cost-Effective Defense', description: 'Designed to counter expensive threats cheaply and at scale — a low cost per interceptor.' },
+  { number: '05', title: 'Contest-Ready Autonomy', description: 'Built to operate in contested environments resistant to electronic warfare and jamming.' },
 ]
 
 export function PlatformsGrid() {
   const ref = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = React.useState(0)
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % advantages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -49,11 +57,12 @@ export function PlatformsGrid() {
           <div>
 
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
-              Why Kshatra Labs?
+              Why Kshatra Labs ?
             </h2>
 
             <p className="mt-4 md:mt-6 text-neutral-400 max-w-xl">
-              Weapons-grade autonomy for the modern battlefield.
+              Kshatra Labs builds real autonomous defense systems — not just drones.
+              Their focus is on autonomous aerial interceptors engineered to detect, pursue, and defeat hostile aerial threats, with AI running fully onboard.
             </p>
 
             <div className="mt-8 md:mt-12 space-y-3 md:space-y-4">
@@ -63,22 +72,46 @@ export function PlatformsGrid() {
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * .08 }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{
+                    delay: i * 0.08,
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
                   viewport={{ once: true }}
-                  className="rounded-xl md:rounded-2xl p-4 md:p-6 bg-white/5 border border-white/10 backdrop-blur-xl"
+                  className={`relative rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 border ${activeIndex === i
+                    ? 'bg-blue-500/10 border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.3)] scale-[1.02]'
+                    : 'bg-white/5 border-white/10 grayscale-[0.5] opacity-60'
+                    } backdrop-blur-xl group hover:opacity-100 hover:grayscale-0 hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]`}
                 >
-                  <div className="flex gap-3 md:gap-4">
-                    <span className="text-xl md:text-3xl font-bold text-white/20">
+                  <div className="flex gap-4 md:gap-6 items-center">
+                    <span className={`text-3xl md:text-5xl font-black transition-colors duration-300 ${activeIndex === i ? 'text-blue-500' : 'text-white/20'
+                      }`}>
                       {item.number}
                     </span>
 
-                    <div>
-                      <h3 className="text-sm md:text-base text-white">{item.title}</h3>
-                      <p className="text-xs md:text-sm text-neutral-400 mt-1">
+                    <motion.div
+                      initial={{ opacity: 0.8 }}
+                      animate={{ opacity: activeIndex === i ? 1 : 0.8 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <h3 className={`text-base md:text-xl font-bold transition-colors duration-300 ${activeIndex === i ? 'text-white' : 'text-white/80'
+                        }`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm md:text-base text-neutral-400 mt-1 leading-relaxed">
                         {item.description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
+
+                  {/* Progress bar for active state */}
+                  {activeIndex === i && (
+                    <motion.div
+                      layoutId="active-marker"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-2xl"
+                    />
+                  )}
                 </motion.div>
               ))}
 

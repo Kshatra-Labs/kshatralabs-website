@@ -20,13 +20,13 @@ export function ThreatAnalysis() {
           <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-black text-white">
                {/* Background Image */}
                <div
-                    className="absolute inset-0 z-0 opacity-20 bg-cover bg-center bg-no-repeat"
+                    className="absolute inset-0 z-0 opacity-40 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
                     style={{ backgroundImage: "url('/bg/page2bg.png')" }}
                ></div>
 
                {/* Black Overlays: Vignette and Gradients to ensure full black corners */}
-               <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_40%,black_100%)]"></div>
-               <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/90 to-transparent"></div>
+               <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_30%,black_100%)]"></div>
+               <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
                <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-transparent to-black"></div>
 
                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12">
@@ -41,12 +41,12 @@ export function ThreatAnalysis() {
                                         <span>{"/// THREAT VECTOR ANALYSIS"}</span>
                                    </div>
                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none">
-                                        ASYMMETRIC <span className="text-white/50">WARFARE</span>
+                                        NOT JUST A <span className="text-white/50">DRONE.</span> AN INTERCEPTOR.
                                    </h2>
 
                                    {/* Capability Cards */}
                                    <div className="flex flex-wrap gap-3 pt-2">
-                                        {['INTERCEPTOR', 'SURVEILLANCE', 'PRECISION STRIKES', 'AI-DRIVEN SWARMING'].map((tag, i) => (
+                                        {['INTERCEPTOR', 'DETECT', 'CHASE', 'DEFENSE-FIRST'].map((tag, i) => (
                                              <span key={i} className={`px-3 py-1 border text-[10px] font-mono tracking-widest transition-all duration-500 ${i === activeTagIndex
                                                   ? 'bg-red-500/20 border-red-500/50 text-red-400 font-bold shadow-[0_0_10px_rgba(239,68,68,0.3)] scale-105'
                                                   : 'bg-white/5 border-white/10 text-blue-300 opacity-60'
@@ -55,8 +55,9 @@ export function ThreatAnalysis() {
                                              </span>
                                         ))}
                                    </div>
+
                                    <p className="text-neutral-400 max-w-lg leading-relaxed border-t border-white/10 pt-4 mt-4">
-                                        Providing decisive advantages, forcing massive, unsustainable cost-exchange imbalances on conventionally superior militaries.
+                                        Built to detect. Built to chase. Built to stop airborne threats.
                                    </p>
                               </div>
 
@@ -73,10 +74,10 @@ export function ThreatAnalysis() {
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
                                         <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
-                                             <span className="text-white/30">01 //</span> COST-EFFECTIVENESS & ACCESSIBILITY
+                                             <span className="text-white/30">01 //</span> HIGH-SPEED AUTONOMOUS FLIGHT
                                         </h3>
                                         <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
-                                             Neutralize expensive aerial threats with affordable interceptors. We provide mass-scale defense at a fraction of the cost of traditional systems.
+                                             Engineered for rapid response and high-velocity interception of hostile objects in mid-air.
                                         </p>
                                    </motion.div>
 
@@ -91,10 +92,10 @@ export function ThreatAnalysis() {
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
                                         <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
-                                             <span className="text-white/30">02 //</span> AUTO_HYBRID_SYSTEM
+                                             <span className="text-white/30">02 //</span> REAL-TIME TARGET TRACKING
                                         </h3>
                                         <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
-                                             Where AI takes over engagement execution in case of critical human latency. <span className="text-blue-200/60 block mt-2">Swarming and AI Integration: Emerging, albeit still developing, AI-controlled drone swarms are expected to operate in decentralized groups, making them highly resilient to communication jamming and electronic warfare (EW).</span>
+                                             Advanced sensor integration for precise detection and persistent chasing of airborne threats.
                                         </p>
                                    </motion.div>
 
@@ -109,10 +110,13 @@ export function ThreatAnalysis() {
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
                                         <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
-                                             <span className="text-white/30">03 //</span> TACTICAL_ADVANTAGES
+                                             <span className="text-white/30">03 //</span> DEFENSE-FIRST DESIGN
                                         </h3>
                                         <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
-                                             These drones offer superior interception, surveillance, reconnaissance, and targeted, high-precision strikes with minimal risk to operator personnel.
+                                             This system is engineered specifically to intercept and neutralize hostile objects.
+                                             <span className="text-blue-200/60 block mt-4 text-xs">
+                                                  Made for rapid response. Designed for protection.
+                                             </span>
                                         </p>
                                    </motion.div>
                               </div>
@@ -121,7 +125,14 @@ export function ThreatAnalysis() {
 
                          {/* Right Column: HUD Video */}
                          <div className="relative">
-                              <div className="relative w-full aspect-video bg-black/80 rounded-sm border border-white/10 overflow-hidden group">
+                              {/* Background Glow */}
+                              <motion.div
+                                   animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.05, 1] }}
+                                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                   className="absolute -inset-10 bg-blue-500/20 blur-3xl rounded-full z-0 pointer-events-none"
+                              />
+
+                              <div className="relative z-10 w-full aspect-video bg-black/80 rounded-sm border border-white/10 overflow-hidden group">
 
                                    {/* Video Element */}
                                    <LazyVideo />
