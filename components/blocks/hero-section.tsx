@@ -59,18 +59,18 @@ export function HeroSection() {
                                                   <ArrowRight className="h-4 w-4" />
                                              </button>
 
-                                             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-[11px] font-mono text-white/80 uppercase tracking-widest font-bold drop-shadow-sm">
-                                                  <div className="flex items-center gap-2">
-                                                       <div className="w-1 h-1 bg-defense-accent rounded-full"></div>
+                                             <div className="flex flex-wrap items-center gap-x-12 gap-y-4 mt-12 text-xs font-mono text-white/90 uppercase tracking-[0.2em] font-bold drop-shadow-sm">
+                                                  <div className="flex items-center gap-3">
+                                                       <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
                                                        <span>Built in Bharat</span>
                                                   </div>
-                                                  <div className="flex items-center gap-2">
-                                                       <div className="w-1 h-1 bg-defense-accent rounded-full"></div>
-                                                       <span>Designed for Contested Environments</span>
+                                                  <div className="flex items-center gap-3">
+                                                       <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
+                                                       <span>Contested Environments</span>
                                                   </div>
-                                                  <div className="flex items-center gap-2">
-                                                       <div className="w-1 h-1 bg-defense-accent rounded-full"></div>
-                                                       <span>Deployed at machine speed</span>
+                                                  <div className="flex items-center gap-3">
+                                                       <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
+                                                       <span>Machine Speed</span>
                                                   </div>
                                              </div>
                                         </div>
