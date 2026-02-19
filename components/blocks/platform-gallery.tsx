@@ -57,7 +57,7 @@ export function PlatformGallery() {
                          </div>
 
                          <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                              Multi-Domain Robotics Platform
+                              Autonomous Interceptor Platform
                          </h2>
 
                          <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">
@@ -82,16 +82,27 @@ export function PlatformGallery() {
                                         transition={{ duration: 0.7, ease: 'easeInOut' }}
                                         className="relative w-full h-full"
                                    >
+                                        {/* Blurred Backdrop for Pillarboxing */}
+                                        <div className="absolute inset-0 overflow-hidden">
+                                             <Image
+                                                  src={galleryImages[activeIndex].src}
+                                                  alt=""
+                                                  fill
+                                                  className="object-cover blur-3xl opacity-30 scale-110"
+                                                  aria-hidden="true"
+                                             />
+                                        </div>
+
                                         <Image
                                              src={galleryImages[activeIndex].src}
                                              alt={galleryImages[activeIndex].alt}
                                              fill
                                              sizes="(max-width: 1280px) 100vw, 1280px"
-                                             className="object-cover"
+                                             className="object-contain relative z-10"
                                              priority
                                         />
                                         {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-20"></div>
                                    </motion.div>
                               </AnimatePresence>
 

@@ -72,28 +72,37 @@ export function PlatformsGrid() {
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * .08 }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{
+                    delay: i * 0.08,
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
                   viewport={{ once: true }}
-                  className={`relative rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-700 border ${activeIndex === i
-                    ? 'bg-white/10 border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.2)]'
+                  className={`relative rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 border ${activeIndex === i
+                    ? 'bg-blue-500/10 border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.3)] scale-[1.02]'
                     : 'bg-white/5 border-white/10 grayscale-[0.5] opacity-60'
-                    } backdrop-blur-xl group hover:opacity-100 hover:grayscale-0`}
+                    } backdrop-blur-xl group hover:opacity-100 hover:grayscale-0 hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]`}
                 >
                   <div className="flex gap-4 md:gap-6 items-center">
-                    <span className={`text-3xl md:text-5xl font-black transition-colors duration-700 ${activeIndex === i ? 'text-blue-500' : 'text-white/20'
+                    <span className={`text-3xl md:text-5xl font-black transition-colors duration-300 ${activeIndex === i ? 'text-blue-500' : 'text-white/20'
                       }`}>
                       {item.number}
                     </span>
 
-                    <div>
-                      <h3 className={`text-base md:text-xl font-bold transition-colors duration-700 ${activeIndex === i ? 'text-white' : 'text-white/80'
+                    <motion.div
+                      initial={{ opacity: 0.8 }}
+                      animate={{ opacity: activeIndex === i ? 1 : 0.8 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <h3 className={`text-base md:text-xl font-bold transition-colors duration-300 ${activeIndex === i ? 'text-white' : 'text-white/80'
                         }`}>
                         {item.title}
                       </h3>
                       <p className="text-sm md:text-base text-neutral-400 mt-1 leading-relaxed">
                         {item.description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Progress bar for active state */}
