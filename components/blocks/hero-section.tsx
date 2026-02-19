@@ -53,18 +53,10 @@ export function HeroSection() {
 
                                              <button
                                                   onClick={() => handleContactClick()}
-                                                  className="group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-black/40 px-8 py-4 font-mono text-sm tracking-widest text-white backdrop-blur-sm transition-all duration-300 hover:bg-defense-accent/10 hover:text-defense-accent border border-white/10 hover:border-defense-accent/50 cursor-pointer"
+                                                  className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer"
                                              >
-                                                  {/* Crosshair corners */}
-                                                  <span className="absolute left-0 top-0 h-2 w-2 border-l-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
-                                                  <span className="absolute right-0 top-0 h-2 w-2 border-r-2 border-t-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
-                                                  <span className="absolute bottom-0 left-0 h-2 w-2 border-b-2 border-l-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
-                                                  <span className="absolute bottom-0 right-0 h-2 w-2 border-b-2 border-r-2 border-white/30 transition-all duration-300 group-hover:h-full group-hover:w-full group-hover:border-defense-accent group-hover:opacity-100"></span>
-
-                                                  <span className="relative z-10 flex items-center gap-2 font-bold">
-                                                       REQUEST A BRIEFING
-                                                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                                  </span>
+                                                  REQUEST A BRIEFING
+                                                  <ArrowRight className="h-4 w-4" />
                                              </button>
 
                                              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-[11px] font-mono text-white/80 uppercase tracking-widest font-bold drop-shadow-sm">

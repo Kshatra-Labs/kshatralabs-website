@@ -113,7 +113,7 @@ export default function Home() {
             <div className="flex flex-col items-center gap-6">
               <button
                 onClick={handleContactClick}
-                className="px-8 py-3 bg-white text-black font-mono font-semibold hover:bg-neutral-200 transition-colors inline-block cursor-pointer"
+                className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-block cursor-pointer rounded-none uppercase"
               >
                 REQUEST A BRIEFING →
               </button>
