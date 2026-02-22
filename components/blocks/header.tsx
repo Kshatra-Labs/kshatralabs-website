@@ -2,17 +2,19 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail, Github } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
+import { Phone, Mail, Github } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
 const menuItems = [
      { name: 'Home', href: '/' },
-     { name: 'Products', href: '/products' },
      { name: 'About', href: '/about' },
 ]
 
 export function Header() {
+     const pathname = usePathname()
      const [menuState, setMenuState] = React.useState(false)
      const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = React.useState(false)
@@ -45,22 +47,56 @@ export function Header() {
                                    {/* Hamburger */}
                                    <button
                                         onClick={() => setMenuState(!menuState)}
-                                        className="lg:hidden p-2"
+                                        className="lg:hidden p-2 flex flex-col justify-center items-center w-10 h-10 gap-0 relative"
+                                        aria-label={menuState ? 'Close menu' : 'Open menu'}
                                    >
-                                        {!menuState ? <Menu className="text-white w-8 h-8" /> : <X className="text-white w-8 h-8" />}
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out origin-center"
+                                             style={{
+                                                  transform: menuState ? 'translateY(6px) rotate(45deg)' : 'translateY(0) rotate(0)',
+                                             }}
+                                        />
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out my-[4px]"
+                                             style={{
+                                                  opacity: menuState ? 0 : 1,
+                                                  transform: menuState ? 'scaleX(0)' : 'scaleX(1)',
+                                             }}
+                                        />
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out origin-center"
+                                             style={{
+                                                  transform: menuState ? 'translateY(-6px) rotate(-45deg)' : 'translateY(0) rotate(0)',
+                                             }}
+                                        />
                                    </button>
                               </div>
 
                               {/* Desktop Nav */}
                               <div className="hidden lg:block">
                                    <ul className="flex gap-10 text-base md:text-lg font-bold font-mono uppercase tracking-wide text-white">
-                                        {menuItems.map((item) => (
-                                             <li key={item.name}>
-                                                  <Link href={item.href} className="hover:text-defense-accent transition-colors">
-                                                       {item.name}
-                                                  </Link>
-                                             </li>
-                                        ))}
+                                        {menuItems.map((item) => {
+                                             const isActive = pathname === item.href
+                                             return (
+                                                  <li key={item.name} className="relative group/nav">
+                                                       <Link
+                                                            href={item.href}
+                                                            className={`transition-colors duration-300 ${isActive ? 'text-blue-500' : 'hover:text-blue-400 text-white'}`}
+                                                       >
+                                                            {item.name}
+                                                       </Link>
+                                                       {isActive && (
+                                                            <motion.div
+                                                                 layoutId="activeNav"
+                                                                 className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500"
+                                                                 initial={{ opacity: 0 }}
+                                                                 animate={{ opacity: 1 }}
+                                                                 transition={{ duration: 0.3 }}
+                                                            />
+                                                       )}
+                                                  </li>
+                                             )
+                                        })}
                                    </ul>
                               </div>
 
@@ -86,16 +122,33 @@ export function Header() {
                               </div>
 
                               {/* Mobile Menu */}
-                              {menuState && (
-                                   <div className="lg:hidden w-full mt-4 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl p-6 space-y-8">
+                              <div
+                                   className="lg:hidden w-full overflow-hidden transition-all duration-350 ease-in-out"
+                                   style={{
+                                        maxHeight: menuState ? '500px' : '0px',
+                                        opacity: menuState ? 1 : 0,
+                                        transform: menuState ? 'translateY(0)' : 'translateY(-8px)',
+                                        transitionDuration: '350ms',
+                                        pointerEvents: menuState ? 'auto' : 'none',
+                                   }}
+                              >
+                                   <div className="mt-4 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl p-6 space-y-8">
                                         <ul className="space-y-5 text-lg font-bold font-mono text-white">
-                                             {menuItems.map((item) => (
-                                                  <li key={item.name}>
-                                                       <Link onClick={() => setMenuState(false)} href={item.href} className="hover:text-defense-accent transition-colors">
-                                                            {item.name}
-                                                       </Link>
-                                                  </li>
-                                             ))}
+                                             {menuItems.map((item) => {
+                                                  const isActive = pathname === item.href
+                                                  return (
+                                                       <li key={item.name} className="flex items-center gap-3">
+                                                            <Link
+                                                                 onClick={() => setMenuState(false)}
+                                                                 href={item.href}
+                                                                 className={`transition-colors ${isActive ? 'text-blue-500' : 'hover:text-blue-400 text-white'}`}
+                                                            >
+                                                                 {item.name}
+                                                            </Link>
+                                                            {isActive && <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]" />}
+                                                       </li>
+                                                  )
+                                             })}
                                         </ul>
 
                                         <div className="flex flex-col gap-6 text-sm font-bold font-mono tracking-widest text-white pt-6 border-t border-white/10">
@@ -122,7 +175,7 @@ export function Header() {
                                              </Link>
                                         </div>
                                    </div>
-                              )}
+                              </div>
                          </div>
                     </div>
                </nav>

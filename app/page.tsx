@@ -28,6 +28,7 @@ const PhilosophyCard = dynamic(() => import('@/components/blocks/philosophy-card
 // const VideoSection = dynamic(() => import("@/components/blocks/video-section").then(mod => mod.VideoSection))
 // const EnvironmentSection = dynamic(() => import("@/components/blocks/environment-section").then(mod => mod.EnvironmentSection))
 const ThreatAnalysis = dynamic(() => import("@/components/blocks/threat-analysis").then(mod => mod.ThreatAnalysis))
+const InterceptorSection = dynamic(() => import("@/components/blocks/interceptor-section").then(mod => mod.InterceptorSection))
 
 // demoFrames data removed/commented out as unused
 
@@ -58,30 +59,11 @@ export default function Home() {
 
         {/* THREAT ANALYSIS SECTION */}
         {/* Updated for contact info visibility */}
-        <ThreatAnalysis />
+        {/* <ThreatAnalysis /> */}
         {/* <FPSMeter /> */}
 
-        {/* VISION SECTION (Spline) */}
-        <section id="vision" className="py-24 px-6 md:px-12 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto">
-            <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
-            <div className="mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 font-mono">
-                Our Vision
-              </h2>
-              <p className="mt-4 text-neutral-300 max-w-2xl text-lg">
-                Kshatra Labs is building intelligent autonomous systems that operate across air, land, and sea. Our vision is to create general-purpose physical intelligence that extends human capability while keeping people out of harm’s way.
-              </p>
-            </div>
-
-            <Card className="w-full h-[600px] bg-black/50 border-white/10 relative overflow-hidden backdrop-blur-sm">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
-            </Card>
-          </div>
-        </section>
+        {/* INTERCEPTOR SECTION */}
+        <InterceptorSection />
 
         {/* MISSION CRITICAL SOLUTIONS */}
         {/* <Capabilities /> */}
@@ -117,7 +99,7 @@ export default function Home() {
               >
                 REQUEST A BRIEFING →
               </button>
-              <div className="flex flex-col md:flex-row items-center gap-4 text-neutral-500 font-mono text-sm">
+              <div className="flex flex-col md:flex-row items-center gap-4 text-white font-mono text-sm">
                 <a href="tel:+919730458528" className="hover:text-white transition-colors">+91 9730458528</a>
                 <span className="hidden md:inline">•</span>
                 <button

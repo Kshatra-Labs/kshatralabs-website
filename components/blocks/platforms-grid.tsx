@@ -1,175 +1,141 @@
 'use client'
 
-import React, { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
+import React from 'react'
+import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+
+const Spotlight = dynamic(() => import("@/components/ui/spotlight").then(mod => mod.Spotlight))
 
 const advantages = [
-  { number: '01', title: 'AI-Native Interceptors', description: 'Designed from the core with neural networks — the autonomy isn’t added on later, it is the system.' },
-  { number: '02', title: 'Onboard Intelligence', description: 'All detection, decision-making, and action happens on the interceptor itself — no cloud-based latency, no external control.' },
-  { number: '03', title: 'Swarm + Multi-Agent Coordination', description: 'Interceptors can operate together, coordinating against complex threats.' },
-  { number: '04', title: 'Cost-Effective Defense', description: 'Designed to counter expensive threats cheaply and at scale — a low cost per interceptor.' },
-  { number: '05', title: 'Contest-Ready Autonomy', description: 'Built to operate in contested environments resistant to electronic warfare and jamming.' },
+  {
+    title: 'AI-Native Architecture',
+    description: 'Built from the ground up around neural networks. Autonomy is not an add-on — it is the core system design.'
+  },
+  {
+    title: 'Fully Onboard Intelligence',
+    description: 'Detection, targeting, and engagement decisions occur directly on the interceptor. No cloud reliance. No remote control latency.'
+  },
+  {
+    title: 'Swarm & Multi-Agent Coordination',
+    description: 'Interceptors operate collaboratively using distributed intelligence to defeat complex threats.'
+  },
+  {
+    title: 'Scalable Cost Advantage',
+    description: 'Low-cost interceptors designed to counter high-value airborne threats at scale.'
+  },
+  {
+    title: 'Contested Environment Ready',
+    description: 'Resilient autonomy designed for electronic warfare and denied environments.',
+  },
+  {
+    title: 'Rapid Deployment Cycle',
+    description: 'Hardware and software iterated at the speed of software. Evolving continuously against emerging threats.',
+  }
 ]
 
 export function PlatformsGrid() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [activeIndex, setActiveIndex] = React.useState(0)
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % advantages.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  })
-
-  const parallaxY = useTransform(scrollYProgress, [0, 1], [60, -60])
-
   return (
-    <section ref={ref} className="relative py-24 md:py-32 bg-black overflow-hidden">
+    <section id="vision" className="relative py-32 bg-black overflow-hidden font-sans">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
-      {/* Noise */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('/noise1.png')] pointer-events-none" />
-
-      {/* Ambient light */}
+      {/* Background Topo Map / Noise with vertical fades */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise1.png')] pointer-events-none" />
       <div
-        className="absolute left-1/2 top-24 -translate-x-1/2 w-[600px] md:w-[900px] h-[600px] md:h-[900px] blur-3xl pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] bg-[url('/bg/page2bg.png')] bg-cover bg-center pointer-events-none mix-blend-screen"
         style={{
-          background:
-            'radial-gradient(circle, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.08) 25%, transparent 60%)',
-          maskImage:
-            'radial-gradient(circle, black 40%, transparent 70%)',
-          WebkitMaskImage:
-            'radial-gradient(circle, black 40%, transparent 70%)',
+          maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      {/* Top and Bottom Black Gradients to fix blending seams */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-
-          {/* LEFT */}
-          <div>
-
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
-              Why Kshatra Labs ?
-            </h2>
-
-            <p className="mt-4 md:mt-6 text-neutral-400 max-w-xl">
-              Kshatra Labs builds real autonomous defense systems — not just drones.
-              Their focus is on autonomous aerial interceptors engineered to detect, pursue, and defeat hostile aerial threats, with AI running fully onboard.
-            </p>
-
-            <div className="mt-8 md:mt-12 space-y-3 md:space-y-4">
-
-              {advantages.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{
-                    delay: i * 0.08,
-                    duration: 0.3,
-                    ease: "easeOut"
-                  }}
-                  viewport={{ once: true }}
-                  className={`relative rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 border ${activeIndex === i
-                    ? 'bg-blue-500/10 border-blue-500 shadow-[0_0_25px_rgba(59,130,246,0.3)] scale-[1.02]'
-                    : 'bg-white/5 border-white/10 grayscale-[0.5] opacity-60'
-                    } backdrop-blur-xl group hover:opacity-100 hover:grayscale-0 hover:border-blue-500/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)]`}
-                >
-                  <div className="flex gap-4 md:gap-6 items-center">
-                    <span className={`text-3xl md:text-5xl font-black transition-colors duration-300 ${activeIndex === i ? 'text-blue-500' : 'text-white/20'
-                      }`}>
-                      {item.number}
-                    </span>
-
-                    <motion.div
-                      initial={{ opacity: 0.8 }}
-                      animate={{ opacity: activeIndex === i ? 1 : 0.8 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <h3 className={`text-base md:text-xl font-bold transition-colors duration-300 ${activeIndex === i ? 'text-white' : 'text-white/80'
-                        }`}>
-                        {item.title}
-                      </h3>
-                      <p className="text-sm md:text-base text-neutral-400 mt-1 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </motion.div>
-                  </div>
-
-                  {/* Progress bar for active state */}
-                  {activeIndex === i && (
-                    <motion.div
-                      layoutId="active-marker"
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-2xl"
-                    />
-                  )}
-                </motion.div>
-              ))}
-
-            </div>
-          </div>
-
-          {/* RIGHT */}
-          <motion.div
-            style={{ y: parallaxY }}
-            className="relative h-[360px] md:h-[520px] flex items-center justify-center"
-          >
-            <Drone />
-          </motion.div>
-
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ================= DRONE ================= */
-
-function Drone() {
-  return (
-    <motion.div
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 5, repeat: Infinity }}
-      className="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl
-      shadow-[0_30px_80px_-30px_rgba(59,130,246,.6)]"
-    >
-
-      {/* Soft frame */}
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-blue-500/20 opacity-40" />
-      <div className="absolute inset-0 rounded-3xl border border-white/5" />
-
-      <Image
-        src="/hawkimg.png"
-        alt="Drone"
-        fill
-        className="object-contain p-4 md:p-6-2xl"
+      {/* Radial Soft Light */}
+      <div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] blur-[120px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 60%)',
+        }}
       />
 
-      {/* Crosshair */}
-      <motion.div
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 6, repeat: Infinity }}
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-      >
-        <div className="relative w-40 h-40 md:w-72 md:h-72 opacity-80">
-          <Image
-            src="/realcross.png"
-            alt="Target Lock"
-            fill
-            className="object-contain"
-          />
-        </div>
-      </motion.div>
+      <div className="relative max-w-6xl mx-auto px-6 lg:px-8">
 
-    </motion.div>
+        {/* Top Section (Split Layout) */}
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start mb-24">
+
+          {/* LEFT: Mission Statement */}
+          <div className="space-y-6">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400 font-mono text-xs uppercase tracking-widest">
+              Our Mission
+            </div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight"
+            >
+              Engineering Autonomous Defense
+            </motion.h2>
+          </div>
+
+          {/* RIGHT: Supporting Copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-6 pt-2 md:pt-14"
+          >
+            <p className="text-xl md:text-2xl text-blue-100 font-medium leading-relaxed">
+              Autonomous systems designed to operate across air, land, and sea.
+            </p>
+            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed font-light">
+              We build real defense platforms — not just drones — powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm’s way.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Spline Vision Scene */}
+        {/* <div className="mb-24">
+          <Card className="w-full h-[500px] md:h-[600px] bg-black/50 border-white/10 relative overflow-hidden backdrop-blur-sm rounded-[2rem]">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </Card>
+        </div> */}
+
+        {/* 2x3 Grid (The 5th item will span or be highlighted appropriately) */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {advantages.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative p-8 md:p-10 rounded-[2rem] backdrop-blur-2xl transition-all duration-500 overflow-hidden bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.1] hover:bg-white/[0.04]"
+            >
+
+              {/* Internal Hover Glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_70%)] pointer-events-none" />
+
+              <div className="relative z-10 flex flex-col h-full space-y-4">
+                <h3 className="text-xl font-medium tracking-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="text-sm md:text-base leading-relaxed font-light text-neutral-400">
+                  {item.description}
+                </p>
+              </div>
+
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
   )
 }

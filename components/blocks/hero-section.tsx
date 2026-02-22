@@ -118,7 +118,7 @@ function HeroBackgroundVideo() {
                playsInline
                className="absolute inset-0 w-full h-full object-cover opacity-80"
           >
-               <source src="/video/main-video.webm" type="video/webm" />
+               <source src="/video/main-video.mp4" type="video/webm" />
                <source src="/video/main-video.mp4" type="video/mp4" />
           </video>
      )

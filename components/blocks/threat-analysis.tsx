@@ -110,7 +110,7 @@ export function ThreatAnalysis() {
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
                                         <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
-                                             <span className="text-white/30">03 //</span> DEFENSE-FIRST DESIGN
+                                             <span className="text-white/30">03 //</span> SWARM CAPABLE
                                         </h3>
                                         <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
                                              This system is engineered specifically to intercept and neutralize hostile objects.
@@ -232,7 +232,7 @@ function LazyVideo() {
                          playsInline
                          className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen"
                     >
-                         <source src="/video/demo.webm" type="video/webm" />
+                         <source src="/video/demo.mp4" type="video/webm" />
                          <source src="/video/demo.mp4" type="video/mp4" />
                     </video>
                )}

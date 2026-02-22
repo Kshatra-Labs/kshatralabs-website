@@ -62,27 +62,23 @@ export function PlatformGallery() {
 
      const scrollThumbnails = (direction: 'left' | 'right') => {
           if (scrollRef.current) {
-               const { scrollLeft, clientWidth } = scrollRef.current
+               const { scrollLeft } = scrollRef.current
                const scrollTo = direction === 'left' ? scrollLeft - 200 : scrollLeft + 200
                scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
           }
      }
 
-     const currentItem = galleryImages[activeIndex]
+     const currentPlatform = galleryImages[activeIndex]
+
 
      return (
           <section className="relative py-20 px-[6vw] bg-[#050608] overflow-hidden text-white font-sans">
                {/* Header */}
                <div className="mb-10 text-left">
-                    <small className="text-[#2f7cff] tracking-[2px] text-[11px] font-bold uppercase block mb-2">
+                    <small className="text-[#2f7cff] tracking-[2px] text-[11px] font-bold uppercase block mb-2 text-center">
                          PLATFORM GALLERY
                     </small>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-4 leading-tight">
-                         Autonomous Interceptor Platform
-                    </h1>
-                    <p className="text-white/60 text-base md:text-lg max-w-[500px] leading-relaxed">
-                         Same AI core deployed across air, ground, and future unmanned systems.
-                    </p>
+
                </div>
 
                {/* Main Card */}
@@ -103,7 +99,7 @@ export function PlatformGallery() {
                                    {/* Blurred Backdrop for Portrait Support */}
                                    <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
                                         <Image
-                                             src={currentItem.src}
+                                             src={currentPlatform.src}
                                              alt=""
                                              fill
                                              className="object-cover blur-3xl opacity-20 scale-110"
@@ -111,8 +107,8 @@ export function PlatformGallery() {
                                    </div>
 
                                    <Image
-                                        src={currentItem.src}
-                                        alt={currentItem.alt}
+                                        src={currentPlatform.src}
+                                        alt={currentPlatform.alt}
                                         fill
                                         sizes="(max-width: 1280px) 100vw, 1280px"
                                         className="object-contain relative z-10"
@@ -124,7 +120,7 @@ export function PlatformGallery() {
 
                                    {/* Label */}
                                    <div className="absolute top-5 left-5 z-40 px-3 py-1.5 border border-white/20 rounded-[20px] text-[10px] md:text-xs tracking-wider backdrop-blur-md bg-black/30 font-mono">
-                                        {currentItem.label}
+                                        {currentPlatform.label}
                                    </div>
                               </motion.div>
                          </AnimatePresence>
@@ -167,17 +163,17 @@ export function PlatformGallery() {
                                         transition={{ duration: 0.3 }}
                                    >
                                         <h3 className="text-2xl md:text-3xl font-bold text-white">
-                                             {currentItem.title}
+                                             {currentPlatform.title}
                                         </h3>
                                         <p className="text-white/60 mt-2 text-sm md:text-base max-w-2xl leading-relaxed">
-                                             {currentItem.description}
+                                             {currentPlatform.description}
                                         </p>
                                    </motion.div>
                               </AnimatePresence>
 
                               {/* Feature Chips */}
                               <div className="flex flex-wrap gap-3 mt-5">
-                                   {currentItem.features.map((feature, i) => (
+                                   {currentPlatform.features.map((feature, i) => (
                                         <motion.div
                                              key={i}
                                              whileHover={{ scale: 1.05, filter: "brightness(1.2)", borderColor: "rgba(47,124,255,0.8)" }}
