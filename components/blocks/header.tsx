@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Menu, X, Phone, Mail, Github } from 'lucide-react'
+import { Phone, Mail, Github } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
@@ -45,9 +45,28 @@ export function Header() {
                                    {/* Hamburger */}
                                    <button
                                         onClick={() => setMenuState(!menuState)}
-                                        className="lg:hidden p-2"
+                                        className="lg:hidden p-2 flex flex-col justify-center items-center w-10 h-10 gap-0 relative"
+                                        aria-label={menuState ? 'Close menu' : 'Open menu'}
                                    >
-                                        {!menuState ? <Menu className="text-white w-8 h-8" /> : <X className="text-white w-8 h-8" />}
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out origin-center"
+                                             style={{
+                                                  transform: menuState ? 'translateY(6px) rotate(45deg)' : 'translateY(0) rotate(0)',
+                                             }}
+                                        />
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out my-[4px]"
+                                             style={{
+                                                  opacity: menuState ? 0 : 1,
+                                                  transform: menuState ? 'scaleX(0)' : 'scaleX(1)',
+                                             }}
+                                        />
+                                        <span
+                                             className="block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out origin-center"
+                                             style={{
+                                                  transform: menuState ? 'translateY(-6px) rotate(-45deg)' : 'translateY(0) rotate(0)',
+                                             }}
+                                        />
                                    </button>
                               </div>
 
@@ -86,8 +105,17 @@ export function Header() {
                               </div>
 
                               {/* Mobile Menu */}
-                              {menuState && (
-                                   <div className="lg:hidden w-full mt-4 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl p-6 space-y-8">
+                              <div
+                                   className="lg:hidden w-full overflow-hidden transition-all duration-350 ease-in-out"
+                                   style={{
+                                        maxHeight: menuState ? '500px' : '0px',
+                                        opacity: menuState ? 1 : 0,
+                                        transform: menuState ? 'translateY(0)' : 'translateY(-8px)',
+                                        transitionDuration: '350ms',
+                                        pointerEvents: menuState ? 'auto' : 'none',
+                                   }}
+                              >
+                                   <div className="mt-4 rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl p-6 space-y-8">
                                         <ul className="space-y-5 text-lg font-bold font-mono text-white">
                                              {menuItems.map((item) => (
                                                   <li key={item.name}>
@@ -122,7 +150,7 @@ export function Header() {
                                              </Link>
                                         </div>
                                    </div>
-                              )}
+                              </div>
                          </div>
                     </div>
                </nav>
