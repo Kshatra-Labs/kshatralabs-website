@@ -7,6 +7,7 @@ import { motion } from 'motion/react'
 import { TeamGrid, TeamMember } from '@/components/ui/team-grid'
 import { CompanyCard } from '@/components/ui/company-card'
 import FooterSection from '@/components/blocks/footer-section'
+import { Plane, Truck, Waves } from 'lucide-react'
 
 const TEAM_MEMBERS: TeamMember[] = [
      {
@@ -150,20 +151,18 @@ export default function AboutPage() {
 
                                    <div className="flex flex-wrap gap-6 pt-8">
                                         {[
-                                             { label: 'Air', icon: 'M12 2l9 20-9-4-9 4z' },
-                                             { label: 'Land', icon: 'M2 17h20v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-4zM2 8a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8z' },
-                                             { label: 'Sea', icon: 'M12 4L3 16h6v4h6v-4h6L12 4z' }
-                                        ].map((domain) => (
+                                             { label: 'Air', Icon: Plane },
+                                             { label: 'Land', Icon: Truck },
+                                             { label: 'Sea', Icon: Waves },
+                                        ].map(({ label, Icon }) => (
                                              <motion.div
-                                                  key={domain.label}
+                                                  key={label}
                                                   whileHover={{ scale: 1.05 }}
                                                   className="px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl flex items-center gap-4 group/item hover:bg-white/10 transition-colors"
                                              >
-                                                  <svg className="w-5 h-5 text-white group-hover/item:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                                                       <path d={domain.icon} />
-                                                  </svg>
+                                                  <Icon className="w-5 h-5 text-white group-hover/item:text-white transition-colors" />
                                                   <span className="font-mono text-sm font-bold uppercase tracking-widest text-white group-hover/item:text-white">
-                                                       {domain.label}
+                                                       {label}
                                                   </span>
                                              </motion.div>
                                         ))}

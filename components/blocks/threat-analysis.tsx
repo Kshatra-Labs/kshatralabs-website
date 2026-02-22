@@ -232,7 +232,7 @@ function LazyVideo() {
                          playsInline
                          className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen"
                     >
-                         <source src="/video/demo.webm" type="video/webm" />
+                         <source src="/video/demo.mp4" type="video/webm" />
                          <source src="/video/demo.mp4" type="video/mp4" />
                     </video>
                )}
