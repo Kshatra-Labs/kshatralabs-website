@@ -71,7 +71,7 @@ export default function AboutPage() {
                                              transition={{ duration: 0.8, delay: 0.3 }}
                                              className="text-lg text-white font-light max-w-2xl leading-relaxed drop-shadow-md"
                                         >
-                                             Kshatra Labs builds next-generation robotic systems for national security. We design, manufacture, and deploy autonomous platforms across air, land, and sea to protect borders and strengthen sovereignty.
+                                             Autonomous platforms for national security. Air, land, and sea.
                                         </motion.p>
                                    </div>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
                                    Core <span className="text-blue-400 text-glow-blue">Focus</span>
                               </h2>
                               <p className="text-lg text-white leading-relaxed font-light">
-                                   We build intelligent autonomous platforms that extend human capability and enhance mission precision. By merging defense-grade engineering with advanced AI, we develop systems that are reliable, adaptive, and mission-ready.
+                                   Defense-grade AI. Reliable. Adaptive. Mission-ready.
                               </p>
                          </div>
 
@@ -142,10 +142,10 @@ export default function AboutPage() {
 
                                    <div className="grid md:grid-cols-2 gap-12">
                                         <p className="text-xl text-white leading-relaxed font-light">
-                                             We operate with agility and deep technical expertise to create solutions that improve operational efficiency and ensure mission success.
+                                             Precision engineering. Zero tolerance for failure.
                                         </p>
                                         <p className="text-xl text-white leading-relaxed font-light border-l-2 border-white/10 pl-8">
-                                             &quot;The future of conflict is autonomous. We are engineering the physical intelligence layer to amplify human potential.&quot;
+                                             &quot;The future of conflict is autonomous.&quot;
                                         </p>
                                    </div>
 
