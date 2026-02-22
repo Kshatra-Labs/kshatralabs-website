@@ -70,6 +70,8 @@ export function PlatformGallery() {
 
      const currentItem = galleryImages[activeIndex]
 
+     const currentItem = galleryImages[activeIndex]
+
      return (
           <section className="relative py-20 px-[6vw] bg-[#050608] overflow-hidden text-white font-sans">
                {/* Header */}
