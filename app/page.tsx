@@ -99,7 +99,7 @@ export default function Home() {
               >
                 REQUEST A BRIEFING →
               </button>
-              <div className="flex flex-col md:flex-row items-center gap-4 text-neutral-500 font-mono text-sm">
+              <div className="flex flex-col md:flex-row items-center gap-4 text-white font-mono text-sm">
                 <a href="tel:+919730458528" className="hover:text-white transition-colors">+91 9730458528</a>
                 <span className="hidden md:inline">•</span>
                 <button

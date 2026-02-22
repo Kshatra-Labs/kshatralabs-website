@@ -62,7 +62,7 @@ export function PlatformGallery() {
 
      const scrollThumbnails = (direction: 'left' | 'right') => {
           if (scrollRef.current) {
-               const { scrollLeft, clientWidth } = scrollRef.current
+               const { scrollLeft } = scrollRef.current
                const scrollTo = direction === 'left' ? scrollLeft - 200 : scrollLeft + 200
                scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' })
           }
@@ -74,15 +74,10 @@ export function PlatformGallery() {
           <section className="relative py-20 px-[6vw] bg-[#050608] overflow-hidden text-white font-sans">
                {/* Header */}
                <div className="mb-10 text-left">
-                    <small className="text-[#2f7cff] tracking-[2px] text-[11px] font-bold uppercase block mb-2">
+                    <small className="text-[#2f7cff] tracking-[2px] text-[11px] font-bold uppercase block mb-2 text-center">
                          PLATFORM GALLERY
                     </small>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-4 leading-tight">
-                         Autonomous Interceptor Platform
-                    </h1>
-                    <p className="text-white/60 text-base md:text-lg max-w-[500px] leading-relaxed">
-                         Same AI core deployed across air, ground, and future unmanned systems.
-                    </p>
+
                </div>
 
                {/* Main Card */}

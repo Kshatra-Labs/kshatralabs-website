@@ -4,11 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 
-const SplineScene = dynamic(() => import("@/components/blocks/spline-scene").then(mod => mod.SplineScene), {
-  ssr: false,
-  loading: () => <div className="w-full h-full min-h-[500px] flex items-center justify-center text-white/20">Loading 3D Scene...</div>
-})
-const Card = dynamic(() => import("@/components/ui/card").then(mod => mod.Card))
 const Spotlight = dynamic(() => import("@/components/ui/spotlight").then(mod => mod.Spotlight))
 
 const advantages = [
@@ -40,12 +35,22 @@ const advantages = [
 
 export function PlatformsGrid() {
   return (
-    <section id="vision" className="relative py-32 bg-[#050505] overflow-hidden font-sans">
+    <section id="vision" className="relative py-32 bg-black overflow-hidden font-sans">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
-      {/* Background Topo Map / Noise */}
+      {/* Background Topo Map / Noise with vertical fades */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise1.png')] pointer-events-none" />
-      <div className="absolute inset-0 opacity-[0.05] bg-[url('/bg/topography.png')] bg-cover bg-center pointer-events-none mix-blend-screen" />
+      <div
+        className="absolute inset-0 opacity-[0.05] bg-[url('/bg/page2bg.png')] bg-cover bg-center pointer-events-none mix-blend-screen"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+        }}
+      />
+
+      {/* Top and Bottom Black Gradients to fix blending seams */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
       {/* Radial Soft Light */}
       <div

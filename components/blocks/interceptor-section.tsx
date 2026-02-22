@@ -12,18 +12,19 @@ export function InterceptorSection() {
      const videoRef = useRef<HTMLVideoElement>(null);
      const [isMuted, setIsMuted] = useState(true);
 
-     const [currentImage, setCurrentImage] = useState(0)
-     const warningImages = [
-          '/warnings/img.avif',
-          '/warnings/img.jpg',
-          '/warnings/img.png',
-          '/warnings/img.webp'
+     const mediaItems = [
+          { type: 'image', src: '/warnings/img.avif' },
+          { type: 'video', src: '/video/threatdrone.mp4' },
+          { type: 'image', src: '/warnings/img.jpg' },
+          { type: 'image', src: '/warnings/new.jpg' }
      ]
+
+     const [currentIndex, setCurrentIndex] = useState(0)
 
      useEffect(() => {
           const timer = setInterval(() => {
-               setCurrentImage((prev) => (prev + 1) % warningImages.length)
-          }, 3000)
+               setCurrentIndex((prev) => (prev + 1) % mediaItems.length)
+          }, 5000)
           return () => clearInterval(timer)
      }, [])
 
@@ -92,7 +93,7 @@ export function InterceptorSection() {
                               <motion.div
                                    animate={{ y: [0, -10, 0] }}
                                    transition={{ duration: 5, repeat: Infinity }}
-                                   className="relative w-64 h-64 md:w-96 md:h-96 rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl
+                                   className="relative w-full aspect-video md:max-w-xl lg:max-w-2xl rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl
                                    shadow-[0_30px_80px_-30px_rgba(239,68,68,.6)]"
                               >
 
@@ -100,39 +101,60 @@ export function InterceptorSection() {
                                    <div className="absolute inset-0 z-10 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-red-500/20 opacity-40 pointer-events-none" />
                                    <div className="absolute inset-0 z-10 rounded-3xl border border-white/5 pointer-events-none" />
 
-                                   <AnimatePresence>
+                                   <AnimatePresence mode="wait">
                                         <motion.div
-                                             key={currentImage}
+                                             key={currentIndex}
                                              initial={{ opacity: 0 }}
                                              animate={{ opacity: 1 }}
                                              exit={{ opacity: 0 }}
-                                             transition={{ duration: 1 }}
+                                             transition={{ duration: 0.8, ease: "easeInOut" }}
                                              className="absolute inset-0 z-0"
                                         >
-                                             <Image
-                                                  src={warningImages[currentImage]}
-                                                  alt="Threat Warning"
-                                                  fill
-                                                  className="object-cover"
-                                             />
+                                             {mediaItems[currentIndex].type === 'video' ? (
+                                                  <div className="w-full h-full relative">
+                                                       <video
+                                                            autoPlay
+                                                            muted
+                                                            loop
+                                                            playsInline
+                                                            className="w-full h-full object-cover"
+                                                       >
+                                                            <source src={mediaItems[currentIndex].src} type="video/mp4" />
+                                                       </video>
+                                                       <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay pointer-events-none" />
+                                                  </div>
+                                             ) : (
+                                                  <Image
+                                                       src={mediaItems[currentIndex].src}
+                                                       alt="Threat Warning"
+                                                       fill
+                                                       className="object-cover"
+                                                  />
+                                             )}
                                         </motion.div>
                                    </AnimatePresence>
 
-                                   {/* Crosshair */}
-                                   <motion.div
-                                        animate={{ scale: [1, 1.05, 1] }}
-                                        transition={{ duration: 6, repeat: Infinity }}
-                                        className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
-                                   >
-                                        <div className="relative w-40 h-40 md:w-72 md:h-72 opacity-80">
-                                             <Image
-                                                  src="/realcross.png"
-                                                  alt="Target Lock"
-                                                  fill
-                                                  className="object-contain"
-                                             />
-                                        </div>
-                                   </motion.div>
+                                   {/* Crosshair - Only show for images */}
+                                   <AnimatePresence>
+                                        {mediaItems[currentIndex].type === 'image' && (
+                                             <motion.div
+                                                  initial={{ opacity: 0, scale: 0.8 }}
+                                                  animate={{ opacity: 0.8, scale: 1 }}
+                                                  exit={{ opacity: 0, scale: 0.8 }}
+                                                  transition={{ duration: 0.5 }}
+                                                  className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
+                                             >
+                                                  <div className="relative w-[60%] h-[60%]">
+                                                       <Image
+                                                            src="/realcross.png"
+                                                            alt="Target Lock"
+                                                            fill
+                                                            className="object-contain"
+                                                       />
+                                                  </div>
+                                             </motion.div>
+                                        )}
+                                   </AnimatePresence>
                               </motion.div>
                          </div>
                     </div>
@@ -157,7 +179,7 @@ export function InterceptorSection() {
                          <div className="grid md:grid-cols-2 gap-12 items-center">
                               <div className="order-2 md:order-1 space-y-8 relative z-20">
                                    <h3 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">
-                                        MEET THE <span className="text-blue-500">HAWK</span>
+                                        INTRODUCING  <span className="text-blue-500">HAWK</span>
                                    </h3>
                                    <div className="space-y-4">
                                         <div className="text-blue-400 font-mono text-sm uppercase tracking-widest">Autonomous Interceptor UAV</div>
@@ -177,7 +199,7 @@ export function InterceptorSection() {
                                    {/* Performance Metrics */}
                                    <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm md:text-base font-mono text-neutral-300">
                                         <div className="flex items-center gap-3">
-                                             <Zap className="w-5 h-5 text-blue-500" /> 160+ km/h
+                                             <Zap className="w-5 h-5 text-blue-500" /> 300+ km/h
                                         </div>
                                         <div className="flex items-center gap-3">
                                              <Target className="w-5 h-5 text-blue-500" /> Autonomous Target Lock
@@ -260,15 +282,14 @@ export function InterceptorSection() {
                                    Interceptor
                               </div>
                               <h2 className="text-4xl md:text-5xl font-black font-mono uppercase tracking-tighter leading-[1.1]">
-                                   <span className="text-neutral-500">NOT JUST A DRONE.</span><br />
-                                   <span className="text-white">AN INTERCEPTOR.</span>
+
                               </h2>
                               <div className="space-y-4 text-neutral-400">
                                    <p className="text-lg">
-                                        <strong className="text-white">DETECT. CHASE. DEFENSE-FIRST.</strong>
+                                        <strong className="text-white">DETECT. CHASE. NEUTRALIZE.</strong>
                                    </p>
                                    <p className="leading-relaxed">
-                                        Built to detect. Built to chase. Built to stop airborne threats.
+                                        Built to stop airborne threats.
                                    </p>
                               </div>
 
@@ -279,14 +300,12 @@ export function InterceptorSection() {
                                         muted
                                         loop
                                         playsInline
-                                        className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                        className="w-full h-full object-cover transition-all duration-700"
                                    >
                                         <source src="/video/demo.mp4" type="video/webm" />
                                    </video>
                                    <div className="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-blue-500/50 transition-all"></div>
-                                   <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 font-mono text-[10px] text-blue-500 uppercase tracking-tighter">
-                                        Live Interception Feed // Alpha-01
-                                   </div>
+
                               </div>
                          </div>
 
@@ -316,7 +335,7 @@ export function InterceptorSection() {
                               <div className="relative pl-8 border-l border-white/10 group hover:border-blue-500/50 transition-colors">
                                    <div className="absolute top-0 left-[-1px] w-[2px] h-0 bg-blue-500 transition-all duration-300 group-hover:h-full"></div>
                                    <div className="font-mono text-sm text-blue-500 mb-2">03 //</div>
-                                   <h4 className="text-xl font-bold font-mono uppercase text-white mb-2">Defense-First Design</h4>
+                                   <h4 className="text-xl font-bold font-mono uppercase text-white mb-2">SWARM CAPABLE</h4>
                                    <p className="text-sm text-neutral-400 leading-relaxed">
                                         This system is engineered specifically to intercept and neutralize hostile objects.<br />
                                         Made for rapid response. Designed for protection.
@@ -381,7 +400,7 @@ export function InterceptorSection() {
                               <div className="group space-y-6 p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all">
                                    <h4 className="text-2xl font-bold font-mono uppercase">Hawkeye</h4>
                                    <p className="text-neutral-400 text-sm">
-                                        World's fastest optical object tracker. Real-time vision-based tracking for high-speed interception.
+                                        World&apos;s fastest optical object tracker. Real-time vision-based tracking for high-speed interception.
                                    </p>
                               </div>
 
@@ -389,7 +408,7 @@ export function InterceptorSection() {
                               <div className="group space-y-6 p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all">
                                    <h4 className="text-2xl font-bold font-mono uppercase">Apex</h4>
                                    <p className="text-neutral-400 text-sm">
-                                        Autonomous Terminal guidance for the world's fastest interception. Locking on and neutralizing threats at machine speed.
+                                        Autonomous Terminal guidance for the world&apos;s fastest interception. Locking on and neutralizing threats at machine speed.
                                    </p>
                               </div>
 
