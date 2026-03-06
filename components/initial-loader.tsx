@@ -28,6 +28,56 @@ export function InitialLoader() {
           const startTime = Date.now();
           const MAX_WAIT = 10000; // 10s max wait for videos
 
+          // Preload critical assets for the "Drones are becoming A Massive Threat" section
+          const CRITICAL_IMAGES = [
+               '/warnings/img.avif',
+               '/warnings/img.jpg',
+               '/warnings/new.jpg',
+               '/bg/page2bg.png',
+               '/realcross.png'
+          ];
+          const CRITICAL_VIDEOS = [
+               '/video/threatdrone.mp4'
+          ];
+
+          let imagesPreloaded = false;
+          let videosPreloaded = false;
+
+          if (hasLoaded) {
+               imagesPreloaded = true;
+               videosPreloaded = true;
+          } else {
+               let loadedImages = 0;
+               CRITICAL_IMAGES.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = () => {
+                         loadedImages++;
+                         if (loadedImages === CRITICAL_IMAGES.length) imagesPreloaded = true;
+                    };
+                    img.onerror = () => {
+                         loadedImages++; // skip errors
+                         if (loadedImages === CRITICAL_IMAGES.length) imagesPreloaded = true;
+                    };
+               });
+
+               let loadedVideos = 0;
+               CRITICAL_VIDEOS.forEach(src => {
+                    const vid = document.createElement('video');
+                    vid.src = src;
+                    vid.preload = 'auto';
+                    vid.oncanplaythrough = () => {
+                         loadedVideos++;
+                         if (loadedVideos === CRITICAL_VIDEOS.length) videosPreloaded = true;
+                    };
+                    vid.onerror = () => {
+                         loadedVideos++;
+                         if (loadedVideos === CRITICAL_VIDEOS.length) videosPreloaded = true;
+                    };
+                    vid.load();
+               });
+          }
+
           let currentProgress = 0;
           const interval = setInterval(() => {
                const elapsed = Date.now() - startTime;
@@ -36,14 +86,16 @@ export function InitialLoader() {
                const videos = Array.from(document.querySelectorAll('video'));
                const allVideosReady = videos.every(v => v.readyState >= 3); // HAVE_FUTURE_DATA or enough
 
+               const isEverythingReady = document.readyState === 'complete' && allVideosReady && imagesPreloaded && videosPreloaded;
+
                // Progress simulation
-               const targetProgress = (document.readyState === 'complete' && allVideosReady) ? 100 : 98;
+               const targetProgress = isEverythingReady ? 100 : 98;
                const increment = (targetProgress - currentProgress) / 10;
                currentProgress = Math.min(currentProgress + increment, targetProgress);
                setProgress(currentProgress);
 
                if (
-                    (document.readyState === 'complete' && allVideosReady) ||
+                    isEverythingReady ||
                     elapsed > MAX_WAIT ||
                     hasLoaded
                ) {

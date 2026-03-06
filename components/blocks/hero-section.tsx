@@ -33,7 +33,7 @@ export function HeroSection() {
                          <div className="mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 w-full h-full flex flex-col justify-center">
                               <div className="w-full space-y-16">
 
-                                   <div className="relative">
+                                   <div className="relative pt-24 md:pt-0">
                                         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                              Autonomous Systems <br />
                                              <span className="font-normal text-white/55">for National Security</span>
@@ -42,7 +42,7 @@ export function HeroSection() {
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
                                         <div className="space-y-8">
                                              <p className="text-lg text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
-                                                  <strong className="text-white font-medium">Kshatra Labs</strong> builds AI-native autonomous systems that sense, decide, and act in real time across air, land, and sea — starting with aerial interception.
+                                                  <strong className="text-white font-medium"></strong>We build AI-native autonomous systems that sense, decide, and act in real time across air, land, and sea — starting with aerial interception.
                                              </p>
 
                                              <button
