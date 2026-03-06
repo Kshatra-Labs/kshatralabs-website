@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)](LICENSE)
 
-Kshatra Labs represents the pinnacle of autonomous systems engineering. We build intelligent platforms that operate across **Air, Land, Sea, and Space**, bridging the gap between physical intelligence and mission-critical execution.
+We represent the pinnacle of autonomous systems engineering. We build intelligent platforms that operate across **Air, Land, Sea, and Space**, bridging the gap between physical intelligence and mission-critical execution.
 
 ---
 
@@ -50,7 +50,7 @@ The system will be accessible at [http://localhost:3000](http://localhost:3000).
 
 ## 🌐 Vision
 
-Kshatra Labs is building general-purpose physical intelligence. Our systems are designed to adapt, learn, and overcome in the world's most challenging environments, ensuring safety and precision in every mission.
+We are building general-purpose physical intelligence. Our systems are designed to adapt, learn, and overcome in the world's most challenging environments, ensuring safety and precision in every mission.
 
 ---
 
