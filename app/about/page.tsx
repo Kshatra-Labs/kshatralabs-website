@@ -51,7 +51,7 @@ export default function AboutPage() {
                                              className="flex items-center gap-2 mb-4"
                                         >
                                              <div className="w-8 h-[1px] bg-white/20"></div>
-                                             <span className="text-xs font-mono uppercase tracking-[0.4em] text-white/40">At Kshatra Labs</span>
+                                             <span className="text-xs font-mono uppercase tracking-[0.4em] text-white/40">Our Mission</span>
                                         </motion.div>
 
                                         <motion.h1
