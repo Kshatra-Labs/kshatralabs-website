@@ -4,9 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { Phone, Mail, ChevronDown } from 'lucide-react'
-import { useIsMobile } from '@/hooks/use-is-mobile'
-import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
+import { Mail, ChevronDown } from 'lucide-react'
 
 // Define our navigation structure with support for dropdowns
 interface NavItem {
@@ -44,15 +42,8 @@ export function Header() {
      const [menuState, setMenuState] = useState(false)
      const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
      const [scrolled, setScrolled] = useState(false)
-     const [isMailModalOpen, setIsMailModalOpen] = useState(false)
-     const isMobile = useIsMobile()
 
-     const handleMailClick = (e: React.MouseEvent) => {
-          if (!isMobile) {
-               e.preventDefault()
-               setIsMailModalOpen(true)
-          }
-     }
+
 
      // Handle scroll state for dynamic header styling
      useEffect(() => {
@@ -218,7 +209,7 @@ export function Header() {
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 
                                         <ul className="space-y-2 text-lg font-bold font-mono text-white relative z-10 w-full">
-                                             {menuItems.map((item, index) => {
+                                             {menuItems.map((item) => {
                                                   const isActive = pathname === item.href || (item.subItems && item.subItems.some(sub => pathname === sub.href))
                                                   const hasDropdown = !!item.subItems
                                                   const isDropdownActive = activeDropdown === item.name || (activeDropdown === null && isActive && hasDropdown)
@@ -289,11 +280,7 @@ export function Header() {
                          </div>
                     </div>
                </nav>
-               <MailChoiceModal
-                    isOpen={isMailModalOpen}
-                    onClose={() => setIsMailModalOpen(false)}
-                    email="contact@kshatralabs.in"
-               />
           </header>
+
      )
 }

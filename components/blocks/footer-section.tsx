@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
 import {
-     Github,
      Mail,
      MapPin,
      Phone,
@@ -75,16 +74,13 @@ const contactInfo = [
 
 export default function Footer4Col() {
      const [isMailModalOpen, setIsMailModalOpen] = useState(false)
+
      const isMobile = useIsMobile()
 
      const handleLinkClick = (e: React.MouseEvent, href: string) => {
-          if (href === 'mailto:contact@kshatralabs.in') {
+          if (href === 'mailto:contact@kshatralabs.in' && !isMobile) {
                e.preventDefault()
-               if (isMobile) {
-                    window.location.href = href
-               } else {
-                    setIsMailModalOpen(true)
-               }
+               setIsMailModalOpen(true)
           }
      }
 

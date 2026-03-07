@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Cpu, Eye, Plane, Network, ChevronDown, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
@@ -106,7 +106,7 @@ function RoleCard({
                     <div className="space-y-2">
                          <div className="flex items-center gap-3">
                               <span className="font-mono text-[10px] uppercase tracking-widest text-defense-accent">
-                                   {String(id).padStart(2, '0')} //
+                                   {String(id).padStart(2, '0')} {" //"}
                               </span>
                          </div>
                          <h3 className="text-xl md:text-2xl font-bold font-mono uppercase group-hover:text-white transition-colors">

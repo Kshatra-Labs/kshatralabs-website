@@ -82,7 +82,7 @@ export default function CompanyPage() {
                                    </h2>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             At Kshatra Labs, we build real defense platforms, not just drones powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm's way.
+                                             At Kshatra Labs, we build real defense platforms, not just drones powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm&apos;s way.
                                         </p>
                                         <p>
                                              By combining edge AI, autonomous navigation, computer vision, and high-speed UAV platforms, we are building scalable and affordable counter-drone technologies designed for modern security challenges.

@@ -3,12 +3,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Shield, Target, Zap, Waves, WifiOff, Network, Volume2, VolumeX } from 'lucide-react'
-import { useIsMobile } from '@/hooks/use-is-mobile'
+import { ArrowRight, Shield, Target, Zap, WifiOff, Network, Volume2, VolumeX } from 'lucide-react'
 
 export function InterceptorSection() {
-     const isMobile = useIsMobile()
-
      const videoRef = useRef<HTMLVideoElement>(null);
      const [isMuted, setIsMuted] = useState(true);
 
@@ -55,9 +52,10 @@ export function InterceptorSection() {
                {/* PRODUCT INTRO - HAWK */}
                <div className="border-y border-white/5 py-24 px-6 md:px-12 relative overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                         <img
+                         <Image
                               src="/styles/hawkmeet.jpg"
                               alt="Background"
+                              fill
                               className="w-full h-full object-cover opacity-60 mix-blend-luminosity transition-opacity duration-1000"
                          />
                          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80"></div>
