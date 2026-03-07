@@ -85,12 +85,10 @@ function RoleCard({
      id,
      title,
      responsibilities,
-     onApply,
 }: {
      id: string
      title: string
      responsibilities: string[]
-     onApply: (e: React.MouseEvent) => void
 }) {
      const [isOpen, setIsOpen] = useState(false)
 
@@ -161,12 +159,14 @@ function RoleCard({
                                         </ul>
                                    </div>
 
-                                   <button
-                                        onClick={onApply}
+                                   <a
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest cursor-pointer"
                                    >
                                         Apply Now <ArrowRight className="w-4 h-4" />
-                                   </button>
+                                   </a>
                               </div>
                          </motion.div>
                     )}
@@ -313,7 +313,6 @@ export default function CareersPage() {
                                         id={id}
                                         title={job.title}
                                         responsibilities={job.responsibilities}
-                                        onApply={handleApplyClick}
                                    />
                               ))}
                          </div>
