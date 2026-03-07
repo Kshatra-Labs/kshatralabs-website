@@ -133,10 +133,13 @@ export default function CareersPage() {
 
                          <div className="space-y-4 relative z-10">
                               {[
-                                   { title: "Robotics Engineer", desc: "Develop autonomous navigation and control systems for high-speed UAV platforms." },
-                                   { title: "Computer Vision Engineer", desc: "Build real-time vision systems for tracking and intercepting fast-moving aerial targets." },
-                                   { title: "Embedded Systems Engineer", desc: "Design low-latency compute systems for onboard AI inference and sensor fusion." },
-                                   { title: "Autonomy Engineer", desc: "Develop decision-making systems enabling fully autonomous interception." }
+                                   { title: "Robotics Engineer", desc: "Design, build, and test robotic systems integrating mechanics, electronics, and control software. Hands on ROS 2." },
+                                   { title: "AI Engineer", desc: "Develop, deploy, and optimize AI/ML models for real-world applications, CV heavy." },
+                                   { title: "Mechanical Engineer", desc: "Design, analyse, and validate mechanical Designs and systems, hands on CAD focus on UAVs aerodynamics." },
+                                   { title: "Drone Engineer", desc: "Build, assemble, and test UAV platforms including airframe, propulsion, avionics, and payloads." },
+                                   { title: "RF Engineer", desc: "Design, test, and optimize RF communication systems and antennas." },
+                                   { title: "Electronics Engineer", desc: "Design and test electronic circuits, PCBs, and embedded systems." },
+                                   { title: "AI R&D Engineer", desc: "Research, prototype, and experiment with advanced AI algorithms and architectures." }
                               ].map((role) => (
                                    <div key={role.title} className="flex flex-col md:flex-row md:items-center justify-between p-6 md:p-8 border border-white/10 bg-black/40 backdrop-blur-sm hover:border-blue-500/40 transition-colors group">
                                         <div className="space-y-2 mb-6 md:mb-0">
@@ -153,6 +156,19 @@ export default function CareersPage() {
                                         </button>
                                    </div>
                               ))}
+                         </div>
+
+                         {/* Skill Set Requirements */}
+                         <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
+                              <h3 className="text-xl font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
+                              <p className="text-neutral-300 leading-relaxed font-light mb-4">
+                                   We are looking for people with an <strong className="text-white">intermediate skill-set</strong>. Having some projects or experience under the following will help:
+                              </p>
+                              <div className="flex flex-wrap gap-2 font-mono text-xs text-neutral-400">
+                                   {['Python', 'C++', 'ROS/ROS2', 'Gazebo', 'SolidWorks/CATIA', 'FEA (ANSYS)', 'GD&T', 'PX4/ArduPilot', 'Flight Controllers', 'Sensors & Actuators', 'Microcontrollers', 'PCBs & Schematics', 'RF Simulation Tools', 'SDR', 'Antennas', 'Link Budgets', 'Debugging', 'Control Systems', 'Data Pipelines', 'PyTorch/TensorFlow', 'APIs', 'Model Deployment', 'Benchmarking', 'Prototyping'].map(skill => (
+                                        <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full">{skill}</span>
+                                   ))}
+                              </div>
                          </div>
                     </section>
 

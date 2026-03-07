@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Rajdhani, Inter } from "next/font/google"; // Removed Geist as per new design
 import { SmoothScroll } from "@/components/smooth-scroll";
-import CustomCursor from "@/components/custom-cursor";
 import { InitialLoader } from "@/components/initial-loader";
 import "./globals.css";
 
@@ -39,7 +38,6 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${rajdhani.variable} ${inter.variable} antialiased font-sans bg-black text-white`}
       >
-        <CustomCursor />
         <InitialLoader />
         <SmoothScroll>
           {children}

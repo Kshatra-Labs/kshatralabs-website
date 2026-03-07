@@ -49,7 +49,6 @@ const data = {
 
 const socialLinks = [
      { icon: Twitter, label: 'Twitter', href: data.twitterLink },
-     { icon: Github, label: 'GitHub', href: data.githubLink },
      { icon: Mail, label: 'Email', href: `mailto:${data.contact.email}` },
 ];
 

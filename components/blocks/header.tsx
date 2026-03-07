@@ -4,13 +4,15 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { Phone, Mail, Github } from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
 
 const menuItems = [
      { name: 'Home', href: '/' },
      { name: 'About', href: '/about' },
+     { name: 'Careers', href: '/careers' },
+     
 ]
 
 export function Header() {
@@ -26,13 +28,13 @@ export function Header() {
                     className="fixed z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-2xl"
                >
                     <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-12">
-                         <div className="relative flex flex-wrap items-center justify-between gap-4 py-4 md:py-6">
+                         <div className="relative flex flex-wrap items-center justify-between gap-4 py-3 md:py-4">
 
                               {/* Logo */}
                               <div className="flex w-full items-center justify-between lg:w-auto">
                                    <Link href="/" className="group">
                                         <div
-                                             className="h-10 md:h-12 w-[240px] md:w-[280px] bg-white group-hover:bg-defense-accent transition-colors"
+                                             className="h-8 md:h-10 w-[200px] md:w-[240px] bg-white group-hover:bg-defense-accent transition-colors"
                                              style={{
                                                   maskImage: 'url(/logo.svg)',
                                                   maskSize: 'contain',
@@ -74,7 +76,7 @@ export function Header() {
 
                               {/* Desktop Nav */}
                               <div className="hidden lg:block">
-                                   <ul className="flex gap-10 text-base md:text-lg font-bold font-mono uppercase tracking-wide text-white">
+                                   <ul className="flex gap-8 text-sm md:text-base font-bold font-mono uppercase tracking-wide text-white">
                                         {menuItems.map((item) => {
                                              const isActive = pathname === item.href
                                              return (
@@ -101,7 +103,7 @@ export function Header() {
                               </div>
 
                               {/* Desktop Contact */}
-                              <div className="hidden lg:flex items-center gap-6 text-sm font-bold font-mono tracking-widest text-white">
+                              <div className="hidden lg:flex items-center gap-6 text-xs md:text-sm font-bold font-mono tracking-widest text-white">
                                    <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
                                         <Phone className="w-4 h-4" />
                                         +91 9730458528
@@ -115,10 +117,7 @@ export function Header() {
                                         contact@kshatralabs.in
                                    </button>
 
-                                   <Link href="https://github.com/Kshatra-Labs" target="_blank" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
-                                        <Github className="w-4 h-4" />
-                                        GitHub
-                                   </Link>
+
                               </div>
 
                               {/* Mobile Menu */}
@@ -169,10 +168,7 @@ export function Header() {
                                                   contact@kshatralabs.in
                                              </button>
 
-                                             <Link href="https://github.com/Kshatra-Labs" target="_blank" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
-                                                  <Github className="w-4 h-4" />
-                                                  GitHub
-                                             </Link>
+
                                         </div>
                                    </div>
                               </div>
