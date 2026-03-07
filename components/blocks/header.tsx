@@ -28,7 +28,7 @@ const menuItems: NavItem[] = [
           name: 'Products',
           href: '/products',
           subItems: [
-               { name: 'HAWK', href: '/products', desc: 'Next-gen autonomous interceptor' },
+               { name: 'HAWK', href: '/products/hawk', desc: 'Next-gen autonomous interceptor' },
                { name: 'HAWKEYE', href: '/products', desc: 'High-precision optical tracking' },
                { name: 'APEX', href: '/products', desc: 'Advanced tactical autonomy' },
                { name: 'SWARM', href: '/products', desc: 'Coordinated multi-agent defense' }
