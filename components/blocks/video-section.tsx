@@ -25,7 +25,7 @@ export function VideoSection() {
                     <video
                          ref={videoRef}
                          className="w-full h-full object-cover"
-                         src="/video/main-video.mp4"
+                         src="/video/intercept.mp4"
                          muted
                          loop
                          playsInline

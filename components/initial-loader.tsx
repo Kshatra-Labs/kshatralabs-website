@@ -28,16 +28,15 @@ export function InitialLoader() {
           const startTime = Date.now();
           const MAX_WAIT = 10000; // 10s max wait for videos
 
-          // Preload critical assets for the "Drones are becoming A Massive Threat" section
+          // Preload critical assets for the initial sections
           const CRITICAL_IMAGES = [
-               '/warnings/img.avif',
-               '/warnings/img.jpg',
-               '/warnings/new.jpg',
-               '/bg/page2bg.png',
+               '/styles/hawkmeet.jpg',
+               '/drone.png',
                '/realcross.png'
           ];
           const CRITICAL_VIDEOS = [
-               '/video/threatdrone.mp4'
+               '/video/demo.mp4',
+               '/video/intercept.webm'
           ];
 
           let imagesPreloaded = false;

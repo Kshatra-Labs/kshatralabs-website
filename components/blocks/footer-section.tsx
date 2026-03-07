@@ -3,13 +3,13 @@
 import React, { useState } from 'react';
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal';
 import {
-     Github,
      Mail,
      MapPin,
      Phone,
      Twitter,
 } from 'lucide-react';
 import Link from 'next/link';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 
 const data = {
      facebookLink: '#',
@@ -49,7 +49,6 @@ const data = {
 
 const socialLinks = [
      { icon: Twitter, label: 'Twitter', href: data.twitterLink },
-     { icon: Github, label: 'GitHub', href: data.githubLink },
      { icon: Mail, label: 'Email', href: `mailto:${data.contact.email}` },
 ];
 
@@ -76,8 +75,10 @@ const contactInfo = [
 export default function Footer4Col() {
      const [isMailModalOpen, setIsMailModalOpen] = useState(false)
 
+     const isMobile = useIsMobile()
+
      const handleLinkClick = (e: React.MouseEvent, href: string) => {
-          if (href === 'mailto:contact@kshatralabs.in') {
+          if (href === 'mailto:contact@kshatralabs.in' && !isMobile) {
                e.preventDefault()
                setIsMailModalOpen(true)
           }
@@ -201,7 +202,7 @@ export default function Footer4Col() {
 
                     <div className="mt-12 border-t border-white/10 pt-6">
                          <div className="text-center sm:flex sm:justify-between sm:text-left text-white/40 font-mono text-xs">
-                              <p>
+                              <p className="hidden">
                                    <span className="block sm:inline">All Systems Nominal.</span>
                               </p>
 

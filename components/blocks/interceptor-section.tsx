@@ -1,32 +1,15 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Shield, Target, Zap, Waves, WifiOff, Network, Volume2, VolumeX } from 'lucide-react'
-import { useIsMobile } from '@/hooks/use-is-mobile'
+import { ArrowRight, Shield, Target, Zap, WifiOff, Network, Volume2, VolumeX } from 'lucide-react'
 
 export function InterceptorSection() {
-     const isMobile = useIsMobile()
-
      const videoRef = useRef<HTMLVideoElement>(null);
      const [isMuted, setIsMuted] = useState(true);
 
-     const mediaItems = [
-          { type: 'image', src: '/warnings/img.avif' },
-          { type: 'video', src: '/video/threatdrone.mp4' },
-          { type: 'image', src: '/warnings/img.jpg' },
-          { type: 'image', src: '/warnings/new.jpg' }
-     ]
 
-     const [currentIndex, setCurrentIndex] = useState(0)
-
-     useEffect(() => {
-          const timer = setInterval(() => {
-               setCurrentIndex((prev) => (prev + 1) % mediaItems.length)
-          }, 5000)
-          return () => clearInterval(timer)
-     }, [])
 
      useEffect(() => {
           const video = videoRef.current;
@@ -64,108 +47,15 @@ export function InterceptorSection() {
 
      return (
           <section className="relative bg-black text-white font-sans overflow-hidden">
-               {/* PROBLEM INTRO SECTION */}
-               <div className="relative min-h-[80vh] flex items-center pt-24 pb-12 px-6 md:px-12">
-                    <div className="absolute inset-0 z-0">
-                         <img
-                              src="/bg/page2bg.png"
-                              alt="Background"
-                              className="w-full h-full object-cover opacity-40 mix-blend-luminosity transition-opacity duration-1000"
-                         />
-                         {/* Overlays to match Threat Analysis style */}
-                         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)]"></div>
-                         <div className="absolute inset-0 z-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-                         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-                    </div>
 
-
-                    <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                         <div className="space-y-8 border-l-4 border-red-600 pl-8 bg-black/20 backdrop-blur-sm p-6">
-                              <h2 className="text-4xl md:text-6xl font-black font-mono tracking-tighter uppercase leading-none">
-                                   Drones are becoming <br />
-                                   <span className="text-red-500 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">A Massive Threat</span>
-                              </h2>
-                              <p className="text-xl text-neutral-400 max-w-xl leading-relaxed">
-                                   Defenses are failing. Current drone defense systems lack reliable, passive hardkill capabilities. The gap between detection and neutralization is widening, leaving critical infrastructure and personnel exposed.
-                              </p>
-                         </div>
-                         <div className="flex items-center justify-center">
-                              <motion.div
-                                   animate={{ y: [0, -10, 0] }}
-                                   transition={{ duration: 5, repeat: Infinity }}
-                                   className="relative w-full aspect-video md:max-w-xl lg:max-w-2xl rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl
-                                   shadow-[0_30px_80px_-30px_rgba(239,68,68,.6)]"
-                              >
-
-                                   {/* Soft frame */}
-                                   <div className="absolute inset-0 z-10 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-red-500/20 opacity-40 pointer-events-none" />
-                                   <div className="absolute inset-0 z-10 rounded-3xl border border-white/5 pointer-events-none" />
-
-                                   <AnimatePresence mode="wait">
-                                        <motion.div
-                                             key={currentIndex}
-                                             initial={{ opacity: 0 }}
-                                             animate={{ opacity: 1 }}
-                                             exit={{ opacity: 0 }}
-                                             transition={{ duration: 0.8, ease: "easeInOut" }}
-                                             className="absolute inset-0 z-0"
-                                        >
-                                             {mediaItems[currentIndex].type === 'video' ? (
-                                                  <div className="w-full h-full relative">
-                                                       <video
-                                                            autoPlay
-                                                            muted
-                                                            loop
-                                                            playsInline
-                                                            className="w-full h-full object-cover"
-                                                       >
-                                                            <source src={mediaItems[currentIndex].src} type="video/mp4" />
-                                                       </video>
-                                                       <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay pointer-events-none" />
-                                                  </div>
-                                             ) : (
-                                                  <Image
-                                                       src={mediaItems[currentIndex].src}
-                                                       alt="Threat Warning"
-                                                       fill
-                                                       className="object-cover"
-                                                  />
-                                             )}
-                                        </motion.div>
-                                   </AnimatePresence>
-
-                                   {/* Crosshair - Only show for images */}
-                                   <AnimatePresence>
-                                        {mediaItems[currentIndex].type === 'image' && (
-                                             <motion.div
-                                                  initial={{ opacity: 0, scale: 0.8 }}
-                                                  animate={{ opacity: 0.8, scale: 1 }}
-                                                  exit={{ opacity: 0, scale: 0.8 }}
-                                                  transition={{ duration: 0.5 }}
-                                                  className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none"
-                                             >
-                                                  <div className="relative w-[60%] h-[60%]">
-                                                       <Image
-                                                            src="/realcross.png"
-                                                            alt="Target Lock"
-                                                            fill
-                                                            className="object-contain"
-                                                       />
-                                                  </div>
-                                             </motion.div>
-                                        )}
-                                   </AnimatePresence>
-                              </motion.div>
-                         </div>
-                    </div>
-               </div>
 
                {/* PRODUCT INTRO - HAWK */}
                <div className="border-y border-white/5 py-24 px-6 md:px-12 relative overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                         <img
+                         <Image
                               src="/styles/hawkmeet.jpg"
                               alt="Background"
+                              fill
                               className="w-full h-full object-cover opacity-60 mix-blend-luminosity transition-opacity duration-1000"
                          />
                          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-80"></div>
@@ -181,46 +71,27 @@ export function InterceptorSection() {
                                    <h3 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">
                                         INTRODUCING  <span className="text-blue-500">HAWK</span>
                                    </h3>
-                                   <div className="space-y-4">
+                                   <div className="space-y-6">
                                         <div className="text-blue-400 font-mono text-sm uppercase tracking-widest">Autonomous Interceptor UAV</div>
-                                        <p className="text-lg text-neutral-300 leading-relaxed font-light">
-                                             High-speed autonomous interceptor designed to neutralize hostile drones and swarms.
-                                        </p>
-                                        <p className="text-lg text-neutral-300 leading-relaxed font-light">
-                                             Powered by fully onboard Edge AI, Hawk operates in GPS-denied environments with real-time target acquisition.
-                                        </p>
-                                        <div className="pt-2">
-                                             <p className="inline-block text-sm font-mono text-blue-400/90 border border-blue-500/20 bg-blue-500/10 px-3 py-1.5 rounded-sm">
-                                                  Drone cost &lt; $1,000 while traditional intercept systems cost 100x more.
+
+                                        <div className="space-y-4 text-lg text-neutral-300 font-light leading-relaxed">
+                                             <p>
+                                                  <span className="text-white font-medium">Drones are rapidly becoming a major security threat</span> to critical infrastructure, military assets, and civilian environments. Existing counter-drone systems are expensive, slow to deploy, and struggle to neutralize fast-moving or swarm-based threats.
                                              </p>
-                                        </div>
-                                   </div>
 
-                                   {/* Performance Metrics */}
-                                   <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm md:text-base font-mono text-neutral-300">
-                                        <div className="flex items-center gap-3">
-                                             <Zap className="w-5 h-5 text-blue-500" /> 300+ km/h
-                                        </div>
-                                        <div className="flex items-center gap-3">
-                                             <Target className="w-5 h-5 text-blue-500" /> Autonomous Target Lock
-                                        </div>
-                                        <div className="flex items-center gap-3">
-                                             <WifiOff className="w-5 h-5 text-blue-500" /> Zero Cloud Dependency
-                                        </div>
-                                        <div className="flex items-center gap-3">
-                                             <Network className="w-5 h-5 text-blue-500" /> Swarm Capable
-                                        </div>
-                                   </div>
+                                             <div className="py-2 border-l-2 border-blue-500/50 pl-4 bg-blue-500/5">
+                                                  <p className="text-xl text-white font-medium uppercase tracking-wide">
+                                                       Hawk is built to close the gap between detection and neutralization.
+                                                  </p>
+                                             </div>
 
-                                   {/* Upgraded Feature Cards */}
-                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                                        <div className="p-5 border border-white/10 bg-white/5 space-y-3 rounded-lg">
-                                             <div className="text-blue-500 font-mono text-xs uppercase tracking-widest font-bold">GPS-Denied Navigation</div>
-                                             <div className="text-sm text-neutral-400 font-light leading-relaxed">Vision + inertial fusion enables operation without satellite signals.</div>
-                                        </div>
-                                        <div className="p-5 border border-white/10 bg-white/5 space-y-3 rounded-lg">
-                                             <div className="text-blue-500 font-mono text-xs uppercase tracking-widest font-bold">Fully Onboard Edge AI</div>
-                                             <div className="text-sm text-neutral-400 font-light leading-relaxed">Real-time detection, tracking, and interception.</div>
+                                             <p>
+                                                  Developed by <span className="text-blue-400 font-medium">Kshatra Labs</span>, Hawk is a high-speed autonomous interceptor UAV designed to <span className="text-white">detect, pursue, and neutralize</span> hostile drones in real time, even in contested or GPS-denied environments.
+                                             </p>
+
+                                             <p>
+                                                  Powered by fully onboard <span className="text-blue-400 font-mono text-sm">EDGE AI</span>, Hawk operates independently without cloud connectivity, enabling ultra-fast response and reliable operation in electronic warfare conditions.
+                                             </p>
                                         </div>
                                    </div>
                               </div>
@@ -257,10 +128,8 @@ export function InterceptorSection() {
                                         {/* Fixed Technical Overlay */}
                                         <div className="absolute top-6 left-6 space-y-1 pointer-events-none z-10 drop-shadow-md">
                                              <div className="font-mono text-lg font-bold text-white uppercase tracking-wider">
-
                                              </div>
                                              <div className="font-mono text-[10px] text-blue-400 uppercase tracking-widest">
-
                                              </div>
                                         </div>
                                         <div className="absolute bottom-6 right-6 font-bold text-[9px] text-white/40 uppercase tracking-widest pointer-events-none z-10">
@@ -268,6 +137,80 @@ export function InterceptorSection() {
                                         </div>
                                    </motion.div>
                               </div>
+                         </div>
+                    </div>
+               </div>
+
+               {/* Features Section - Moved below the Introducing Hawk Grid */}
+               <div className="py-24 px-6 md:px-12 relative overflow-hidden bg-black/50 border-b border-white/5">
+                    <div className="max-w-7xl mx-auto space-y-12 relative z-10 w-full">
+                         <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto">
+                              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-blue-500/30"></div>
+                              <div className="text-blue-500 font-mono text-xl uppercase tracking-widest font-bold">Features</div>
+                              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-blue-500/30"></div>
+                         </div>
+
+                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <Zap className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        High-Speed Interception
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">Engage hostile drones at speeds exceeding 300 km/h, allowing rapid response before threats reach protected zones.</div>
+                              </div>
+
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <Target className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        Autonomous Target Lock
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">Advanced onboard AI performs real-time detection, tracking, and interception with minimal human input.</div>
+                              </div>
+
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <Shield className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        Fully Onboard Edge AI
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">All perception and decision-making runs directly on the UAV, ensuring low latency and zero cloud dependency.</div>
+                              </div>
+
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <WifiOff className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        GPS-Denied Navigation
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">Vision-based navigation fused with inertial sensing enables reliable operation even when GPS signals are jammed or unavailable.</div>
+                              </div>
+
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <Network className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        Swarm Defense Ready
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">Multiple Hawk units can coordinate to intercept multiple targets and drone swarms simultaneously.</div>
+                              </div>
+
+                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
+                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
+                                        <ArrowRight className="w-6 h-6 text-blue-400" />
+                                   </div>
+                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
+                                        Low-Cost Scalable Defense
+                                   </div>
+                                   <div className="text-neutral-400 font-light leading-relaxed">Traditional interceptor systems cost 100× more. Hawk enables scalable deployment for wide-area protection.</div>
+                              </div>
+
                          </div>
                     </div>
                </div>
@@ -366,7 +309,7 @@ export function InterceptorSection() {
                                         className="w-full h-full object-cover"
                                         preload="auto"
                                    >
-                                        <source src="/video/intercept.mp4" type="video/mp4" />
+                                        <source src="/video/main-video.webm" type="video/webm" />
                                    </video>
                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
 
@@ -434,7 +377,7 @@ export function InterceptorSection() {
                          </p>
                     </div>
                </div>
-          </section>
+          </section >
 
      )
 }

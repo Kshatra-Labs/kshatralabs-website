@@ -33,16 +33,17 @@ export function HeroSection() {
                          <div className="mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 w-full h-full flex flex-col justify-center">
                               <div className="w-full space-y-16">
 
-                                   <div className="relative pt-24 md:pt-0">
-                                        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                                             Autonomous Systems <br />
-                                             <span className="font-normal text-white/55">for National Security</span>
+                                   <div className="relative pt-32 md:pt-0">
+                                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                             Modern warfare demands systems that are not just automated — <br />
+                                             <span className="font-normal text-white/55">but truly autonomous</span>
                                         </h1>
                                    </div>
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
                                         <div className="space-y-8">
-                                             <p className="text-lg text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
-                                                  <strong className="text-white font-medium"></strong>We build AI-native autonomous systems that sense, decide, and act in real time across air, land, and sea — starting with aerial interception.
+                                             <p className="text-sm text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
+                                                  <strong className="text-white font-medium">Our Mission</strong><br />
+                                                  At Kshatra Labs, We build real defense platforms, not just drones powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm’s way.
                                              </p>
 
                                              <button
@@ -118,8 +119,8 @@ function HeroBackgroundVideo() {
                playsInline
                className="absolute inset-0 w-full h-full object-cover opacity-80"
           >
-               <source src="/video/main-video.mp4" type="video/webm" />
-               <source src="/video/main-video.mp4" type="video/mp4" />
+               
+               <source src="/video/intercept.mp4" type="video/mp4" />
           </video>
      )
 }

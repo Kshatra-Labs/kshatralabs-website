@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react'
+import { ArrowRight, Mail, MapPin } from 'lucide-react'
 
 interface MobileMenuProps {
      isOpen: boolean
@@ -91,12 +91,7 @@ export function MobileMenu({ isOpen, onClose, menuItems, onEmailClick }: MobileM
                               {/* Contact Info */}
                               <motion.div variants={contactVariants} className="space-y-6 border-t border-white/10 pt-8 mt-auto">
                                    <div className="grid gap-4">
-                                        <a href="tel:+919730458528" className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group p-3 rounded-lg hover:bg-white/5">
-                                             <div className="p-3 bg-white/5 rounded-full group-hover:bg-defense-accent/20 transition-colors">
-                                                  <Phone className="w-5 h-5 text-defense-accent" />
-                                             </div>
-                                             <span className="font-mono text-lg">+91 9730458528</span>
-                                        </a>
+
 
                                         <button onClick={(e) => { onClose(); onEmailClick?.(e); }} className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group p-3 rounded-lg hover:bg-white/5 w-full text-left">
                                              <div className="p-3 bg-white/5 rounded-full group-hover:bg-defense-accent/20 transition-colors">
