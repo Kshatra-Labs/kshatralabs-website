@@ -54,6 +54,27 @@ export function Header() {
           return () => window.removeEventListener('scroll', handleScroll)
      }, [])
 
+     // Prevent body scroll when mobile menu is open
+     useEffect(() => {
+          if (menuState) {
+               document.body.style.overflow = 'hidden'
+          } else {
+               document.body.style.overflow = ''
+          }
+          
+          const handleResize = () => {
+               if (window.innerWidth >= 1024 && menuState) {
+                    setMenuState(false)
+               }
+          }
+          window.addEventListener('resize', handleResize)
+          
+          return () => {
+               document.body.style.overflow = ''
+               window.removeEventListener('resize', handleResize)
+          }
+     }, [menuState])
+
      return (
           <header>
                <nav
@@ -218,108 +239,107 @@ export function Header() {
                                    </Link>
                               </div>
 
-                              {/* Mobile Menu via AnimatePresence */}
-                              <AnimatePresence>
-                                   {menuState && (
-                                        <motion.div
-                                             initial={{ opacity: 0, height: 0 }}
-                                             animate={{ opacity: 1, height: 'auto' }}
-                                             exit={{ opacity: 0, height: 0 }}
-                                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                                             className="lg:hidden w-full overflow-hidden absolute top-full left-0 mt-2 px-4 z-50"
-                                        >
-                                             <div className="rounded-xl border border-white/10 bg-black/95 backdrop-blur-3xl shadow-2xl p-6 space-y-8 relative overflow-hidden">
-                                                  <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
-                                                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-
-                                                  <ul className="space-y-1 text-base font-bold font-mono text-white relative z-10 w-full">
-                                                       {menuItems.map((item, idx) => {
-                                                            const isActive = pathname === item.href || (item.subItems && item.subItems.some(sub => pathname === sub.href))
-                                                            const hasDropdown = !!item.subItems
-                                                            const isDropdownActive = activeDropdown === item.name
-
-                                                            return (
-                                                                 <motion.li
-                                                                      key={item.name}
-                                                                      className="flex flex-col w-full"
-                                                                      initial={{ opacity: 0, x: -10 }}
-                                                                      animate={{ opacity: 1, x: 0 }}
-                                                                      transition={{ delay: idx * 0.05 + 0.1 }}
-                                                                 >
-                                                                      <div className={`flex items-center justify-between w-full py-4 px-2 rounded-lg transition-colors ${isActive ? 'bg-blue-500/5' : ''}`}>
-                                                                           <Link
-                                                                                onClick={() => !hasDropdown && setMenuState(false)}
-                                                                                href={item.href}
-                                                                                className={`flex-1 transition-colors tracking-widest ${isActive ? 'text-blue-500' : 'text-white'}`}
-                                                                           >
-                                                                                {item.name}
-                                                                           </Link>
-
-                                                                           {hasDropdown && (
-                                                                                <button
-                                                                                     onClick={() => setActiveDropdown(isDropdownActive ? null : item.name)}
-                                                                                     className="p-2 border border-white/10 rounded-lg bg-white/5"
-                                                                                >
-                                                                                     <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isDropdownActive ? 'rotate-180 text-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]' : 'text-neutral-400'}`} />
-                                                                                </button>
-                                                                           )}
-                                                                      </div>
-
-                                                                      {/* Mobile Submenu */}
-                                                                      <AnimatePresence>
-                                                                           {hasDropdown && isDropdownActive && (
-                                                                                <motion.div
-                                                                                     initial={{ height: 0, opacity: 0 }}
-                                                                                     animate={{ height: 'auto', opacity: 1 }}
-                                                                                     exit={{ height: 0, opacity: 0 }}
-                                                                                     className="overflow-hidden w-full bg-blue-500/5 rounded-lg border-l border-blue-500/20"
-                                                                                >
-                                                                                     <div className="py-2 pl-4 flex flex-col gap-3">
-                                                                                          {item.subItems!.map((sub, sIdx) => (
-                                                                                               <motion.div
-                                                                                                    key={sub.name}
-                                                                                                    initial={{ opacity: 0, x: -5 }}
-                                                                                                    animate={{ opacity: 1, x: 0 }}
-                                                                                                    transition={{ delay: sIdx * 0.05 }}
-                                                                                               >
-                                                                                                    <Link
-                                                                                                         href={sub.href}
-                                                                                                         onClick={() => setMenuState(false)}
-                                                                                                         className={`flex flex-col gap-0.5 py-2 transition-colors ${pathname === sub.href ? 'text-white' : 'text-neutral-400 hover:text-white'}`}
-                                                                                                    >
-                                                                                                         <span className="font-mono uppercase text-sm tracking-widest">{sub.name}</span>
-                                                                                                         <span className="text-[10px] text-neutral-400 uppercase tracking-tighter">{sub.desc}</span>
-                                                                                                    </Link>
-                                                                                               </motion.div>
-                                                                                          ))}
-                                                                                     </div>
-                                                                                </motion.div>
-                                                                           )}
-                                                                      </AnimatePresence>
-                                                                 </motion.li>
-                                                            )
-                                                       })}
-                                                  </ul>
-
-                                                  <div className="flex flex-col gap-6 text-sm font-bold font-mono tracking-widest text-neutral-300 pt-6 border-t border-white/10 relative z-10">
-
-
-                                                       <Link
-                                                            href="/contact-us"
-                                                            onClick={() => setMenuState(false)}
-                                                            className="flex items-center gap-3 text-left hover:text-white transition-colors"
-                                                       >
-                                                            <div className="p-2 bg-white/10 rounded-full"><Mail className="w-4 h-4" /></div>
-                                                            Contact Us
-                                                       </Link>
-                                                  </div>
-                                             </div>
-                                        </motion.div>
-                                   )}
-                              </AnimatePresence>
                          </div>
                     </div>
                </nav>
+
+               {/* Mobile Menu via AnimatePresence */}
+               <AnimatePresence>
+                    {menuState && (
+                         <motion.div
+                              initial={{ x: '100%' }}
+                              animate={{ x: 0 }}
+                              exit={{ x: '100%' }}
+                              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                              className="lg:hidden fixed inset-0 z-40 w-full h-screen bg-black/95 backdrop-blur-3xl p-6 pt-24 overflow-y-auto"
+                         >
+                              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+                              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+
+                              <div className="relative z-10 flex flex-col min-h-full space-y-8 mt-4">
+                                   <ul className="space-y-4 text-2xl md:text-3xl font-bold font-mono text-white w-full">
+                                        {menuItems.map((item, idx) => {
+                                             const isActive = pathname === item.href || (item.subItems && item.subItems.some(sub => pathname === sub.href))
+                                             const hasDropdown = !!item.subItems
+                                             const isDropdownActive = activeDropdown === item.name
+
+                                             return (
+                                                  <motion.li
+                                                       key={item.name}
+                                                       className="flex flex-col w-full"
+                                                       initial={{ opacity: 0, x: 20 }}
+                                                       animate={{ opacity: 1, x: 0 }}
+                                                       transition={{ delay: idx * 0.05 + 0.2 }}
+                                                  >
+                                                       <div className={`flex items-center justify-between w-full py-4 px-2 rounded-lg transition-colors`}>
+                                                            <Link
+                                                                 onClick={() => !hasDropdown && setMenuState(false)}
+                                                                 href={item.href}
+                                                                 className={`flex-1 transition-colors tracking-widest ${isActive ? 'text-blue-500' : 'text-white'}`}
+                                                            >
+                                                                 {item.name}
+                                                            </Link>
+
+                                                            {hasDropdown && (
+                                                                 <button
+                                                                      onClick={() => setActiveDropdown(isDropdownActive ? null : item.name)}
+                                                                      className="p-2 border border-white/10 rounded-lg bg-white/5"
+                                                                 >
+                                                                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownActive ? 'rotate-180 text-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]' : 'text-neutral-400'}`} />
+                                                                 </button>
+                                                            )}
+                                                       </div>
+
+                                                       {/* Mobile Submenu */}
+                                                       <AnimatePresence>
+                                                            {hasDropdown && isDropdownActive && (
+                                                                 <motion.div
+                                                                      initial={{ height: 0, opacity: 0 }}
+                                                                      animate={{ height: 'auto', opacity: 1 }}
+                                                                      exit={{ height: 0, opacity: 0 }}
+                                                                      className="overflow-hidden w-full bg-blue-500/5 rounded-lg border-l border-blue-500/20 mt-2"
+                                                                 >
+                                                                      <div className="py-4 pl-6 flex flex-col gap-5">
+                                                                           {item.subItems!.map((sub, sIdx) => (
+                                                                                <motion.div
+                                                                                     key={sub.name}
+                                                                                     initial={{ opacity: 0, x: 10 }}
+                                                                                     animate={{ opacity: 1, x: 0 }}
+                                                                                     transition={{ delay: sIdx * 0.05 }}
+                                                                                >
+                                                                                     <Link
+                                                                                          href={sub.href}
+                                                                                          onClick={() => setMenuState(false)}
+                                                                                          className={`flex flex-col gap-1 transition-colors ${pathname === sub.href ? 'text-white' : 'text-neutral-400 hover:text-white'}`}
+                                                                                     >
+                                                                                          <span className="font-mono uppercase text-lg md:text-xl tracking-widest">{sub.name}</span>
+                                                                                          <span className="text-xs text-neutral-400 uppercase tracking-tighter">{sub.desc}</span>
+                                                                                     </Link>
+                                                                                </motion.div>
+                                                                           ))}
+                                                                      </div>
+                                                                 </motion.div>
+                                                            )}
+                                                       </AnimatePresence>
+                                                  </motion.li>
+                                             )
+                                        })}
+                                   </ul>
+
+                                   <div className="flex flex-col gap-6 text-xl font-bold font-mono tracking-widest text-neutral-300 pt-8 border-t border-white/10 mt-auto pb-8">
+                                        <Link
+                                             href="/contact-us"
+                                             onClick={() => setMenuState(false)}
+                                             className="flex items-center gap-4 text-left hover:text-white transition-colors"
+                                        >
+                                             <div className="p-3 bg-white/10 rounded-full"><Mail className="w-6 h-6" /></div>
+                                             Contact Us
+                                        </Link>
+                                   </div>
+                              </div>
+                         </motion.div>
+                    )}
+               </AnimatePresence>
           </header>
 
      )
