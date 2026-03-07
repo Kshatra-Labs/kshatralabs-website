@@ -311,7 +311,7 @@ export function InterceptorSection() {
                                         className="w-full h-full object-cover"
                                         preload="auto"
                                    >
-                                        <source src="/video/intercept.mp4" type="video/mp4" />
+                                        <source src="/video/main-video.mp4" type="video/mp4" />
                                    </video>
                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
 
