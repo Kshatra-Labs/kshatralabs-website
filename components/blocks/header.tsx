@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { Phone, Mail, ChevronDown } from 'lucide-react'
-import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
+import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 
 // Define our navigation structure with support for dropdowns
 interface NavItem {
@@ -26,6 +26,16 @@ const menuItems: NavItem[] = [
                { name: 'Gallery', href: '/about/gallery', desc: 'Visual overview of our platforms' }
           ]
      },
+     {
+          name: 'Products',
+          href: '/products',
+          subItems: [
+               { name: 'HAWK', href: '/products', desc: 'Next-gen autonomous interceptor' },
+               { name: 'HAWKEYE', href: '/products', desc: 'High-precision optical tracking' },
+               { name: 'APEX', href: '/products', desc: 'Advanced tactical autonomy' },
+               { name: 'SWARM', href: '/products', desc: 'Coordinated multi-agent defense' }
+          ]
+     },
      { name: 'Careers', href: '/careers' },
 ]
 
@@ -34,8 +44,15 @@ export function Header() {
      const [menuState, setMenuState] = useState(false)
      const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
      const [scrolled, setScrolled] = useState(false)
-     const isMobile = useIsMobile()
      const [isMailModalOpen, setIsMailModalOpen] = useState(false)
+     const isMobile = useIsMobile()
+
+     const handleMailClick = (e: React.MouseEvent) => {
+          if (!isMobile) {
+               e.preventDefault()
+               setIsMailModalOpen(true)
+          }
+     }
 
      // Handle scroll state for dynamic header styling
      useEffect(() => {
@@ -51,8 +68,8 @@ export function Header() {
                <nav
                     data-state={menuState && 'active'}
                     className={`fixed z-50 w-full transition-all duration-500 ${scrolled || menuState
-                              ? 'bg-black/80 backdrop-blur-2xl border-b border-white/10 py-2'
-                              : 'bg-transparent border-b border-transparent py-4'
+                         ? 'bg-black/80 backdrop-blur-2xl border-b border-white/10 py-2'
+                         : 'bg-transparent border-b border-transparent py-4'
                          }`}
                >
                     <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-12">
@@ -176,18 +193,15 @@ export function Header() {
 
                               {/* Desktop Contact */}
                               <div className="hidden lg:flex items-center gap-6 text-xs md:text-sm font-bold font-mono tracking-widest text-white">
-                                   <a href="tel:+919730458528" className="flex items-center gap-2 hover:text-defense-accent transition-colors">
-                                        <Phone className="w-4 h-4" />
-                                        +91 9730458528
-                                   </a>
 
-                                   <button
-                                        onClick={() => setIsMailModalOpen(true)}
+
+                                   <Link
+                                        href="/contact-us"
                                         className="flex items-center gap-2 hover:text-defense-accent transition-colors"
                                    >
                                         <Mail className="w-4 h-4" />
-                                        contact@kshatralabs.in
-                                   </button>
+                                        Contact Us
+                                   </Link>
                               </div>
 
                               {/* Mobile Menu */}
@@ -195,7 +209,7 @@ export function Header() {
                                    className="lg:hidden w-full overflow-hidden transition-all duration-500 ease-[0.16,1,0.3,1] absolute top-full left-0 mt-4 px-4"
                                    style={{
                                         maxHeight: menuState ? '1000px' : '0px',
-                                        opacity: menuState ? 1 : 0,
+                                        opacity: menuState ? '1' : '0',
                                         pointerEvents: menuState ? 'auto' : 'none',
                                    }}
                               >
@@ -259,29 +273,22 @@ export function Header() {
                                         </ul>
 
                                         <div className="flex flex-col gap-6 text-sm font-bold font-mono tracking-widest text-neutral-300 pt-6 border-t border-white/10 relative z-10">
-                                             <a href="tel:+919730458528" className="flex items-center gap-3 hover:text-white transition-colors">
-                                                  <div className="p-2 bg-white/10 rounded-full"><Phone className="w-4 h-4" /></div>
-                                                  +91 9730458528
-                                             </a>
 
-                                             <button
-                                                  onClick={() =>
-                                                       !isMobile
-                                                            ? setIsMailModalOpen(true)
-                                                            : (window.location.href = 'mailto:contact@kshatralabs.in')
-                                                  }
+
+                                             <Link
+                                                  href="/contact-us"
+                                                  onClick={() => setMenuState(false)}
                                                   className="flex items-center gap-3 text-left hover:text-white transition-colors"
                                              >
                                                   <div className="p-2 bg-white/10 rounded-full"><Mail className="w-4 h-4" /></div>
-                                                  contact@kshatralabs.in
-                                             </button>
+                                                  Contact Us
+                                             </Link>
                                         </div>
                                    </div>
                               </div>
                          </div>
                     </div>
                </nav>
-
                <MailChoiceModal
                     isOpen={isMailModalOpen}
                     onClose={() => setIsMailModalOpen(false)}

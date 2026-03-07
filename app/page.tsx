@@ -74,8 +74,8 @@ export default function Home() {
         {/* PLATFORM GALLERY */}
         <PlatformGallery />
 
-        {/* PHILOSOPHY CARD */}
-        <PhilosophyCard />
+        {/* PHILOSOPHY CARD - HIDDEN PER USER REQUEST */}
+        {/* <PhilosophyCard /> */}
 
         {/* HERO VIDEO SECTION - HIDDEN */}
         {/* <VideoSection /> */}

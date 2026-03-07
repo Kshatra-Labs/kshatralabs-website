@@ -365,33 +365,34 @@ export default function CareersPage() {
                          </div>
                     </section>
 
-                    {/* 6. HIRING PROCESS */}
-                    <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
-                         <div className="mb-16 space-y-4">
-                              <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Hiring Process</h2>
-                              <div className="h-1 w-24 bg-defense-accent"></div>
-                         </div>
+                    {/* 6. HIRING PROCESS - HIDDEN PER USER REQUEST */}
+                    {/* 
+                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
+                          <div className="mb-16 space-y-4">
+                               <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Hiring Process</h2>
+                               <div className="h-1 w-24 bg-defense-accent"></div>
+                          </div>
 
-                         <div className="grid md:grid-cols-4 gap-6 relative">
-                              {/* Connector line for desktop */}
-                              <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0"></div>
+                          <div className="grid md:grid-cols-4 gap-6 relative">
+                               <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0"></div>
 
-                              {[
-                                   { step: "1", title: "Initial Conversation", desc: "A short call to understand your experience and interests." },
-                                   { step: "2", title: "Technical Evaluation", desc: "A deep dive into engineering problems relevant to the role." },
-                                   { step: "3", title: "Founder Discussion", desc: "Discussion about mission alignment and long-term vision." },
-                                   { step: "4", title: "Offer", desc: "Join the team building the next generation of autonomous defense systems." }
-                              ].map((item) => (
-                                   <div key={item.step} className="relative z-10 bg-black pt-4 md:pt-0">
-                                        <div className="w-14 h-14 bg-black border border-white/20 flex items-center justify-center font-mono text-xl font-bold text-defense-accent mb-6">
-                                             {item.step}
-                                        </div>
-                                        <h3 className="text-lg font-bold font-mono uppercase mb-3">{item.title}</h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
-                                   </div>
-                              ))}
-                         </div>
-                    </section>
+                               {[
+                                    { step: "1", title: "Initial Conversation", desc: "A short call to understand your experience and interests." },
+                                    { step: "2", title: "Technical Evaluation", desc: "A deep dive into engineering problems relevant to the role." },
+                                    { step: "3", title: "Founder Discussion", desc: "Discussion about mission alignment and long-term vision." },
+                                    { step: "4", title: "Offer", desc: "Join the team building the next generation of autonomous defense systems." }
+                               ].map((item) => (
+                                    <div key={item.step} className="relative z-10 bg-black pt-4 md:pt-0">
+                                         <div className="w-14 h-14 bg-black border border-white/20 flex items-center justify-center font-mono text-xl font-bold text-defense-accent mb-6">
+                                              {item.step}
+                                         </div>
+                                         <h3 className="text-lg font-bold font-mono uppercase mb-3">{item.title}</h3>
+                                         <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                                    </div>
+                               ))}
+                          </div>
+                     </section>
+                     */}
 
                     {/* 7. FINAL CALL TO ACTION */}
                     <section className="px-6 md:px-12 max-w-4xl mx-auto text-center border-t border-white/10 pt-24">
