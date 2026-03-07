@@ -367,7 +367,7 @@ export function InterceptorSection() {
                </div>
 
                {/* MANIFESTO / FINAL WORD */}
-               <div className="relative py-32 px-6 md:px-12 bg-[#050505] border-t border-white/5">
+               <div className="relative py-32 pt-48 px-6 md:px-12 bg-[#050505] border-t border-white/5">
                     <div className="max-w-4xl mx-auto text-center space-y-8 flex flex-col items-center">
                          <h3 className="text-3xl md:text-5xl font-medium tracking-tight leading-tight text-white">
                               Modern warfare demands systems that are not just automated — but truly autonomous.
