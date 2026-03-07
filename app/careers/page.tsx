@@ -224,31 +224,36 @@ export default function CareersPage() {
 
                     {/* 2. WHY JOIN US */}
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
-                         <div className="mb-16 space-y-4">
-                              <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Why Work With Us</h2>
-                              <div className="h-1 w-24 bg-defense-accent"></div>
+                         <div className="mb-16 space-y-6 max-w-3xl">
+                              <div className="space-y-4">
+                                   <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Why Work With Us</h2>
+                                   <div className="h-1 w-24 bg-defense-accent"></div>
+                              </div>
+                              <p className="text-xl text-neutral-300 font-light leading-relaxed">
+                                   We are building autonomous defense systems from the ground up — and assembling a small team of engineers capable of solving some of the hardest problems in robotics and AI.
+                              </p>
                          </div>
 
                          <div className="grid md:grid-cols-2 gap-6">
                               <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
                                    <div className="text-defense-accent font-mono text-sm mb-4">01 //</div>
                                    <h3 className="text-2xl font-bold font-mono uppercase mb-3">Mission Impact</h3>
-                                   <p className="text-neutral-400 leading-relaxed">Work on real systems designed to protect critical infrastructure and national security.</p>
+                                   <p className="text-neutral-400 leading-relaxed">Work on real-world autonomous systems designed to protect critical infrastructure and national security.</p>
                               </div>
                               <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
                                    <div className="text-defense-accent font-mono text-sm mb-4">02 //</div>
                                    <h3 className="text-2xl font-bold font-mono uppercase mb-3">Frontier Engineering</h3>
-                                   <p className="text-neutral-400 leading-relaxed">Solve problems at the intersection of robotics, AI, autonomy, and aerospace engineering.</p>
+                                   <p className="text-neutral-400 leading-relaxed">Solve frontier engineering problems at the intersection of robotics, AI, autonomy, and aerospace.</p>
                               </div>
                               <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
                                    <div className="text-defense-accent font-mono text-sm mb-4">03 //</div>
                                    <h3 className="text-2xl font-bold font-mono uppercase mb-3">Build From First Principles</h3>
-                                   <p className="text-neutral-400 leading-relaxed">We design systems from the ground up — hardware, software, and intelligence tightly integrated.</p>
+                                   <p className="text-neutral-400 leading-relaxed">We build systems from first principles — tightly integrating hardware, software, and onboard intelligence.</p>
                               </div>
                               <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
                                    <div className="text-defense-accent font-mono text-sm mb-4">04 //</div>
                                    <h3 className="text-2xl font-bold font-mono uppercase mb-3">Small Team, Massive Impact</h3>
-                                   <p className="text-neutral-400 leading-relaxed">Early team members shape the architecture and direction of next-generation defense platforms.</p>
+                                   <p className="text-neutral-400 leading-relaxed">Early engineers shape the architecture, capabilities, and direction of next-generation defense platforms.</p>
                               </div>
                          </div>
                     </section>
