@@ -36,7 +36,7 @@ export function InitialLoader() {
           ];
           const CRITICAL_VIDEOS = [
                '/video/demo.mp4',
-               '/video/intercept.mp4'
+               '/video/intercept.webm'
           ];
 
           let imagesPreloaded = false;
