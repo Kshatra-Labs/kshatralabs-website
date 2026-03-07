@@ -4,6 +4,8 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { InitialLoader } from "@/components/initial-loader";
 import "./globals.css";
 
+export const revalidate = 0; // Disable static caching globally
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],

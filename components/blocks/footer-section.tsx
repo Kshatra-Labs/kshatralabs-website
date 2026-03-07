@@ -10,6 +10,7 @@ import {
      Twitter,
 } from 'lucide-react';
 import Link from 'next/link';
+import { useIsMobile } from '@/hooks/use-is-mobile';
 
 const data = {
      facebookLink: '#',
@@ -74,11 +75,16 @@ const contactInfo = [
 
 export default function Footer4Col() {
      const [isMailModalOpen, setIsMailModalOpen] = useState(false)
+     const isMobile = useIsMobile()
 
      const handleLinkClick = (e: React.MouseEvent, href: string) => {
           if (href === 'mailto:contact@kshatralabs.in') {
                e.preventDefault()
-               setIsMailModalOpen(true)
+               if (isMobile) {
+                    window.location.href = href
+               } else {
+                    setIsMailModalOpen(true)
+               }
           }
      }
 
@@ -200,7 +206,7 @@ export default function Footer4Col() {
 
                     <div className="mt-12 border-t border-white/10 pt-6">
                          <div className="text-center sm:flex sm:justify-between sm:text-left text-white/40 font-mono text-xs">
-                              <p>
+                              <p className="hidden">
                                    <span className="block sm:inline">All Systems Nominal.</span>
                               </p>
 
