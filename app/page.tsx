@@ -22,7 +22,6 @@ const BackgroundPaths = dynamic(() => import("@/components/ui/background-paths")
 // const Spotlight = dynamic(() => import("@/components/ui/spotlight").then(mod => mod.Spotlight))
 const Footer4Col = dynamic(() => import("@/components/blocks/footer-section")) // Default export
 // const Capabilities = dynamic(() => import('@/components/blocks/capabilities').then(mod => mod.Capabilities))
-const PlatformsGrid = dynamic(() => import('@/components/blocks/platforms-grid').then(mod => mod.PlatformsGrid))
 
 // const PhilosophyCard = dynamic(() => import('@/components/blocks/philosophy-card').then(mod => mod.PhilosophyCard))
 // const VideoSection = dynamic(() => import("@/components/blocks/video-section").then(mod => mod.VideoSection))
@@ -68,8 +67,6 @@ export default function Home() {
         {/* MISSION CRITICAL SOLUTIONS */}
         {/* <Capabilities /> */}
 
-        {/* PRODUCT SYSTEMS GRID */}
-        <PlatformsGrid />
         {/* PHILOSOPHY CARD - HIDDEN PER USER REQUEST */}
         {/* <PhilosophyCard /> */}
 
