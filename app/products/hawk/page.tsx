@@ -6,9 +6,20 @@ import Image from 'next/image'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
 import { BackgroundPaths } from '@/components/ui/background-paths'
-import { Shield, Zap, Target, Cpu, Activity, Navigation } from 'lucide-react'
+import { Shield, Zap, Target, Cpu, Activity, Navigation, Volume2, VolumeX } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+
 
 export default function HawkProductPage() {
+     const videoRef = useRef<HTMLVideoElement>(null);
+     const [isMuted, setIsMuted] = useState(true);
+
+     useEffect(() => {
+          if (videoRef.current) {
+               videoRef.current.muted = isMuted;
+          }
+     }, [isMuted]);
+
      return (
           <div className="relative min-h-screen bg-black text-white selection:bg-white/20 font-sans overflow-hidden">
                <Header />
@@ -115,6 +126,89 @@ export default function HawkProductPage() {
                                    </motion.div>
                               ))}
                          </div>
+
+                         {/* NOT JUST A DRONE SECTION */}
+                         <div className="relative py-24 bg-black border-y border-white/5 overflow-hidden rounded-[3rem] mb-32">
+                              <div className="grid md:grid-cols-2 gap-16 items-center px-8 md:px-12">
+
+                                   {/* LEFT: Heading & Intro */}
+                                   <div className="space-y-6">
+                                        <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-widest text-blue-500 mb-4">
+                                             Interceptor
+                                        </div>
+                                        <div className="space-y-4 text-neutral-400">
+                                             <p className="text-2xl md:text-3xl font-bold text-white font-mono uppercase tracking-tight">
+                                                  DETECT. CHASE. NEUTRALIZE.
+                                             </p>
+                                             <p className="text-lg leading-relaxed font-light">
+                                                  Built to stop airborne threats.
+                                             </p>
+                                        </div>
+
+                                        {/* REINSERTED VIDEO */}
+                                        <div className="mt-8 relative aspect-video border border-white/10 bg-neutral-900 group rounded-xl overflow-hidden">
+                                             <video
+                                                  ref={videoRef}
+                                                  autoPlay
+                                                  muted={isMuted}
+                                                  loop
+                                                  playsInline
+                                                  className="w-full h-full object-cover transition-all duration-700"
+                                             >
+                                                  <source src="/video/demo.mp4" type="video/mp4" />
+                                             </video>
+                                             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-blue-500/50 transition-all"></div>
+
+                                             {/* Audio Toggle Button */}
+                                             <button
+                                                  onClick={() => setIsMuted(!isMuted)}
+                                                  className="absolute bottom-4 right-4 z-20 p-2 rounded-full bg-black/40 border border-white/10 backdrop-blur-md hover:bg-black/60 transition-all"
+                                             >
+                                                  {isMuted ? (
+                                                       <VolumeX className="w-4 h-4 text-white/70" />
+                                                  ) : (
+                                                       <Volume2 className="w-4 h-4 text-blue-500" />
+                                                  )}
+                                             </button>
+                                        </div>
+                                   </div>
+
+                                   {/* RIGHT: Features List */}
+                                   <div className="space-y-12">
+                                        {/* 01 */}
+                                        <div className="relative pl-8 border-l border-white/10 group hover:border-blue-500/50 transition-colors">
+                                             <div className="absolute top-0 left-[-1px] w-[2px] h-0 bg-blue-500 transition-all duration-300 group-hover:h-full"></div>
+                                             <div className="font-mono text-sm text-blue-500 mb-2">01 //</div>
+                                             <h4 className="text-xl font-bold font-mono uppercase text-white mb-2">High-Speed Autonomous Flight</h4>
+                                             <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                                                  Engineered for rapid response and high-velocity interception of hostile objects in mid-air.
+                                             </p>
+                                        </div>
+
+                                        {/* 02 */}
+                                        <div className="relative pl-8 border-l border-white/10 group hover:border-blue-500/50 transition-colors">
+                                             <div className="absolute top-0 left-[-1px] w-[2px] h-0 bg-blue-500 transition-all duration-300 group-hover:h-full"></div>
+                                             <div className="font-mono text-sm text-blue-500 mb-2">02 //</div>
+                                             <h4 className="text-xl font-bold font-mono uppercase text-white mb-2">Real-Time Target Tracking</h4>
+                                             <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                                                  Advanced sensor integration for precise detection and persistent chasing of airborne threats.
+                                             </p>
+                                        </div>
+
+                                        {/* 03 */}
+                                        <div className="relative pl-8 border-l border-white/10 group hover:border-blue-500/50 transition-colors">
+                                             <div className="absolute top-0 left-[-1px] w-[2px] h-0 bg-blue-500 transition-all duration-300 group-hover:h-full"></div>
+                                             <div className="font-mono text-sm text-blue-500 mb-2">03 //</div>
+                                             <h4 className="text-xl font-bold font-mono uppercase text-white mb-2">SWARM CAPABLE</h4>
+                                             <p className="text-sm text-neutral-400 leading-relaxed font-light">
+                                                  This system is engineered specifically to intercept and neutralize hostile objects.<br />
+                                                  Made for rapid response. Designed for protection.
+                                             </p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
                     </div>
                </main>
 
