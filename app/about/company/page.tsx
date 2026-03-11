@@ -65,7 +65,7 @@ export default function CompanyPage() {
                               >
                                    <div className="flex items-center gap-2">
                                         <div className="w-1 h-1 rounded-full bg-defense-accent opacity-100"></div>
-                                        <span>Established 2024</span>
+                                        <span>Established 2025</span>
                                    </div>
                                    <div className="flex items-center gap-2">
                                         <div className="w-1 h-1 rounded-full bg-defense-accent opacity-100"></div>
@@ -162,10 +162,10 @@ export default function CompanyPage() {
                                    </div>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             Drone technology is evolving rapidly, creating new challenges for defense, infrastructure protection, and public safety. Affordable and intelligent counter-drone systems will become essential in the coming years.
+                                             The nature of warfare is evolving rapidly, with asymmetric threats challenging traditional defense paradigms. True deterrence now requires systems that are as adaptable and scalable as the threats they counter. Intelligent, cost-effective defense networks will form the backbone of future security.
                                         </p>
                                         <p>
-                                             Kshatra Labs is working to build technologies that can address these emerging threats and help shape the future of aerial security.
+                                             Kshatra Labs is engineering autonomous, scalable swarm technologies that shift the paradigm from reactive defense to proactive deterrence, shaping the future of multi-domain security.
                                         </p>
                                    </div>
                               </div>
@@ -179,10 +179,10 @@ export default function CompanyPage() {
                                    </div>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             While our current focus is on aerial defense systems, our long-term vision extends far beyond interceptor UAVs. Kshatra Labs aims to expand into a broader ecosystem of intelligent autonomous machines, including commercial robotics, autonomous vehicles, and next-generation unmanned systems capable of operating reliably in complex environments.
+                                             While our immediate focus includes autonomous kinetic interception, our longer-term vision extends to a comprehensive ecosystem of intelligent, cost-effective swarm systems. We are building the foundation for mass-manufacturable, collaborative autonomous machines capable of operating reliably in contested environments.
                                         </p>
                                         <p>
-                                             By advancing the capabilities of AI, robotics, and autonomous control, we aim to build technologies that serve both defense and commercial applications.
+                                             By advancing the capabilities of distributed AI and autonomous control, we aim to build highly scalable swarm systems that redefine strategic deterrence and next-generation unmanned operations.
                                         </p>
                                    </div>
                               </div>
