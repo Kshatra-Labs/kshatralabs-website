@@ -13,17 +13,17 @@ const GALLERY_IMAGES = [
           id: 1,
           src: '/gallery/pic1.jpg',
           alt: 'Our Co-Founders Rishav and Harshill',
-          description: 'Our Co-Founders Rishav and Harshill during their presentations to Indian Airforce and Indian Army.'
+          description: 'CEO Rishav presenting CUAS solutions.'
      },
      {
           id: 2,
           src: '/gallery/pic2.jpg',
-          alt: 'Rishav during presentation',
-          description: 'Rishav presenting to the Indian Airforce and Indian Army.'
+          alt: '',
+          description: 'Co-Founders Rishav and Harshill in the Indian Army HQ.'
      }
 ]
 
-export default function GalleryPage() {
+export default function GalleryPage() { 
      const [selectedImage, setSelectedImage] = useState<typeof GALLERY_IMAGES[0] | null>(null)
 
      return (
