@@ -43,9 +43,6 @@ export default function GalleryPage() {
                               transition={{ duration: 0.8 }}
                               className="inline-flex items-center gap-2 mb-4"
                          >
-                              <div className="w-8 h-[1px] bg-white/20"></div>
-                              <span className="text-xs font-mono uppercase tracking-[0.4em] text-defense-accent">Visual Assets</span>
-                              <div className="w-8 h-[1px] bg-white/20"></div>
                          </motion.div>
 
                          <motion.h1
