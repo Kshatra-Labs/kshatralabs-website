@@ -43,7 +43,7 @@ export function HeroSection() {
                                         <div className="space-y-8">
                                              <p className="text-sm text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
                                                   <strong className="text-white font-medium">Our Mission</strong><br />
-                                                  At Kshatra Labs, We engineer true autonomous defense platforms.Powered by our proprietary APEX autonomy stack,our systems detect,pudrsue,and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm's way.
+                                                  At Kshatra Labs, We engineer true autonomous defense platforms.Powered by our proprietary APEX autonomy stack,our systems detect,pudrsue,and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
                                              </p>
 
                                              <button

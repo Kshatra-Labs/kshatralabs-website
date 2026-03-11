@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Shield, Target, Zap, WifiOff, Network, Volume2, VolumeX } from 'lucide-react'
+import { ArrowRight, Shield, Target, Zap, WifiOff, Network } from 'lucide-react'
 
 export function InterceptorSection() {
      const videoRef = useRef<HTMLVideoElement>(null);
-     const [isMuted, setIsMuted] = useState(true);
+     const [isMuted] = useState(true);
 
 
 

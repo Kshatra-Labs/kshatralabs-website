@@ -1,8 +1,8 @@
-self.addEventListener("install", (e) => {
+self.addEventListener("install", () => {
      self.skipWaiting();
 });
 
-self.addEventListener("activate", (e) => {
+self.addEventListener("activate", () => {
      self.registration.unregister()
           .then(function () {
                return self.clients.matchAll();
