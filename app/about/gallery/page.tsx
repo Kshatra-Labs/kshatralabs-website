@@ -13,17 +13,17 @@ const GALLERY_IMAGES = [
           id: 1,
           src: '/gallery/pic1.jpg',
           alt: 'Our Co-Founders Rishav and Harshill',
-          description: 'Our Co-Founders Rishav and Harshill during their presentations to Indian Airforce and Indian Army.'
+          description: 'CEO Rishav presenting CUAS solutions.'
      },
      {
           id: 2,
           src: '/gallery/pic2.jpg',
-          alt: 'Rishav during presentation',
-          description: 'Rishav presenting to the Indian Airforce and Indian Army.'
+          alt: '',
+          description: 'Co-Founders Rishav and Harshill in the Indian Army HQ.'
      }
 ]
 
-export default function GalleryPage() {
+export default function GalleryPage() { 
      const [selectedImage, setSelectedImage] = useState<typeof GALLERY_IMAGES[0] | null>(null)
 
      return (
@@ -43,9 +43,6 @@ export default function GalleryPage() {
                               transition={{ duration: 0.8 }}
                               className="inline-flex items-center gap-2 mb-4"
                          >
-                              <div className="w-8 h-[1px] bg-white/20"></div>
-                              <span className="text-xs font-mono uppercase tracking-[0.4em] text-defense-accent">Visual Assets</span>
-                              <div className="w-8 h-[1px] bg-white/20"></div>
                          </motion.div>
 
                          <motion.h1
