@@ -99,7 +99,7 @@ export default function CompanyPage() {
                                              We focus on building systems that are autonomous, scalable, and cost-efficient.
                                         </p>
                                         <p>
-                                             By running AI models directly onboard the platform and minimizing reliance on external infrastructure, our systems are designed to operate reliably in real-world and contested environments where low latency and independence are critical.
+                                             By running AI models directly onboard the platform and minimizing reliance on external infrastructure, our systems are designed to operate reliably in real-world and contested environments. Furthermore, we are building a centralized software backbone—akin to systems like Lattice and Hivemind—that connects these edge nodes into a unified, intelligent network, enabling seamless command, control, and multi-agent coordination where low latency and independence are critical.
                                         </p>
                                    </div>
                               </div>
