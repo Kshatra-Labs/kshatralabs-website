@@ -35,7 +35,7 @@ export default function GalleryPage() {
 
                <Header />
 
-               <main className="relative z-10 pt-32 pb-24">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24">
                     <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 space-y-6 text-center">
                          <motion.div
                               initial={{ opacity: 0, y: 20 }}

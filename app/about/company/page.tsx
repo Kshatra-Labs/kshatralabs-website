@@ -17,7 +17,7 @@ export default function CompanyPage() {
 
                <Header />
 
-               <main className="relative z-10 pt-32 pb-24 px-6 md:px-12 text-white">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24 px-6 md:px-12 text-white">
                     <div className="max-w-7xl mx-auto space-y-32">
 
                          {/* 1. HERO SECTION */}
@@ -61,7 +61,7 @@ export default function CompanyPage() {
                                    initial={{ opacity: 0 }}
                                    animate={{ opacity: 1 }}
                                    transition={{ duration: 1, delay: 0.5 }}
-                                   className="pt-8 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold font-mono uppercase tracking-[0.3em] text-white"
+                                   className="pt-32 md:pt-40 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold font-mono uppercase tracking-[0.3em] text-white"
                               >
                                    <div className="flex items-center gap-2">
                                         <div className="w-1 h-1 rounded-full bg-defense-accent opacity-100"></div>
@@ -129,7 +129,7 @@ export default function CompanyPage() {
                                         <div className="h-[2px] w-24 bg-blue-500/50 group-hover:w-48 transition-all duration-700 mt-6"></div>
                                    </div>
 
-                                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+                                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-32 md:pt-40">
                                         {[
                                              { label: 'Autonomous UAV systems', Icon: Plane },
                                              { label: 'Edge AI and onboard decision systems', Icon: Cpu },
@@ -152,7 +152,7 @@ export default function CompanyPage() {
                          </motion.div>
 
                          {/* 4. WHY IT MATTERS & VISION */}
-                         <div className="grid md:grid-cols-2 gap-16 border-t border-white/5 pt-16">
+                         <div className="grid md:grid-cols-2 gap-16 border-t border-white/5 pt-32 md:pt-40">
                               <div className="space-y-6">
                                    <div className="flex items-center gap-4 mb-8">
                                         <Target className="w-8 h-8 text-defense-accent" />

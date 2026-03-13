@@ -29,7 +29,7 @@ export default function ContactUsPage() {
 
                <Header />
 
-               <main className="relative z-10 pt-32 pb-24 px-6 md:px-12 text-white">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24 px-6 md:px-12 text-white">
                     <div className="max-w-7xl mx-auto space-y-16">
 
                          <div className="text-center space-y-6 max-w-3xl mx-auto mb-16">

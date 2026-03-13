@@ -29,7 +29,7 @@ export default function HawkProductPage() {
                     <BackgroundPaths title="" />
                </div>
 
-               <main className="relative z-10 pt-32 pb-24">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24">
                     <div className="max-w-7xl mx-auto px-6 md:px-12">
                          {/* Product Hero */}
                          <div className="grid lg:grid-cols-5 gap-16 items-center mb-32">
@@ -67,7 +67,7 @@ export default function HawkProductPage() {
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         transition={{ duration: 1, delay: 0.4 }}
-                                        className="flex flex-wrap gap-4 pt-4"
+                                        className="flex flex-wrap gap-4 pt-32 md:pt-40"
                                    >
                                         {['Edge AI', 'Target Lock', 'High Speed', 'EW Resistant'].map((tag) => (
                                              <div key={tag} className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-mono uppercase tracking-widest">

@@ -17,7 +17,7 @@ export default function ProductsPage() {
                     <BackgroundPaths title="" />
                </div>
 
-               <main className="relative z-10 pt-48 pb-24 min-h-screen flex flex-col justify-between">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24 min-h-screen flex flex-col justify-between">
                     <section className="px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
                          <motion.div
                               initial={{ opacity: 0, y: 20 }}
