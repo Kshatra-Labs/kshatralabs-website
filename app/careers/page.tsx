@@ -114,7 +114,7 @@ function RoleCard({
                          </h3>
                          <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-white">
                               <span>Bangalore</span>
-                              <span>Internships</span>
+                              <span>Internship</span>
                          </div>
                     </div>
 
@@ -305,7 +305,7 @@ export default function CareersPage() {
                               <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Open Positions</h2>
                               <div className="h-1 w-24 bg-defense-accent"></div>
                               <p className="text-white font-mono text-sm uppercase tracking-widest">
-                                   Bangalore, India · Internships
+                                   Bangalore, India · Internship
                               </p>
                          </div>
 
