@@ -17,7 +17,7 @@ export default function CompanyPage() {
 
                <Header />
 
-               <main className="relative z-10 pt-32 pb-24 px-6 md:px-12 text-white">
+               <main className="relative z-10 pt-32 md:pt-40 pb-24 px-6 md:px-12 text-white">
                     <div className="max-w-7xl mx-auto space-y-32">
 
                          {/* 1. HERO SECTION */}
@@ -61,7 +61,7 @@ export default function CompanyPage() {
                                    initial={{ opacity: 0 }}
                                    animate={{ opacity: 1 }}
                                    transition={{ duration: 1, delay: 0.5 }}
-                                   className="pt-8 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold font-mono uppercase tracking-[0.3em] text-white"
+                                   className="pt-32 md:pt-40 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold font-mono uppercase tracking-[0.3em] text-white"
                               >
                                    <div className="flex items-center gap-2">
                                         <div className="w-1 h-1 rounded-full bg-defense-accent opacity-100"></div>
@@ -82,7 +82,7 @@ export default function CompanyPage() {
                                    </h2>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             At Kshatra Labs, we build real defense platforms, not just drones powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm&apos;s way.
+                                             At Kshatra Labs, we engineer true autonomous defense platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
                                         </p>
                                         <p>
                                              By combining edge AI, autonomous navigation, computer vision, and high-speed UAV platforms, we are building scalable and affordable counter-drone technologies designed for modern security challenges.
@@ -99,7 +99,7 @@ export default function CompanyPage() {
                                              We focus on building systems that are autonomous, scalable, and cost-efficient.
                                         </p>
                                         <p>
-                                             By running AI models directly onboard the platform and minimizing reliance on external infrastructure, our systems are designed to operate reliably in real-world and contested environments where low latency and independence are critical.
+                                             By running AI models directly onboard the platform and minimizing reliance on external infrastructure, our systems are designed to operate reliably in real-world and contested environments. Furthermore, we are building a centralized software backbone—akin to systems like Lattice and Hivemind—that connects these edge nodes into a unified, intelligent network, enabling seamless command, control, and multi-agent coordination where low latency and independence are critical.
                                         </p>
                                    </div>
                               </div>
@@ -129,7 +129,7 @@ export default function CompanyPage() {
                                         <div className="h-[2px] w-24 bg-blue-500/50 group-hover:w-48 transition-all duration-700 mt-6"></div>
                                    </div>
 
-                                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+                                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-32 md:pt-40">
                                         {[
                                              { label: 'Autonomous UAV systems', Icon: Plane },
                                              { label: 'Edge AI and onboard decision systems', Icon: Cpu },
@@ -152,7 +152,7 @@ export default function CompanyPage() {
                          </motion.div>
 
                          {/* 4. WHY IT MATTERS & VISION */}
-                         <div className="grid md:grid-cols-2 gap-16 border-t border-white/5 pt-16">
+                         <div className="grid md:grid-cols-2 gap-16 border-t border-white/5 pt-32 md:pt-40">
                               <div className="space-y-6">
                                    <div className="flex items-center gap-4 mb-8">
                                         <Target className="w-8 h-8 text-defense-accent" />

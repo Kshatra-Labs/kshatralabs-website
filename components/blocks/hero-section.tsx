@@ -33,7 +33,7 @@ export function HeroSection() {
                          <div className="mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 w-full h-full flex flex-col justify-center">
                               <div className="w-full space-y-16">
 
-                                   <div className="relative pt-32 md:pt-16">
+                                   <div className="relative pt-32 md:pt-40">
                                         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                              Modern warfare demands systems that are not just automated — <br />
                                              <span className="font-normal text-white/55">but truly autonomous</span>
@@ -43,7 +43,7 @@ export function HeroSection() {
                                         <div className="space-y-8">
                                              <p className="text-sm text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
                                                   <strong className="text-white font-medium">Our Mission</strong><br />
-                                                  At Kshatra Labs, We engineer true autonomous defense platforms.Powered by our proprietary APEX autonomy stack,our systems detect,pudrsue,and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
+                                                  At Kshatra Labs, we engineer true autonomous defense platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
                                              </p>
 
                                              <button

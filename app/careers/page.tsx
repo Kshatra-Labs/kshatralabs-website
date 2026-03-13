@@ -114,7 +114,7 @@ function RoleCard({
                          </h3>
                          <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-white">
                               <span>Bangalore</span>
-                              <span>Internships</span>
+                              <span>Internship</span>
                          </div>
                     </div>
 
@@ -194,7 +194,7 @@ export default function CareersPage() {
                {/* Background Grid Pattern */}
                <div className="fixed inset-0 z-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
 
-               <div className="relative z-10 pt-32 pb-24">
+               <div className="relative z-10 pt-32 md:pt-40 pb-24">
 
                     {/* 1. HERO SECTION */}
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
@@ -305,7 +305,7 @@ export default function CareersPage() {
                               <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Open Positions</h2>
                               <div className="h-1 w-24 bg-defense-accent"></div>
                               <p className="text-white font-mono text-sm uppercase tracking-widest">
-                                   Bangalore, India · Internships
+                                   Bangalore, India · Internship
                               </p>
                          </div>
 
