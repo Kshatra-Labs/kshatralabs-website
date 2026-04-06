@@ -78,6 +78,16 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
                "Prepare proposals, presentations, and technical documentation for client engagements.",
                "Support fundraising efforts by engaging with investors, VCs, and defense innovation programs."
           ]
+     },
+     "7": {
+          "title": "CAD Developer",
+          "responsibilities": [
+               "Design custom drone parts, mechanical assemblies, and perform daily CAD modeling work.",
+               "Write custom plugins and automation scripts for AutoCAD, FreeCAD, SolidWorks, CATIA, etc.",
+               "3D modeling and design tasks.",
+               "Automate mechanical design checks and validation processes to speed up testing.",
+               "Collaborate with mechanical engineers to build faster and more efficient design workflows."
+          ]
      }
 }
 
@@ -323,12 +333,25 @@ export default function CareersPage() {
                          {/* Skill Set Requirements */}
                          <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
                               <h3 className="text-xl font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
-                              <p className="text-neutral-300 leading-relaxed font-light mb-4">
-                                   We are looking for people with an <strong className="text-white">intermediate skill-set</strong>. Having some projects or experience under the following will help:
+                              <p className="text-neutral-300 leading-relaxed font-light mb-6">
+                                   We are a <strong className="text-white">defense drone company</strong> operating at the frontier of AI, robotics, mechanical engineering, and CAD. You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
                               </p>
-                              <div className="flex flex-wrap gap-2 font-mono text-xs text-neutral-400">
-                                   {['Python', 'C++', 'ROS/ROS2', 'Gazebo', 'SolidWorks/CATIA', 'FEA (ANSYS)', 'GD&T', 'PX4/ArduPilot', 'Flight Controllers', 'Sensors & Actuators', 'Microcontrollers', 'PCBs & Schematics', 'RF Simulation Tools', 'SDR', 'Antennas', 'Link Budgets', 'Debugging', 'Control Systems', 'Data Pipelines', 'PyTorch/TensorFlow', 'APIs', 'Model Deployment', 'Benchmarking', 'Prototyping'].map(skill => (
-                                        <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full">{skill}</span>
+                              <div className="flex flex-wrap gap-2.5 font-mono text-xs text-neutral-400">
+                                   {[
+                                        // Software & AI
+                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment',
+                                        // Robotics & Controls
+                                        'ROS/ROS2', 'Gazebo', 'Control Systems', 'PX4/ArduPilot', 'Flight Controllers',
+                                        // Mechanical & CAD
+                                        'SolidWorks/CATIA', 'AutoCAD/FreeCAD API', 'FEA (ANSYS)', 'GD&T',
+                                        // Embedded & Hardware
+                                        'Microcontrollers', 'Sensors & Actuators', 'PCBs & Schematics', 'Hardware Debugging',
+                                        // RF & Comms
+                                        'SDR', 'RF Simulation', 'Antennas', 'Link Budgets',
+                                        // General Engineering
+                                        'Rapid Prototyping', 'Benchmarking'
+                                   ].map(skill => (
+                                        <span key={skill} className="px-3 py-1.5 bg-black/40 border border-white/10 rounded-full hover:border-white/30 hover:text-white transition-colors cursor-default">{skill}</span>
                                    ))}
                               </div>
                          </div>
