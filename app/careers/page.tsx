@@ -169,7 +169,7 @@ function RoleCard({
                                    </div>
 
                                    <a
-                                        href="https://docs.google.com/forms/d/e/1FAIpQLScvdn-XvJE-kzFrborHVz12tZr-Y6-050V7kbWsQxg0KtUEZA/viewform?usp=dialog"
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest cursor-pointer"
