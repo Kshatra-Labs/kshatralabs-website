@@ -60,14 +60,18 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
           ]
      },
      "5": {
-          "title": "Full Stack Software Engineer",
+          "title": "Software Engineer",
           "responsibilities": [
-               "Develop ground control station (GCS) software for drone operations.",
-               "Build web-based mission planning and monitoring interfaces.",
-               "Work with React, TypeScript, Node.js, and modern web frameworks.",
-               "Implement real-time data visualization using WebGL and mapping libraries.",
-               "Develop REST APIs and WebSocket servers for telemetry streaming.",
-               "Integrate with MAVLink protocol for drone communication."
+               "Platform Architecture: Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous swarm systems.",
+               "Swarm Command: Design the overarching swarm command interfaces and state machines, translating high-level operator commands into distributed tasks for edge autonomy nodes.",
+               "Networking & Telemetry: Develop high-performance, low-latency networking architectures. Handle distributed messaging and telemetry over degraded or low-bandwidth networks.",
+               "Data Ingestion: Build resilient pipelines to ingest, time-sync, and process MAVLink telemetry and external sensor data (Radar, Vision) into a unified Common Operating Picture (COP).",
+               "Native GUI Development: Design and build the real-time, native Linux operator interface (using Qt/QML or similar) to visualize high-throughput geospatial and mission data.",
+               "HEADER:Required Technical Stack",
+               "Languages: Modern C++ and Python.",
+               "OS: Deep Linux systems programming experience.",
+               "Networking: Middleware and messaging protocols (ROS2).",
+               "Data: Data pipelines"
           ]
      },
      "6": {
@@ -150,12 +154,15 @@ function RoleCard({
                                              What You&apos;ll Work On
                                         </h4>
                                         <ul className="space-y-3">
-                                             {responsibilities.map((item, idx) => (
-                                                  <li key={idx} className="flex items-start gap-3 text-neutral-300 text-sm leading-relaxed">
-                                                       <CheckCircle2 className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                                                       {item}
-                                                  </li>
-                                             ))}
+                                             {responsibilities.map((item, idx) => {
+                                                  const isHeader = item.startsWith('HEADER:');
+                                                  return (
+                                                       <li key={idx} className={`flex items-start gap-3 text-neutral-300 text-sm leading-relaxed ${isHeader ? 'mt-6 mb-2 font-mono text-xs uppercase tracking-widest text-defense-accent font-bold' : ''}`}>
+                                                            {!isHeader && <CheckCircle2 className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />}
+                                                            {isHeader ? item.replace('HEADER:', '') : item}
+                                                       </li>
+                                                  )
+                                             })}
                                         </ul>
                                    </div>
 
@@ -302,12 +309,22 @@ export default function CareersPage() {
                          {/* Underglow */}
                          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-500/5 blur-[120px] pointer-events-none"></div>
 
-                         <div className="mb-16 space-y-4 relative z-10">
-                              <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Open Positions</h2>
-                              <div className="h-1 w-24 bg-defense-accent"></div>
-                              <p className="text-white font-mono text-sm uppercase tracking-widest">
-                                   Bangalore, India · Internship
-                              </p>
+                         <div className="mb-16 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+                              <div className="space-y-4">
+                                   <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Open Positions</h2>
+                                   <div className="h-1 w-24 bg-defense-accent"></div>
+                                   <p className="text-white font-mono text-sm uppercase tracking-widest">
+                                        Bangalore, India · Internship
+                                   </p>
+                              </div>
+                              <a
+                                   href="https://docs.google.com/document/d/1eItHpt6uffIohbG--rBGkeftcFWlQapF4zaC6LcK3UQ/edit?tab=t.0"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="inline-flex items-center justify-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest cursor-pointer whitespace-nowrap w-full md:w-auto mt-4 md:mt-0"
+                              >
+                                   View Full Job Description <ArrowRight className="w-4 h-4" />
+                              </a>
                          </div>
 
                          <div className="space-y-4 relative z-10">
@@ -325,7 +342,7 @@ export default function CareersPage() {
                          <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
                               <h3 className="text-xl font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
                               <p className="text-neutral-300 leading-relaxed font-light mb-4">
-                                   As a <strong className="text-white">Defence Drone Company</strong> our primary motive is to build bleeding-edge autonomous robotic systems second to none.
+                                   As a <strong className="text-white">Defence Robotics Company</strong> our primary motive is to build bleeding-edge autonomous robotic systems second to none.
                               </p>
                               <p className="text-neutral-300 leading-relaxed font-light mb-6">
                                    You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
