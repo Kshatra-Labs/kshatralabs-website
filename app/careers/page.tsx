@@ -333,8 +333,11 @@ export default function CareersPage() {
                          {/* Skill Set Requirements */}
                          <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
                               <h3 className="text-xl font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
+                              <p className="text-neutral-300 leading-relaxed font-light mb-4">
+                                   As a <strong className="text-white">Defence Drone Company</strong> our primary motive is to build bleeding-edge autonomous robotic systems second to none.
+                              </p>
                               <p className="text-neutral-300 leading-relaxed font-light mb-6">
-                                   We are a <strong className="text-white">defense drone company</strong> operating at the frontier of AI, robotics, mechanical engineering, and CAD. You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
+                                   You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
                               </p>
                               <div className="flex flex-wrap gap-2.5 font-mono text-xs text-neutral-400">
                                    {[
