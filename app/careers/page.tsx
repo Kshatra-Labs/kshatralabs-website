@@ -79,6 +79,16 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
                "Prepare proposals, presentations, and technical documentation for client engagements.",
                "Support fundraising efforts by engaging with investors, VCs, and defence innovation programs."
           ]
+     },
+     "7": {
+          "title": "CAD Developer",
+          "responsibilities": [
+               "Design custom drone parts, mechanical assemblies, and perform daily CAD modeling work.",
+               "Write custom plugins and automation scripts for AutoCAD, FreeCAD, SolidWorks, CATIA, etc.",
+               "3D modeling and design tasks.",
+               "Automate mechanical design checks and validation processes to speed up testing.",
+               "Collaborate with mechanical engineers to build faster and more efficient design workflows."
+          ]
      }
 }
 
