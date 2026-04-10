@@ -55,7 +55,8 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
                "Perform CFD analysis to estimate drag coefficient (Cd) and understand flow behavior.",
                "Iterate the design to reduce drag while maintaining aerodynamic stability and performance.",
                "Perform FEA to validate structural strength, stiffness, and load paths of the airframe.",
-               "Balance aerodynamic efficiency with weight, manufacturability, and structural constraints."
+               "Balance aerodynamic efficiency with weight, manufacturability, and structural constraints.",
+               "Design custom drone parts, mechanical assemblies, and perform daily CAD modeling work."
           ]
      },
      "5": {
@@ -77,16 +78,6 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
                "Conduct market research to identify emerging opportunities in autonomous systems and counter-UAS markets.",
                "Prepare proposals, presentations, and technical documentation for client engagements.",
                "Support fundraising efforts by engaging with investors, VCs, and defence innovation programs."
-          ]
-     },
-     "7": {
-          "title": "CAD Developer",
-          "responsibilities": [
-               "Design custom drone parts, mechanical assemblies, and perform daily CAD modeling work.",
-               "Write custom plugins and automation scripts for AutoCAD, FreeCAD, SolidWorks, CATIA, etc.",
-               "3D modeling and design tasks.",
-               "Automate mechanical design checks and validation processes to speed up testing.",
-               "Collaborate with mechanical engineers to build faster and more efficient design workflows."
           ]
      }
 }
@@ -342,7 +333,7 @@ export default function CareersPage() {
                               <div className="flex flex-wrap gap-2.5 font-mono text-xs text-neutral-400">
                                    {[
                                         // Software & AI
-                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment',
+                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment', 'GPU Acceleration', 'Edge Computing',
                                         // Robotics & Controls
                                         'ROS/ROS2', 'Gazebo', 'Control Systems', 'PX4/ArduPilot', 'Flight Controllers',
                                         // Mechanical & CAD
