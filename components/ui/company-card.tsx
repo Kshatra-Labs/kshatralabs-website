@@ -37,7 +37,7 @@ export function CompanyCard() {
                     <div className="w-12 h-1 bg-defense-accent rounded-full my-3 group-hover:w-24 transition-all duration-500" />
 
                     <p className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase font-mono">
-                         Defense Technology
+                         Defence Technology
                     </p>
                </div>
 

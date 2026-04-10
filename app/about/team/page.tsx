@@ -64,7 +64,7 @@ export default function TeamPage() {
                                    transition={{ duration: 0.8, delay: 0.2 }}
                                    className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto"
                               >
-                                   Engineers, researchers, and defense experts building the foundation for next-generation autonomous platforms.
+                                   Engineers, researchers, and defence experts building the foundation for next-generation autonomous platforms.
                               </motion.p>
                          </div>
 

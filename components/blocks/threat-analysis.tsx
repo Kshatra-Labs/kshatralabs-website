@@ -46,7 +46,7 @@ export function ThreatAnalysis() {
 
                                    {/* Capability Cards */}
                                    <div className="flex flex-wrap gap-3 pt-2">
-                                        {['INTERCEPTOR', 'DETECT', 'CHASE', 'DEFENSE-FIRST'].map((tag, i) => (
+                                        {['INTERCEPTOR', 'DETECT', 'CHASE', 'DEFENCE-FIRST'].map((tag, i) => (
                                              <span key={i} className={`px-3 py-1 border text-[10px] font-mono tracking-widest transition-all duration-500 ${i === activeTagIndex
                                                   ? 'bg-red-500/20 border-red-500/50 text-red-400 font-bold shadow-[0_0_10px_rgba(239,68,68,0.3)] scale-105'
                                                   : 'bg-white/5 border-white/10 text-blue-300 opacity-60'

@@ -51,7 +51,7 @@ export default function CompanyPage() {
                                              transition={{ duration: 0.8, delay: 0.3 }}
                                              className="text-lg text-neutral-300 font-light max-w-2xl leading-relaxed drop-shadow-md"
                                         >
-                                             Kshatra Labs is focused on building the next generation of autonomous aerial defense systems. As drones become faster, cheaper, and more accessible, the threat they pose to critical infrastructure, military operations, and public safety continues to grow. Our goal is to develop intelligent systems capable of detecting, tracking, and neutralizing aerial threats in real time.
+                                             Kshatra Labs is focused on building the next generation of autonomous aerial defence systems. As drones become faster, cheaper, and more accessible, the threat they pose to critical infrastructure, military operations, and public safety continues to grow. Our goal is to develop intelligent systems capable of detecting, tracking, and neutralizing aerial threats in real time.
                                         </motion.p>
                                    </div>
                               </div>
@@ -82,7 +82,7 @@ export default function CompanyPage() {
                                    </h2>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             At Kshatra Labs, we engineer true autonomous defense platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
+                                             At Kshatra Labs, we engineer true autonomous defence platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, keeping humans entirely out of the loop and out of harm&apos;s way.
                                         </p>
                                         <p>
                                              By combining edge AI, autonomous navigation, computer vision, and high-speed UAV platforms, we are building scalable and affordable counter-drone technologies designed for modern security challenges.
@@ -162,10 +162,10 @@ export default function CompanyPage() {
                                    </div>
                                    <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             The nature of warfare is evolving rapidly, with asymmetric threats challenging traditional defense paradigms. True deterrence now requires systems that are as adaptable and scalable as the threats they counter. Intelligent, cost-effective defense networks will form the backbone of future security.
+                                             The nature of warfare is evolving rapidly, with asymmetric threats challenging traditional defence paradigms. True deterrence now requires systems that are as adaptable and scalable as the threats they counter. Intelligent, cost-effective defence networks will form the backbone of future security.
                                         </p>
                                         <p>
-                                             Kshatra Labs is engineering autonomous, scalable swarm technologies that shift the paradigm from reactive defense to proactive deterrence, shaping the future of multi-domain security.
+                                             Kshatra Labs is engineering autonomous, scalable swarm technologies that shift the paradigm from reactive defence to proactive deterrence, shaping the future of multi-domain security.
                                         </p>
                                    </div>
                               </div>

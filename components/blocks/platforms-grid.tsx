@@ -76,7 +76,7 @@ export function PlatformsGrid() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight"
             >
-              Engineering Autonomous Defense
+              Engineering Autonomous Defence
             </motion.h2>
           </div>
 
@@ -92,7 +92,7 @@ export function PlatformsGrid() {
               Autonomous systems designed to operate across air, land, and sea.
             </p>
             <p className="text-lg md:text-xl text-neutral-400 leading-relaxed font-light">
-              We build real defense platforms — not just drones — powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm’s way.
+              We build real defence platforms — not just drones — powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm’s way.
             </p>
           </motion.div>
         </div>
