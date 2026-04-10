@@ -15,8 +15,8 @@ import {
 } from 'lucide-react'
 
 const data = {
-  defense: [
-    { icon: Shield, title: 'Counter-Drone Defense', code: 'C-UAS', featured: true },
+  defence: [
+    { icon: Shield, title: 'Counter-Drone Defence', code: 'C-UAS', featured: true },
     { icon: Eye, title: 'Border Security', code: 'BSEC' },
     { icon: Activity, title: 'Rapid Base Response', code: 'BDRR' },
     { icon: Lock, title: 'Asset Protection', code: 'HVAP' },
@@ -47,13 +47,13 @@ export function Capabilities() {
           </h1>
 
           <p className="mt-4 text-neutral-400 max-w-xl">
-            Defense and industrial systems built to never fail.
+            Defence and industrial systems built to never fail.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16">
 
-          <Column title="Defense" items={data.defense} />
+          <Column title="Defence" items={data.defence} />
           <Column title="Industrial" items={data.industrial} />
 
         </div>

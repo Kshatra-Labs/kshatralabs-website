@@ -110,7 +110,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 //                               Join the Mission
 //                          </h3>
 //                          <p className="text-sm text-[#9ca3af] max-w-[200px] mx-auto">
-//                               Help us build the future of autonomous defense systems.
+//                               Help us build the future of autonomous defence systems.
 //                          </p>
 //                     </div>
 //                </div>

@@ -21,7 +21,7 @@ const data = {
           platforms: '#platforms',
           technology: '#technology',
           vision: '#vision',
-          defense: '#',
+          defence: '#',
      },
      about: {
           history: '#',

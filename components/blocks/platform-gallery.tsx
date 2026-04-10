@@ -17,8 +17,8 @@ const galleryImages = [
      {
           src: '/styles/3.png',
           alt: 'Land Domain - Ground Systems',
-          label: 'GROUND DEFENSE UNIT',
-          title: 'Autonomous Perimeter Defense',
+          label: 'GROUND DEFENCE UNIT',
+          title: 'Autonomous Perimeter Defence',
           description: 'All-terrain ground interceptor for securing contested zones without human latency.',
           features: ['All-Terrain', '360° Vision', 'Mesh Networking', 'High Endurance']
      },
@@ -27,7 +27,7 @@ const galleryImages = [
           alt: 'Multi-Domain Operations',
           label: 'MULTI-DOMAIN COMMAND',
           title: 'Cross-Domain Coordination',
-          description: 'Synchronized operation across aerial and ground assets for unified defense.',
+          description: 'Synchronized operation across aerial and ground assets for unified defence.',
           features: ['Unified UI', 'Shared Intent', 'Real-time Analytics', 'Satellite Sync']
      },
 ]

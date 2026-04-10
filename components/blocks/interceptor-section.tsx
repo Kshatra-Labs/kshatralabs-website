@@ -196,7 +196,7 @@ export function InterceptorSection() {
                                         <Network className="w-6 h-6 text-blue-400" />
                                    </div>
                                    <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Swarm Defense Ready
+                                        Swarm Defence Ready
                                    </div>
                                    <div className="text-neutral-400 font-light leading-relaxed">Multiple Hawk units can coordinate to intercept multiple targets and drone swarms simultaneously.</div>
                               </div>
@@ -206,7 +206,7 @@ export function InterceptorSection() {
                                         <ArrowRight className="w-6 h-6 text-blue-400" />
                                    </div>
                                    <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Low-Cost Scalable Defense
+                                        Low-Cost Scalable Defence
                                    </div>
                                    <div className="text-neutral-400 font-light leading-relaxed">Traditional interceptor systems cost 100× more. Hawk enables scalable deployment for wide-area protection.</div>
                               </div>

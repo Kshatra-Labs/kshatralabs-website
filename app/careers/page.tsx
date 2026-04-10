@@ -55,7 +55,8 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
                "Perform CFD analysis to estimate drag coefficient (Cd) and understand flow behavior.",
                "Iterate the design to reduce drag while maintaining aerodynamic stability and performance.",
                "Perform FEA to validate structural strength, stiffness, and load paths of the airframe.",
-               "Balance aerodynamic efficiency with weight, manufacturability, and structural constraints."
+               "Balance aerodynamic efficiency with weight, manufacturability, and structural constraints.",
+               "Design custom drone parts, mechanical assemblies, and perform daily CAD modeling work."
           ]
      },
      "5": {
@@ -72,11 +73,11 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
      "6": {
           "title": "Business Development",
           "responsibilities": [
-               "Identify and engage potential clients in defense, security, and commercial drone sectors.",
+               "Identify and engage potential clients in defence, security, and commercial drone sectors.",
                "Build strategic partnerships with government agencies, private enterprises, and research institutions.",
                "Conduct market research to identify emerging opportunities in autonomous systems and counter-UAS markets.",
                "Prepare proposals, presentations, and technical documentation for client engagements.",
-               "Support fundraising efforts by engaging with investors, VCs, and defense innovation programs."
+               "Support fundraising efforts by engaging with investors, VCs, and defence innovation programs."
           ]
      },
      "7": {
@@ -213,7 +214,7 @@ export default function CareersPage() {
                          </div>
                          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                               Build the future of <br />
-                              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20 [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">Autonomous Defense</span>
+                              <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20 [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">Autonomous Defence</span>
                          </h1>
 
                          <div className="grid md:grid-cols-2 gap-12 mt-12 border-t border-white/10 pt-10">
@@ -240,7 +241,7 @@ export default function CareersPage() {
                                     <div className="h-1 w-24 bg-defense-accent"></div>
                                </div>
                                <p className="text-xl text-neutral-300 font-light leading-relaxed">
-                                    We are building autonomous defense systems from the ground up — and assembling a small team of engineers capable of solving some of the hardest problems in robotics and AI.
+                                    We are building autonomous defence systems from the ground up — and assembling a small team of engineers capable of solving some of the hardest problems in robotics and AI.
                                </p>
                           </div>
 
@@ -263,7 +264,7 @@ export default function CareersPage() {
                                <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
                                     <div className="text-defense-accent font-mono text-sm mb-4">04 //</div>
                                     <h3 className="text-2xl font-bold font-mono uppercase mb-3">Small Team, Massive Impact</h3>
-                                    <p className="text-neutral-400 leading-relaxed">Early engineers shape the architecture, capabilities, and direction of next-generation defense platforms.</p>
+                                    <p className="text-neutral-400 leading-relaxed">Early engineers shape the architecture, capabilities, and direction of next-generation defence platforms.</p>
                                </div>
                           </div>
                      </section>
@@ -273,7 +274,7 @@ export default function CareersPage() {
                     {/* 
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
                          <div className="mb-16 space-y-4">
-                              <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Engineering Autonomous Defense</h2>
+                              <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight">Engineering Autonomous Defence</h2>
                               <div className="h-1 w-24 bg-red-600"></div>
                          </div>
 
@@ -294,7 +295,7 @@ export default function CareersPage() {
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Network className="w-8 h-8 text-red-500 mb-6" />
                                    <h3 className="text-xl font-bold font-mono uppercase mb-3">Swarm Intelligence</h3>
-                                   <p className="text-sm text-neutral-400 leading-relaxed">Multi-agent coordination enabling large-scale drone defense.</p>
+                                   <p className="text-sm text-neutral-400 leading-relaxed">Multi-agent coordination enabling large-scale drone defence.</p>
                               </div>
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -333,13 +334,16 @@ export default function CareersPage() {
                          {/* Skill Set Requirements */}
                          <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
                               <h3 className="text-xl font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
+                              <p className="text-neutral-300 leading-relaxed font-light mb-4">
+                                   As a <strong className="text-white">Defence Drone Company</strong> our primary motive is to build bleeding-edge autonomous robotic systems second to none.
+                              </p>
                               <p className="text-neutral-300 leading-relaxed font-light mb-6">
-                                   We are a <strong className="text-white">defense drone company</strong> operating at the frontier of AI, robotics, mechanical engineering, and CAD. You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
+                                   You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
                               </p>
                               <div className="flex flex-wrap gap-2.5 font-mono text-xs text-neutral-400">
                                    {[
                                         // Software & AI
-                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment',
+                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment', 'GPU Acceleration', 'Edge Computing',
                                         // Robotics & Controls
                                         'ROS/ROS2', 'Gazebo', 'Control Systems', 'PX4/ArduPilot', 'Flight Controllers',
                                         // Mechanical & CAD
@@ -364,7 +368,7 @@ export default function CareersPage() {
                                    <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight mb-8">Our Engineering Culture</h2>
                                    <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-light">
                                         <p>
-                                             We believe the future of defense will be autonomous, software-defined, and AI-native.
+                                             We believe the future of defence will be autonomous, software-defined, and AI-native.
                                         </p>
                                         <p>
                                              Our team operates with a strong bias toward engineering rigor, rapid experimentation, and real-world deployment.
@@ -406,7 +410,7 @@ export default function CareersPage() {
                                     { step: "1", title: "Initial Conversation", desc: "A short call to understand your experience and interests." },
                                     { step: "2", title: "Technical Evaluation", desc: "A deep dive into engineering problems relevant to the role." },
                                     { step: "3", title: "Founder Discussion", desc: "Discussion about mission alignment and long-term vision." },
-                                    { step: "4", title: "Offer", desc: "Join the team building the next generation of autonomous defense systems." }
+                                    { step: "4", title: "Offer", desc: "Join the team building the next generation of autonomous defence systems." }
                                ].map((item) => (
                                     <div key={item.step} className="relative z-10 bg-black pt-4 md:pt-0">
                                          <div className="w-14 h-14 bg-black border border-white/20 flex items-center justify-center font-mono text-xl font-bold text-defense-accent mb-6">
@@ -426,7 +430,7 @@ export default function CareersPage() {
                               Join <span className="text-blue-500">The Team</span>
                          </h2>
                          <p className="text-lg md:text-xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                              If you want to work on some of the hardest engineering problems in robotics, AI, and autonomous defense — we want to hear from you.
+                              If you want to work on some of the hardest engineering problems in robotics, AI, and autonomous defence — we want to hear from you.
                          </p>
 
                          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
