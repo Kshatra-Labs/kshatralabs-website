@@ -7,6 +7,7 @@ import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
+import Link from 'next/link'
 
 interface JobDescription {
      title: string
@@ -317,14 +318,12 @@ export default function CareersPage() {
                                         Bangalore, India · Internship
                                    </p>
                               </div>
-                              <a
-                                   href="https://docs.google.com/document/d/1eItHpt6uffIohbG--rBGkeftcFWlQapF4zaC6LcK3UQ/edit?tab=t.0"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
+                              <Link
+                                   href="/careers/jd"
                                    className="inline-flex items-center justify-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest cursor-pointer whitespace-nowrap w-full md:w-auto mt-4 md:mt-0"
                               >
                                    View Full Job Description <ArrowRight className="w-4 h-4" />
-                              </a>
+                              </Link>
                          </div>
 
                          <div className="space-y-4 relative z-10">
