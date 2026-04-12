@@ -140,7 +140,7 @@ export default function JobDescriptionsPage() {
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Swarm operation</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design the overarching swarm command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., 'form a perimeter', 'search this sector') into distributed tasks for the edge autonomy stacks to execute.</p>
+                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design the overarching swarm command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., &apos;form a perimeter&apos;, &apos;search this sector&apos;) into distributed tasks for the edge autonomy stacks to execute.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Networks</h5>
@@ -235,7 +235,7 @@ export default function JobDescriptionsPage() {
 
                               <div className="bg-white/5 border border-white/10 p-6 md:p-8 mb-12">
                                    <p className="text-neutral-300 font-light leading-relaxed">
-                                        <strong className="text-white font-medium">KshatraLabs</strong> employs a highly selective, flat management model prioritizing rapid, impactful contribution. This structure facilitates agile development on projects that often intersect with critical technological domains, contributing subtly but significantly to the nation's strategic and defensive capabilities. Interns are uniquely positioned within this environment, entrusted with substantive roles that directly influence advanced research outcomes. Their involvement is a testament to their potential, positioning them within an elite group whose innovations not only drive company success but also support broader national technological resilience and progress.
+                                        <strong className="text-white font-medium">KshatraLabs</strong> employs a highly selective, flat management model prioritizing rapid, impactful contribution. This structure facilitates agile development on projects that often intersect with critical technological domains, contributing subtly but significantly to the nation&apos;s strategic and defensive capabilities. Interns are uniquely positioned within this environment, entrusted with substantive roles that directly influence advanced research outcomes. Their involvement is a testament to their potential, positioning them within an elite group whose innovations not only drive company success but also support broader national technological resilience and progress.
                                    </p>
                               </div>
 
