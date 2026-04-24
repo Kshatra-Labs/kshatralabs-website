@@ -28,6 +28,7 @@ const Footer4Col = dynamic(() => import("@/components/blocks/footer-section")) /
 // const EnvironmentSection = dynamic(() => import("@/components/blocks/environment-section").then(mod => mod.EnvironmentSection))
 // const ThreatAnalysis = dynamic(() => import("@/components/blocks/threat-analysis").then(mod => mod.ThreatAnalysis))
 const InterceptorSection = dynamic(() => import("@/components/blocks/interceptor-section").then(mod => mod.InterceptorSection))
+const Partners = dynamic(() => import("@/components/blocks/partners"))
 
 // demoFrames data removed/commented out as unused
 
@@ -63,6 +64,9 @@ export default function Home() {
 
         {/* INTERCEPTOR SECTION */}
         <InterceptorSection />
+
+        {/* PARTNERS SECTION */}
+        <Partners />
 
         {/* MISSION CRITICAL SOLUTIONS */}
         {/* <Capabilities /> */}
