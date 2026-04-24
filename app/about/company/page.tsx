@@ -6,6 +6,7 @@ import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
 import FooterSection from '@/components/blocks/footer-section'
 import { Plane, Cpu, Eye, Network, Navigation, Target } from 'lucide-react'
+import Partners from '@/components/blocks/partners'
 
 export default function CompanyPage() {
      return (
@@ -187,6 +188,8 @@ export default function CompanyPage() {
                                    </div>
                               </div>
                          </div>
+
+                         <Partners />
 
                     </div>
                </main>

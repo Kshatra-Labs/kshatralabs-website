@@ -8,6 +8,12 @@ import FooterSection from '@/components/blocks/footer-section'
 import { BackgroundPaths } from '@/components/ui/background-paths'
 import { Shield, Zap, Target, Cpu, Activity, Navigation, Volume2, VolumeX } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+
+const DownloadBrochure = dynamic(() => import('@/components/blocks/download-brochure'), {
+     loading: () => <div className="h-40 flex items-center justify-center text-neutral-500 font-mono text-xs">LOADING DOCUMENTATION...</div>,
+     ssr: false
+})
 
 
 export default function HawkProductPage() {
@@ -208,6 +214,9 @@ export default function HawkProductPage() {
                                    </div>
                               </div>
                          </div>
+
+                         {/* Download Brochure Section */}
+                         <DownloadBrochure />
 
                     </div>
                </main>
