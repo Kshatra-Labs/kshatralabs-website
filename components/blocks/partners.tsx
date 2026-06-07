@@ -39,16 +39,15 @@ export default function Partners() {
                               {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
                                    <div
                                         key={index}
-                                        className="group flex flex-col items-center justify-center shrink-0 px-8 gap-3"
-                                        style={{ width: 220 }}
+                                        className="group flex flex-col items-center justify-center shrink-0 px-4 md:px-8 gap-4 md:gap-5 w-[280px] md:w-[400px] lg:w-[450px]"
                                    >
                                         {/* Logo Badge */}
-                                        <div className="w-[130px] h-[52px] flex items-center justify-center bg-white rounded-sm px-3 py-2 shadow-md transition-all duration-300 group-hover:shadow-white/20 group-hover:shadow-lg group-hover:scale-105">
+                                        <div className="w-[160px] h-[64px] md:w-[220px] md:h-[88px] flex items-center justify-center bg-white rounded-md px-3 py-2 md:px-4 md:py-3 shadow-md transition-all duration-300 group-hover:shadow-white/20 group-hover:shadow-lg group-hover:scale-105">
                                              <Image
                                                   src={partner.logo}
                                                   alt={partner.name}
-                                                  width={120}
-                                                  height={44}
+                                                  width={200}
+                                                  height={76}
                                                   className="max-h-full w-auto object-contain"
                                                   draggable={false}
                                                   priority
@@ -57,7 +56,7 @@ export default function Partners() {
                                         </div>
 
                                         {/* Name */}
-                                        <span className="text-[9px] font-mono text-neutral-500 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                                        <span className="text-[10px] md:text-[12px] font-mono text-neutral-500 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                                              {partner.name}
                                         </span>
                                    </div>
