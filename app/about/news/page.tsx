@@ -7,6 +7,175 @@ import { motion } from 'framer-motion'
 import FooterSection from '@/components/blocks/footer-section'
 import { ArrowRight } from 'lucide-react'
 
+const cardStyles = `
+  .uiverse-card {
+    width: 100%;
+    border-radius: 20px;
+    background: #0a0a0a;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .uiverse-card:hover {
+    transform: scale(1.02);
+  }
+
+  .uiverse-card .top-section {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uiverse-card .bottom-section {
+    margin-top: 15px;
+    padding: 10px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .uiverse-btn {
+    background-color: white;
+    color: black;
+    border-radius: 10em;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0.8em 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: fit-content;
+  }
+
+  .uiverse-btn:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+    color: black;
+  }
+
+  .uiverse-btn:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+  }
+
+  .date-tag {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: default;
+    position: relative;
+    padding: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    transition: all .15s ease;
+    display: inline-block;
+  }
+
+  .date-tag::before,
+  .date-tag::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+  }
+
+  .date-tag::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+
+  .date-tag::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+
+  .date-tag-lg {
+    position: relative;
+    display: block;
+    padding: 6px 14px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+
+  .date-tag-lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+  }
+
+  .date-tag-lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+  }
+
+  .date-tag-sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #ff4655;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+  }
+
+  .date-tag-text {
+    position: relative;
+    letter-spacing: 0.1em;
+  }
+
+  .date-tag:hover {
+    color: #0f1923;
+  }
+
+  .date-tag:hover .date-tag-sl {
+    width: calc(100% + 15px);
+  }
+
+  .date-tag:hover .date-tag-lg::after {
+    background-color: #fff;
+  }
+`;
+
 // Add newest posts to the TOP of this array
 const newsPosts = [
      {
@@ -52,6 +221,7 @@ const newsPosts = [
 export default function NewsPage() {
      return (
           <div className="relative min-h-screen bg-black text-white selection:bg-white/20 overflow-hidden font-sans">
+               <style>{cardStyles}</style>
                {/* Fixed Background */}
                <div className="fixed inset-0 z-0 opacity-40">
                     <BackgroundPaths title="" />
@@ -107,12 +277,12 @@ export default function NewsPage() {
                                              whileInView={{ opacity: 1, y: 0 }}
                                              viewport={{ once: true, margin: "-50px" }}
                                              transition={{ duration: 0.6, delay: (idx % 3) * 0.1 }}
-                                             className="flex flex-col group bg-white/[0.02] border border-white/10 rounded-3xl overflow-hidden hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.2)] backdrop-blur-md"
+                                             className="uiverse-card group"
                                         >
-                                             {/* Media Container (Top) */}
-                                             {(post.youtubeId || post.instagramId || post.imageUrl) && (
-                                                  <div className="w-full bg-neutral-950 border-b border-white/10 relative">
-                                                       {post.youtubeId && (
+                                             {/* Top Section */}
+                                             <div className="top-section">
+                                                  <div className="w-full relative z-0 flex-1 min-h-[200px]">
+                                                       {post.youtubeId ? (
                                                             <div className="relative w-full aspect-video">
                                                                  <iframe 
                                                                       src={`https://www.youtube.com/embed/${post.youtubeId}?rel=0`} 
@@ -123,38 +293,34 @@ export default function NewsPage() {
                                                                       className="absolute inset-0 w-full h-full"
                                                                  ></iframe>
                                                             </div>
-                                                       )}
-                                                       {post.instagramId && (
-                                                            <div className="relative w-full bg-white">
+                                                       ) : post.instagramId ? (
+                                                            <div className="relative w-full h-[450px] bg-white flex items-center overflow-hidden">
                                                                  <iframe 
                                                                       src={`https://www.instagram.com/p/${post.instagramId}/embed`} 
                                                                       height="450" 
                                                                       frameBorder="0" 
                                                                       scrolling="no" 
                                                                       allowTransparency
-                                                                      className="w-full"
+                                                                      className="w-full absolute inset-0 h-full"
                                                                  ></iframe>
                                                             </div>
-                                                       )}
-                                                       {post.imageUrl && (
-                                                            <div className="relative w-full aspect-[4/5] bg-black">
+                                                       ) : post.imageUrl ? (
+                                                            <div className="relative w-full h-full bg-[#0a0a0a] min-h-[200px] flex items-center justify-center">
                                                                  <img 
                                                                       src={post.imageUrl} 
                                                                       alt={post.title}
-                                                                      className="w-full h-full object-cover"
+                                                                      className="w-full h-full object-contain"
                                                                  />
                                                             </div>
+                                                       ) : (
+                                                            <div className="absolute inset-0 w-full h-full"></div>
                                                        )}
                                                   </div>
-                                             )}
+                                             </div>
 
-                                             {/* Meta & Title */}
-                                             <div className="flex flex-col p-6 md:p-8 flex-1">
-                                                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] md:text-xs font-mono uppercase tracking-widest mb-5 w-fit">
-                                                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)] animate-pulse"></span>
-                                                       {post.date || 'Latest'}
-                                                  </div>
-                                                  <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight mb-4 leading-snug group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                             {/* Bottom Section */}
+                                             <div className="bottom-section">
+                                                  <h3 className="text-xl font-bold text-white tracking-wide mb-3 leading-snug group-hover:text-[#50f6ff] transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                                        {post.url ? (
                                                             <a href={post.url} target="_blank" rel="noopener noreferrer">{post.title}</a>
                                                        ) : (
@@ -162,25 +328,32 @@ export default function NewsPage() {
                                                        )}
                                                   </h3>
                                                   
-                                                  {/* Description */}
                                                   {post.description && (
-                                                       <p className="text-neutral-400 font-light leading-relaxed mb-8 text-sm md:text-base flex-1">
+                                                       <p className="text-[#aadef3] opacity-80 font-light leading-relaxed mb-4 text-sm flex-1">
                                                             {post.description}
                                                        </p>
                                                   )}
 
-                                                  {/* Links */}
+                                                  <div className={`flex items-center mb-6 ${!post.description ? 'flex-1 items-start' : ''}`}>
+                                                       <div className="date-tag">
+                                                            <span className="date-tag-lg">
+                                                                 <span className="date-tag-sl" />
+                                                                 <span className="date-tag-text">{post.date || 'Latest'}</span>
+                                                            </span>
+                                                       </div>
+                                                  </div>
+
                                                   {(post.url || post.links) && (
                                                        <div className="mt-auto pt-4 border-t border-white/10 flex flex-col gap-3">
                                                             {post.links ? (
                                                                  post.links.map((link, i) => (
-                                                                      <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#2563EB] transition-colors uppercase tracking-widest w-fit">
-                                                                           {link.text} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                                                      <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="uiverse-btn">
+                                                                           {link.text} <ArrowRight className="w-3.5 h-3.5" />
                                                                       </a>
                                                                  ))
                                                             ) : (
-                                                                 <a href={post.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-[#2563EB] transition-colors uppercase tracking-widest w-fit">
-                                                                      {post.linkText || 'Read More'} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                                                 <a href={post.url} target="_blank" rel="noopener noreferrer" className="uiverse-btn">
+                                                                      {post.linkText || 'Read More'} <ArrowRight className="w-3.5 h-3.5" />
                                                                  </a>
                                                             )}
                                                        </div>
