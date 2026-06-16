@@ -11,7 +11,7 @@ import { ArrowRight } from 'lucide-react'
 const newsPosts = [
      {
           id: 'instagram-may-21',
-          date: 'Latest',
+          date: 'May 21, 2026',
           title: 'Featured by iTIC Incubator @ IITH',
           description: 'Kshatra Labs was recently highlighted in a post by iTIC Incubator, the Technology Business Incubator at IIT Hyderabad. iTIC is dedicated to creating a supportive and nourishing environment for entrepreneurs.',
           url: 'https://www.instagram.com/p/DYoX9TLmB4i/',
@@ -28,8 +28,17 @@ const newsPosts = [
           linkText: 'Watch on YouTube'
      },
      {
+          id: 'upstart-finale',
+          date: 'January 28, 2026',
+          title: '1st Runner Up at UPSTART Finale, IIT Kanpur',
+          description: 'From bold ideas to breakthrough execution — Kshatra Labs proudly secured the 1st Runner Up position at the UPSTART Finale organized by E-Cell IIT Kanpur.',
+          url: 'https://www.instagram.com/p/DUDgw1nDKNO/',
+          imageUrl: '/insta1.png',
+          linkText: 'View on Instagram'
+     },
+     {
           id: 'campus-fund-event',
-          date: 'December 2025',
+          date: 'December 10, 2025',
           title: 'AWS IDFC FIRST Campus Fund Grand Challenge 2025 - Finale',
           description: 'To be selected among the top 13 student-led startups out of nearly 1,500 applications across India and abroad is a huge privilege. The Grand Finale was held in Mumbai on December 10, 2025. Deeply humbled to be included in such a talented group. This milestone was also featured in a press release by Business Wire India via New Delhi Times.',
           youtubeId: 'iUGGd9Oqh8Y',
@@ -101,7 +110,7 @@ export default function NewsPage() {
                                              className="flex flex-col group bg-white/[0.02] border border-white/10 rounded-3xl overflow-hidden hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.2)] backdrop-blur-md"
                                         >
                                              {/* Media Container (Top) */}
-                                             {(post.youtubeId || post.instagramId) && (
+                                             {(post.youtubeId || post.instagramId || post.imageUrl) && (
                                                   <div className="w-full bg-neutral-950 border-b border-white/10 relative">
                                                        {post.youtubeId && (
                                                             <div className="relative w-full aspect-video">
@@ -127,13 +136,22 @@ export default function NewsPage() {
                                                                  ></iframe>
                                                             </div>
                                                        )}
+                                                       {post.imageUrl && (
+                                                            <div className="relative w-full aspect-[4/5] bg-black">
+                                                                 <img 
+                                                                      src={post.imageUrl} 
+                                                                      alt={post.title}
+                                                                      className="w-full h-full object-cover"
+                                                                 />
+                                                            </div>
+                                                       )}
                                                   </div>
                                              )}
 
                                              {/* Meta & Title */}
                                              <div className="flex flex-col p-6 md:p-8 flex-1">
-                                                  <div className="text-xs font-sans text-neutral-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                                       <span className="w-2 h-2 rounded-full bg-[#ea580c] shadow-[0_0_8px_rgba(234,88,12,0.6)]"></span>
+                                                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] md:text-xs font-mono uppercase tracking-widest mb-5 w-fit">
+                                                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)] animate-pulse"></span>
                                                        {post.date || 'Latest'}
                                                   </div>
                                                   <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight mb-4 leading-snug group-hover:text-[#2563EB] transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>

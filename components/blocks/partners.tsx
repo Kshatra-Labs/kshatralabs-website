@@ -9,6 +9,8 @@ const partners = [
      { name: 'GUSEC', logo: '/partners/GUSEC-Board-Meeting-20th-SEP-2025.png' },
      { name: 'iTIC Incubator — IIT Hyderabad', logo: '/partners/images.png' },
      { name: 'Startup India Seed Fund', logo: '/partners/DPIIT-Seed-Fund-Scheme.jpg.webp' },
+     { name: 'Mach33 Aero', logo: '/partners/mach33_aero_logo.jpg' },
+     { name: 'Social Alpha', logo: '/partners/social_alpha_logo.jpg' },
 ]
 
 export default function Partners() {
