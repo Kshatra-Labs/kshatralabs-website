@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { Search, Menu, X, ArrowRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 interface MegaMenuColumn {
      title: string;

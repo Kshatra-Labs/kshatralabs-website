@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import { Header } from '@/components/blocks/header'
 import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
@@ -306,10 +307,11 @@ export default function NewsPage() {
                                                             </div>
                                                        ) : post.imageUrl ? (
                                                             <div className="relative w-full h-full bg-[#0a0a0a] min-h-[200px] flex items-center justify-center">
-                                                                 <img 
+                                                                 <Image 
                                                                       src={post.imageUrl} 
                                                                       alt={post.title}
-                                                                      className="w-full h-full object-contain"
+                                                                      fill
+                                                                      className="object-contain"
                                                                  />
                                                             </div>
                                                        ) : (
