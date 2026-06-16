@@ -40,6 +40,12 @@ const menuItems: NavItem[] = [
                     items: [
                          { name: 'Gallery', href: '/about/gallery', desc: 'Visual overview of our platforms' }
                     ]
+               },
+               {
+                    title: 'NEWS',
+                    items: [
+                         { name: 'News', href: '/about/news', desc: 'Latest updates and announcements' }
+                    ]
                }
           ]
      },
