@@ -6,345 +6,578 @@ import FooterSection from '@/components/blocks/footer-section'
 import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
 
+/* ─────────────────────────────────────────────────────────────
+   Sub-components
+   ───────────────────────────────────────────────────────────── */
+
+function SectionDivider() {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="h-px flex-1 bg-gradient-to-r from-amber-500/40 to-transparent" />
+      <div className="w-1.5 h-1.5 bg-amber-500/60 rotate-45 shrink-0" />
+    </div>
+  )
+}
+
+interface SectionProps {
+  num: string
+  title: string
+  children: React.ReactNode
+  warning?: boolean
+}
+
+function Section({ num, title, children, warning = false }: SectionProps) {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+    >
+      <div className={`border-l-2 pl-6 ${warning ? 'border-red-600/70' : 'border-amber-500'}`}>
+        {/* Section header */}
+        <div className="flex items-baseline gap-3 mb-4">
+          <span
+            className={`font-mono text-xs tracking-widest shrink-0 ${
+              warning ? 'text-red-500' : 'text-amber-500'
+            }`}
+          >
+            §{num}
+          </span>
+          <h2
+            className={`text-xl md:text-2xl font-bold tracking-tight leading-snug ${
+              warning ? 'text-red-200' : 'text-white'
+            }`}
+            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          >
+            {title}
+          </h2>
+        </div>
+
+        {/* Section body */}
+        <div className="text-neutral-400 leading-relaxed space-y-3 text-[15px]">
+          {children}
+        </div>
+      </div>
+    </motion.section>
+  )
+}
+
+interface BulletListProps {
+  items: string[]
+  danger?: boolean
+}
+
+function BulletList({ items, danger = false }: BulletListProps) {
+  return (
+    <ul className="space-y-2 mt-2">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-start gap-3">
+          <span
+            className={`font-mono text-xs mt-[5px] shrink-0 select-none ${
+              danger ? 'text-red-500' : 'text-amber-500'
+            }`}
+          >
+            —
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+interface SubGroupProps {
+  label: string
+  items: string[]
+}
+
+function SubGroup({ label, items }: SubGroupProps) {
+  return (
+    <div className="mt-5">
+      <p className="font-mono text-[10px] tracking-widest uppercase text-red-500/80 mb-2">
+        {label}
+      </p>
+      <BulletList items={items} danger />
+    </div>
+  )
+}
+
+function AlertBox({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mt-5 bg-red-950/25 border border-red-800/40 rounded-sm px-5 py-4">
+      <div className="flex items-start gap-3">
+        <span className="font-mono text-[10px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
+          ⚠ NOTICE
+        </span>
+        <p className="text-red-200/75 text-sm leading-relaxed">{children}</p>
+      </div>
+    </div>
+  )
+}
+
+function InfoCard({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="bg-neutral-900/60 border border-neutral-800 rounded-sm px-5 py-4 font-mono text-sm leading-loose">
+      <p className="font-mono text-[10px] tracking-widest uppercase text-amber-500/70 mb-3">
+        {label}
+      </p>
+      {children}
+    </div>
+  )
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Page
+   ───────────────────────────────────────────────────────────── */
+
 export default function TermsOfServicePage() {
-     return (
-          <div className="relative min-h-screen bg-black text-white selection:bg-white/20 overflow-hidden font-sans">
-               {/* Fixed Background */}
-               <div className="fixed inset-0 z-0 opacity-40">
-                    <BackgroundPaths title="" />
-               </div>
+  return (
+    <div className="relative min-h-screen bg-black text-white selection:bg-amber-500/20 overflow-hidden font-sans">
 
-               <Header />
+      {/* Ambient background */}
+      <div className="fixed inset-0 z-0 opacity-20">
+        <BackgroundPaths title="" />
+      </div>
 
-               <main className="relative z-10 pt-32 md:pt-40 pb-24 px-6 md:px-12 text-white">
-                    <div className="max-w-4xl mx-auto space-y-12">
-                         <div className="space-y-6 mb-16">
-                              <motion.h1
-                                   initial={{ opacity: 0, y: 30 }}
-                                   animate={{ opacity: 1, y: 0 }}
-                                   transition={{ duration: 1, delay: 0.1 }}
-                                   className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-white mb-6"
-                                   style={{ fontFamily: 'var(--font-space-grotesk)' }}
-                              >
-                                   Website Terms of Use
-                              </motion.h1>
-                              <motion.p
-                                   initial={{ opacity: 0, y: 20 }}
-                                   animate={{ opacity: 1, y: 0 }}
-                                   transition={{ duration: 0.8, delay: 0.2 }}
-                                   className="text-lg text-neutral-400 font-light leading-relaxed"
-                              >
-                                   Effective Date: 01-Jan-2026
-                              </motion.p>
-                         </div>
+      {/* Tactical amber grid */}
+      <div
+        className="fixed inset-0 pointer-events-none z-[1]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(245, 158, 11, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(245, 158, 11, 0.035) 1px, transparent 1px)
+          `,
+          backgroundSize: '64px 64px',
+        }}
+      />
 
-                         <motion.div 
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.8, delay: 0.3 }}
-                              className="text-neutral-300"
-                         >
-                              <p className="leading-relaxed mb-6">
-                                   These Terms of Service (“Terms”) govern access to and use of the website kshatralabs.in and all associated services, documentation, tools, and digital content operated by Kshatra Labs (“Kshatra Labs”, “Company”, “we”, “us”, or “our”).
-                              </p>
-                              <p className="leading-relaxed mb-6">
-                                   By accessing or using the website or any related services (collectively, the “Services”), you agree to be bound by these Terms. If you do not agree, you must immediately discontinue use of the Services.
-                              </p>
-                              <p className="leading-relaxed mb-6">
-                                   These Terms govern website use only and are separate from:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>Terms of Sale</li>
-                                   <li>Warranty & Liability Agreement</li>
-                                   <li>Privacy Policy</li>
-                              </ul>
-                              <p className="leading-relaxed mb-12">
-                                   which govern product transactions and data practices.
-                              </p>
+      {/* Radial vignette */}
+      <div
+        className="fixed inset-0 pointer-events-none z-[2]"
+        style={{
+          background:
+            'radial-gradient(ellipse at 50% 0%, transparent 40%, rgba(0,0,0,0.55) 100%)',
+        }}
+      />
 
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">1. Company Identification</h2>
-                              <p className="leading-relaxed mb-6">
-                                   KSHATRA LABS<br/>
-                                   Autonomous Systems Facility<br/>
-                                   Bangalore, India<br/><br/>
-                                   Phone: +91 97304 58528
-                              </p>
+      <Header />
 
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">2. Eligibility</h2>
-                              <p className="leading-relaxed mb-4">The Services are intended for use by:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>individuals aged 18 years or older</li>
-                                   <li>legally authorised representatives of businesses or institutions</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   By using the Services you represent that you have the legal authority to enter into binding agreements.
-                              </p>
+      <main className="relative z-10 pt-32 md:pt-44 pb-28 px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
 
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">3. Nature of the Website</h2>
-                              <p className="leading-relaxed mb-4">The website provides:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>technical information</li>
-                                   <li>product specifications</li>
-                                   <li>documentation</li>
-                                   <li>engineering resources</li>
-                                   <li>purchasing capabilities</li>
-                                   <li>support channels</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   All information is provided for informational and evaluation purposes only and does not constitute engineering certification, design approval, or regulatory compliance assurance.
-                              </p>
+          {/* ── Title block ── */}
+          <div className="mb-18 md:mb-20">
+            <motion.div
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              className="flex items-center gap-4 mb-6"
+            >
+              <div className="h-px w-8 bg-amber-500/60" />
+              <span className="font-mono text-[11px] tracking-[0.25em] text-amber-500/60 uppercase">
+                Legal Documentation
+              </span>
+            </motion.div>
 
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">4. Permitted Use</h2>
-                              <p className="leading-relaxed mb-4">Users may access the website for legitimate purposes including:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>learning about Kshatra Labs products</li>
-                                   <li>evaluating technical specifications</li>
-                                   <li>placing orders</li>
-                                   <li>requesting technical support</li>
-                                   <li>communicating with the Company</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   Any use beyond these purposes is prohibited unless explicitly authorised in writing.
-                              </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+              className="text-5xl md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase leading-[0.92] tracking-tight text-white"
+              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            >
+              Website<br />
+              <span className="text-amber-500">Terms</span>{' '}
+              <span className="text-neutral-500">of Use</span>
+            </motion.h1>
 
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">5. Prohibited Activities</h2>
-                              <p className="leading-relaxed mb-4">You agree not to:</p>
-                              <h3 className="text-xl font-semibold text-neutral-200 mb-2 mt-4">Technical misuse</h3>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>scrape or harvest technical data</li>
-                                   <li>use automated bots or crawlers without permission</li>
-                                   <li>copy engineering documentation for competitive development</li>
-                                   <li>reverse engineer product designs based on website content</li>
-                                   <li>reproduce schematics, firmware descriptions, or engineering insights</li>
-                              </ul>
-
-                              <h3 className="text-xl font-semibold text-neutral-200 mb-2 mt-4">Security violations</h3>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>attempt unauthorised access to servers or databases</li>
-                                   <li>probe vulnerabilities or bypass security systems</li>
-                                   <li>introduce malware or harmful code</li>
-                              </ul>
-
-                              <h3 className="text-xl font-semibold text-neutral-200 mb-2 mt-4">Competitive misuse</h3>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>use website data for competing product development</li>
-                                   <li>benchmark Kshatra Labs products using unpublished or misrepresented methods</li>
-                                   <li>misrepresent Kshatra Labs specifications or documentation</li>
-                              </ul>
-
-                              <h3 className="text-xl font-semibold text-neutral-200 mb-2 mt-4">Data exploitation</h3>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>train AI models or data systems on website engineering data without written consent</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-4">Violation may result in:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>termination of access</li>
-                                   <li>legal action</li>
-                                   <li>reporting to authorities where applicable.</li>
-                              </ul>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">6. Technical Documentation Disclaimer</h2>
-                              <p className="leading-relaxed mb-4">Engineering data available on this website may include:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>product specifications</li>
-                                   <li>performance curves</li>
-                                   <li>application notes</li>
-                                   <li>integration guidelines</li>
-                                   <li>test data</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-4">These materials:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>represent controlled internal test conditions</li>
-                                   <li>may change without notice</li>
-                                   <li>may vary depending on system integration</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-6">
-                                   Kshatra Labs does not guarantee system-level outcomes resulting from use of this information.
-                              </p>
-
-                              <p className="leading-relaxed mb-4">Users remain responsible for:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>validating designs</li>
-                                   <li>performing safety testing</li>
-                                   <li>ensuring regulatory compliance.</li>
-                              </ul>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">7. Product Safety Notice</h2>
-                              <p className="leading-relaxed mb-4">Products referenced on this website may involve:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>rotating propulsion systems</li>
-                                   <li>high current electronics</li>
-                                   <li>high temperature components</li>
-                                   <li>fuel combustion systems (IC engines)</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-4">Improper integration may result in:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>equipment damage</li>
-                                   <li>fire</li>
-                                   <li>serious injury or death</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-6">
-                                   The website does not provide complete safety guidance for system design. Users must ensure appropriate safety procedures and testing protocols.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">8. Intellectual Property</h2>
-                              <p className="leading-relaxed mb-4">All website content including:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>designs</li>
-                                   <li>text</li>
-                                   <li>graphics</li>
-                                   <li>documentation</li>
-                                   <li>photographs</li>
-                                   <li>engineering data</li>
-                                   <li>software elements</li>
-                                   <li>trademarks and branding</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-6">
-                                   is the intellectual property of Kshatra Labs or its licensors.
-                              </p>
-
-                              <p className="leading-relaxed mb-4">You may not:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>reproduce or redistribute content</li>
-                                   <li>create derivative works</li>
-                                   <li>replicate engineering designs</li>
-                                   <li>commercially exploit website content</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-6">
-                                   without written permission. Limited permission is granted to download materials solely for internal evaluation purposes.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">9. User Submissions</h2>
-                              <p className="leading-relaxed mb-4">Users may submit:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>feedback</li>
-                                   <li>reviews</li>
-                                   <li>support requests</li>
-                                   <li>technical inquiries</li>
-                              </ul>
-
-                              <p className="leading-relaxed mb-6">
-                                   By submitting content you grant Kshatra Labs a non-exclusive, worldwide, royalty-free license to use such submissions for operational or improvement purposes.
-                              </p>
-
-                              <p className="leading-relaxed mb-4">Users must not submit content that:</p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>infringes intellectual property</li>
-                                   <li>contains malicious code</li>
-                                   <li>violates applicable laws.</li>
-                              </ul>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">10. Third-Party Links</h2>
-                              <p className="leading-relaxed mb-4">
-                                   The website may link to third-party platforms or services. Kshatra Labs does not control and is not responsible for:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>content</li>
-                                   <li>security</li>
-                                   <li>policies</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   of external websites. Accessing third-party websites is at your own risk.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">11. Website Availability</h2>
-                              <p className="leading-relaxed mb-4">
-                                   Kshatra Labs does not guarantee uninterrupted availability of the Services. The website may be unavailable due to:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>maintenance</li>
-                                   <li>software upgrades</li>
-                                   <li>infrastructure failures</li>
-                                   <li>cyber incidents</li>
-                                   <li>external service provider outages.</li>
-                              </ul>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">12. Disclaimer of Warranties</h2>
-                              <p className="leading-relaxed mb-4">
-                                   The Services and website content are provided “as is” and “as available.” Kshatra Labs makes no warranties regarding:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>completeness or accuracy of website content</li>
-                                   <li>uninterrupted operation</li>
-                                   <li>compatibility with user systems</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   Product warranties are governed exclusively by the Terms of Sale and Warranty Agreement.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">13. Limitation of Liability</h2>
-                              <p className="leading-relaxed mb-4">
-                                   To the maximum extent permitted by law, Kshatra Labs shall not be liable for:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>loss of profits</li>
-                                   <li>business interruption</li>
-                                   <li>loss of data</li>
-                                   <li>engineering redesign costs</li>
-                                   <li>reliance on website technical information</li>
-                                   <li>indirect or consequential damages</li>
-                              </ul>
-                              <p className="leading-relaxed mb-6">
-                                   arising from website use. Nothing in these Terms excludes liability where exclusion is prohibited by law.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">14. Export Control</h2>
-                              <p className="leading-relaxed mb-6">
-                                   Information and products presented on this website may be subject to export control laws and international trade restrictions. Users agree not to use or transfer information in violation of such laws.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">15. Security Monitoring</h2>
-                              <p className="leading-relaxed mb-4">
-                                   Kshatra Labs may monitor website activity to detect misuse or security threats. We reserve the right to:
-                              </p>
-                              <ul className="list-disc list-inside mb-6 space-y-2">
-                                   <li>suspend access</li>
-                                   <li>investigate suspicious activity</li>
-                                   <li>cooperate with law enforcement authorities.</li>
-                              </ul>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">16. Privacy</h2>
-                              <p className="leading-relaxed mb-6">
-                                   Use of the Services is subject to the Kshatra Labs Privacy Policy, which governs collection and processing of personal data.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">17. Governing Law</h2>
-                              <p className="leading-relaxed mb-6">
-                                   These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Bangalore, Karnataka, unless applicable consumer laws require otherwise.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">18. Changes to Terms</h2>
-                              <p className="leading-relaxed mb-6">
-                                   Kshatra Labs may update these Terms at any time. The updated version will be published on the website with a revised effective date. Continued use of the Services constitutes acceptance of the updated Terms.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">19. Severability</h2>
-                              <p className="leading-relaxed mb-6">
-                                   If any provision of these Terms is deemed invalid or unenforceable, the remaining provisions shall remain in full force.
-                              </p>
-
-                              <h2 className="text-2xl font-bold text-white mb-4 mt-8">20. Contact</h2>
-                              <p className="leading-relaxed mb-6">
-                                   KSHATRA LABS<br/>
-                                   Autonomous Systems Facility<br/>
-                                   Bangalore, India<br/><br/>
-                                   Phone: +91 97304 58528<br/><br/>
-                                   Email: <a href="mailto:contact@kshatralabs.in" className="text-blue-400 hover:text-blue-300 transition-colors">contact@kshatralabs.in</a>
-                              </p>
-                         </motion.div>
-                    </div>
-               </main>
-
-               {/* Grid Overlay */}
-               <div className="fixed inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-               <FooterSection />
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="font-mono text-xs text-neutral-600 tracking-widest mt-7 uppercase"
+            >
+              Kshatra Labs &nbsp;·&nbsp; kshatralabs.in &nbsp;·&nbsp; Effective 01-Jan-2026
+            </motion.p>
           </div>
-     )
+
+          {/* ── Intro ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="text-neutral-400 leading-relaxed space-y-4 text-[15px] mb-18 pl-6 border-l border-neutral-800"
+          >
+            <p>
+              These Terms of Service (&quot;Terms&quot;) govern access to and use of the website{' '}
+              <span className="text-white font-medium">kshatralabs.in</span> and all associated
+              services, documentation, tools, and digital content operated by Kshatra Labs
+              (&quot;Kshatra Labs&quot;, &quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
+            </p>
+            <p>
+              By accessing or using the website or any related services (collectively, the
+              &quot;Services&quot;), you agree to be bound by these Terms. If you do not agree, you must
+              immediately discontinue use of the Services.
+            </p>
+            <p>
+              These Terms govern website use only and are separate from the{' '}
+              <span className="text-white font-medium">Privacy Policy</span>, which governs
+              product transactions and data practices.
+            </p>
+          </motion.div>
+
+          <SectionDivider />
+
+          {/* ── All Sections ── */}
+          <div className="mt-16 space-y-14">
+
+            {/* §01 */}
+            <Section num="01" title="Company Identification">
+              <InfoCard label="Operator">
+                <p className="text-white font-semibold">KSHATRA LABS</p>
+                <p className="text-neutral-500">Autonomous Systems Facility</p>
+                <p className="text-neutral-500">Bangalore, India</p>
+                <p className="text-neutral-400 mt-2">+91 97304 58528</p>
+              </InfoCard>
+            </Section>
+
+            {/* §02 */}
+            <Section num="02" title="Eligibility">
+              <p>The Services are intended for use by:</p>
+              <BulletList
+                items={[
+                  'individuals aged 18 years or older',
+                  'legally authorised representatives of businesses or institutions',
+                ]}
+              />
+              <p className="mt-3">
+                By using the Services you represent that you have the legal authority to enter
+                into binding agreements.
+              </p>
+            </Section>
+
+            {/* §03 */}
+            <Section num="03" title="Nature of the Website">
+              <p>The website provides:</p>
+              <BulletList
+                items={[
+                  'technical information',
+                  'product specifications',
+                  'documentation',
+                  'engineering resources',
+                  'contact and support information',
+                ]}
+              />
+              <p className="mt-3">
+                All information is provided for informational and evaluation purposes only and
+                does not constitute engineering certification, design approval, or regulatory
+                compliance assurance.
+              </p>
+            </Section>
+
+            {/* §04 */}
+            <Section num="04" title="Permitted Use">
+              <p>Users may access the website for legitimate purposes including:</p>
+              <BulletList
+                items={[
+                  'learning about Kshatra Labs products',
+                  'evaluating technical specifications',
+                  'contacting us for inquiries or technical support',
+                ]}
+              />
+              <p className="mt-3">
+                Any use beyond these purposes is prohibited unless explicitly authorised in
+                writing.
+              </p>
+            </Section>
+
+            {/* §05 – WARNING */}
+            <Section num="05" title="Prohibited Activities" warning>
+              <p>You agree not to engage in the following activities:</p>
+
+              <SubGroup
+                label="Technical Misuse"
+                items={[
+                  'scrape or harvest technical data',
+                  'use automated bots or crawlers without permission',
+                  'copy engineering documentation for competitive development',
+                  'reverse engineer product designs based on website content',
+                  'reproduce schematics, firmware descriptions, or engineering insights',
+                ]}
+              />
+              <SubGroup
+                label="Security Violations"
+                items={[
+                  'attempt unauthorised access to servers or databases',
+                  'probe vulnerabilities or bypass security systems',
+                  'introduce malware or harmful code',
+                ]}
+              />
+              <SubGroup
+                label="Competitive Misuse"
+                items={[
+                  'use website data for competing product development',
+                  'benchmark Kshatra Labs products using unpublished or misrepresented methods',
+                  'misrepresent Kshatra Labs specifications or documentation',
+                ]}
+              />
+              <SubGroup
+                label="Data Exploitation"
+                items={[
+                  'train AI models or data systems on website engineering data without written consent',
+                ]}
+              />
+
+              <AlertBox>
+                Violation may result in immediate termination of access, civil or criminal
+                legal action, and reporting to relevant authorities where applicable.
+              </AlertBox>
+            </Section>
+
+            {/* §06 */}
+            <Section num="06" title="Technical Documentation Disclaimer">
+              <p>
+                Engineering data available on this website may include product specifications,
+                performance curves, application notes, integration guidelines, and test data.
+              </p>
+              <BulletList
+                items={[
+                  'materials represent controlled internal test conditions and may change without notice',
+                  'performance may vary depending on system integration',
+                  'Kshatra Labs does not guarantee system-level outcomes resulting from use of this information',
+                ]}
+              />
+              <p className="mt-3">
+                Users remain responsible for validating designs, performing safety testing, and
+                ensuring regulatory compliance.
+              </p>
+            </Section>
+
+            {/* §07 – WARNING */}
+            <Section num="07" title="Product Safety Notice" warning>
+              <p>Products referenced on this website may involve:</p>
+              <BulletList
+                items={[
+                  'rotating propulsion systems',
+                  'high current electronics',
+                  'high temperature components',
+                  'fuel combustion systems (IC engines)',
+                ]}
+                danger
+              />
+              <AlertBox>
+                Improper integration may result in equipment damage, fire, serious injury, or
+                death. The website does not provide complete safety guidance for system design.
+                Users must ensure appropriate safety procedures and testing protocols are in
+                place prior to any deployment or integration.
+              </AlertBox>
+            </Section>
+
+            {/* §08 */}
+            <Section num="08" title="Intellectual Property">
+              <p>
+                All website content — including designs, text, graphics, documentation,
+                photographs, engineering data, software elements, trademarks, and branding —
+                is the intellectual property of Kshatra Labs or its licensors.
+              </p>
+              <p className="mt-3">You may not:</p>
+              <BulletList
+                items={[
+                  'reproduce or redistribute content',
+                  'create derivative works',
+                  'replicate engineering designs',
+                  'commercially exploit website content',
+                ]}
+              />
+              <p className="mt-3">
+                without written permission. Limited permission is granted to download materials
+                solely for internal evaluation purposes.
+              </p>
+            </Section>
+
+            {/* §09 */}
+            <Section num="09" title="User Submissions">
+              <p>
+                Users may submit feedback, reviews, support requests, and technical inquiries.
+                By submitting content you grant Kshatra Labs a non-exclusive, worldwide,
+                royalty-free license to use such submissions for operational or improvement
+                purposes.
+              </p>
+              <p className="mt-3">Users must not submit content that:</p>
+              <BulletList
+                items={[
+                  'infringes intellectual property',
+                  'contains malicious code',
+                  'violates applicable laws',
+                ]}
+              />
+            </Section>
+
+            {/* §10 */}
+            <Section num="10" title="Third-Party Links">
+              <p>
+                The website may link to third-party platforms or services. Kshatra Labs does
+                not control and is not responsible for the content, security, or policies of
+                external websites. Accessing third-party websites is at your own risk.
+              </p>
+            </Section>
+
+            {/* §11 */}
+            <Section num="11" title="Website Availability">
+              <p>
+                Kshatra Labs does not guarantee uninterrupted availability of the Services. The
+                website may be unavailable due to:
+              </p>
+              <BulletList
+                items={[
+                  'scheduled maintenance',
+                  'software upgrades',
+                  'infrastructure failures',
+                  'cyber incidents',
+                  'external service provider outages',
+                ]}
+              />
+            </Section>
+
+            {/* §12 */}
+            <Section num="12" title="Disclaimer of Warranties">
+              <p>
+                The Services and website content are provided &quot;as is&quot; and &quot;as available.&quot;
+                Kshatra Labs makes no warranties regarding:
+              </p>
+              <BulletList
+                items={[
+                  'completeness or accuracy of website content',
+                  'uninterrupted operation',
+                  'compatibility with user systems',
+                ]}
+              />
+              <p className="mt-3">
+                Product warranties, when applicable to offline purchases, are governed by
+                separate agreements.
+              </p>
+            </Section>
+
+            {/* §13 */}
+            <Section num="13" title="Limitation of Liability">
+              <p>
+                To the maximum extent permitted by law, Kshatra Labs shall not be liable for:
+              </p>
+              <BulletList
+                items={[
+                  'loss of profits or business interruption',
+                  'loss of data',
+                  'engineering redesign costs',
+                  'reliance on website technical information',
+                  'indirect or consequential damages',
+                ]}
+              />
+              <p className="mt-3">
+                arising from website use. Nothing in these Terms excludes liability where
+                exclusion is prohibited by law.
+              </p>
+            </Section>
+
+            {/* §14 */}
+            <Section num="14" title="Export Control">
+              <p>
+                Information and products presented on this website may be subject to export
+                control laws and international trade restrictions. Users agree not to use or
+                transfer information in violation of such laws.
+              </p>
+            </Section>
+
+            {/* §15 */}
+            <Section num="15" title="Security Monitoring">
+              <p>
+                Kshatra Labs may monitor website activity to detect misuse or security threats.
+                We reserve the right to:
+              </p>
+              <BulletList
+                items={[
+                  'suspend access without prior notice',
+                  'investigate suspicious activity',
+                  'cooperate with law enforcement authorities',
+                ]}
+              />
+            </Section>
+
+            {/* §16 */}
+            <Section num="16" title="Privacy">
+              <p>
+                Use of the Services is subject to the Kshatra Labs Privacy Policy, which
+                governs collection and processing of personal data.
+              </p>
+            </Section>
+
+            {/* §17 */}
+            <Section num="17" title="Governing Law">
+              <p>
+                These Terms are governed by the laws of India. Any disputes shall be subject to
+                the exclusive jurisdiction of courts in Bangalore, Karnataka, unless applicable
+                consumer laws require otherwise.
+              </p>
+            </Section>
+
+            {/* §18 */}
+            <Section num="18" title="Changes to Terms">
+              <p>
+                Kshatra Labs may update these Terms at any time. The updated version will be
+                published on the website with a revised effective date. Continued use of the
+                Services constitutes acceptance of the updated Terms.
+              </p>
+            </Section>
+
+            {/* §19 */}
+            <Section num="19" title="Severability">
+              <p>
+                If any provision of these Terms is deemed invalid or unenforceable, the
+                remaining provisions shall remain in full force.
+              </p>
+            </Section>
+
+            {/* §20 */}
+            <Section num="20" title="Contact">
+              <InfoCard label="For Legal Enquiries">
+                <p className="text-white font-semibold">KSHATRA LABS</p>
+                <p className="text-neutral-500">
+                  Autonomous Systems Facility &nbsp;·&nbsp; Bangalore, India
+                </p>
+                <p className="text-neutral-400 mt-2">+91 97304 58528</p>
+                <p className="mt-1">
+                  <a
+                    href="mailto:contact@kshatralabs.in"
+                    className="text-amber-400 hover:text-amber-300 transition-colors duration-200"
+                  >
+                    contact@kshatralabs.in
+                  </a>
+                </p>
+              </InfoCard>
+            </Section>
+
+          </div>
+
+          {/* ── Document footer ── */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-24 pt-8 border-t border-neutral-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+          >
+            <p className="font-mono text-[11px] text-neutral-700 tracking-widest uppercase">
+              © {new Date().getFullYear()} Kshatra Labs. All Rights Reserved.
+            </p>
+            <p className="font-mono text-[11px] text-amber-500/30 tracking-widest uppercase">
+              KL-LEGAL-TOS-001 &nbsp;·&nbsp; Rev 1.0
+            </p>
+          </motion.div>
+
+        </div>
+      </main>
+
+      <FooterSection />
+    </div>
+  )
 }
