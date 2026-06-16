@@ -215,14 +215,14 @@ export default function TermsOfServicePage() {
             className="text-neutral-400 leading-relaxed space-y-4 text-[15px] mb-18 pl-6 border-l border-neutral-800"
           >
             <p>
-              These Terms of Service ("Terms") govern access to and use of the website{' '}
+              These Terms of Service (&quot;Terms&quot;) govern access to and use of the website{' '}
               <span className="text-white font-medium">kshatralabs.in</span> and all associated
               services, documentation, tools, and digital content operated by Kshatra Labs
-              ("Kshatra Labs", "Company", "we", "us", or "our").
+              (&quot;Kshatra Labs&quot;, &quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
             </p>
             <p>
               By accessing or using the website or any related services (collectively, the
-              "Services"), you agree to be bound by these Terms. If you do not agree, you must
+              &quot;Services&quot;), you agree to be bound by these Terms. If you do not agree, you must
               immediately discontinue use of the Services.
             </p>
             <p>
@@ -448,7 +448,7 @@ export default function TermsOfServicePage() {
             {/* §12 */}
             <Section num="12" title="Disclaimer of Warranties">
               <p>
-                The Services and website content are provided "as is" and "as available."
+                The Services and website content are provided &quot;as is&quot; and &quot;as available.&quot;
                 Kshatra Labs makes no warranties regarding:
               </p>
               <BulletList
