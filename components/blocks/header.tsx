@@ -54,7 +54,7 @@ const menuItems: NavItem[] = [
           name: 'Products',
           href: '/products/hawk',
           generalInfo: {
-               title: 'LAND DOMAIN',
+               title: 'About',
                desc: 'A family of autonomous systems, powered by advanced tactical AI, that provide integrated, persistent awareness and security for land regions, borders, and critical infrastructure.'
           },
           megaMenuColumns: [
