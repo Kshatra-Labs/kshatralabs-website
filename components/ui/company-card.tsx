@@ -44,7 +44,7 @@ export function CompanyCard() {
                {/* Actions */}
                <div className="flex items-center gap-2 w-full mt-auto">
                     <a
-                         href="https://www.linkedin.com/company/kshatra-labs/"
+                         href="https://in.linkedin.com/company/kshatra-labs"
                          target="_blank"
                          rel="noopener noreferrer"
                          className="flex-1 flex items-center justify-center gap-3 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-200 group/btn"

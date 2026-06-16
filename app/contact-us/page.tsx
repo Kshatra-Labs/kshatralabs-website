@@ -125,7 +125,7 @@ export default function ContactUsPage() {
                                              </div>
                                         </div>
 
-                                        <a href="https://www.linkedin.com/company/kshatralabs/" target="_blank" rel="noopener noreferrer" className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20">
+                                        <a href="https://in.linkedin.com/company/kshatra-labs" target="_blank" rel="noopener noreferrer" className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20">
                                              <div className="absolute top-0 right-0 w-48 h-48 bg-defense-accent/5 rounded-full blur-[50px] pointer-events-none -translate-y-1/2 translate-x-1/2 group-hover:bg-defense-accent/10 transition-colors duration-700"></div>
                                              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-defense-accent/50 transition-colors">
                                                   <Linkedin className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
