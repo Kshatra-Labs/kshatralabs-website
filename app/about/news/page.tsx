@@ -306,12 +306,13 @@ export default function NewsPage() {
                                                                  ></iframe>
                                                             </div>
                                                        ) : post.imageUrl ? (
-                                                            <div className="relative w-full h-full bg-[#0a0a0a] min-h-[200px] flex items-center justify-center">
+                                                            <div className="relative w-full bg-[#0a0a0a] flex items-center justify-center">
                                                                  <Image 
                                                                       src={post.imageUrl} 
                                                                       alt={post.title}
-                                                                      fill
-                                                                      className="object-contain"
+                                                                      width={800}
+                                                                      height={800}
+                                                                      className="w-full h-auto object-cover"
                                                                  />
                                                             </div>
                                                        ) : (
