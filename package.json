@@ -37,7 +37,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/stats.js": "^0.17.4",
-    "@types/three": "^0.185.0",
+    "@types/three": "^0.185.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "shadcn": "^3.8.5",
