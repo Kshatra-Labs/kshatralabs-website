@@ -45,6 +45,10 @@ This document serves as the persistent memory storage for critical architectural
   * `Rajdhani` (`--font-rajdhani`) for monospace / tactical HUD elements (`--font-mono`).
   * `Inter` (`--font-inter`) for clean body typography (`--font-sans`).
 
+### 2.5 CI Build & Lint Fixes
+* **Decision Date / Context**: Resolved CI/Build check failure `Simple Next.js CI / Build (pull_request)`.
+* **Details**: Fixed ESLint errors in `app/how-to/page.tsx`, `components/blocks/hawk/hawk-hero.tsx`, and `components/blocks/hawk/hawk-mission-simulation.tsx` by removing unused imports, escaping strings/entities, wrapping raw comments in JSX, and typing telemetry data. Verified build passes successfully (`next build`).
+
 ---
 
 ## 3. Active Technical Notes for AI Agents

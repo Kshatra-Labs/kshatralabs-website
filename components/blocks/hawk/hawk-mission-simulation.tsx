@@ -230,7 +230,7 @@ export function HawkMissionSimulation() {
                               <div className="pt-6 border-t border-neutral-800 space-y-3 font-mono">
                                    {activePhase.telemetryData.map((data, idx) => (
                                         <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-900 text-xs">
-                                             <span className="text-neutral-400 uppercase tracking-wider">{data.label || (data as any).name}</span>
+                                             <span className="text-neutral-400 uppercase tracking-wider">{data.label}</span>
                                              <span className="font-bold text-white">{data.val}</span>
                                         </div>
                                    ))}

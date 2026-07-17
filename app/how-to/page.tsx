@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Skiper61 } from "@/components/v1/skiper61";
-import { Skiper67, VideoPlayer, VideoPlayerContent, VideoPlayerControlBar, VideoPlayerPlayButton, VideoPlayerTimeRange, VideoPlayerMuteButton } from "@/components/v1/skiper67";
+import { Skiper67 } from "@/components/v1/skiper67";
 import { Copy, Check, Terminal, ExternalLink, ShieldCheck, Play, MousePointer } from "lucide-react";
 
 type TabId = "mouse-follower" | "video-player";
@@ -147,11 +147,11 @@ export default function HowToPage() {
                   How to Use
                 </h3>
                 <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-xs text-neutral-300 leading-relaxed overflow-x-auto">
-                  <span className="text-neutral-500 block mb-2">// Import Mouse Follower Components</span>
+                  <span className="text-neutral-500 block mb-2">{"// Import Mouse Follower Components"}</span>
                   <span className="text-[#cc1414]">import</span>{" "}
                   <span>{"{"} SimpleMouseFollow, SpringMouseFollow {"}"}</span>{" "}
                   <span className="text-[#cc1414]">from</span>{" "}
-                  <span className="text-emerald-400">"@/components/v1/skiper61"</span>;
+                  <span className="text-emerald-400">&quot;@/components/v1/skiper61&quot;</span>;
                   <br /><br />
                   <span className="text-[#cc1414]">const</span> Demo = () =&gt; {"{"}
                   <br />
@@ -206,7 +206,7 @@ export default function HowToPage() {
                   How to Use
                 </h3>
                 <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[11px] text-neutral-300 leading-relaxed overflow-x-auto">
-                  <span className="text-neutral-500 block mb-2">// Import Custom Video Player Components</span>
+                  <span className="text-neutral-500 block mb-2">{"// Import Custom Video Player Components"}</span>
                   <span className="text-[#cc1414]">import</span>{" "}
                   <span>{"{"}</span>
                   <br />
@@ -224,7 +224,7 @@ export default function HowToPage() {
                   <br />
                   <span>{"}"}</span>{" "}
                   <span className="text-[#cc1414]">from</span>{" "}
-                  <span className="text-emerald-400">"@/components/v1/skiper67"</span>;
+                  <span className="text-emerald-400">&quot;@/components/v1/skiper67&quot;</span>;
                   <br /><br />
                   <span className="text-[#cc1414]">const</span> PlayerDemo = () =&gt; {"{"}
                   <br />
@@ -234,23 +234,23 @@ export default function HowToPage() {
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerContent
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src="/video/demo.mp4"
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src=&quot;/video/demo.mp4&quot;
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoPlay
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slot="media"
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slot=&quot;media&quot;
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;className="w-full object-cover"
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;className=&quot;w-full object-cover&quot;
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerControlBar className="absolute bottom-0 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-center px-5"&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerControlBar className=&quot;absolute bottom-0 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-center px-5&quot;&gt;
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerPlayButton className="h-4 bg-transparent" /&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerPlayButton className=&quot;h-4 bg-transparent&quot; /&gt;
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerTimeRange className="bg-transparent" /&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerTimeRange className=&quot;bg-transparent&quot; /&gt;
                   <br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerMuteButton className="size-4 bg-transparent" /&gt;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;VideoPlayerMuteButton className=&quot;size-4 bg-transparent&quot; /&gt;
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/VideoPlayerControlBar&gt;
                   <br />

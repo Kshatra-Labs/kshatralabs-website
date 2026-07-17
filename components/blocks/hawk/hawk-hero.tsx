@@ -191,7 +191,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                    </h2>
                               </div>
                               <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">
-                                   Inspect HAWK's main subsystems and design parameters below
+                                   Inspect HAWK&apos;s main subsystems and design parameters below
                               </p>
                          </div>
 
