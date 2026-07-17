@@ -3,6 +3,7 @@ import React from 'react'
 import { ArrowRight } from 'lucide-react'
 import { MailChoiceModal } from '@/components/ui/mail-choice-modal'
 import { useIsMobile } from '@/hooks/use-is-mobile'
+import { VideoPlayer, VideoPlayerContent } from "@/components/v1/skiper67"
 
 export function HeroSection() {
      const isMobile = useIsMobile()
@@ -88,39 +89,17 @@ export function HeroSection() {
 
 
 function HeroBackgroundVideo() {
-     const videoRef = React.useRef<HTMLVideoElement>(null)
-
-     React.useEffect(() => {
-          const video = videoRef.current
-          if (!video) return
-
-          const observer = new IntersectionObserver(
-               ([entry]) => {
-                    if (entry.isIntersecting) {
-                         video.play().catch(() => { })
-                    } else {
-                         video.pause()
-                    }
-               },
-               { threshold: 0.1 }
-          )
-
-          observer.observe(video)
-
-          return () => observer.disconnect()
-     }, [])
-
      return (
-          <video
-               ref={videoRef}
-               autoPlay
-               muted
-               loop
-               playsInline
-               className="absolute inset-0 w-full h-full object-cover opacity-80"
-          >
-
-               <source src="/video/intercept.mp4" type="video/mp4" />
-          </video>
+          <VideoPlayer style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0 }}>
+               <VideoPlayerContent
+                    src="/video/intercept.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    slot="media"
+                    className="absolute inset-0 w-full h-full object-cover opacity-80"
+               />
+          </VideoPlayer>
      )
 }
