@@ -1,0 +1,18 @@
+# AI Agent & Cursor Rules (.cursorrules)
+
+You are working on the `kshatralabs-website` repository ("Engineering the Unmanned Future").
+Before performing any task, writing any code, or suggesting modifications, you MUST read and abide by the following core files located in the project root:
+
+1. `prd.md` - Product Requirements Document
+2. `architecture.md` (and `architechture.md`) - System Architecture & Technical Stack
+3. `rules.md` - Strict Coding & Engineering Rules
+4. `phases.md` - Project Roadmap & Implementation Phases
+5. `design.md` - Design System & UI Tokens
+6. `memory.md` - Project Memory & Context Log
+
+## Key Mandatory Rules:
+- Always use strict TypeScript and Next.js 16 App Router conventions.
+- Always include `'use client';` at the top of React components using browser hooks, window/document objects, or Three.js/Spline 3D canvases.
+- Always use `next/dynamic` with `{ ssr: false }` when importing 3D Spline or WebGL scenes.
+- Maintain the tactical, dark-mode glassmorphism aesthetics (`#000000` base, `#cc1414` defense red accents, `Space Grotesk` headings, and `Rajdhani` monospace technical labels).
+- Keep `memory.md` and `phases.md` updated as you complete major tasks or make architectural decisions.

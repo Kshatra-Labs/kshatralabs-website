@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-// import { Target, Crosshair, Wifi, AlertTriangle } from 'lucide-react'
+import { VideoPlayer, VideoPlayerContent } from "@/components/v1/skiper67"
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { type ClassValue } from 'clsx'
 
@@ -198,44 +198,20 @@ function LazyVideo() {
      const videoRef = React.useRef<HTMLVideoElement>(null)
      const [hasLoaded, setHasLoaded] = React.useState(false)
 
-     React.useEffect(() => {
-          const container = containerRef.current
-          if (!container) return
-
-          const observer = new IntersectionObserver(
-               ([entry]) => {
-                    if (entry.isIntersecting) {
-                         setHasLoaded(true)
-                         // Small timeout to allow the video element to mount if it wasn't already
-                         setTimeout(() => {
-                              videoRef.current?.play().catch(() => { })
-                         }, 0)
-                    } else {
-                         videoRef.current?.pause()
-                    }
-               },
-               { threshold: 0.1 }
-          )
-
-          observer.observe(container)
-
-          return () => observer.disconnect()
-     }, [])
-
+     // Automatically handles playback via native autoplay
      return (
-          <div ref={containerRef} className="w-full h-full absolute inset-0">
-               {hasLoaded && (
-                    <video
-                         ref={videoRef}
+          <div className="w-full h-full absolute inset-0">
+               <VideoPlayer style={{ width: "100%", height: "100%" }}>
+                    <VideoPlayerContent
+                         src="/video/demo.mp4"
+                         autoPlay
                          muted
                          loop
                          playsInline
+                         slot="media"
                          className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen"
-                    >
-                         <source src="/video/demo.mp4" type="video/webm" />
-                         <source src="/video/demo.mp4" type="video/mp4" />
-                    </video>
-               )}
+                    />
+               </VideoPlayer>
           </div>
      )
 }
