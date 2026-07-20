@@ -8,8 +8,8 @@ import dynamic from 'next/dynamic'
 // Modular Anduril-Grade Hawk Components
 import { HawkHero } from '@/components/blocks/hawk/hawk-hero'
 import { HawkMissionSimulation } from '@/components/blocks/hawk/hawk-mission-simulation'
-import { HawkHardwareArchitecture } from '@/components/blocks/hawk/hawk-hardware-architecture'
-import { HawkSpecs } from '@/components/blocks/hawk/hawk-specs'
+// import { HawkHardwareArchitecture } from '@/components/blocks/hawk/hawk-hardware-architecture'
+// import { HawkSpecs } from '@/components/blocks/hawk/hawk-specs'
 import { HawkAdvisorModal } from '@/components/blocks/hawk/hawk-advisor-modal'
 
 const DownloadBrochure = dynamic(() => import('@/components/blocks/download-brochure'), {
@@ -37,11 +37,11 @@ export default function HawkProductPage() {
                     {/* 2. Interactive Kill-Chain & Mission Simulation */}
                     <HawkMissionSimulation />
 
-                    {/* 3. Exploded Hardware & Silicon Architecture Deep-Dive */}
-                    <HawkHardwareArchitecture />
+                    {/* 3. Exploded Hardware & Silicon Architecture Deep-Dive (Hidden to protect sensitive engineering details & vulnerabilities) */}
+                    {/* <HawkHardwareArchitecture /> */}
 
-                    {/* 4. Technical HUD Specifications & Data Matrix */}
-                    <HawkSpecs />
+                    {/* 4. Technical HUD Specifications & Data Matrix (Removed per user request) */}
+                    {/* <HawkSpecs /> */}
 
                     {/* 7. Download Brochure Section */}
                     <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">

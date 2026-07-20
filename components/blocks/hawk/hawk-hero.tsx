@@ -35,22 +35,18 @@ const HAWK_HOTSPOTS: Hotspot[] = [
           title: 'Onboard AI Flight Computer',
           category: 'Guidance Computer',
           desc: 'Runs our neural guidance software locally inside the interceptor. Calculates flight path adjustments 1,000 times per second using visual tracking so it never loses lock, even if GPS or radio signals are jammed.',
-          specs: [
-               { label: 'Processing Power', value: '15.6 TOPS AI Processor' },
-               { label: 'Flight Update Rate', value: '1,000 adjustments per second' },
-               { label: 'Navigation', value: 'Visual Tracking (No GPS needed)' }
-          ]
+          specs: []
      },
      {
           id: 'airframe',
           x: 42,
           y: 62,
-          title: 'Carbon Composite Frame',
-          category: 'Airframe Structure',
-          desc: 'Lightweight, ultra-strong carbon fiber body built to withstand sharp turns at high speed. Designed with low radar reflection and a modular layout for quick field repairs.',
+          title: 'Carbon Composite Frame & Modular Bay',
+          category: 'Airframe & Variants',
+          desc: 'Lightweight, ultra-strong carbon fiber body built to withstand sharp turns at high speed. Available in two distinct operational variants: Direct Kinetic Hit-to-Kill and Proximity Airburst.',
           specs: [
-               { label: 'Maneuver Limit', value: 'High-Agility Vectoring' },
-               { label: 'Impact Type', value: 'Direct Body-to-Body Collision' },
+               { label: 'Available Variants', value: 'Kinetic Hit-to-Kill & Proximity Airburst' },
+               { label: 'Impact / Fuse Type', value: 'Direct Body Collision or Proximity Sensor' },
                { label: 'Total Weight', value: '4.8 kg (Operational)' }
           ]
      },
@@ -62,7 +58,7 @@ const HAWK_HOTSPOTS: Hotspot[] = [
           category: 'Electric Propulsion',
           desc: 'Custom high-RPM brushless electric motors and carbon fiber propellers. Accelerates the interceptor instantly to its top speed to catch fast-moving loitering weapons and enemy drones.',
           specs: [
-               { label: 'Top Speed', value: '250+ kmph' },
+               { label: 'Top Speed', value: '300+ kmph' },
                { label: 'Acceleration', value: 'Reaches top speed in 1.8 seconds' },
                { label: 'Power Source', value: 'High-Discharge Flight Battery' }
           ]
@@ -145,28 +141,28 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                     <div className="mt-20 pt-12 border-t border-neutral-900 grid grid-cols-2 lg:grid-cols-4 gap-8">
                          <div>
                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
-                                   250+ kmph
+                                   300+ kmph
                               </div>
                               <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                    Maximum Flight Speed
                               </div>
                          </div>
-                         <div>
-                              <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
-                                   15.6 TOPS
-                              </div>
-                              <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
-                                   Onboard AI Computer
-                              </div>
-                         </div>
-                         <div>
-                              <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
-                                   30+ min
-                              </div>
-                              <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
-                                   Mission Endurance
-                              </div>
-                         </div>
+                          <div>
+                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                                    &lt; 5 ms
+                               </div>
+                               <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                                    Target Lock Speed
+                               </div>
+                          </div>
+                          <div>
+                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                                    1/10th
+                               </div>
+                               <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                                    Cost of Missile Defense
+                               </div>
+                          </div>
                          <div>
                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
                                    100%
@@ -250,14 +246,16 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                                       {spot.desc}
                                                                  </p>
 
-                                                                 <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[11px]">
-                                                                      {spot.specs.map((spec, idx) => (
-                                                                           <div key={idx} className="flex items-center justify-between">
-                                                                                <span className="text-neutral-500 uppercase">{spec.label}</span>
-                                                                                <span className="font-bold text-white">{spec.value}</span>
-                                                                           </div>
-                                                                      ))}
-                                                                 </div>
+                                                                 {spot.specs && spot.specs.length > 0 && (
+                                                                      <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[11px]">
+                                                                           {spot.specs.map((spec, idx) => (
+                                                                                <div key={idx} className="flex items-center justify-between">
+                                                                                     <span className="text-neutral-500 uppercase">{spec.label}</span>
+                                                                                     <span className="font-bold text-white">{spec.value}</span>
+                                                                                </div>
+                                                                           ))}
+                                                                      </div>
+                                                                 )}
                                                             </div>
                                                        )}
                                                   </div>

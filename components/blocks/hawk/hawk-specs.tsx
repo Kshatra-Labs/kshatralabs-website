@@ -13,12 +13,12 @@ const SPEC_GROUPS: SpecGroup[] = [
           id: 'kinetics',
           title: 'Flight Performance',
           specs: [
-               { label: 'Maximum Speed', value: '250+', unit: 'kmph', note: 'High-torque brushless motors and lightweight carbon props' },
-               { label: 'Operational Range', value: '15', unit: 'Kilometers Range', note: 'Effective remote interception capability' },
-               { label: 'Maximum Altitude', value: '4,500', unit: 'Meters Above Sea Level', note: 'Capable of altitude stability in mountain passes' },
+               { label: 'Maximum Speed', value: '300+', unit: 'kmph', note: 'High-torque brushless motors and lightweight carbon props' },
                { label: 'Acceleration Rate', value: '1.8', unit: 'Seconds to Top Speed', note: 'Instant throttle response from vertical canister launch' },
-               { label: 'Mission Endurance', value: '30+', unit: 'Minutes Active Flight', note: 'Optimized high-discharge flight battery capacity' },
-               { label: 'Launch Setup Time', value: '< 2.0', unit: 'Seconds Total', note: 'Fast reaction from perimeter sensor cueing' }
+               { label: 'Maximum Altitude', value: '4,500', unit: 'Meters Above Sea Level', note: 'Capable of altitude stability in mountain passes and high-altitude warfare' },
+               { label: 'Launch Reaction Time', value: '< 0.5', unit: 'Seconds from Command', note: 'Instant vertical takeoff upon automated perimeter radar cueing' },
+               { label: 'Swarm Interception', value: '32+', unit: 'Simultaneous Targets', note: 'Network-coordinated multi-interceptor vectoring against dense drone swarms' },
+               { label: 'Defense Cost Ratio', value: '1/10th', unit: 'Cost of Missile Defense', note: 'Asymmetric economic advantage against low-cost loitering munitions and FPVs' }
           ]
      },
      {
@@ -35,14 +35,16 @@ const SPEC_GROUPS: SpecGroup[] = [
      },
      {
           id: 'airframe',
-          title: 'Size & Weight',
+          title: 'Airframe & Configurations',
           specs: [
+               { label: 'Available Variants', value: 'Kinetic & Proximity', unit: '2 Mission Variants', note: 'Direct kinetic hit-to-kill or modular proximity neutralization' },
                { label: 'Interceptor Width', value: '1,420', unit: 'Millimeters', note: 'Compact frame size designed for canister pods' },
                { label: 'Wingspan (Deployed)', value: '680', unit: 'Millimeters', note: 'Aerodynamic carbon structure optimized for fast turns' },
                { label: 'Total Launch Weight', value: '4.8', unit: 'Kilograms', note: 'Lightweight carbon composite frame including battery' },
+               { label: 'Optional Payload', value: '300-700', unit: 'Grams Capacity', note: 'Modular attachment capacity for tactical packages and sensors' },
                { label: 'Body Material', value: 'Carbon Composite', unit: 'Reinforced Structure', note: 'High strength-to-weight ratio with low radar visibility' },
                { label: 'Radar Cross Section', value: '< 0.01', unit: 'Square Meters', note: 'Low-profile front and side radar reflection' },
-               { label: 'Neutralization Method', value: 'Kinetic Impact', unit: 'Direct Collision', note: 'Snaps target wings and rotors upon collision without explosives' }
+               { label: 'Neutralization Method', value: 'Kinetic or Proximity', unit: 'Modular Intercept', note: 'Direct physical collision or proximity-triggered neutralization' }
           ]
      },
      {
