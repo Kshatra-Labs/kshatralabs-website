@@ -38,7 +38,8 @@ const MISSION_PHASES: MissionPhase[] = [
           telemetryData: [
                { label: 'Detection Range', val: '15 km Perimeter' },
                { label: 'Tracking Accuracy', val: '99.8% Multi-Sensor Lock' },
-               { label: 'Data Transfer Time', val: '< 50 milliseconds' }
+               { label: 'Data Transfer Time', val: '< 50 milliseconds' },
+               { label: 'Optional Payload', val: '300-700 gm Capacity' }
           ]
      },
      {
@@ -46,7 +47,7 @@ const MISSION_PHASES: MissionPhase[] = [
           stepNumber: '02',
           title: 'High-Acceleration Takeoff',
           subtitle: 'Fast Electric Launch',
-          desc: 'HAWK launches straight up from its weather-sealed container. Custom high-torque electric motors instantly vector the interceptor toward the target, reaching 250+ kmph in under two seconds.',
+          desc: 'HAWK launches straight up from its weather-sealed container. Custom high-torque electric motors instantly vector the interceptor toward the target, reaching 300+ kmph in under two seconds.',
           bulletPoints: [
                'Container pods can be set up on the ground, on rooftops, or on vehicles',
                'Electric motor thrust vectors immediately in any direction after takeoff',
@@ -55,26 +56,26 @@ const MISSION_PHASES: MissionPhase[] = [
           videoUrl: '/video/main-video.mp4',
           telemetryData: [
                { label: 'Launch Time', val: '< 0.5 seconds from command' },
-               { label: 'Acceleration', val: '250 kmph in 1.8 seconds' },
-               { label: 'Top Speed', val: '250+ kmph (Electric Drive)' }
+               { label: 'Acceleration', val: '300 kmph in 1.8 seconds' },
+               { label: 'Top Speed', val: '300+ kmph (Electric Drive)' }
           ]
      },
      {
           id: 'impact',
           stepNumber: '03',
-          title: 'Direct Kinetic Impact',
-          subtitle: 'Body-to-Body Collision',
-          desc: 'HAWK destroys the target by colliding directly into it at high speed. This physical kinetic hit snaps the enemy drone in half immediately without using explosives that could drop dangerous shrapnel below.',
+          title: 'Kinetic & Proximity Interception',
+          subtitle: 'Two Operational Neutralization Variants',
+          desc: 'HAWK is available in two distinct configurations: Kinetic Hit-to-Kill (which collides directly at high speed to snap enemy structural wings and rotors without explosives) and Proximity Airburst (equipped with proximity fuzing or modular countermeasures for evading swarms).',
           bulletPoints: [
-               'Direct high-speed hit destroys enemy structural wings and rotors',
-               'No explosive warhead needed—prevents hazardous blast debris over friendly areas',
+               'Kinetic Variant: Direct high-speed body-to-body collision with zero explosive shrapnel below',
+               'Proximity Variant: Modular proximity fuzing and payload deployment for evading drone swarms',
                'Far lower cost per intercept compared to traditional air defense missiles'
           ],
           videoUrl: '/video/intercept.mp4',
           telemetryData: [
-               { label: 'Collision Accuracy', val: '< 10 cm Direct Hit' },
-               { label: 'Neutralization Method', val: 'High-Speed Kinetic Impact' },
-               { label: 'Ground Safety', val: 'Zero Explosive Shrapnel' }
+               { label: 'Available Variants', val: 'Kinetic & Proximity Configurations' },
+               { label: 'Collision Accuracy', val: '< 10 cm Direct Hit (Kinetic Mode)' },
+               { label: 'Neutralization Method', val: 'Direct Kinetic Hit or Proximity Fuse' }
           ]
      }
 ]
