@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronUp, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 
 interface Hotspot {
      id: string;
@@ -70,7 +71,37 @@ interface HawkHeroProps {
 }
 
 export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
-     const [activeHotspot, setActiveHotspot] = useState<Hotspot>(HAWK_HOTSPOTS[0])
+     const [activeHotspot, setActiveHotspot] = useState<Hotspot | null>(HAWK_HOTSPOTS[0])
+     const [isManualOverride, setIsManualOverride] = useState(false)
+     const boxRef = useRef<HTMLDivElement>(null)
+
+     const { scrollYProgress } = useScroll({
+          target: boxRef,
+          offset: ["start 75%", "end 25%"]
+     })
+
+     useMotionValueEvent(scrollYProgress, "change", (latest) => {
+          if (isManualOverride) return;
+
+          if (latest < 0.28) {
+               setActiveHotspot(HAWK_HOTSPOTS[0])
+          } else if (latest < 0.52) {
+               setActiveHotspot(HAWK_HOTSPOTS[1])
+          } else if (latest < 0.76) {
+               setActiveHotspot(HAWK_HOTSPOTS[2])
+          } else {
+               setActiveHotspot(HAWK_HOTSPOTS[3])
+          }
+     })
+
+     const handleHotspotClick = (spot: Hotspot) => {
+          setIsManualOverride(true)
+          if (activeHotspot?.id === spot.id) {
+               setActiveHotspot(null)
+          } else {
+               setActiveHotspot(spot)
+          }
+     }
 
      return (
           <section className="relative pt-32 md:pt-40 pb-24 bg-[#000000] border-b border-neutral-900 text-white overflow-hidden">
@@ -102,17 +133,18 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               <div className="pt-4 flex flex-wrap items-center gap-6">
                                    <button
                                         onClick={onRequestBriefing}
-                                        className="group px-8 py-4 bg-white text-black font-mono text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#cc1414] hover:text-white transition-colors duration-200 flex items-center gap-3"
+                                        style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
+                                        className="group px-8 py-4 bg-white text-black font-mono text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#cc1414] hover:text-white transition-colors duration-200 flex items-center gap-3 rounded-none"
                                    >
                                         <span>Request Technical Briefing</span>
                                         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                                    </button>
 
                                    <a
-                                        href="#specifications"
+                                        href="#how-it-works"
                                         className="px-8 py-4 bg-transparent border border-neutral-800 text-white font-mono text-xs font-bold tracking-[0.2em] uppercase hover:border-neutral-500 transition-colors duration-200"
                                    >
-                                        Specifications
+                                        How It Works
                                    </a>
                               </div>
                          </div>
@@ -172,7 +204,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               </div>
                          </div>
                     </div>
-                    {/* Hardware Architecture Breakdown (Accordion Style, Zero Overlays) */}
+                    {/* Hardware Architecture Breakdown (Smooth Scroll-Driven Flow, Zero Traps) */}
                     <div className="mt-24 border-t border-neutral-900 pt-16">
                          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
                               <div>
@@ -191,9 +223,10 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               </p>
                          </div>
 
-                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border border-neutral-900 bg-[#050505] p-6 md:p-12">
+                         {/* Stable outer container with fixed min-height ensures zero layout shifts or jitter */}
+                         <div ref={boxRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border border-neutral-900 bg-[#050505] p-6 md:p-12 min-h-[580px] shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
                               {/* Left Inspection Diagram (100% Clean Image Panel, Zero Overlays) */}
-                              <div className="lg:col-span-7 relative h-[500px] sm:h-[600px] w-full bg-black border border-neutral-900 flex items-center justify-center overflow-hidden">
+                              <div className="lg:col-span-7 relative h-[480px] sm:h-[560px] w-full bg-black border border-neutral-900 flex items-center justify-center overflow-hidden">
                                    {/* Blueprint-style grid background lines */}
                                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:40px_40px] opacity-30" />
                                    
@@ -205,59 +238,81 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                    />
                               </div>
 
-                              {/* Right Details Accordion (No floating overlays, pure premium typography) */}
+                              {/* Right Details Accordion */}
                               <div className="lg:col-span-5 flex flex-col justify-start space-y-4">
-                                   <div className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900">
-                                        System Assemblies
+                                   <div className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900 flex items-center justify-between">
+                                        <span>System Assemblies</span>
+                                        <span className="text-[10px] text-neutral-500 font-normal tracking-normal">Scroll or click to inspect</span>
                                    </div>
 
                                    <div className="space-y-2">
                                         {HAWK_HOTSPOTS.map((spot, index) => {
-                                             const isOpen = activeHotspot.id === spot.id;
+                                             const isOpen = activeHotspot?.id === spot.id;
 
                                              return (
                                                   <div 
-                                                       key={spot.id} 
+                                                       key={spot.id}
                                                        className={`border-b border-neutral-900 pb-4 transition-all duration-200 ${
                                                             isOpen ? 'text-white border-neutral-800' : 'text-neutral-500 hover:text-neutral-300'
                                                        }`}
                                                   >
                                                        <button
-                                                            onClick={() => setActiveHotspot(spot)}
-                                                            className="w-full flex items-center justify-between py-3 text-left font-mono"
+                                                            onClick={() => handleHotspotClick(spot)}
+                                                            className="w-full flex items-center justify-between py-3 text-left font-mono group cursor-pointer"
                                                        >
-                                                            <span className="text-sm font-bold uppercase tracking-wider">
+                                                            <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                                                                 isOpen ? 'text-white' : 'text-neutral-400 group-hover:text-white'
+                                                            }`}>
                                                                  0{index + 1}. {spot.category}
                                                             </span>
-                                                            <span className={`text-xs transition-transform duration-300 ${isOpen ? 'rotate-45 text-[#cc1414]' : ''}`}>
-                                                                 {isOpen ? '—' : '+'}
-                                                            </span>
-                                                       </button>
-
-                                                       {isOpen && (
-                                                            <div className="mt-3 space-y-4">
-                                                                 <h4 
-                                                                      className="text-xl font-bold uppercase tracking-tight text-white"
-                                                                      style={{ fontFamily: 'var(--font-space-grotesk)' }}
-                                                                 >
-                                                                      {spot.title}
-                                                                 </h4>
-                                                                 <p className="text-sm text-neutral-300 leading-relaxed font-light">
-                                                                      {spot.desc}
-                                                                 </p>
-
-                                                                 {spot.specs && spot.specs.length > 0 && (
-                                                                      <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[11px]">
-                                                                           {spot.specs.map((spec, idx) => (
-                                                                                <div key={idx} className="flex items-center justify-between">
-                                                                                     <span className="text-neutral-500 uppercase">{spec.label}</span>
-                                                                                     <span className="font-bold text-white">{spec.value}</span>
-                                                                                </div>
-                                                                           ))}
-                                                                      </div>
+                                                            <div className={`w-8 h-8 flex items-center justify-center border transition-all duration-200 ${
+                                                                 isOpen 
+                                                                      ? 'bg-[#cc1414] border-[#cc1414] text-white shadow-[0_0_15px_rgba(204,20,20,0.4)]' 
+                                                                      : 'bg-neutral-900/80 border-neutral-800 text-neutral-400 group-hover:border-neutral-600 group-hover:text-white'
+                                                            }`}>
+                                                                 {isOpen ? (
+                                                                      <ChevronUp className="w-4 h-4 stroke-[2.5]" />
+                                                                 ) : (
+                                                                      <ChevronDown className="w-4 h-4 stroke-[2.5]" />
                                                                  )}
                                                             </div>
-                                                       )}
+                                                       </button>
+
+                                                       <AnimatePresence initial={false}>
+                                                            {isOpen && (
+                                                                 <motion.div
+                                                                      key="content"
+                                                                      initial={{ height: 0, opacity: 0 }}
+                                                                      animate={{ height: 'auto', opacity: 1 }}
+                                                                      exit={{ height: 0, opacity: 0 }}
+                                                                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                                                                      className="overflow-hidden"
+                                                                 >
+                                                                      <div className="pt-3 pb-2 space-y-4">
+                                                                           <h4 
+                                                                                className="text-xl font-bold uppercase tracking-tight text-white"
+                                                                                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                                                                           >
+                                                                                {spot.title}
+                                                                           </h4>
+                                                                           <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                                                                                {spot.desc}
+                                                                           </p>
+
+                                                                           {spot.specs && spot.specs.length > 0 && (
+                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[11px]">
+                                                                                     {spot.specs.map((spec, idx) => (
+                                                                                          <div key={idx} className="flex items-center justify-between">
+                                                                                               <span className="text-neutral-500 uppercase">{spec.label}</span>
+                                                                                               <span className="font-bold text-white">{spec.value}</span>
+                                                                                          </div>
+                                                                                     ))}
+                                                                                </div>
+                                                                           )}
+                                                                      </div>
+                                                                 </motion.div>
+                                                            )}
+                                                       </AnimatePresence>
                                                   </div>
                                              )
                                         })}

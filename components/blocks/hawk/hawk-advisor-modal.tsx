@@ -206,7 +206,8 @@ export function HawkAdvisorModal({ isOpen, onClose }: HawkAdvisorModalProps) {
                                              <button
                                                   type="submit"
                                                   disabled={isSubmitting}
-                                                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white text-black font-mono text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-[#cc1414] hover:text-white disabled:opacity-50 disabled:pointer-events-none"
+                                                  style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
+                                                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-black font-mono text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-[#cc1414] hover:text-white disabled:opacity-50 disabled:pointer-events-none"
                                              >
                                                   {isSubmitting ? (
                                                        <span>SENDING...</span>

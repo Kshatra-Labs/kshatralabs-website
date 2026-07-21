@@ -246,3 +246,8 @@ body::-webkit-scrollbar-thumb:hover,
   scrollbar-color: #f90000 #000000 !important;
   scrollbar-width: auto !important;
 }
+
+/* Corner Diagonals Skill - Primary Button Chamfer Utility */
+.clip-diagonal-btn {
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}

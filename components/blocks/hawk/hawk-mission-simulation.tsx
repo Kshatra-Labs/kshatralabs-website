@@ -84,7 +84,7 @@ export function HawkMissionSimulation() {
      const [activePhase, setActivePhase] = useState<MissionPhase>(MISSION_PHASES[0])
 
      return (
-          <section id="mission-simulation" className="py-24 md:py-32 bg-[#050505] border-b border-neutral-900 text-white">
+          <section id="how-it-works" className="py-24 md:py-32 bg-[#050505] border-b border-neutral-900 text-white">
                <div className="max-w-7xl mx-auto px-6 md:px-12">
                     {/* Section Header (Clean, Simple English) */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 pb-8 border-b border-neutral-800">
