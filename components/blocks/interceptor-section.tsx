@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowRight, Shield, Target, Zap, WifiOff, Network } from 'lucide-react'
+import { Icon } from '@iconify/react'
 
 export function InterceptorSection() {
      const videoRef = useRef<HTMLVideoElement>(null);
@@ -141,76 +142,177 @@ export function InterceptorSection() {
                     </div>
                </div>
 
-               {/* Features Section - Moved below the Introducing Hawk Grid */}
-               <div className="py-24 px-6 md:px-12 relative overflow-hidden bg-black/50 border-b border-white/5">
-                    <div className="max-w-7xl mx-auto space-y-12 relative z-10 w-full">
-                         <div className="flex items-center justify-center gap-4 max-w-2xl mx-auto">
-                              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-blue-500/30"></div>
-                              <div className="text-blue-500 font-mono text-xl uppercase tracking-widest font-bold">Features</div>
-                              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-blue-500/30"></div>
+               {/* Features Section - Tactical 2D Grid */}
+               <div className="py-24 px-6 md:px-12 relative overflow-hidden bg-black border-y border-white/20 font-sans">
+                    {/* Tactical 2D Background Grid Lines */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+
+                    <div className="max-w-7xl mx-auto space-y-16 relative z-10 w-full">
+                         {/* High-Contrast 2D Section Header */}
+                         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 border-b border-white/20 pb-6">
+                              <div>
+                                   <h2 className="text-3xl md:text-5xl font-bold font-mono uppercase tracking-tight text-white">
+                                        Features
+                                   </h2>
+                              </div>
+                              <div className="font-mono text-xs uppercase text-neutral-400 border border-white/20 bg-neutral-950 px-3 py-1.5 rounded-none flex items-center gap-2">
+                                   <span>Hawk Interceptor</span>
+                              </div>
                          </div>
 
-                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <Zap className="w-6 h-6 text-blue-400" />
+                         {/* High-Contrast 2D Feature Grid - Sharp Corners (rounded-none), Zero 3D */}
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              {/* 01: High-Speed Interception */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   {/* Corner Crosshair Accents */}
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   {/* Sharp Top Hover Line */}
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
+
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:bolt-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [01]
+                                        </span>
                                    </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        High-Speed Interception
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             High-Speed Interception
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             Engage hostile drones at speeds exceeding 300 km/h, allowing rapid response before threats reach protected zones.
+                                        </p>
                                    </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">Engage hostile drones at speeds exceeding 300 km/h, allowing rapid response before threats reach protected zones.</div>
                               </div>
 
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <Target className="w-6 h-6 text-blue-400" />
+                              {/* 02: Autonomous Target Lock */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
+
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:target-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [02]
+                                        </span>
                                    </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Autonomous Target Lock
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             Autonomous Target Lock
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             Advanced onboard AI performs real-time detection, tracking, and interception with minimal human input.
+                                        </p>
                                    </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">Advanced onboard AI performs real-time detection, tracking, and interception with minimal human input.</div>
                               </div>
 
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <Shield className="w-6 h-6 text-blue-400" />
+                              {/* 03: Fully Onboard Edge AI */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
+
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:cpu-bolt-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [03]
+                                        </span>
                                    </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Fully Onboard Edge AI
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             Fully Onboard Edge AI
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             All perception and decision-making runs directly on the UAV, ensuring low latency and zero cloud dependency.
+                                        </p>
                                    </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">All perception and decision-making runs directly on the UAV, ensuring low latency and zero cloud dependency.</div>
                               </div>
 
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <WifiOff className="w-6 h-6 text-blue-400" />
+                              {/* 04: GPS-Denied Navigation */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
+
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:satellite-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [04]
+                                        </span>
                                    </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        GPS-Denied Navigation
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             GPS-Denied Navigation
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             Vision-based navigation fused with inertial sensing enables reliable operation even when GPS signals are jammed or unavailable.
+                                        </p>
                                    </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">Vision-based navigation fused with inertial sensing enables reliable operation even when GPS signals are jammed or unavailable.</div>
                               </div>
 
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <Network className="w-6 h-6 text-blue-400" />
+                              {/* 05: Swarm Defence Ready */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
+
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:shield-check-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [05]
+                                        </span>
                                    </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Swarm Defence Ready
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             Swarm Defence Ready
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             Multiple Hawk units can coordinate to intercept multiple targets and drone swarms simultaneously.
+                                        </p>
                                    </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">Multiple Hawk units can coordinate to intercept multiple targets and drone swarms simultaneously.</div>
                               </div>
 
-                              <div className="p-6 border border-white/10 bg-white/[0.02] space-y-4 rounded-xl hover:bg-white/[0.04] hover:border-blue-500/50 transition-all duration-300 group">
-                                   <div className="p-3 bg-blue-500/10 rounded-lg w-fit group-hover:bg-blue-500/20 transition-colors">
-                                        <ArrowRight className="w-6 h-6 text-blue-400" />
-                                   </div>
-                                   <div className="text-white font-mono text-sm uppercase tracking-wider font-bold">
-                                        Low-Cost Scalable Defence
-                                   </div>
-                                   <div className="text-neutral-400 font-light leading-relaxed">Traditional interceptor systems cost 100× more. Hawk enables scalable deployment for wide-area protection.</div>
-                              </div>
+                              {/* 06: Low-Cost Scalable Defence */}
+                              <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
+                                   <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
+                                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
+                                   <div className="flex items-start justify-between gap-4">
+                                        <Icon icon="solar:tag-price-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <span className="font-mono text-xs font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
+                                             [06]
+                                        </span>
+                                   </div>
+
+                                   <div className="space-y-3">
+                                        <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
+                                             Low-Cost Scalable Defence
+                                        </div>
+                                        <p className="text-neutral-200 text-sm font-normal leading-relaxed">
+                                             Traditional interceptor systems cost 100× more. Hawk enables scalable deployment for wide-area protection.
+                                        </p>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>

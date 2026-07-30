@@ -28,6 +28,7 @@ const Footer4Col = dynamic(() => import("@/components/blocks/footer-section")) /
 // const EnvironmentSection = dynamic(() => import("@/components/blocks/environment-section").then(mod => mod.EnvironmentSection))
 // const ThreatAnalysis = dynamic(() => import("@/components/blocks/threat-analysis").then(mod => mod.ThreatAnalysis))
 const InterceptorSection = dynamic(() => import("@/components/blocks/interceptor-section").then(mod => mod.InterceptorSection))
+const TacticalGlobeSection = dynamic(() => import("@/components/blocks/wireframe/tactical-globe-section").then(mod => mod.TacticalGlobeSection), { ssr: false })
 const Partners = dynamic(() => import("@/components/blocks/partners"))
 
 // demoFrames data removed/commented out as unused
@@ -80,35 +81,8 @@ export default function Home() {
         {/* ENVIRONMENT SECTION - HIDDEN */}
         {/* <EnvironmentSection /> */}
 
-        {/* CALL TO ACTION SECTION */}
-        <section className="py-24 px-6 md:px-12 bg-black">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready for the <span className="text-blue-500">Autonomous Era?</span>
-            </h2>
-            <p className="text-neutral-400 text-lg mb-12 max-w-2xl mx-auto">
-              Deploy systems that adapt, learn, and overcome in the world&apos;s most challenging environments.
-            </p>
-            <div className="flex flex-col items-center gap-6">
-              <button
-                onClick={handleContactClick}
-                className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-block cursor-pointer rounded-none uppercase"
-              >
-                REQUEST A BRIEFING →
-              </button>
-              <div className="flex flex-col md:flex-row items-center gap-4 text-white font-mono text-sm">
-                <a href="tel:+919730458528" className="hover:text-white transition-colors">+91 9730458528</a>
-                <span className="hidden md:inline">•</span>
-                <button
-                  onClick={handleContactClick}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  contact@kshatralabs.in
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* TACTICAL GLOBE & CALL TO ACTION SECTION (SIDE-BY-SIDE) */}
+        <TacticalGlobeSection onContactClick={handleContactClick} />
 
         <Footer4Col />
         <MailChoiceModal

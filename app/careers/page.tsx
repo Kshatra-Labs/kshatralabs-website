@@ -207,9 +207,6 @@ export default function CareersPage() {
 
                     {/* 1. HERO SECTION */}
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
-                         <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-widest text-defense-accent mb-6">
-                              Founding Team
-                         </div>
                          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                               Build the future of <br />
                               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20 [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">Autonomous Defence</span>

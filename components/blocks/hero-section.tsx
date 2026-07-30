@@ -49,7 +49,8 @@ export function HeroSection() {
 
                                              <button
                                                   onClick={() => handleContactClick()}
-                                                  className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer"
+                                                  style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
+                                                  className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer rounded-none"
                                              >
                                                   REQUEST A BRIEFING
                                                   <ArrowRight className="h-4 w-4" />
@@ -98,6 +99,8 @@ function HeroBackgroundVideo() {
                     loop
                     playsInline
                     slot="media"
+                    tabIndex={-1}
+                    suppressHydrationWarning
                     className="absolute inset-0 w-full h-full object-cover opacity-80"
                />
           </VideoPlayer>

@@ -82,57 +82,80 @@ export default function ContactUsPage() {
                                    className="col-span-1 lg:col-span-5 w-full max-w-7xl mx-auto"
                               >
                                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        {/* 01: Official Correspondence */}
                                         <a
                                              href="mailto:contact@kshatralabs.in"
                                              onClick={handleMailClick}
-                                             className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20"
+                                             className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
                                         >
-                                             <div className="absolute top-0 right-0 w-48 h-48 bg-defense-accent/5 rounded-full blur-[50px] pointer-events-none -translate-y-1/2 translate-x-1/2 group-hover:bg-defense-accent/10 transition-colors duration-700"></div>
-                                             <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-defense-accent/50 transition-colors">
-                                                  <Mail className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                                             <div className="flex items-start justify-between gap-4">
+                                                  <Mail className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
-                                             <div className="space-y-3">
-                                                  <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">Official Correspondence</h3>
-                                                  <p className="text-xl font-medium text-white transition-colors">
+
+                                             <div className="space-y-1.5 pt-2">
+                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                       Email
+                                                  </h3>
+                                                  <p className="text-lg font-bold font-mono text-black tracking-tight break-all">
                                                        contact@kshatralabs.in
                                                   </p>
                                              </div>
                                         </a>
 
-                                        <a href="tel:+919730458528" className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20">
-                                             <div className="absolute top-0 right-0 w-48 h-48 bg-defense-accent/5 rounded-full blur-[50px] pointer-events-none -translate-y-1/2 translate-x-1/2 group-hover:bg-defense-accent/10 transition-colors duration-700"></div>
-                                             <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-defense-accent/50 transition-colors">
-                                                  <Phone className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                                        {/* 02: Direct Operator */}
+                                        <a
+                                             href="tel:+919730458528"
+                                             className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
+                                        >
+                                             <div className="flex items-start justify-between gap-4">
+                                                  <Phone className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
-                                             <div className="space-y-3">
-                                                  <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">Direct Operator</h3>
-                                                  <p className="text-xl font-medium text-white transition-colors">
+
+                                             <div className="space-y-1.5 pt-2">
+                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                       Phone no
+                                                  </h3>
+                                                  <p className="text-lg font-bold font-mono text-black tracking-tight">
                                                        +91 97304 58528
                                                   </p>
                                              </div>
                                         </a>
 
-                                        <div className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20 cursor-default">
-                                             <div className="absolute top-0 right-0 w-48 h-48 bg-defense-accent/5 rounded-full blur-[50px] pointer-events-none -translate-y-1/2 translate-x-1/2 group-hover:bg-defense-accent/10 transition-colors duration-700"></div>
-                                             <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-white/20 transition-colors">
-                                                  <MapPin className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                                        {/* 03: Global Headquarters */}
+                                        <div className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px] cursor-default">
+                                             <div className="flex items-start justify-between gap-4">
+                                                  <MapPin className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
-                                             <div className="space-y-3">
-                                                  <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">Global Headquarters</h3>
-                                                  <p className="text-lg font-medium text-white leading-relaxed">
-                                                       Bangalore, India<br /><span className="text-sm text-neutral-400 font-light mt-1 block">Autonomous Systems Facility</span>
+
+                                             <div className="space-y-1.5 pt-2">
+                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                       Located At
+                                                  </h3>
+                                                  <p className="text-base font-bold font-mono text-black leading-tight">
+                                                       Bangalore, India
                                                   </p>
+                                                  <span className="text-[11px] font-mono uppercase text-neutral-600 block">
+                                                       Autonomous Systems Facility
+                                                  </span>
                                              </div>
                                         </div>
 
-                                        <a href="https://in.linkedin.com/company/kshatra-labs" target="_blank" rel="noopener noreferrer" className="p-8 border border-white/10 bg-neutral-900/40 backdrop-blur-xl rounded-3xl space-y-6 group relative overflow-hidden transition-all hover:bg-neutral-900/60 hover:border-white/20">
-                                             <div className="absolute top-0 right-0 w-48 h-48 bg-defense-accent/5 rounded-full blur-[50px] pointer-events-none -translate-y-1/2 translate-x-1/2 group-hover:bg-defense-accent/10 transition-colors duration-700"></div>
-                                             <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black group-hover:border-defense-accent/50 transition-colors">
-                                                  <Linkedin className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors" />
+                                        {/* 04: Professional Network */}
+                                        <a
+                                             href="https://in.linkedin.com/company/kshatra-labs"
+                                             target="_blank"
+                                             rel="noopener noreferrer"
+                                             className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
+                                        >
+                                             <div className="flex items-start justify-between gap-4">
+                                                  <Linkedin className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
-                                             <div className="space-y-3">
-                                                  <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-neutral-500">Professional Network</h3>
-                                                  <p className="text-xl font-medium text-white transition-colors">
+
+                                             <div className="space-y-1.5 pt-2">
+                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                       Linkedin
+                                                  </h3>
+                                                  <p className="text-lg font-bold font-mono text-black tracking-tight">
                                                        Kshatra Labs
                                                   </p>
                                              </div>

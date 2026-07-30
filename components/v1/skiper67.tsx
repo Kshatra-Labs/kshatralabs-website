@@ -22,6 +22,7 @@ export type VideoPlayerProps = ComponentProps<typeof MediaController>;
 
 export const VideoPlayer = ({ style, ...props }: VideoPlayerProps) => (
   <MediaController
+    suppressHydrationWarning
     style={{
       ...style,
     }}
@@ -118,7 +119,7 @@ export const VideoPlayerContent = ({
   className,
   ...props
 }: VideoPlayerContentProps) => (
-  <video className={cn("mb-0 mt-0", className)} {...props} />
+  <video suppressHydrationWarning className={cn("mb-0 mt-0", className)} {...props} />
 );
 
 export const Skiper67 = () => {
