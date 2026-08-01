@@ -30,7 +30,7 @@ export default function GalleryPage() {
           <div className="relative min-h-screen bg-black text-white selection:bg-white/20 overflow-hidden font-sans">
                {/* Fixed Background */}
                <div className="fixed inset-0 z-0 opacity-40">
-                    <BackgroundPaths title="" />
+                     
                </div>
 
                <Header />

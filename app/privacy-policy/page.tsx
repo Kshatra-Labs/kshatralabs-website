@@ -192,7 +192,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Ambient background */}
       <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
-        <BackgroundPaths title="" />
+         
       </div>
 
       {/* Tactical amber grid */}

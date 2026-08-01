@@ -51,7 +51,7 @@ export default function Home() {
 
       {/* Background Paths typically have their own container, we'll put them fixed behind */}
       <div className="fixed inset-0 z-0 opacity-40">
-        <BackgroundPaths title="" />
+         
       </div>
 
       <div className="relative z-10">

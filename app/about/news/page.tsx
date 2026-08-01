@@ -225,7 +225,7 @@ export default function NewsPage() {
                <style>{cardStyles}</style>
                {/* Fixed Background */}
                <div className="fixed inset-0 z-0 opacity-40">
-                    <BackgroundPaths title="" />
+                     
                </div>
 
                <Header />

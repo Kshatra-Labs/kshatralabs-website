@@ -137,7 +137,7 @@ export default function TermsOfServicePage() {
 
       {/* Ambient background */}
       <div className="fixed inset-0 z-0 opacity-20">
-        <BackgroundPaths title="" />
+         
       </div>
 
       {/* Tactical amber grid */}

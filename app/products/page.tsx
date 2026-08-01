@@ -14,7 +14,7 @@ export default function ProductsPage() {
 
                {/* Background Paths */}
                <div className="fixed inset-0 z-0 opacity-40">
-                    <BackgroundPaths title="" />
+                     
                </div>
 
                <main className="relative z-10 pt-32 md:pt-40 pb-24 min-h-screen flex flex-col justify-between">
