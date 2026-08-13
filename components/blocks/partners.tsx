@@ -11,6 +11,8 @@ const partners = [
      { name: 'Startup India Seed Fund', logo: '/partners/DPIIT-Seed-Fund-Scheme.jpg.webp' },
      { name: 'Mach33 Aero', logo: '/partners/mach33_aero_logo.jpg' },
      { name: 'Social Alpha', logo: '/partners/social_alpha_logo.jpg' },
+     { name: 'Finvolve', logo: '/partners/filvolve-logo.png' },
+     { name: 'India Accelerator', logo: '/partners/indiaaccelerator.png' },
 ]
 
 export default function Partners() {

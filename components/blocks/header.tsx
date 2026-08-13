@@ -79,7 +79,7 @@ const menuItems: NavItem[] = [
                {
                     title: 'COORDINATED DEFENCE',
                     items: [
-                         { name: 'SWARM', href: '/products', desc: 'Distributed software architecture enabling collaborative engagement across multiple autonomous nodes.', comingSoon: true }
+                         { name: 'NETWORK', href: '/products', desc: 'Distributed software architecture enabling collaborative engagement across multiple autonomous nodes.', comingSoon: true }
                     ]
                }
           ]

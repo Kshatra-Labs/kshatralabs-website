@@ -38,8 +38,8 @@ The purpose of the Kshatra Labs digital platform (`kshatralabs-website`) is to p
 * **Description**: Compact edge compute and communications unit for sensor fusion, rapid interceptor tasking, and operator-supervised engagements.
 * **Status**: Systems Integration
 
-### 3.4 SWARM LAYER (Coordinated Defence Network)
-* **Description**: A secure mesh communication and coordination layer enabling multi-interceptor swarm behavior, target deconfliction, and resilient field networks.
+### 3.4 NETWORK LAYER (Coordinated Defence Network)
+* **Description**: A secure mesh communication and coordination layer enabling multi-interceptor network behavior, target deconfliction, and resilient field networks.
 * **Status**: Development Program
 
 ---

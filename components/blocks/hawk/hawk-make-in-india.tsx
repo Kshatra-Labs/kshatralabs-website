@@ -26,7 +26,7 @@ const ADVANTAGES: Advantage[] = [
           title: 'Lower Cost Per Intercept',
           metric: '1/10th',
           metricLabel: 'Cost of Missile Defense',
-          desc: 'Traditional air defense missiles cost hundreds of thousands of dollars each—making them too expensive to waste on cheap enemy drones. HAWK is engineered at a fraction of the cost to affordably defeat large incoming drone swarms.'
+          desc: 'Traditional air defense missiles cost hundreds of thousands of dollars each—making them too expensive to waste on cheap enemy drones. HAWK is engineered at a fraction of the cost to affordably defeat large incoming drone networks.'
      },
      {
           number: '03',
@@ -62,7 +62,7 @@ export function HawkMakeInIndia() {
                          >
                               Sovereign Defense IP
                          </h2>
-                         <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
+                         <p className="text-lg sm:text-lg text-neutral-300 font-light leading-relaxed">
                               Designed, built, and controlled entirely within India to ensure complete supply chain independence and absolute system ownership.
                          </p>
                     </div>
@@ -99,7 +99,7 @@ export function HawkMakeInIndia() {
 
                                    {/* Column 3: Description Paragraph (5 Cols) */}
                                    <div className="md:col-span-5 pt-1">
-                                        <p className="text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
+                                        <p className="text-lg sm:text-lg text-neutral-300 leading-relaxed font-normal">
                                              {item.desc}
                                         </p>
                                    </div>

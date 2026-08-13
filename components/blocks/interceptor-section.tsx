@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ArrowRight, Shield, Target, Zap, WifiOff, Network } from 'lucide-react'
 import { Icon } from '@iconify/react'
+import Link from 'next/link'
 
 export function InterceptorSection() {
      const videoRef = useRef<HTMLVideoElement>(null);
@@ -75,13 +76,13 @@ export function InterceptorSection() {
                                    <div className="space-y-6">
                                         <div className="text-blue-400 font-mono text-sm uppercase tracking-widest">Autonomous Interceptor UAV</div>
 
-                                        <div className="space-y-4 text-lg text-neutral-300 font-light leading-relaxed">
+                                        <div className="space-y-4 text-xl text-neutral-300 font-light leading-relaxed">
                                              <p>
-                                                  <span className="text-white font-medium">Drones are rapidly becoming a major security threat</span> to critical infrastructure, military assets, and civilian environments. Existing counter-drone systems are expensive, slow to deploy, and struggle to neutralize fast-moving or swarm-based threats.
+                                                  <span className="text-white font-medium">Drones are rapidly becoming a major security threat</span> to critical infrastructure, military assets, and civilian environments. Existing counter-drone systems are expensive, slow to deploy, and struggle to neutralize fast-moving or network-based threats.
                                              </p>
 
                                              <div className="py-2 border-l-2 border-blue-500/50 pl-4 bg-blue-500/5">
-                                                  <p className="text-xl text-white font-medium uppercase tracking-wide">
+                                                  <p className="text-2xl text-white font-medium uppercase tracking-wide">
                                                        Hawk is built to close the gap between detection and neutralization.
                                                   </p>
                                              </div>
@@ -94,6 +95,15 @@ export function InterceptorSection() {
                                                   Powered by fully onboard <span className="text-blue-400 font-mono text-sm">EDGE AI</span>, Hawk operates independently without cloud connectivity, enabling ultra-fast response and reliable operation in electronic warfare conditions.
                                              </p>
                                         </div>
+
+                                        {/* CTA Button */}
+                                        <Link
+                                             href="/products/hawk"
+                                             className="inline-flex items-center gap-3 px-7 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-mono text-sm font-bold uppercase tracking-widest transition-all duration-200 group/btn"
+                                        >
+                                             View HAWK
+                                             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                                        </Link>
                                    </div>
                               </div>
                               <div className="order-1 md:order-2 flex items-center justify-center">
@@ -264,7 +274,7 @@ export function InterceptorSection() {
                                    </div>
                               </div>
 
-                              {/* 05: Swarm Defence Ready */}
+                              {/* 05: Network Defence Ready */}
                               <div className="relative p-7 border border-white/20 bg-black/90 space-y-6 rounded-none hover:border-blue-500 hover:bg-neutral-950 transition-all duration-200 group">
                                    <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
                                    <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/40 group-hover:border-blue-500 transition-colors pointer-events-none" />
@@ -281,10 +291,10 @@ export function InterceptorSection() {
 
                                    <div className="space-y-3">
                                         <div className="text-white font-mono text-base uppercase tracking-wider font-bold">
-                                             Swarm Defence Ready
+                                             Network Defence Ready
                                         </div>
                                         <p className="text-neutral-200 text-sm font-normal leading-relaxed">
-                                             Multiple Hawk units can coordinate to intercept multiple targets and drone swarms simultaneously.
+                                             Multiple Hawk units can coordinate to intercept multiple targets and drone networks simultaneously.
                                         </p>
                                    </div>
                               </div>

@@ -12,7 +12,7 @@ const galleryImages = [
           label: 'AIR INTERCEPTOR UNIT',
           title: 'High-Speed Autonomous Interception',
           description: 'Edge AI powered system with onboard tracking and threat engagement.',
-          features: ['Edge AI', 'Target Lock', 'Swarm Ready', 'EW Resistant']
+          features: ['Edge AI', 'Target Lock', 'Network Ready', 'EW Resistant']
      },
      {
           src: '/styles/3.png',

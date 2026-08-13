@@ -28,7 +28,7 @@ const MISSION_PHASES: MissionPhase[] = [
           stepNumber: '01',
           title: 'Target Detection & Tracking',
           subtitle: 'Radar & Camera Integration',
-          desc: 'Before launch, HAWK connects directly to perimeter radars and sentry cameras. As soon as an enemy drone or incoming swarm enters the area, the command system tracks its exact speed and direction in real time.',
+          desc: 'Before launch, HAWK connects directly to perimeter radars and sentry cameras. As soon as an enemy drone or incoming network enters the area, the command system tracks its exact speed and direction in real time.',
           bulletPoints: [
                'Works with existing radars, thermal cameras, and radio sensors',
                'Automatically identifies and separates incoming drone threats',
@@ -38,7 +38,6 @@ const MISSION_PHASES: MissionPhase[] = [
           telemetryData: [
                { label: 'Detection Range', val: '15 km Perimeter' },
                { label: 'Tracking Accuracy', val: '99.8% Multi-Sensor Lock' },
-               { label: 'Data Transfer Time', val: '< 50 milliseconds' },
                { label: 'Optional Payload', val: '300-700 gm Capacity' }
           ]
      },
@@ -65,10 +64,10 @@ const MISSION_PHASES: MissionPhase[] = [
           stepNumber: '03',
           title: 'Kinetic & Proximity Interception',
           subtitle: 'Two Operational Neutralization Variants',
-          desc: 'HAWK is available in two distinct configurations: Kinetic Hit-to-Kill (which collides directly at high speed to snap enemy structural wings and rotors without explosives) and Proximity Airburst (equipped with proximity fuzing or modular countermeasures for evading swarms).',
+          desc: 'HAWK is available in two distinct configurations: Kinetic Hit-to-Kill (which collides directly at high speed to snap enemy structural wings and rotors without explosives) and Proximity Explosives.',
           bulletPoints: [
                'Kinetic Variant: Direct high-speed body-to-body collision with zero explosive shrapnel below',
-               'Proximity Variant: Modular proximity fuzing and payload deployment for evading drone swarms',
+               'Proximity Variant: Modular proximity fuzing and payload deployment for evading drone networks',
                'Far lower cost per intercept compared to traditional air defense missiles'
           ],
           videoUrl: '/video/intercept.mp4',
@@ -99,7 +98,7 @@ export function HawkMissionSimulation() {
                                    The 3 Steps to Intercept
                               </h2>
                          </div>
-                         <p className="max-w-md text-base text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
                               From the first radar alert to direct high-speed collision, HAWK completes the mission automatically in under two seconds.
                          </p>
                     </div>
@@ -130,7 +129,7 @@ export function HawkMissionSimulation() {
 
                                         <div className="pt-4">
                                              <h3 
-                                                  className={`text-lg font-bold uppercase tracking-tight ${isSelected ? 'text-white' : 'text-neutral-300'}`}
+                                                  className={`text-xl font-bold uppercase tracking-tight ${isSelected ? 'text-white' : 'text-neutral-300'}`}
                                                   style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                              >
                                                   {phase.title}
@@ -213,13 +212,13 @@ export function HawkMissionSimulation() {
                                         {activePhase.subtitle}
                                    </div>
 
-                                   <p className="text-sm text-neutral-300 leading-relaxed mb-6 font-normal">
+                                   <p className="text-lg text-neutral-300 leading-relaxed mb-6 font-normal">
                                         {activePhase.desc}
                                    </p>
 
                                    <div className="space-y-3 pt-4 border-t border-neutral-800">
                                         {activePhase.bulletPoints.map((point, idx) => (
-                                             <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/90 font-normal">
+                                             <div key={idx} className="flex items-start gap-3 text-base sm:text-lg text-white/90 font-normal">
                                                   <span className="font-mono text-xs font-bold text-[#cc1414] mt-0.5">•</span>
                                                   <span>{point}</span>
                                              </div>
@@ -230,7 +229,7 @@ export function HawkMissionSimulation() {
                               {/* Technical Performance Specs */}
                               <div className="pt-6 border-t border-neutral-800 space-y-3 font-mono">
                                    {activePhase.telemetryData.map((data, idx) => (
-                                        <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-900 text-xs">
+                                        <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-900 text-sm">
                                              <span className="text-neutral-400 uppercase tracking-wider">{data.label}</span>
                                              <span className="font-bold text-white">{data.val}</span>
                                         </div>

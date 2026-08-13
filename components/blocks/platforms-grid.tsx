@@ -16,7 +16,7 @@ const advantages = [
     description: 'Detection, targeting, and engagement decisions occur directly on the interceptor. No cloud reliance. No remote control latency.'
   },
   {
-    title: 'Swarm & Multi-Agent Coordination',
+    title: 'Network & Multi-Agent Coordination',
     description: 'Interceptors operate collaboratively using distributed intelligence to defeat complex threats.'
   },
   {

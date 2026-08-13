@@ -80,7 +80,7 @@ export default function Footer4Col() {
                                              </div>
                                              <div className="max-w-[30ch] font-sans text-[14px] leading-[1.35]">
                                                   <p>
-                                                       Monday to Friday <br />
+                                                      
                                                        9:00AM to 5:30PM IST
                                                   </p>
                                              </div>
@@ -153,7 +153,7 @@ export default function Footer4Col() {
                                              </li>
                                              <li>
                                                   <Link href="/products" className="block font-sans text-[14px] font-medium uppercase leading-[1.2] text-[#eef7f4] transition-colors hover:text-white">
-                                                       Swarm Systems
+                                                       Network Systems
                                                   </Link>
                                              </li>
                                         </ul>

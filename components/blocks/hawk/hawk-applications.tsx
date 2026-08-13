@@ -18,7 +18,7 @@ const APPLICATIONS: Application[] = [
           number: '01',
           title: 'Border & Forward Bases',
           subtitle: 'Military Camp & Airstrip Protection',
-          desc: 'Protects forward military camps, ammunition stores, and landing strips from hostile drone swarms and incoming loitering weapons.',
+          desc: 'Protects forward military camps, ammunition stores, and landing strips from hostile drone networks and incoming loitering weapons.',
           capabilities: [
                'Easy to deploy along mountain borders or remote desert camps',
                'Automatically tracks and prioritizes up to 32 incoming drones at once',
@@ -81,7 +81,7 @@ export function HawkApplications() {
                                    Defense Applications
                               </h2>
                          </div>
-                         <p className="max-w-md text-base text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
                               Whether protecting remote border camps, warship decks, or critical power plants, HAWK provides reliable 24/7 drone defense across every operational environment.
                          </p>
                     </div>
@@ -111,20 +111,20 @@ export function HawkApplications() {
                                              >
                                                   {app.title}
                                              </h3>
-                                             <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+                                             <p className="text-lg sm:text-lg text-neutral-300 font-light leading-relaxed">
                                                   {app.desc}
                                              </p>
                                         </div>
 
                                         {/* Key Benefits */}
                                         <div className="space-y-3 pt-2">
-                                             <div className="font-mono text-[11px] uppercase tracking-widest text-neutral-500 font-bold mb-2">
+                                             <div className="font-mono text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">
                                                   Operational Advantages
                                              </div>
                                              {app.capabilities.map((cap, idx) => (
                                                   <div key={idx} className="flex items-start gap-3">
                                                        <span className="font-mono text-xs text-[#cc1414] font-bold mt-0.5">•</span>
-                                                       <span className="text-xs sm:text-sm text-neutral-300 font-light leading-relaxed">
+                                                       <span className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
                                                             {cap}
                                                        </span>
                                                   </div>

@@ -17,7 +17,7 @@ const SPEC_GROUPS: SpecGroup[] = [
                { label: 'Acceleration Rate', value: '1.8', unit: 'Seconds to Top Speed', note: 'Instant throttle response from vertical canister launch' },
                { label: 'Maximum Altitude', value: '4,500', unit: 'Meters Above Sea Level', note: 'Capable of altitude stability in mountain passes and high-altitude warfare' },
                { label: 'Launch Reaction Time', value: '< 0.5', unit: 'Seconds from Command', note: 'Instant vertical takeoff upon automated perimeter radar cueing' },
-               { label: 'Swarm Interception', value: '32+', unit: 'Simultaneous Targets', note: 'Network-coordinated multi-interceptor vectoring against dense drone swarms' },
+               { label: 'Network Interception', value: '32+', unit: 'Simultaneous Targets', note: 'Network-coordinated multi-interceptor vectoring against dense drone networks' },
                { label: 'Defense Cost Ratio', value: '1/10th', unit: 'Cost of Missile Defense', note: 'Asymmetric economic advantage against low-cost loitering munitions and FPVs' }
           ]
      },
@@ -56,7 +56,7 @@ const SPEC_GROUPS: SpecGroup[] = [
                { label: 'Battery Chemistry', value: 'High-Discharge LiPo', unit: 'Solid-State Battery', note: 'Safe, high-energy-density cell architecture' },
                { label: 'Operating Temperature', value: '-30°C to +55°C', unit: 'Military Certified', note: 'Handles extreme desert sandstorms, monsoon rain, and freezing cold' },
                { label: 'Command Network', value: 'Standard Ethernet', unit: 'Open Network Link', note: 'Connects directly to existing radar and command post computers' },
-               { label: 'Multi-Launcher Pods', value: 'Up to 64 Units', unit: 'Network Coordinated', note: 'Connects multiple pods together to defeat large drone swarms' }
+               { label: 'Multi-Launcher Pods', value: 'Up to 64 Units', unit: 'Network Coordinated', note: 'Connects multiple pods together to defeat large drone networks' }
           ]
      }
 ]
@@ -82,7 +82,7 @@ export function HawkSpecs() {
                                    Technical Specifications
                               </h2>
                          </div>
-                         <p className="max-w-md text-base text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
                               Verified mechanical, aerodynamic, and compute parameters for the HAWK autonomous drone interceptor.
                          </p>
                     </div>
@@ -121,7 +121,7 @@ export function HawkSpecs() {
                                         <div className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 font-bold mb-1">
                                              {spec.label}
                                         </div>
-                                        <p className="text-xs text-neutral-300 font-light leading-relaxed mb-4">
+                                        <p className="text-base text-neutral-300 font-light leading-relaxed mb-4">
                                              {spec.note}
                                         </p>
                                    </div>
@@ -130,7 +130,7 @@ export function HawkSpecs() {
                                              {spec.value}
                                         </span>
                                         {spec.unit && (
-                                             <span className="font-mono text-[9px] uppercase tracking-widest text-[#cc1414] font-bold">
+                                             <span className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold">
                                                   / {spec.unit}
                                              </span>
                                         )}

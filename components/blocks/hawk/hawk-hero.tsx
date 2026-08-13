@@ -127,7 +127,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               </h1>
 
                               <p className="text-xl sm:text-2xl font-light text-neutral-300 max-w-2xl leading-relaxed">
-                                   Fast, reliable protection against hostile drones and incoming swarms. Powered by onboard AI vision that tracks and neutralizes threats without needing GPS.
+                                   Fast, reliable protection against hostile drones and incoming networks. Powered by onboard AI vision that tracks and neutralizes threats without needing GPS.
                               </p>
 
                               <div className="pt-4 flex flex-wrap items-center gap-6">
@@ -175,7 +175,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
                                    300+ kmph
                               </div>
-                              <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                              <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                    Maximum Flight Speed
                               </div>
                          </div>
@@ -183,7 +183,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
                                     &lt; 5 ms
                                </div>
-                               <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                               <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                     Target Lock Speed
                                </div>
                           </div>
@@ -191,7 +191,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
                                     1/10th
                                </div>
-                               <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                               <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                     Cost of Missile Defense
                                </div>
                           </div>
@@ -199,7 +199,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
                                    100%
                               </div>
-                              <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                              <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                    Built in India
                               </div>
                          </div>
@@ -218,7 +218,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                         How HAWK is Built
                                    </h2>
                               </div>
-                              <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">
+                              <p className="font-mono text-base text-neutral-400 uppercase tracking-widest">
                                    Inspect HAWK&apos;s main subsystems and design parameters below
                               </p>
                          </div>
@@ -295,12 +295,12 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                                            >
                                                                                 {spot.title}
                                                                            </h4>
-                                                                           <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                                                                           <p className="text-lg text-neutral-300 leading-relaxed font-light">
                                                                                 {spot.desc}
                                                                            </p>
 
                                                                            {spot.specs && spot.specs.length > 0 && (
-                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[11px]">
+                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-base">
                                                                                      {spot.specs.map((spec, idx) => (
                                                                                           <div key={idx} className="flex items-center justify-between">
                                                                                                <span className="text-neutral-500 uppercase">{spec.label}</span>

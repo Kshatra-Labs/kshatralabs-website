@@ -81,7 +81,7 @@ export default function CompanyPage() {
                                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                         Our <span className="text-blue-400 text-glow-blue">Mission</span>
                                    </h2>
-                                   <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              At Kshatra Labs, we engineer true autonomous defence platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, maintaining human supervision while keeping operators entirely out of harm&apos;s way.
                                         </p>
@@ -95,7 +95,7 @@ export default function CompanyPage() {
                                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                         Our <span className="text-emerald-500 text-glow-green">Approach</span>
                                    </h2>
-                                   <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              We focus on building systems that are autonomous, scalable, and cost-efficient.
                                         </p>
@@ -161,12 +161,12 @@ export default function CompanyPage() {
                                              Why It Matters
                                         </h2>
                                    </div>
-                                   <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              The nature of warfare is evolving rapidly, with asymmetric threats challenging traditional defence paradigms. True deterrence now requires systems that are as adaptable and scalable as the threats they counter. Intelligent, cost-effective defence networks will form the backbone of future security.
                                         </p>
                                         <p>
-                                             Kshatra Labs is engineering autonomous, scalable swarm technologies that shift the paradigm from reactive defence to proactive deterrence, shaping the future of multi-domain security.
+                                             Kshatra Labs is engineering autonomous, scalable technologies that shift the paradigm from reactive defence to proactive deterrence, shaping the future of multi-domain security.
                                         </p>
                                    </div>
                               </div>
@@ -178,12 +178,12 @@ export default function CompanyPage() {
                                              Future Vision
                                         </h2>
                                    </div>
-                                   <div className="text-lg text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
-                                             While our immediate focus includes autonomous kinetic interception, our longer-term vision extends to a comprehensive ecosystem of intelligent, cost-effective swarm systems. We are building the foundation for mass-manufacturable, collaborative autonomous machines capable of operating reliably in contested environments.
+                                             While our immediate focus includes autonomous kinetic interception, our longer-term vision extends to a comprehensive ecosystem of intelligent, cost-effective autonomous systems. We are building the foundation for mass-manufacturable, collaborative autonomous machines capable of operating reliably in contested environments.
                                         </p>
                                         <p>
-                                             By advancing the capabilities of distributed AI and autonomous control, we aim to build highly scalable swarm systems that redefine strategic deterrence and next-generation unmanned operations.
+                                             By advancing the capabilities of distributed AI and autonomous control, we aim to build highly scalable networked systems that redefine strategic deterrence and next-generation unmanned operations.
                                         </p>
                                    </div>
                               </div>

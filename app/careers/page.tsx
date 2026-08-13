@@ -63,8 +63,8 @@ const JOB_DESCRIPTIONS: Record<string, JobDescription> = {
      "5": {
           "title": "Software Engineer",
           "responsibilities": [
-               "Platform Architecture: Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous swarm systems.",
-               "Swarm Command: Design the overarching swarm command interfaces and state machines, translating high-level operator commands into distributed tasks for edge autonomy nodes.",
+               "Platform Architecture: Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous network systems.",
+               "Network Command: Design the overarching network command interfaces and state machines, translating high-level operator commands into distributed tasks for edge autonomy nodes.",
                "Networking & Telemetry: Develop high-performance, low-latency networking architectures. Handle distributed messaging and telemetry over degraded or low-bandwidth networks.",
                "Data Ingestion: Build resilient pipelines to ingest, time-sync, and process MAVLink telemetry and external sensor data (Radar, Vision) into a unified Common Operating Picture (COP).",
                "Native GUI Development: Design and build the real-time, native Linux operator interface (using Qt/QML or similar) to visualize high-throughput geospatial and mission data.",
@@ -289,7 +289,7 @@ export default function CareersPage() {
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Network className="w-8 h-8 text-red-500 mb-6" />
-                                   <h3 className="text-xl font-bold font-mono uppercase mb-3">Swarm Intelligence</h3>
+                                   <h3 className="text-xl font-bold font-mono uppercase mb-3">Network Intelligence</h3>
                                    <p className="text-sm text-neutral-400 leading-relaxed">Multi-agent coordination enabling large-scale drone defence.</p>
                               </div>
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">

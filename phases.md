@@ -16,7 +16,7 @@ This document tracks the phased development lifecycle, current progress, and str
     * `InterceptorSection` & `Partners` showcase
     * High-tech `InitialLoader` and `custom-cursor.tsx`
   * Deployed `Lenis` smooth scroll integration (`smooth-scroll.tsx`).
-  * Created product portfolio overview page (`app/products/page.tsx`) featuring **HAWK MK-1**, **HAWKEYE**, **APEX**, and **SWARM LAYER**.
+  * Created product portfolio overview page (`app/products/page.tsx`) featuring **HAWK MK-1**, **HAWKEYE**, **APEX**, and **NETWORK LAYER**.
   * Created detailed product sub-route (`app/products/hawk`).
 
 ---
@@ -40,10 +40,10 @@ This document tracks the phased development lifecycle, current progress, and str
 * **Status**: Planned
 * **Key Deliverables**:
   * **Dedicated Product Sub-Pages**:
-    * Build comprehensive, highly immersive technical specification pages for `/products/hawkeye`, `/products/apex`, and `/products/swarm-layer`.
+    * Build comprehensive, highly immersive technical specification pages for `/products/hawkeye`, `/products/apex`, and `/products/network-layer`.
     * Include interactive 3D model viewers and rotating telemetry blueprints for each product.
   * **Interactive Configuration Simulator**:
-    * Develop an interactive HAWK MK-1 and Swarm Layer mission config tool where visitors can toggle payload configurations, optical sensors, and range parameters.
+    * Develop an interactive HAWK MK-1 and Network Layer mission config tool where visitors can toggle payload configurations, optical sensors, and range parameters.
   * **Dynamic Career Portal (`app/careers`)**:
     * Interactive job listing filter for physical intelligence, embedded hardware, and AI roles at Kshatra Labs (`Bengaluru`).
   * **Briefing & Demo Scheduling Portal (`app/contact-us`)**:

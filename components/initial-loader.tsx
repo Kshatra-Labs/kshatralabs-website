@@ -25,87 +25,36 @@ export function InitialLoader() {
 
      useEffect(() => {
           const hasLoaded = sessionStorage.getItem('kshatra-loaded');
-          const startTime = Date.now();
-          const MAX_WAIT = 10000; // 10s max wait for videos
 
-          // Preload critical assets for the initial sections
-          const CRITICAL_IMAGES = [
-               '/styles/hawkmeet.jpg',
-               '/drone.png',
-               '/realcross.png'
-          ];
-          const CRITICAL_VIDEOS = [
-               '/video/demo.mp4',
-               '/video/intercept.webm'
-          ];
-
-          let imagesPreloaded = false;
-          let videosPreloaded = false;
-
+          // Skip loader on repeat visits within the same session
           if (hasLoaded) {
-               imagesPreloaded = true;
-               videosPreloaded = true;
-          } else {
-               let loadedImages = 0;
-               CRITICAL_IMAGES.forEach(src => {
-                    const img = new Image();
-                    img.src = src;
-                    img.onload = () => {
-                         loadedImages++;
-                         if (loadedImages === CRITICAL_IMAGES.length) imagesPreloaded = true;
-                    };
-                    img.onerror = () => {
-                         loadedImages++; // skip errors
-                         if (loadedImages === CRITICAL_IMAGES.length) imagesPreloaded = true;
-                    };
-               });
-
-               let loadedVideos = 0;
-               CRITICAL_VIDEOS.forEach(src => {
-                    const vid = document.createElement('video');
-                    vid.src = src;
-                    vid.preload = 'auto';
-                    vid.oncanplaythrough = () => {
-                         loadedVideos++;
-                         if (loadedVideos === CRITICAL_VIDEOS.length) videosPreloaded = true;
-                    };
-                    vid.onerror = () => {
-                         loadedVideos++;
-                         if (loadedVideos === CRITICAL_VIDEOS.length) videosPreloaded = true;
-                    };
-                    vid.load();
-               });
+               setProgress(100);
+               setIsLoading(false);
+               return;
           }
 
-          let currentProgress = 0;
+          const TOTAL_DURATION = 1800; // ms — fast enough to not feel sluggish
+          const TICK = 50; // ms per interval tick
+          const startTime = Date.now();
+
           const interval = setInterval(() => {
                const elapsed = Date.now() - startTime;
+               const ratio = Math.min(elapsed / TOTAL_DURATION, 1);
 
-               // Check if all videos are ready
-               const videos = Array.from(document.querySelectorAll('video'));
-               const allVideosReady = videos.every(v => v.readyState >= 3); // HAVE_FUTURE_DATA or enough
+               // Ease-out curve: fast start, slow finish
+               const eased = 1 - Math.pow(1 - ratio, 3);
+               const progress = Math.min(eased * 100, 100);
+               setProgress(progress);
 
-               const isEverythingReady = document.readyState === 'complete' && allVideosReady && imagesPreloaded && videosPreloaded;
-
-               // Progress simulation
-               const targetProgress = isEverythingReady ? 100 : 98;
-               const increment = (targetProgress - currentProgress) / 10;
-               currentProgress = Math.min(currentProgress + increment, targetProgress);
-               setProgress(currentProgress);
-
-               if (
-                    isEverythingReady ||
-                    elapsed > MAX_WAIT ||
-                    hasLoaded
-               ) {
+               if (ratio >= 1) {
                     clearInterval(interval);
                     setProgress(100);
                     setTimeout(() => {
                          setIsLoading(false);
                          sessionStorage.setItem('kshatra-loaded', 'true');
-                    }, 500);
+                    }, 400);
                }
-          }, 100);
+          }, TICK);
 
           return () => clearInterval(interval);
      }, []);

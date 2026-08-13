@@ -113,8 +113,8 @@ export default function JobDescriptionsPage() {
                                         <div className="mb-8">
                                              <h4 className="text-white font-bold font-mono mb-3">Core Responsibilities:</h4>
                                              <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
-                                                  <li><strong className="text-white font-medium">Platform Architecture:</strong> Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous swarm systems.</li>
-                                                  <li><strong className="text-white font-medium">Swarm Command:</strong> Design the overarching swarm command interfaces and state machines, translating high-level operator commands into distributed tasks for edge autonomy nodes.</li>
+                                                  <li><strong className="text-white font-medium">Platform Architecture:</strong> Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous network systems.</li>
+                                                  <li><strong className="text-white font-medium">Network Command:</strong> Design the overarching network command interfaces and state machines, translating high-level operator commands into distributed tasks for edge autonomy nodes.</li>
                                                   <li><strong className="text-white font-medium">Networking & Telemetry:</strong> Develop high-performance, low-latency networking architectures. Handle distributed messaging and telemetry over degraded or low-bandwidth networks.</li>
                                                   <li><strong className="text-white font-medium">Data Ingestion:</strong> Build resilient pipelines to ingest, time-sync, and process MAVLink telemetry and external sensor data (Radar, Vision) into a unified Common Operating Picture (COP).</li>
                                                   <li><strong className="text-white font-medium">Native GUI Development:</strong> Design and build the real-time, native Linux operator interface (using Qt/QML or similar) to visualize high-throughput geospatial and mission data.</li>
@@ -136,11 +136,11 @@ export default function JobDescriptionsPage() {
                                              <div className="space-y-6">
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Architecture</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous swarm systems. Experience building Common Operating Picture (COP) software or modern defense tech platforms (e.g., Lattice-style sensor fusion and asset management) is highly desirable.</p>
+                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous network systems. Experience building Common Operating Picture (COP) software or modern defense tech platforms (e.g., Lattice-style sensor fusion and asset management) is highly desirable.</p>
                                                   </div>
                                                   <div>
-                                                       <h5 className="text-white font-bold mb-2">Swarm operation</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design the overarching swarm command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., &apos;form a perimeter&apos;, &apos;search this sector&apos;) into distributed tasks for the edge autonomy stacks to execute.</p>
+                                                       <h5 className="text-white font-bold mb-2">Network operation</h5>
+                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design the overarching network command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., &apos;form a perimeter&apos;, &apos;search this sector&apos;) into distributed tasks for the edge autonomy stacks to execute.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Networks</h5>
@@ -152,11 +152,11 @@ export default function JobDescriptionsPage() {
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Operator UI</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and build the real-time operator interface for swarm supervision. Must have experience visualizing high-throughput geospatial and telemetry data without performance degradation. Familiarity with modern frontend frameworks (e.g., React, Vue) and geospatial/3D rendering tools (e.g., CesiumJS, Mapbox, or WebGL) is highly preferred.</p>
+                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and build the real-time operator interface for network supervision. Must have experience visualizing high-throughput geospatial and telemetry data without performance degradation. Familiarity with modern frontend frameworks (e.g., React, Vue) and geospatial/3D rendering tools (e.g., CesiumJS, Mapbox, or WebGL) is highly preferred.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Specifics</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and develop a high-performance, native Linux desktop application for real-time swarm supervision. Extensive experience with C++ GUI frameworks (e.g., Qt/QML) or similar native toolkits is required to smoothly render low-latency geospatial data, radar tracks, and continuous swarm telemetry.</p>
+                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and develop a high-performance, native Linux desktop application for real-time network supervision. Extensive experience with C++ GUI frameworks (e.g., Qt/QML) or similar native toolkits is required to smoothly render low-latency geospatial data, radar tracks, and continuous network telemetry.</p>
                                                   </div>
                                              </div>
                                         </div>

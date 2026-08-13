@@ -70,7 +70,7 @@ export default function ProductsPage() {
                               transition={{ duration: 1.5, delay: 1 }}
                               className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40"
                          >
-                              {['HAWK', 'HAWKEYE', 'APEX', 'SWARM'].map((platform) => (
+                              {['HAWK', 'HAWKEYE', 'APEX', 'NETWORK'].map((platform) => (
                                    <div key={platform} className="flex flex-col items-center gap-2">
                                         <div className="w-1.5 h-1.5 bg-defense-accent rounded-full animate-pulse"></div>
                                         <span className="font-mono text-[10px] tracking-[0.3em] font-bold">{platform}</span>

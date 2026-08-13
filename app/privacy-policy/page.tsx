@@ -744,12 +744,7 @@ export default function PrivacyPolicyPage() {
               {/* §08 Cross-Border */}
               <section id="cross-border" className="scroll-mt-40">
                 <SectionHeading id="cross-border">Cross-Border Data Transfers</SectionHeading>
-                <P>
-                  We use third-party infrastructure and service providers — including cloud hosting,
-                  analytics, email delivery, and payment processing — that may store or process your
-                  personal data outside India (e.g., in the United States, the European Union,
-                  Singapore, or other jurisdictions).
-                </P>
+                
                 <P>
                   Where such international transfers occur, we ensure your data is protected by:
                 </P>

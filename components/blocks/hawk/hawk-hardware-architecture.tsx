@@ -36,15 +36,14 @@ const HARDWARE_SYSTEMS: HardwareSystem[] = [
           code: '02',
           title: 'Onboard AI Computer',
           subtitle: 'Instant In-Flight Steering',
-          desc: 'Instead of relying on fragile radio connections to a ground station, HAWK carries its own AI computer. It calculates speed, direction, and interception angles 1,000 times per second directly inside the interceptor.',
+          desc: 'Instead of relying on fragile radio connections to a ground station, HAWK carries its own AI computer. It calculates speed, direction, and interception angles rapidly per second directly inside the interceptor.',
           keyFeatures: [
                '15.6 TOPS AI processor operating with minimal power and heat',
                'Steers using visual landmarks and motion tracking when GPS is unavailable',
-               'Connects with nearby HAWK units so multiple interceptors can target different drones in a swarm'
+               'Connects with nearby HAWK units so multiple interceptors can target different drones in a network'
           ],
           technicalSpecs: [
                { name: 'Processing Capacity', val: '15.6 TOPS AI Core' },
-               { name: 'Steering Updates', val: '1,000 times per second' },
                { name: 'Primary Guidance', val: 'Vision & Motion Sensors' },
                { name: 'Signal Encryption', val: 'AES-256 Secure Link' }
           ]
@@ -62,7 +61,6 @@ const HARDWARE_SYSTEMS: HardwareSystem[] = [
           ],
           technicalSpecs: [
                { name: 'Maneuver Envelope', val: 'High-Agility Vectoring' },
-               { name: 'Total Launch Weight', val: '4.8 kg Operational' },
                { name: 'Body Dimensions', val: '1,420 mm x 680 mm' },
                { name: 'Neutralization Type', val: 'Direct Kinetic Impact' }
           ]
@@ -104,7 +102,7 @@ export function HawkHardwareArchitecture() {
                                    Inside the Hardware
                               </h2>
                          </div>
-                         <p className="max-w-md text-sm text-neutral-400 font-light leading-relaxed">
+                         <p className="max-w-md text-lg text-neutral-400 font-light leading-relaxed">
                               Every part of HAWK is engineered to handle high-speed flight forces and track targets reliably without external help.
                          </p>
                     </div>
@@ -132,7 +130,7 @@ export function HawkHardwareArchitecture() {
                                              </span>
                                         </div>
 
-                                        <p className="text-sm text-neutral-300 leading-relaxed pt-2 font-normal">
+                                        <p className="text-lg text-neutral-300 leading-relaxed pt-2 font-normal">
                                              {system.desc}
                                         </p>
 
@@ -141,7 +139,7 @@ export function HawkHardwareArchitecture() {
                                              {system.keyFeatures.map((feat, idx) => (
                                                   <div key={idx} className="flex items-start gap-3">
                                                        <span className="font-mono text-xs text-[#cc1414] font-bold mt-0.5">•</span>
-                                                       <span className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-normal">{feat}</span>
+                                                       <span className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">{feat}</span>
                                                   </div>
                                              ))}
                                         </div>
@@ -154,7 +152,7 @@ export function HawkHardwareArchitecture() {
                                         </div>
                                         <div className="border border-neutral-900 divide-y divide-neutral-900 bg-black font-mono">
                                              {system.technicalSpecs.map((spec, idx) => (
-                                                  <div key={idx} className="p-3.5 flex items-center justify-between text-xs sm:text-sm">
+                                                  <div key={idx} className="p-3.5 flex items-center justify-between text-base sm:text-lg">
                                                        <span className="uppercase tracking-wider text-neutral-400 font-medium">{spec.name}</span>
                                                        <span className="font-bold text-white tracking-tight text-right ml-4">{spec.val}</span>
                                                   </div>
