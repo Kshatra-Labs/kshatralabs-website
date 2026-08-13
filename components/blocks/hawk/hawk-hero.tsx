@@ -35,7 +35,7 @@ const HAWK_HOTSPOTS: Hotspot[] = [
           y: 44,
           title: 'Onboard AI Flight Computer',
           category: 'Guidance Computer',
-          desc: 'Runs our neural guidance software locally inside the interceptor. Calculates flight path adjustments 1,000 times per second using visual tracking so it never loses lock, even if GPS or radio signals are jammed.',
+          desc: 'Runs our neural guidance software locally inside the interceptor. Calculates flight path adjustments using visual tracking so it never loses lock, even if GPS or radio signals are jammed.',
           specs: []
      },
      {
