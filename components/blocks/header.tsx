@@ -75,12 +75,6 @@ const menuItems: NavItem[] = [
                     items: [
                          { name: 'APEX', href: '/products', desc: 'Intelligent edge-compute node that processes sensor data in real-time to enable autonomous decision making.', comingSoon: true }
                     ]
-               },
-               {
-                    title: 'COORDINATED DEFENCE',
-                    items: [
-                         { name: 'NETWORK', href: '/products', desc: 'Distributed software architecture enabling collaborative engagement across multiple autonomous nodes.', comingSoon: true }
-                    ]
                }
           ]
      },

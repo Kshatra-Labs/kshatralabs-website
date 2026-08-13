@@ -42,8 +42,8 @@ export function HeroSection() {
                                    </div>
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
                                         <div className="space-y-8">
-                                             <p className="text-sm text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
-                                                  <strong className="text-white font-medium">Our Mission</strong><br />
+                                             <p className="text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed font-light max-w-[620px] drop-shadow-md">
+                                                  <strong className="text-white text-lg md:text-xl lg:text-2xl font-medium">Our Mission</strong><br />
                                                   At Kshatra Labs, we engineer true autonomous defence platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, maintaining human supervision while keeping operators entirely out of harm&apos;s way.
                                              </p>
 
