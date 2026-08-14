@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Shield, Target, Zap, WifiOff, Network } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 
@@ -117,6 +117,7 @@ export function InterceptorSection() {
                                              src="/drone.png"
                                              alt="Hawk Interceptor"
                                              fill
+                                             sizes="(min-width: 768px) 450px, 288px"
                                              className="object-contain p-2 transition-transform duration-700"
                                         />
 
@@ -131,6 +132,7 @@ export function InterceptorSection() {
                                                        src="/realcross.png"
                                                        alt="Target Lock"
                                                        fill
+                                                       sizes="(min-width: 768px) 288px, 160px"
                                                        className="object-contain opacity-40"
                                                   />
                                              </div>

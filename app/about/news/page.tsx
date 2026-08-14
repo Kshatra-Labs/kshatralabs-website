@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from 'next/image'
 import { Header } from '@/components/blocks/header'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
 import FooterSection from '@/components/blocks/footer-section'
 import { ArrowRight } from 'lucide-react'

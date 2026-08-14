@@ -8,7 +8,6 @@ import { MailChoiceModal } from "@/components/ui/mail-choice-modal"
 import { Header } from '@/components/blocks/header'
 
 const HeroSection = dynamic(() => import("@/components/blocks/hero-section").then(mod => mod.HeroSection))
-const BackgroundPaths = dynamic(() => import("@/components/ui/background-paths").then(mod => mod.BackgroundPaths), { ssr: false })
 // Reverted to SplineScene per user request (retaining optimizations)
 // const SplineScene = dynamic(() => import("@/components/blocks/spline-scene").then(mod => mod.SplineScene), {
 //   ssr: false,

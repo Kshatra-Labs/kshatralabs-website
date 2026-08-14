@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
 import { useIsMobile } from '@/hooks/use-is-mobile'

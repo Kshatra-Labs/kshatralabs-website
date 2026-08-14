@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Header } from '@/components/blocks/header'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { motion } from 'framer-motion'
 import FooterSection from '@/components/blocks/footer-section'
 import { Plane, Cpu, Eye, Network, Navigation, Target } from 'lucide-react'

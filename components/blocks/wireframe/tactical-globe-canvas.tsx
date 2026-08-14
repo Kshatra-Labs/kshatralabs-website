@@ -3,10 +3,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as d3Geo from 'd3-geo'
 import * as topojson from 'topojson-client'
+import type { Feature, FeatureCollection, Geometry, Position } from 'geojson'
+import type { Topology, GeometryObject } from 'topojson-specification'
 
 interface TacticalGlobeCanvasProps {
   onCoordsChange?: (coords: { lat: number; lng: number; isBangaloreVisible: boolean }) => void
 }
+
+// Bangalore HQ exact coordinates [lng, lat] — hoisted so the render-loop
+// effect's dependency array can reference a stable value, not a new array
+// on every render.
+const BANGALORE_COORDS: [number, number] = [77.5946, 12.9716]
 
 export function TacticalGlobeCanvas({ onCoordsChange }: TacticalGlobeCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -18,43 +25,40 @@ export function TacticalGlobeCanvas({ onCoordsChange }: TacticalGlobeCanvasProps
   const lastMousePosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const velocityRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const resumeAutoRotateTimeRef = useRef<number>(0)
-  const landFeaturesRef = useRef<any>(null)
+  const landFeaturesRef = useRef<Feature | FeatureCollection | null>(null)
   const sparseDotsRef = useRef<Array<[number, number]>>([])
 
   const [isLoaded, setIsLoaded] = useState(false)
-
-  // Bangalore HQ exact coordinates [lng, lat]
-  const bangaloreCoords: [number, number] = [77.5946, 12.9716]
 
   // Load world-atlas coastline data and generate sparse sampling vertices
   useEffect(() => {
     let isMounted = true
     fetch('/data/land-110m.json')
       .then((res) => res.json())
-      .then((worldData) => {
+      .then((worldData: Topology) => {
         if (!isMounted) return
-        const features = topojson.feature(worldData, worldData.objects.land as any) as any
+        const features = topojson.feature(worldData, worldData.objects.land as GeometryObject) as Feature | FeatureCollection
         landFeaturesRef.current = features
 
         // Extract coordinates from polygons/lines for sparse blueprint sampling dots
         const coordsList: Array<[number, number]> = []
-        const extractCoords = (geom: any) => {
+        const extractCoords = (geom: Geometry | null | undefined) => {
           if (!geom) return
           if (geom.type === 'Polygon') {
-            geom.coordinates.forEach((ring: any) => {
-              ring.forEach((pt: any) => coordsList.push([pt[0], pt[1]]))
+            geom.coordinates.forEach((ring: Position[]) => {
+              ring.forEach((pt) => coordsList.push([pt[0], pt[1]]))
             })
           } else if (geom.type === 'MultiPolygon') {
-            geom.coordinates.forEach((polygon: any) => {
-              polygon.forEach((ring: any) => {
-                ring.forEach((pt: any) => coordsList.push([pt[0], pt[1]]))
+            geom.coordinates.forEach((polygon: Position[][]) => {
+              polygon.forEach((ring) => {
+                ring.forEach((pt) => coordsList.push([pt[0], pt[1]]))
               })
             })
           }
         }
 
         if (features.type === 'FeatureCollection') {
-          features.features.forEach((f: any) => extractCoords(f.geometry))
+          features.features.forEach((f) => extractCoords(f.geometry))
         } else if (features.type === 'Feature') {
           extractCoords(features.geometry)
         }
@@ -154,7 +158,7 @@ export function TacticalGlobeCanvas({ onCoordsChange }: TacticalGlobeCanvasProps
       if (landFeaturesRef.current) {
         context.beginPath()
         if (landFeaturesRef.current.type === 'FeatureCollection') {
-          landFeaturesRef.current.features.forEach((f: any) => pathGenerator(f))
+          landFeaturesRef.current.features.forEach((f) => pathGenerator(f))
         } else {
           pathGenerator(landFeaturesRef.current)
         }
@@ -175,7 +179,7 @@ export function TacticalGlobeCanvas({ onCoordsChange }: TacticalGlobeCanvasProps
       })
 
       // 5. Draw Primary Bangalore Target Node & Locator (#FF0000 strictly for data node)
-      const bPoint = projection(bangaloreCoords)
+      const bPoint = projection(BANGALORE_COORDS)
       const isBangaloreVisible = bPoint !== null
 
       if (isBangaloreVisible && bPoint) {

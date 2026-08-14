@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { X } from 'lucide-react'
 
 const GALLERY_IMAGES = [

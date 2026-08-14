@@ -194,10 +194,6 @@ export function ThreatAnalysis() {
 }
 
 function LazyVideo() {
-     const containerRef = React.useRef<HTMLDivElement>(null)
-     const videoRef = React.useRef<HTMLVideoElement>(null)
-     const [hasLoaded, setHasLoaded] = React.useState(false)
-
      // Automatically handles playback via native autoplay
      return (
           <div className="w-full h-full absolute inset-0">

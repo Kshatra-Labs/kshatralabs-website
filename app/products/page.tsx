@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
-import { BackgroundPaths } from "@/components/ui/background-paths"
 import { ShinyButton } from '@/components/ui/shiny-button'
 
 export default function ProductsPage() {

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Header } from '@/components/blocks/header'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { TeamGrid, TeamMember } from '@/components/ui/team-grid'
 import FooterSection from '@/components/blocks/footer-section'
 import { motion } from 'framer-motion'
