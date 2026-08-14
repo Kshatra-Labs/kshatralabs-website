@@ -6,15 +6,6 @@
 
 @layer base {
 
-  html {
-    /* Root stays at the browser default (16px). A non-default root turns
-       Tailwind's rem-based text-* scale into fractional pixel sizes
-       (e.g. text-xs -> 12.75px), which renders visibly blurry on small
-       and mono text. Text sizes are set directly in px instead. */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
   html.lenis,
   html.lenis body {
     height: auto;
