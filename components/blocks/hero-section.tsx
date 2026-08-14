@@ -36,8 +36,8 @@ export function HeroSection() {
 
                                    <div className="relative pt-32 md:pt-40">
                                         <h1 className="text-[38px] md:text-[51px] lg:text-[64px] xl:text-[77px] font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                                             Modern warfare demands systems that are not just automated — <br />
-                                             <span className="font-normal text-white/55">but truly autonomous</span>
+                                             Modern warfare demands systems that are <br />
+                                             <span className="font-normal text-white/55">truly autonomous.</span>
                                         </h1>
                                    </div>
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
@@ -56,18 +56,14 @@ export function HeroSection() {
                                                   <ArrowRight className="h-5 w-5" />
                                              </button>
 
-                                             <div className="flex flex-wrap items-center gap-x-12 gap-y-4 mt-12 text-[13px] font-mono text-white/90 uppercase tracking-[0.2em] font-bold drop-shadow-sm">
+                                             <div className="flex flex-wrap items-center gap-x-12 gap-y-4 mt-12 text-[15px] font-mono text-white/90 uppercase tracking-[0.2em] font-bold drop-shadow-sm">
                                                   <div className="flex items-center gap-3">
                                                        <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
                                                        <span>Built in Bharat</span>
                                                   </div>
                                                   <div className="flex items-center gap-3">
                                                        <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
-                                                       <span>Contested Environments</span>
-                                                  </div>
-                                                  <div className="flex items-center gap-3">
-                                                       <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
-                                                       <span>Machine Speed</span>
+                                                       <span>Advanced Autonomy</span>
                                                   </div>
                                              </div>
                                         </div>

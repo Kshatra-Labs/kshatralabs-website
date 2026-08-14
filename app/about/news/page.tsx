@@ -299,8 +299,7 @@ export default function NewsPage() {
                                                                       src={`https://www.instagram.com/p/${post.instagramId}/embed`} 
                                                                       height="450" 
                                                                       frameBorder="0" 
-                                                                      scrolling="no" 
-                                                                      allowTransparency
+                                                                      scrolling="no"
                                                                       className="w-full absolute inset-0 h-full"
                                                                  ></iframe>
                                                             </div>

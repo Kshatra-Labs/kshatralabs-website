@@ -74,7 +74,7 @@ export function InterceptorSection() {
                                         INTRODUCING  <span className="text-blue-500">HAWK</span>
                                    </h3>
                                    <div className="space-y-6">
-                                        <div className="text-blue-400 font-mono text-[15px] uppercase tracking-widest">Autonomous Interceptor UAV</div>
+                                        <div className="text-blue-400 font-mono text-[15px] uppercase tracking-widest">Autonomous Aerial Electric Interceptor</div>
 
                                         <div className="space-y-4 text-[21px] text-neutral-300 font-light leading-relaxed">
                                              <p>
