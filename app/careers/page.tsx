@@ -111,14 +111,14 @@ function RoleCard({
                >
                     <div className="space-y-2">
                          <div className="flex items-center gap-3">
-                              <span className="font-mono text-[10px] uppercase tracking-widest text-defense-accent">
+                              <span className="font-mono text-[11px] uppercase tracking-widest text-defense-accent">
                                    {String(id).padStart(2, '0')} {" //"}
                               </span>
                          </div>
                          <h3 className="text-xl md:text-2xl font-bold font-mono uppercase group-hover:text-white transition-colors">
                               {title}
                          </h3>
-                         <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-white">
+                         <div className="flex gap-4 font-mono text-[11px] uppercase tracking-widest text-white">
                               <span>Bangalore</span>
                               <span>Internship</span>
                          </div>

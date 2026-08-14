@@ -118,7 +118,7 @@ export function HawkSpecs() {
                                    className="p-5 border border-neutral-900 bg-[#050505] flex flex-col justify-between hover:border-neutral-800 transition-colors duration-200"
                               >
                                    <div>
-                                        <div className="font-mono text-[10px] uppercase tracking-wider text-neutral-400 font-bold mb-1">
+                                        <div className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 font-bold mb-1">
                                              {spec.label}
                                         </div>
                                         <p className="text-base text-neutral-300 font-light leading-relaxed mb-4">

@@ -61,7 +61,7 @@ export default function CompanyPage() {
                                    initial={{ opacity: 0 }}
                                    animate={{ opacity: 1 }}
                                    transition={{ duration: 1, delay: 0.5 }}
-                                   className="pt-32 md:pt-40 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[10px] font-bold font-mono uppercase tracking-[0.3em] text-white"
+                                   className="pt-32 md:pt-40 border-t border-white/5 flex flex-wrap items-center gap-x-8 gap-y-4 text-[11px] font-bold font-mono uppercase tracking-[0.3em] text-white"
                               >
                                    <div className="flex items-center gap-2">
                                         <div className="w-1 h-1 rounded-full bg-defense-accent opacity-100"></div>

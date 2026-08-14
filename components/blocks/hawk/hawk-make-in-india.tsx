@@ -82,7 +82,7 @@ export function HawkMakeInIndia() {
                                         <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-mono">
                                              {item.metric}
                                         </div>
-                                        <div className="text-[11px] uppercase tracking-widest text-neutral-400 font-bold font-mono">
+                                        <div className="text-[12px] uppercase tracking-widest text-neutral-400 font-bold font-mono">
                                              {item.metricLabel}
                                         </div>
                                    </div>

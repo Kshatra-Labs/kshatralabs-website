@@ -287,7 +287,7 @@ export function TacticalGlobeCanvas({ onCoordsChange }: TacticalGlobeCanvasProps
         className="w-full h-full cursor-grab active:cursor-grabbing touch-none"
       />
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+        <div className="absolute inset-0 flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
           [INITIALIZING ORTHOGRAPHIC PROJECTION...]
         </div>
       )}

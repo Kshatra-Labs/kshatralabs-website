@@ -27,7 +27,7 @@ export const LoadingScreen = ({ isLoading, progress }: LoadingScreenProps) => {
                          {/* Bottom Progress Bar */}
                          <div className="absolute bottom-12 left-0 right-0 flex flex-col items-center px-8">
                               <div className="w-full max-w-sm space-y-4">
-                                   <div className="flex justify-between items-end font-mono text-[10px] tracking-[0.2em] text-blue-500/50 uppercase">
+                                   <div className="flex justify-between items-end font-mono text-[11px] tracking-[0.2em] text-blue-500/50 uppercase">
                                         <span>Loading...</span>
                                         <span>{Math.round(progress)}%</span>
                                    </div>
@@ -44,7 +44,7 @@ export const LoadingScreen = ({ isLoading, progress }: LoadingScreenProps) => {
                                    <motion.div
                                         animate={{ opacity: [0.2, 0.5, 0.2] }}
                                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                                        className="text-[10px] font-mono text-white/20 text-center tracking-[0.3em] uppercase pt-2"
+                                        className="text-[11px] font-mono text-white/20 text-center tracking-[0.3em] uppercase pt-2"
                                    >
                                         Loading... 
                                    </motion.div>

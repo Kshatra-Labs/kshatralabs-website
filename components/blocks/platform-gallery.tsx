@@ -75,7 +75,7 @@ export function PlatformGallery() {
           <section className="relative py-20 px-[6vw] bg-[#050608] overflow-hidden text-white font-sans">
                {/* Header */}
                <div className="mb-10 text-left">
-                    <small className="text-[#2f7cff] tracking-[2px] text-[11px] font-bold uppercase block mb-2 text-center">
+                    <small className="text-[#2f7cff] tracking-[2px] text-[12px] font-bold uppercase block mb-2 text-center">
                          PLATFORM GALLERY
                     </small>
 
@@ -119,7 +119,7 @@ export function PlatformGallery() {
                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,black_90%)] z-20 pointer-events-none"></div>
 
                                    {/* Label */}
-                                   <div className="absolute top-5 left-5 z-40 px-3 py-1.5 border border-white/20 rounded-[20px] text-[10px] md:text-xs tracking-wider backdrop-blur-md bg-black/30 font-mono">
+                                   <div className="absolute top-5 left-5 z-40 px-3 py-1.5 border border-white/20 rounded-[20px] text-[11px] md:text-xs tracking-wider backdrop-blur-md bg-black/30 font-mono">
                                         {currentPlatform.label}
                                    </div>
                               </motion.div>
@@ -177,7 +177,7 @@ export function PlatformGallery() {
                                         <motion.div
                                              key={i}
                                              whileHover={{ scale: 1.05, filter: "brightness(1.2)", borderColor: "rgba(47,124,255,0.8)" }}
-                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[10px] md:text-sm border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium cursor-default transition-colors duration-300"
+                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[11px] md:text-sm border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium cursor-default transition-colors duration-300"
                                         >
                                              {feature}
                                         </motion.div>
@@ -188,7 +188,7 @@ export function PlatformGallery() {
                          {/* Thumbnails Navigation */}
                          <div className="relative flex flex-col gap-2 min-w-[300px] md:max-w-[400px]">
                               <div className="flex items-center justify-between px-1 mb-1">
-                                   <span className="text-[10px] font-mono text-white/40 tracking-widest uppercase">Select Platform</span>
+                                   <span className="text-[11px] font-mono text-white/40 tracking-widest uppercase">Select Platform</span>
                                    <div className="flex gap-2">
                                         <button
                                              onClick={() => scrollThumbnails('left')}

@@ -170,7 +170,7 @@ export function HawkMissionSimulation() {
                                    <VideoPlayerControlBar className="absolute bottom-0 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-between px-6 py-4 bg-gradient-to-t from-black/80 to-transparent">
                                         <div className="flex items-center gap-2">
                                              <VideoPlayerPlayButton className="h-4 w-4 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />
-                                             <span className="font-mono text-[10px] text-white/60">LIVE // STEP {activePhase.stepNumber}</span>
+                                             <span className="font-mono text-[11px] text-white/60">LIVE // STEP {activePhase.stepNumber}</span>
                                         </div>
                                         <VideoPlayerTimeRange className="flex-1 mx-6 bg-transparent" />
                                         <VideoPlayerMuteButton className="size-4 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />
@@ -184,7 +184,7 @@ export function HawkMissionSimulation() {
                               <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-white/40 pointer-events-none z-10" />
 
                               {/* Top Feed Tag */}
-                              <div className="absolute top-4 inset-x-4 flex items-center justify-between font-mono text-[10px] text-white/80 pointer-events-none z-10">
+                              <div className="absolute top-4 inset-x-4 flex items-center justify-between font-mono text-[11px] text-white/80 pointer-events-none z-10">
                                    <div className="px-3 py-1 bg-black/85 border border-neutral-800 uppercase tracking-widest">
                                         Camera Feed: Step {activePhase.stepNumber}
                                    </div>

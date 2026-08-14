@@ -47,7 +47,7 @@ export function ThreatAnalysis() {
                                    {/* Capability Cards */}
                                    <div className="flex flex-wrap gap-3 pt-2">
                                         {['INTERCEPTOR', 'DETECT', 'CHASE', 'DEFENCE-FIRST'].map((tag, i) => (
-                                             <span key={i} className={`px-3 py-1 border text-[10px] font-mono tracking-widest transition-all duration-500 ${i === activeTagIndex
+                                             <span key={i} className={`px-3 py-1 border text-[11px] font-mono tracking-widest transition-all duration-500 ${i === activeTagIndex
                                                   ? 'bg-red-500/20 border-red-500/50 text-red-400 font-bold shadow-[0_0_10px_rgba(239,68,68,0.3)] scale-105'
                                                   : 'bg-white/5 border-white/10 text-blue-300 opacity-60'
                                                   }`}>
@@ -140,7 +140,7 @@ export function ThreatAnalysis() {
                                    {/* HUD Overlay */}
                                    <div className="absolute inset-0 pointer-events-none p-4 md:p-8 flex flex-col justify-between">
                                         {/* Top Bar */}
-                                        <div className="flex justify-between items-start text-[10px] font-mono tracking-widest text-red-500">
+                                        <div className="flex justify-between items-start text-[11px] font-mono tracking-widest text-red-500">
                                              <div className="flex items-center gap-2">
                                                   <span className="animate-pulse">■</span> LIVE FEED
                                              </div>
@@ -165,7 +165,7 @@ export function ThreatAnalysis() {
                                         <div className="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-blue-500/50"></div>
 
                                         {/* Bottom Bar */}
-                                        <div className="flex justify-between items-end text-[10px] font-mono tracking-widest text-white/30">
+                                        <div className="flex justify-between items-end text-[11px] font-mono tracking-widest text-white/30">
                                              <div className="space-y-1">
                                                   <div>LAT 34°03&apos;N</div>
                                                   <div>LON 118°14&apos;W</div>

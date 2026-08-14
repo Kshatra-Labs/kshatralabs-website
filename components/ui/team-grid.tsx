@@ -62,7 +62,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                          </h3>
                     </div>
 
-                    <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono font-bold uppercase tracking-widest text-white/50 group-hover:text-white/80 group-hover:border-white/20 transition-all">
+                    <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono font-bold uppercase tracking-widest text-white/50 group-hover:text-white/80 group-hover:border-white/20 transition-all">
                          {member.role}
                     </div>
                </div>
@@ -81,7 +81,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                               rel="noopener noreferrer"
                               className="flex items-center justify-between group/link"
                          >
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-white/30 group-hover/link:text-blue-400 transition-colors">Connect via LinkedIn</span>
+                              <span className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/30 group-hover/link:text-blue-400 transition-colors">Connect via LinkedIn</span>
                               <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover/link:bg-blue-500 group-hover/link:border-transparent group-hover/link:text-black transition-all duration-300">
                                    <Linkedin className="w-3.5 h-3.5" />
                               </div>

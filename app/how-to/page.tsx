@@ -50,7 +50,7 @@ export default function HowToPage() {
 
           {/* Installation CLI Card */}
           <div className="w-full lg:w-auto min-w-[340px] bg-[#050505] border border-neutral-800 p-5 rounded-2xl">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase text-neutral-500 tracking-wider mb-3">
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase text-neutral-500 tracking-wider mb-3">
               <Terminal className="w-3.5 h-3.5 text-[#cc1414]" />
               <span>Shadcn CLI Trusted Registry</span>
             </div>
@@ -205,7 +205,7 @@ export default function HowToPage() {
                 >
                   How to Use
                 </h3>
-                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[11px] text-neutral-300 leading-relaxed overflow-x-auto">
+                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[12px] text-neutral-300 leading-relaxed overflow-x-auto">
                   <span className="text-neutral-500 block mb-2">{"// Import Custom Video Player Components"}</span>
                   <span className="text-[#cc1414]">import</span>{" "}
                   <span>{"{"}</span>
@@ -273,15 +273,15 @@ export default function HowToPage() {
                 <div className="border border-neutral-900 bg-[#050505] rounded-2xl divide-y divide-neutral-900 font-mono text-xs">
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayer /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Media-Chrome controller container</div>
+                    <div className="text-neutral-500 text-[12px]">Media-Chrome controller container</div>
                   </div>
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayerContent /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Underlying HTML5 video player element</div>
+                    <div className="text-neutral-500 text-[12px]">Underlying HTML5 video player element</div>
                   </div>
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayerControlBar /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Bottom aligned actions bar container</div>
+                    <div className="text-neutral-500 text-[12px]">Bottom aligned actions bar container</div>
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function HowToPage() {
             <p className="text-xs text-neutral-400 leading-relaxed font-light">
               Free to use and modify in personal and commercial projects. Attribution to Skiper UI required when using free tiers.
             </p>
-            <div className="pt-2 border-t border-neutral-900 flex justify-between items-center text-[10px] font-mono text-neutral-500">
+            <div className="pt-2 border-t border-neutral-900 flex justify-between items-center text-[11px] font-mono text-neutral-500">
               <span>Skiper UI Registry 3.0</span>
               <a href="mailto:yo@gxuri.me" className="hover:text-white transition-colors flex items-center gap-1">
                 <span>yo@gxuri.me</span>

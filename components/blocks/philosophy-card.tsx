@@ -27,7 +27,7 @@ export function PhilosophyCard() {
                               {/* Left: Bold Statement */}
                               <div>
                                    <div className="mb-8">
-                                        <span className="text-blue-400/80 font-mono text-[9px] tracking-[0.3em] uppercase font-medium">
+                                        <span className="text-blue-400/80 font-mono text-[10px] tracking-[0.3em] uppercase font-medium">
                                              {"/// Core Philosophy"}
                                         </span>
                                    </div>
@@ -52,7 +52,7 @@ export function PhilosophyCard() {
                                         {/* Stat 1 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
                                              <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">Rapid Response</div>
-                                             <div className="text-[9px] sm:text-[10px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
+                                             <div className="text-[10px] sm:text-[11px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
                                                   Interception
                                              </div>
                                         </div>
@@ -60,7 +60,7 @@ export function PhilosophyCard() {
                                         {/* Stat 2 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
                                              <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">100%</div>
-                                             <div className="text-[9px] sm:text-[10px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
+                                             <div className="text-[10px] sm:text-[11px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
                                                   Edge Compute (onboard)
                                              </div>
                                         </div>

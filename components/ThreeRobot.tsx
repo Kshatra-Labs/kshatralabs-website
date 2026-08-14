@@ -73,7 +73,7 @@ export function ThreeRobot() {
                )}
 
                {/* Debug Info (Optional - remove in prod) */}
-               <div className="absolute bottom-4 right-4 text-[10px] font-mono text-white/30 pointer-events-none">
+               <div className="absolute bottom-4 right-4 text-[11px] font-mono text-white/30 pointer-events-none">
                     Config: {quality.toUpperCase()} | DPR: {dpr}
                </div>
           </div>

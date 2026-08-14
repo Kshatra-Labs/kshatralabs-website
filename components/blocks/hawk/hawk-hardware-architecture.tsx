@@ -118,7 +118,7 @@ export function HawkHardwareArchitecture() {
                                    <div className="space-y-4">
                                         <div className="flex items-center justify-between pb-4 border-b border-neutral-900">
                                              <div>
-                                                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#cc1414] font-bold block mb-1">
+                                                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#cc1414] font-bold block mb-1">
                                                        System Subassembly 0{system.code}
                                                   </span>
                                                   <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-white">
@@ -147,7 +147,7 @@ export function HawkHardwareArchitecture() {
 
                                    {/* Bottom Section: Specifications Table */}
                                    <div className="pt-4 border-t border-neutral-900">
-                                        <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-500 font-bold mb-3">
+                                        <div className="font-mono text-[11px] uppercase tracking-widest text-neutral-500 font-bold mb-3">
                                              Technical Specifications
                                         </div>
                                         <div className="border border-neutral-900 divide-y divide-neutral-900 bg-black font-mono">

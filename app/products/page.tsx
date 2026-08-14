@@ -22,7 +22,7 @@ export default function ProductsPage() {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.8, ease: "easeOut" }}
-                              className="inline-block px-3 py-1 bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-widest text-defense-accent mb-8"
+                              className="inline-block px-3 py-1 bg-white/5 border border-white/10 font-mono text-[11px] uppercase tracking-widest text-defense-accent mb-8"
                          >
                               Status: Classified Development
                          </motion.div>
@@ -72,7 +72,7 @@ export default function ProductsPage() {
                               {['HAWK', 'HAWKEYE', 'APEX', 'NETWORK'].map((platform) => (
                                    <div key={platform} className="flex flex-col items-center gap-2">
                                         <div className="w-1.5 h-1.5 bg-defense-accent rounded-full animate-pulse"></div>
-                                        <span className="font-mono text-[10px] tracking-[0.3em] font-bold">{platform}</span>
+                                        <span className="font-mono text-[11px] tracking-[0.3em] font-bold">{platform}</span>
                                    </div>
                               ))}
                          </motion.div>

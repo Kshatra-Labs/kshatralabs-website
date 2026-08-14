@@ -6,6 +6,11 @@
 
 @layer base {
 
+  html {
+    /* 16px -> 17px rem base, scales all Tailwind text-* utilities site-wide */
+    font-size: 106.25%;
+  }
+
   html.lenis,
   html.lenis body {
     height: auto;

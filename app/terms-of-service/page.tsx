@@ -54,7 +54,7 @@ function Section({ num, title, children, warning = false }: SectionProps) {
         </div>
 
         {/* Section body */}
-        <div className="text-neutral-400 leading-relaxed space-y-3 text-[15px]">
+        <div className="text-neutral-400 leading-relaxed space-y-3 text-[16px]">
           {children}
         </div>
       </div>
@@ -94,7 +94,7 @@ interface SubGroupProps {
 function SubGroup({ label, items }: SubGroupProps) {
   return (
     <div className="mt-5">
-      <p className="font-mono text-[10px] tracking-widest uppercase text-red-500/80 mb-2">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-red-500/80 mb-2">
         {label}
       </p>
       <BulletList items={items} danger />
@@ -106,7 +106,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="mt-5 bg-red-950/25 border border-red-800/40 rounded-sm px-5 py-4">
       <div className="flex items-start gap-3">
-        <span className="font-mono text-[10px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
+        <span className="font-mono text-[11px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
           ⚠ NOTICE
         </span>
         <p className="text-red-200/75 text-sm leading-relaxed">{children}</p>
@@ -118,7 +118,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
 function InfoCard({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="bg-neutral-900/60 border border-neutral-800 rounded-sm px-5 py-4 font-mono text-sm leading-loose">
-      <p className="font-mono text-[10px] tracking-widest uppercase text-amber-500/70 mb-3">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-amber-500/70 mb-3">
         {label}
       </p>
       {children}
@@ -174,7 +174,7 @@ export default function TermsOfServicePage() {
               className="flex items-center gap-4 mb-6"
             >
               <div className="h-px w-8 bg-amber-500/60" />
-              <span className="font-mono text-[11px] tracking-[0.25em] text-amber-500/60 uppercase">
+              <span className="font-mono text-[12px] tracking-[0.25em] text-amber-500/60 uppercase">
                 Legal Documentation
               </span>
             </motion.div>
@@ -206,7 +206,7 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="text-neutral-400 leading-relaxed space-y-4 text-[15px] mb-18 pl-6 border-l border-neutral-800"
+            className="text-neutral-400 leading-relaxed space-y-4 text-[16px] mb-18 pl-6 border-l border-neutral-800"
           >
             <p>
               These Terms of Service (&quot;Terms&quot;) govern access to and use of the website{' '}
@@ -565,10 +565,10 @@ export default function TermsOfServicePage() {
             transition={{ duration: 0.8 }}
             className="mt-24 pt-8 border-t border-neutral-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
           >
-            <p className="font-mono text-[11px] text-neutral-700 tracking-widest uppercase">
+            <p className="font-mono text-[12px] text-neutral-700 tracking-widest uppercase">
               © {new Date().getFullYear()} Kshatra Labs. All Rights Reserved.
             </p>
-            <p className="font-mono text-[11px] text-amber-500/30 tracking-widest uppercase">
+            <p className="font-mono text-[12px] text-amber-500/30 tracking-widest uppercase">
               KL-LEGAL-TOS-001 &nbsp;·&nbsp; Rev 1.0
             </p>
           </motion.div>

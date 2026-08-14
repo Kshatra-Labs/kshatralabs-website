@@ -322,7 +322,7 @@ const TestimonialCard = ({
 
                               <motion.p
                                    layoutId={layout ? `category-${testimonial.name}` : undefined}
-                                   className="text-defense-accent/80 font-mono text-[10px] uppercase tracking-widest font-bold"
+                                   className="text-defense-accent/80 font-mono text-[11px] uppercase tracking-widest font-bold"
                               >
                                    {testimonial.designation}
                               </motion.p>
@@ -336,7 +336,7 @@ const TestimonialCard = ({
 
                          {/* Connect Label */}
                          <div className="mt-6 flex items-center gap-2 text-white/20 group-hover:text-white transition-colors">
-                              <span className="text-[10px] font-bold font-mono uppercase tracking-widest">View Profile</span>
+                              <span className="text-[11px] font-bold font-mono uppercase tracking-widest">View Profile</span>
                          </div>
                     </div>
                </motion.button>

@@ -143,7 +143,7 @@ export function Header() {
                                         >
                                              <Link 
                                                   href={item.href}
-                                                  className={`flex items-center gap-2 text-[13px] font-semibold uppercase tracking-widest transition-colors duration-300 ${isDropdownOpen || isActive ? 'text-[#2563EB]' : 'text-white hover:text-[#2563EB]'}`}
+                                                  className={`flex items-center gap-2 text-[14px] font-semibold uppercase tracking-widest transition-colors duration-300 ${isDropdownOpen || isActive ? 'text-[#2563EB]' : 'text-white hover:text-[#2563EB]'}`}
                                              >
                                                   {hasDropdown && (
                                                        <motion.div 
@@ -191,8 +191,8 @@ export function Header() {
                                                   <div key={item.name} className="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto gap-8 lg:gap-0">
                                                        {/* Left Info Panel */}
                                                        <div className="w-full lg:w-[35%] flex flex-col justify-start pr-12 lg:pr-16 lg:border-r border-white/10 mb-8 lg:mb-0 h-full min-h-[150px] lg:min-h-[180px]">
-                                                            <h3 className="text-[13px] font-semibold text-white mb-4 uppercase tracking-widest transition-opacity duration-300">{displayTitle}</h3>
-                                                            <p className="text-[15px] text-white/70 leading-relaxed font-normal transition-opacity duration-300" style={{ fontFamily: 'var(--font-space-grotesk)' }}>{displayDesc}</p>
+                                                            <h3 className="text-[14px] font-semibold text-white mb-4 uppercase tracking-widest transition-opacity duration-300">{displayTitle}</h3>
+                                                            <p className="text-[16px] text-white/70 leading-relaxed font-normal transition-opacity duration-300" style={{ fontFamily: 'var(--font-space-grotesk)' }}>{displayDesc}</p>
                                                        </div>
                                                        {/* Right Options Panel */}
                                                        <div className="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:pl-12 lg:divide-x divide-white/10 gap-y-8">
@@ -202,7 +202,7 @@ export function Header() {
                                                                            <Link
                                                                                 href={col.items[0]?.href ?? '#'}
                                                                                 onClick={() => setActiveDropdown(null)}
-                                                                                className="text-[13px] font-bold uppercase tracking-[0.2em] text-white hover:text-white/80 transition-colors leading-snug"
+                                                                                className="text-[14px] font-bold uppercase tracking-[0.2em] text-white hover:text-white/80 transition-colors leading-snug"
                                                                            >
                                                                                 {col.title}
                                                                            </Link>
@@ -215,10 +215,10 @@ export function Header() {
                                                                                      onClick={() => setActiveDropdown(null)}
                                                                                      onMouseEnter={() => setHoveredProduct(sub.name)}
                                                                                      onMouseLeave={() => setHoveredProduct(null)}
-                                                                                     className="text-[15px] font-bold text-white hover:text-black hover:bg-white py-3 px-4 rounded-none transition-all duration-300 flex items-center justify-between group/link"
+                                                                                     className="text-[16px] font-bold text-white hover:text-black hover:bg-white py-3 px-4 rounded-none transition-all duration-300 flex items-center justify-between group/link"
                                                                                 >
                                                                                      <div className="flex items-center gap-3">
-                                                                                          <span className="text-[14px] text-white/50 font-normal group-hover/link:text-black/50 transition-colors">+</span>
+                                                                                          <span className="text-[15px] text-white/50 font-normal group-hover/link:text-black/50 transition-colors">+</span>
                                                                                           <span>{sub.name}</span>
                                                                                      </div>
                                                                                 </Link>
@@ -240,10 +240,10 @@ export function Header() {
                                                                  onClick={() => setActiveDropdown(null)}
                                                                  className="group/card flex flex-col p-4 md:p-5 hover:bg-white rounded-none transition-colors duration-200 h-full"
                                                             >
-                                                                 <h3 className="text-[17px] font-medium text-white/90 mb-1 tracking-tight group-hover/card:text-black transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                                                 <h3 className="text-[18px] font-medium text-white/90 mb-1 tracking-tight group-hover/card:text-black transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                                                       {col.items[0]?.name}
                                                                  </h3>
-                                                                 <p className="text-[13px] text-white/50 leading-relaxed font-normal group-hover/card:text-black/70 transition-colors">
+                                                                 <p className="text-[14px] text-white/50 leading-relaxed font-normal group-hover/card:text-black/70 transition-colors">
                                                                       {col.items[0]?.desc}
                                                                  </p>
                                                             </Link>
@@ -320,7 +320,7 @@ export function Header() {
                                                                                 >
                                                                                      <span>{sub.name}</span>
                                                                                      {sub.comingSoon && (
-                                                                                          <span className="text-[10px] text-white/30 tracking-widest">
+                                                                                          <span className="text-[11px] text-white/30 tracking-widest">
                                                                                                [COMING SOON]
                                                                                           </span>
                                                                                      )}

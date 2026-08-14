@@ -242,7 +242,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               <div className="lg:col-span-5 flex flex-col justify-start space-y-4">
                                    <div className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900 flex items-center justify-between">
                                         <span>System Assemblies</span>
-                                        <span className="text-[10px] text-neutral-500 font-normal tracking-normal">Scroll or click to inspect</span>
+                                        <span className="text-[11px] text-neutral-500 font-normal tracking-normal">Scroll or click to inspect</span>
                                    </div>
 
                                    <div className="space-y-2">

@@ -29,7 +29,7 @@ export function VideoSection() {
                          <VideoPlayerControlBar className="absolute bottom-0 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-between px-6 py-4 bg-gradient-to-t from-black/80 to-transparent">
                               <div className="flex items-center gap-2">
                                    <VideoPlayerPlayButton className="h-4 w-4 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />
-                                   <span className="font-mono text-[10px] text-white/60">HAWK FLIGHT DEMO</span>
+                                   <span className="font-mono text-[11px] text-white/60">HAWK FLIGHT DEMO</span>
                               </div>
                               <VideoPlayerTimeRange className="flex-1 mx-6 bg-transparent" />
                               <VideoPlayerMuteButton className="size-4 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />

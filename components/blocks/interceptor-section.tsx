@@ -142,10 +142,10 @@ export function InterceptorSection() {
                                         <div className="absolute top-6 left-6 space-y-1 pointer-events-none z-10 drop-shadow-md">
                                              <div className="font-mono text-lg font-bold text-white uppercase tracking-wider">
                                              </div>
-                                             <div className="font-mono text-[10px] text-blue-400 uppercase tracking-widest">
+                                             <div className="font-mono text-[11px] text-blue-400 uppercase tracking-widest">
                                              </div>
                                         </div>
-                                        <div className="absolute bottom-6 right-6 font-bold text-[9px] text-white/40 uppercase tracking-widest pointer-events-none z-10">
+                                        <div className="absolute bottom-6 right-6 font-bold text-[10px] text-white/40 uppercase tracking-widest pointer-events-none z-10">
                                              Hawk Interceptor
                                         </div>
                                    </motion.div>

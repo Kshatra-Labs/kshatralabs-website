@@ -92,7 +92,7 @@ export default function ContactUsPage() {
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
-                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                  <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Email
                                                   </h3>
                                                   <p className="text-lg font-bold font-mono text-black tracking-tight break-all">
@@ -111,7 +111,7 @@ export default function ContactUsPage() {
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
-                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                  <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Phone no
                                                   </h3>
                                                   <p className="text-lg font-bold font-mono text-black tracking-tight">
@@ -127,13 +127,13 @@ export default function ContactUsPage() {
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
-                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                  <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Located At
                                                   </h3>
                                                   <p className="text-base font-bold font-mono text-black leading-tight">
                                                        Bangalore, India
                                                   </p>
-                                                  <span className="text-[11px] font-mono uppercase text-neutral-600 block">
+                                                  <span className="text-[12px] font-mono uppercase text-neutral-600 block">
                                                        Autonomous Systems Facility
                                                   </span>
                                              </div>
@@ -151,7 +151,7 @@ export default function ContactUsPage() {
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
-                                                  <h3 className="font-mono text-[11px] font-bold uppercase tracking-widest text-neutral-500">
+                                                  <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Linkedin
                                                   </h3>
                                                   <p className="text-lg font-bold font-mono text-black tracking-tight">

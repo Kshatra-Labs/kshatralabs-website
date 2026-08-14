@@ -101,13 +101,13 @@ function SubHeading({ children }: { children: React.ReactNode }) {
 
 function P({ children }: { children: React.ReactNode }) {
   return (
-    <p className="leading-relaxed text-neutral-400 mb-5 text-[15px]">{children}</p>
+    <p className="leading-relaxed text-neutral-400 mb-5 text-[16px]">{children}</p>
   )
 }
 
 function UL({ children }: { children: React.ReactNode }) {
   return (
-    <ul className="list-disc list-outside pl-5 mb-5 space-y-2 text-neutral-400 leading-relaxed text-[15px] marker:text-amber-500">
+    <ul className="list-disc list-outside pl-5 mb-5 space-y-2 text-neutral-400 leading-relaxed text-[16px] marker:text-amber-500">
       {children}
     </ul>
   )
@@ -128,7 +128,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
   return (
     <div className="mt-5 mb-2 bg-red-950/25 border border-red-800/40 rounded-sm px-5 py-4">
       <div className="flex items-start gap-3">
-        <span className="font-mono text-[10px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
+        <span className="font-mono text-[11px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
           ⚠ NOTICE
         </span>
         <div className="text-red-200/75 text-sm leading-relaxed">{children}</div>
@@ -154,7 +154,7 @@ function InfoCard({
           : 'bg-neutral-900/60 border border-neutral-800'
       }`}
     >
-      <p className="font-mono text-[10px] tracking-widest uppercase text-amber-500/70 mb-3">
+      <p className="font-mono text-[11px] tracking-widest uppercase text-amber-500/70 mb-3">
         {label}
       </p>
       {children}
@@ -225,7 +225,7 @@ export default function PrivacyPolicyPage() {
             <div className="sticky top-36">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-4 h-px bg-amber-500/60" />
-                <p className="font-mono text-[10px] uppercase tracking-widest text-amber-500/60">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-amber-500/60">
                   Contents
                 </p>
               </div>
@@ -234,7 +234,7 @@ export default function PrivacyPolicyPage() {
                   <a
                     key={id}
                     href={`#${id}`}
-                    className={`flex items-start gap-2.5 text-[11px] py-1.5 pl-3 border-l transition-all duration-200 ${
+                    className={`flex items-start gap-2.5 text-[12px] py-1.5 pl-3 border-l transition-all duration-200 ${
                       activeId === id
                         ? 'border-amber-500 text-amber-400'
                         : 'border-neutral-800 text-neutral-600 hover:text-neutral-300 hover:border-neutral-600'
@@ -269,7 +269,7 @@ export default function PrivacyPolicyPage() {
                 className="flex items-center gap-4 mb-6"
               >
                 <div className="h-px w-8 bg-amber-500/60" />
-                <span className="font-mono text-[11px] tracking-[0.25em] text-amber-500/60 uppercase">
+                <span className="font-mono text-[12px] tracking-[0.25em] text-amber-500/60 uppercase">
                   Legal Documentation
                 </span>
               </motion.div>
@@ -1288,10 +1288,10 @@ export default function PrivacyPolicyPage() {
 
             {/* Document footer */}
             <div className="mt-20 pt-8 border-t border-neutral-800/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <p className="font-mono text-[11px] text-neutral-700 tracking-widest uppercase">
+              <p className="font-mono text-[12px] text-neutral-700 tracking-widest uppercase">
                 © {new Date().getFullYear()} Kshatra Labs. All Rights Reserved.
               </p>
-              <p className="font-mono text-[11px] text-amber-500/30 tracking-widest uppercase">
+              <p className="font-mono text-[12px] text-amber-500/30 tracking-widest uppercase">
                 KL-LEGAL-PP-002 &nbsp;·&nbsp; Rev 2.0
               </p>
             </div>
