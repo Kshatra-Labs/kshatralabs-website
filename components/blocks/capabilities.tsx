@@ -40,9 +40,9 @@ export function Capabilities() {
 
         {/* Title */}
         <div className="mb-20">
-          <p className="text-blue-400 text-xs tracking-widest uppercase">Capabilities</p>
+          <p className="text-blue-400 text-[13px] tracking-widest uppercase">Capabilities</p>
 
-          <h1 className="mt-4 text-5xl font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
+          <h1 className="mt-4 text-[51px] font-bold bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
             Mission Critical Solutions
           </h1>
 
@@ -108,12 +108,12 @@ function Card({ icon: Icon, title, code, featured, delay }: any) {
             whileHover={{ rotate: 5 }}
             className="p-3 rounded-xl bg-white/10 border border-white/20"
           >
-            <Icon className="w-5 h-5 text-blue-400" />
+            <Icon className="w-6 h-6 text-blue-400" />
           </motion.div>
 
           <div>
             <p className="text-white">{title}</p>
-            <p className="text-xs text-neutral-500">{code}</p>
+            <p className="text-[13px] text-neutral-500">{code}</p>
           </div>
 
         </div>
@@ -123,8 +123,8 @@ function Card({ icon: Icon, title, code, featured, delay }: any) {
             className="flex items-center gap-2 text-blue-400"
             whileHover={{ x: 4 }}
           >
-            <span className="text-xs">View</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="text-[13px]">View</span>
+            <ArrowRight className="w-5 h-5" />
           </motion.div>
         )}
 

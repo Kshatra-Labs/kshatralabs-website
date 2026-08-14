@@ -242,14 +242,14 @@ export default function NewsPage() {
                                         className="flex items-center gap-3"
                                    >
                                         <div className="w-12 h-[1px] bg-[#2563EB]"></div>
-                                        <span className="text-sm font-mono uppercase tracking-[0.2em] text-[#2563EB] font-semibold">Press & Media</span>
+                                        <span className="text-[15px] font-mono uppercase tracking-[0.2em] text-[#2563EB] font-semibold">Press & Media</span>
                                    </motion.div>
 
                                    <motion.h1
                                         initial={{ opacity: 0, y: 30 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                                        className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white leading-tight"
+                                        className="text-[51px] md:text-[77px] lg:text-[102px] font-medium tracking-tight text-white leading-tight"
                                         style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                    >
                                         Latest News & <br className="hidden md:block" />
@@ -260,7 +260,7 @@ export default function NewsPage() {
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.8, delay: 0.3 }}
-                                        className="text-lg md:text-xl text-neutral-400 font-light max-w-2xl leading-relaxed pt-4"
+                                        className="text-[19px] md:text-[21px] text-neutral-400 font-light max-w-2xl leading-relaxed pt-4"
                                    >
                                         Stay informed with the latest developments, milestones, and strategic announcements from Kshatra Labs. Explore our press releases, media coverage, and corporate updates.
                                    </motion.p>
@@ -322,7 +322,7 @@ export default function NewsPage() {
 
                                              {/* Bottom Section */}
                                              <div className="bottom-section">
-                                                  <h3 className="text-xl font-bold text-white tracking-wide mb-3 leading-snug group-hover:text-[#50f6ff] transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                                  <h3 className="text-[21px] font-bold text-white tracking-wide mb-3 leading-snug group-hover:text-[#50f6ff] transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                                        {post.url ? (
                                                             <a href={post.url} target="_blank" rel="noopener noreferrer">{post.title}</a>
                                                        ) : (
@@ -331,7 +331,7 @@ export default function NewsPage() {
                                                   </h3>
                                                   
                                                   {post.description && (
-                                                       <p className="text-[#aadef3] opacity-80 font-light leading-relaxed mb-4 text-sm flex-1">
+                                                       <p className="text-[#aadef3] opacity-80 font-light leading-relaxed mb-4 text-[15px] flex-1">
                                                             {post.description}
                                                        </p>
                                                   )}

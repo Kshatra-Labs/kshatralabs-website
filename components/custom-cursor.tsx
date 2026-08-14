@@ -115,7 +115,7 @@ export default function CustomCursor() {
           <>
                <div
                     ref={cursorRef}
-                    className="fixed top-0 left-0 w-4 h-4 rounded-full bg-white pointer-events-none z-[9999] mix-blend-difference will-change-transform"
+                    className="fixed top-0 left-0 w-5 h-5 rounded-full bg-white pointer-events-none z-[9999] mix-blend-difference will-change-transform"
                     style={{
                          opacity: 0,
                          // Initialize scale var

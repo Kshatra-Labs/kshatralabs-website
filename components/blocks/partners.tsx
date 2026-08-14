@@ -21,7 +21,7 @@ export default function Partners() {
 
                {/* Header */}
                <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-                    <h2 className="text-xl md:text-2xl font-bold font-mono uppercase tracking-widest text-white/80">
+                    <h2 className="text-[21px] md:text-[26px] font-bold font-mono uppercase tracking-widest text-white/80">
                          Partners &amp; Supporters
                     </h2>
                </div>

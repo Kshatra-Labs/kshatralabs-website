@@ -70,7 +70,7 @@ export function BackgroundPaths({
                          transition={{ duration: 2 }}
                          className="max-w-4xl mx-auto"
                     >
-                         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
+                         <h1 className="text-[51px] sm:text-[77px] md:text-[102px] font-bold mb-8 tracking-tighter">
                               {words.map((word, wordIndex) => (
                                    <span
                                         key={wordIndex}
@@ -108,7 +108,7 @@ export function BackgroundPaths({
                           >
                                <Button
                                     variant="ghost"
-                                    className="rounded-[1.15rem] px-8 py-6 text-lg font-semibold backdrop-blur-md 
+                                    className="rounded-[1.15rem] px-8 py-6 text-[19px] font-semibold backdrop-blur-md 
                             bg-white/95 hover:bg-white/100 dark:bg-black/95 dark:hover:bg-black/100 
                             text-black dark:text-white transition-all duration-300 
                             group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10

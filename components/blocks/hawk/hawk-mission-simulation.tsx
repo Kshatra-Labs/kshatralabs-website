@@ -88,17 +88,17 @@ export function HawkMissionSimulation() {
                     {/* Section Header (Clean, Simple English) */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 pb-8 border-b border-neutral-800">
                          <div>
-                              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
+                              <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
                                    How HAWK Works
                               </span>
                               <h2 
-                                   className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white"
+                                   className="text-[38px] sm:text-[51px] lg:text-[64px] font-black uppercase tracking-tight text-white"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    The 3 Steps to Intercept
                               </h2>
                          </div>
-                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-[19px] text-neutral-300 font-light leading-relaxed">
                               From the first radar alert to direct high-speed collision, HAWK completes the mission automatically in under two seconds.
                          </p>
                     </div>
@@ -116,12 +116,12 @@ export function HawkMissionSimulation() {
                                              isSelected ? 'bg-neutral-900/80 text-white' : 'hover:bg-neutral-950 text-neutral-400'
                                         }`}
                                    >
-                                        <div className="flex items-center justify-between font-mono text-xs pb-4 border-b border-neutral-800">
+                                        <div className="flex items-center justify-between font-mono text-[13px] pb-4 border-b border-neutral-800">
                                              <span className={`font-bold ${isSelected ? 'text-white' : 'text-neutral-500'}`}>
                                                   STEP {phase.stepNumber}
                                              </span>
                                              {isSelected && (
-                                                  <span className="font-mono text-xs text-[#cc1414] uppercase tracking-widest font-bold">
+                                                  <span className="font-mono text-[13px] text-[#cc1414] uppercase tracking-widest font-bold">
                                                        Active
                                                   </span>
                                              )}
@@ -129,12 +129,12 @@ export function HawkMissionSimulation() {
 
                                         <div className="pt-4">
                                              <h3 
-                                                  className={`text-xl font-bold uppercase tracking-tight ${isSelected ? 'text-white' : 'text-neutral-300'}`}
+                                                  className={`text-[21px] font-bold uppercase tracking-tight ${isSelected ? 'text-white' : 'text-neutral-300'}`}
                                                   style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                              >
                                                   {phase.title}
                                              </h3>
-                                             <span className="font-mono text-xs text-neutral-400 uppercase tracking-widest mt-1 block">
+                                             <span className="font-mono text-[13px] text-neutral-400 uppercase tracking-widest mt-1 block">
                                                   {phase.subtitle}
                                              </span>
                                         </div>
@@ -169,7 +169,7 @@ export function HawkMissionSimulation() {
                                    {/* Bottom Control Bar */}
                                    <VideoPlayerControlBar className="absolute bottom-0 left-1/2 flex w-full max-w-7xl -translate-x-1/2 items-center justify-between px-6 py-4 bg-gradient-to-t from-black/80 to-transparent">
                                         <div className="flex items-center gap-2">
-                                             <VideoPlayerPlayButton className="h-4 w-4 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />
+                                             <VideoPlayerPlayButton className="h-5 w-5 bg-transparent text-white border-0 hover:text-[#cc1414] transition-colors" />
                                              <span className="font-mono text-[11px] text-white/60">LIVE // STEP {activePhase.stepNumber}</span>
                                         </div>
                                         <VideoPlayerTimeRange className="flex-1 mx-6 bg-transparent" />
@@ -178,10 +178,10 @@ export function HawkMissionSimulation() {
                               </VideoPlayer>
 
                               {/* Corner Brackets */}
-                              <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-white/40 pointer-events-none z-10" />
-                              <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-white/40 pointer-events-none z-10" />
-                              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-white/40 pointer-events-none z-10" />
-                              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-white/40 pointer-events-none z-10" />
+                              <div className="absolute top-0 left-0 w-7 h-7 border-t-2 border-l-2 border-white/40 pointer-events-none z-10" />
+                              <div className="absolute top-0 right-0 w-7 h-7 border-t-2 border-r-2 border-white/40 pointer-events-none z-10" />
+                              <div className="absolute bottom-0 left-0 w-7 h-7 border-b-2 border-l-2 border-white/40 pointer-events-none z-10" />
+                              <div className="absolute bottom-0 right-0 w-7 h-7 border-b-2 border-r-2 border-white/40 pointer-events-none z-10" />
 
                               {/* Top Feed Tag */}
                               <div className="absolute top-4 inset-x-4 flex items-center justify-between font-mono text-[11px] text-white/80 pointer-events-none z-10">
@@ -197,29 +197,29 @@ export function HawkMissionSimulation() {
                          {/* Right Details Copy Area (Clean, Simple Words) */}
                          <div className="lg:col-span-4 p-8 flex flex-col justify-between space-y-6 bg-[#050505]">
                               <div>
-                                   <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 pb-4 border-b border-neutral-800 mb-6 flex justify-between">
+                                   <div className="font-mono text-[13px] uppercase tracking-widest text-neutral-400 pb-4 border-b border-neutral-800 mb-6 flex justify-between">
                                         <span>Step {activePhase.stepNumber} Details</span>
                                         <span className="text-white font-bold">Active</span>
                                    </div>
 
                                    <h3 
-                                        className="text-2xl font-bold uppercase tracking-tight text-white mb-2"
+                                        className="text-[26px] font-bold uppercase tracking-tight text-white mb-2"
                                         style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                    >
                                         {activePhase.title}
                                    </h3>
-                                   <div className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-6 font-medium">
+                                   <div className="font-mono text-[13px] uppercase tracking-widest text-neutral-400 mb-6 font-medium">
                                         {activePhase.subtitle}
                                    </div>
 
-                                   <p className="text-lg text-neutral-300 leading-relaxed mb-6 font-normal">
+                                   <p className="text-[19px] text-neutral-300 leading-relaxed mb-6 font-normal">
                                         {activePhase.desc}
                                    </p>
 
                                    <div className="space-y-3 pt-4 border-t border-neutral-800">
                                         {activePhase.bulletPoints.map((point, idx) => (
-                                             <div key={idx} className="flex items-start gap-3 text-base sm:text-lg text-white/90 font-normal">
-                                                  <span className="font-mono text-xs font-bold text-[#cc1414] mt-0.5">•</span>
+                                             <div key={idx} className="flex items-start gap-3 text-[17px] sm:text-[19px] text-white/90 font-normal">
+                                                  <span className="font-mono text-[13px] font-bold text-[#cc1414] mt-0.5">•</span>
                                                   <span>{point}</span>
                                              </div>
                                         ))}
@@ -229,7 +229,7 @@ export function HawkMissionSimulation() {
                               {/* Technical Performance Specs */}
                               <div className="pt-6 border-t border-neutral-800 space-y-3 font-mono">
                                    {activePhase.telemetryData.map((data, idx) => (
-                                        <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-900 text-sm">
+                                        <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-900 text-[15px]">
                                              <span className="text-neutral-400 uppercase tracking-wider">{data.label}</span>
                                              <span className="font-bold text-white">{data.val}</span>
                                         </div>

@@ -14,7 +14,7 @@ export function EnvironmentSection() {
                          initial={{ opacity: 0, y: 20 }}
                          whileInView={{ opacity: 1, y: 0 }}
                          viewport={{ once: true }}
-                         className="text-white text-5xl md:text-7xl font-mono mb-20 tracking-tighter max-w-xl"
+                         className="text-white text-[51px] md:text-[77px] font-mono mb-20 tracking-tighter max-w-xl"
                     >
                          Built for Every<br />
                          <span className="text-zinc-500">Environment</span>
@@ -78,7 +78,7 @@ function LabelBox({ label, x, y, align, delay }: { label: string, x: string, y: 
                          <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white" />
                          <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white" />
 
-                         <span className="text-white font-mono text-sm tracking-[0.2em]">{label}</span>
+                         <span className="text-white font-mono text-[15px] tracking-[0.2em]">{label}</span>
                     </div>
                </div>
           </motion.div>

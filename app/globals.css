@@ -7,8 +7,12 @@
 @layer base {
 
   html {
-    /* 16px -> 17px rem base, scales all Tailwind text-* utilities site-wide */
-    font-size: 106.25%;
+    /* Root stays at the browser default (16px). A non-default root turns
+       Tailwind's rem-based text-* scale into fractional pixel sizes
+       (e.g. text-xs -> 12.75px), which renders visibly blurry on small
+       and mono text. Text sizes are set directly in px instead. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html.lenis,

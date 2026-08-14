@@ -53,16 +53,16 @@ export function HawkMakeInIndia() {
                     
                     {/* Top Section Header */}
                     <div className="max-w-3xl mb-20">
-                         <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-bold block mb-3">
+                         <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-bold block mb-3">
                               Strategic Autonomy
                          </span>
                          <h2 
-                              className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-6"
+                              className="text-[38px] sm:text-[51px] lg:text-[64px] font-black uppercase tracking-tight text-white mb-6"
                               style={{ fontFamily: 'var(--font-space-grotesk)' }}
                          >
                               Sovereign Defense IP
                          </h2>
-                         <p className="text-lg sm:text-lg text-neutral-300 font-light leading-relaxed">
+                         <p className="text-[19px] sm:text-[19px] text-neutral-300 font-light leading-relaxed">
                               Designed, built, and controlled entirely within India to ensure complete supply chain independence and absolute system ownership.
                          </p>
                     </div>
@@ -76,10 +76,10 @@ export function HawkMakeInIndia() {
                               >
                                    {/* Column 1: Pillar Number & Metric (3 Cols) */}
                                    <div className="md:col-span-3 space-y-2">
-                                        <div className="font-mono text-xs text-neutral-500 font-bold tracking-widest">
+                                        <div className="font-mono text-[13px] text-neutral-500 font-bold tracking-widest">
                                              PILLAR {item.number}
                                         </div>
-                                        <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-mono">
+                                        <div className="text-[32px] sm:text-[38px] font-extrabold text-white tracking-tight font-mono">
                                              {item.metric}
                                         </div>
                                         <div className="text-[12px] uppercase tracking-widest text-neutral-400 font-bold font-mono">
@@ -89,17 +89,17 @@ export function HawkMakeInIndia() {
 
                                    {/* Column 2: Category & Title (4 Cols) */}
                                    <div className="md:col-span-4 space-y-2 pt-1">
-                                        <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#cc1414] font-bold block">
+                                        <span className="font-mono text-[13px] uppercase tracking-[0.2em] text-[#cc1414] font-bold block">
                                              {item.category}
                                         </span>
-                                        <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-white">
+                                        <h3 className="text-[21px] sm:text-[26px] font-extrabold uppercase tracking-tight text-white">
                                              {item.title}
                                         </h3>
                                    </div>
 
                                    {/* Column 3: Description Paragraph (5 Cols) */}
                                    <div className="md:col-span-5 pt-1">
-                                        <p className="text-lg sm:text-lg text-neutral-300 leading-relaxed font-normal">
+                                        <p className="text-[19px] sm:text-[19px] text-neutral-300 leading-relaxed font-normal">
                                              {item.desc}
                                         </p>
                                    </div>

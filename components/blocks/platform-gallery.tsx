@@ -119,7 +119,7 @@ export function PlatformGallery() {
                                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,black_90%)] z-20 pointer-events-none"></div>
 
                                    {/* Label */}
-                                   <div className="absolute top-5 left-5 z-40 px-3 py-1.5 border border-white/20 rounded-[20px] text-[11px] md:text-xs tracking-wider backdrop-blur-md bg-black/30 font-mono">
+                                   <div className="absolute top-5 left-5 z-40 px-3 py-1.5 border border-white/20 rounded-[20px] text-[11px] md:text-[13px] tracking-wider backdrop-blur-md bg-black/30 font-mono">
                                         {currentPlatform.label}
                                    </div>
                               </motion.div>
@@ -135,7 +135,7 @@ export function PlatformGallery() {
                               className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-black/40 border border-white/10 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
                               aria-label="Previous image"
                          >
-                              <ChevronLeft className="w-5 h-5 text-white" strokeWidth={2} />
+                              <ChevronLeft className="w-6 h-6 text-white" strokeWidth={2} />
                          </button>
 
                          <button
@@ -147,7 +147,7 @@ export function PlatformGallery() {
                               className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-black/40 border border-white/10 opacity-0 group-hover:opacity-100 hover:bg-black/60 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm"
                               aria-label="Next image"
                          >
-                              <ChevronRight className="w-5 h-5 text-white" strokeWidth={2} />
+                              <ChevronRight className="w-6 h-6 text-white" strokeWidth={2} />
                          </button>
                     </div>
 
@@ -162,10 +162,10 @@ export function PlatformGallery() {
                                         exit={{ opacity: 0, y: -10 }}
                                         transition={{ duration: 0.3 }}
                                    >
-                                        <h3 className="text-2xl md:text-3xl font-bold text-white">
+                                        <h3 className="text-[26px] md:text-[32px] font-bold text-white">
                                              {currentPlatform.title}
                                         </h3>
-                                        <p className="text-white/60 mt-2 text-sm md:text-base max-w-2xl leading-relaxed">
+                                        <p className="text-white/60 mt-2 text-[15px] md:text-[17px] max-w-2xl leading-relaxed">
                                              {currentPlatform.description}
                                         </p>
                                    </motion.div>
@@ -177,7 +177,7 @@ export function PlatformGallery() {
                                         <motion.div
                                              key={i}
                                              whileHover={{ scale: 1.05, filter: "brightness(1.2)", borderColor: "rgba(47,124,255,0.8)" }}
-                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[11px] md:text-sm border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium cursor-default transition-colors duration-300"
+                                             className="px-3 py-1.5 md:px-4 md:py-2 rounded-[16px] bg-[#0e1320] text-[11px] md:text-[15px] border border-[#2f7cff]/40 text-blue-200 uppercase tracking-wider font-medium cursor-default transition-colors duration-300"
                                         >
                                              {feature}
                                         </motion.div>
@@ -194,13 +194,13 @@ export function PlatformGallery() {
                                              onClick={() => scrollThumbnails('left')}
                                              className="p-1 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                                         >
-                                             <ChevronLeft className="w-4 h-4 text-white/60" />
+                                             <ChevronLeft className="w-5 h-5 text-white/60" />
                                         </button>
                                         <button
                                              onClick={() => scrollThumbnails('right')}
                                              className="p-1 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                                         >
-                                             <ChevronRight className="w-4 h-4 text-white/60" />
+                                             <ChevronRight className="w-5 h-5 text-white/60" />
                                         </button>
                                    </div>
                               </div>

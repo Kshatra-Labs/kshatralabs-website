@@ -161,14 +161,14 @@ const Carousel = ({ items, initialScroll = 0 }: iCarouselProps) => {
                          onClick={handleScrollLeft}
                          disabled={!canScrollLeft}
                     >
-                         <ArrowLeft className="h-6 w-6 text-white" />
+                         <ArrowLeft className="h-7 w-7 text-white" />
                     </button>
                     <button
                          className="relative z-40 h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center disabled:opacity-50 hover:bg-defense-accent/20 transition-all duration-200"
                          onClick={handleScrollRight}
                          disabled={!canScrollRight}
                     >
-                         <ArrowRight className="h-6 w-6 text-white" />
+                         <ArrowRight className="h-7 w-7 text-white" />
                     </button>
                </div>
           </div>
@@ -254,25 +254,25 @@ const TestimonialCard = ({
                                         className="absolute top-6 right-6 h-10 w-10 rounded-full flex items-center justify-center bg-white/10 hover:bg-defense-accent/20 transition-colors"
                                         onClick={handleCollapse}
                                    >
-                                        <X className="h-6 w-6 text-white" />
+                                        <X className="h-7 w-7 text-white" />
                                    </button>
                                    <div className="space-y-8">
                                         <div className="space-y-4">
                                              <motion.p
                                                   layoutId={layout ? `category-${testimonial.name}` : undefined}
-                                                  className="text-defense-accent font-mono text-sm uppercase tracking-widest font-bold"
+                                                  className="text-defense-accent font-mono text-[15px] uppercase tracking-widest font-bold"
                                              >
                                                   {testimonial.designation}
                                              </motion.p>
                                              <motion.h3
                                                   layoutId={layout ? `title-${testimonial.name}` : undefined}
-                                                  className="text-3xl md:text-5xl font-bold uppercase italic text-white tracking-tighter"
+                                                  className="text-[32px] md:text-[51px] font-bold uppercase italic text-white tracking-tighter"
                                              >
                                                   {testimonial.name}
                                              </motion.h3>
                                         </div>
 
-                                        <div className="relative text-neutral-300 text-lg md:text-xl font-light leading-relaxed">
+                                        <div className="relative text-neutral-300 text-[19px] md:text-[21px] font-light leading-relaxed">
                                              <Quote className="h-8 w-8 text-defense-accent/20 absolute -top-4 -left-6" />
                                              <p className="px-2">
                                                   {testimonial.description}
@@ -315,7 +315,7 @@ const TestimonialCard = ({
                          <div className="mt-8 text-center space-y-4 z-20">
                               <motion.h4
                                    layoutId={layout ? `title-${testimonial.name}` : undefined}
-                                   className="text-white text-xl md:text-2xl font-bold uppercase italic tracking-tight group-hover:text-defense-accent transition-colors"
+                                   className="text-white text-[21px] md:text-[26px] font-bold uppercase italic tracking-tight group-hover:text-defense-accent transition-colors"
                               >
                                    {testimonial.name}
                               </motion.h4>
@@ -328,7 +328,7 @@ const TestimonialCard = ({
                               </motion.p>
 
                               <motion.p
-                                   className="text-neutral-400 text-sm font-light leading-relaxed line-clamp-3 px-4"
+                                   className="text-neutral-400 text-[15px] font-light leading-relaxed line-clamp-3 px-4"
                               >
                                    {testimonial.description}
                               </motion.p>

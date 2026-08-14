@@ -67,14 +67,14 @@ export function PlatformsGrid() {
 
           {/* LEFT: Mission Statement */}
           <div className="space-y-6">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400 font-mono text-xs uppercase tracking-widest">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 text-blue-400 font-mono text-[13px] uppercase tracking-widest">
               Our Mission
             </div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-tight"
+              className="text-[38px] md:text-[51px] lg:text-[64px] font-semibold tracking-tight text-white leading-tight"
             >
               Engineering Autonomous Defence
             </motion.h2>
@@ -88,10 +88,10 @@ export function PlatformsGrid() {
             transition={{ delay: 0.1 }}
             className="space-y-6 pt-2 md:pt-14"
           >
-            <p className="text-xl md:text-2xl text-blue-100 font-medium leading-relaxed">
+            <p className="text-[21px] md:text-[26px] text-blue-100 font-medium leading-relaxed">
               Autonomous systems designed to operate across air, land, and sea.
             </p>
-            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed font-light">
+            <p className="text-[19px] md:text-[21px] text-neutral-400 leading-relaxed font-light">
               We build real defence platforms — not just drones — powered by fully onboard AI to detect, pursue, and neutralize aerial threats while keeping humans out of harm’s way.
             </p>
           </motion.div>
@@ -123,10 +123,10 @@ export function PlatformsGrid() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_70%)] pointer-events-none" />
 
               <div className="relative z-10 flex flex-col h-full space-y-4">
-                <h3 className="text-xl font-medium tracking-tight text-white">
+                <h3 className="text-[21px] font-medium tracking-tight text-white">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base leading-relaxed font-light text-neutral-400">
+                <p className="text-[15px] md:text-[17px] leading-relaxed font-light text-neutral-400">
                   {item.description}
                 </p>
               </div>

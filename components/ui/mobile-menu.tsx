@@ -76,13 +76,13 @@ export function MobileMenu({ isOpen, onClose, menuItems, onEmailClick }: MobileM
                                              <Link
                                                   href={item.href}
                                                   onClick={onClose}
-                                                  className="group flex items-center justify-between text-4xl font-bold font-space-grotesk text-white/80 hover:text-white transition-colors"
+                                                  className="group flex items-center justify-between text-[38px] font-bold font-space-grotesk text-white/80 hover:text-white transition-colors"
                                              >
                                                   <span className="relative overflow-hidden">
                                                        {item.name}
                                                        <span className="absolute left-0 bottom-0 w-full h-0.5 bg-defense-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                                                   </span>
-                                                  <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-defense-accent" />
+                                                  <ArrowRight className="w-7 h-7 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-defense-accent" />
                                              </Link>
                                         </motion.div>
                                    ))}
@@ -95,18 +95,18 @@ export function MobileMenu({ isOpen, onClose, menuItems, onEmailClick }: MobileM
 
                                         <button onClick={(e) => { onClose(); onEmailClick?.(e); }} className="flex items-center gap-4 text-white/60 hover:text-white transition-colors group p-3 rounded-lg hover:bg-white/5 w-full text-left">
                                              <div className="p-3 bg-white/5 rounded-full group-hover:bg-defense-accent/20 transition-colors">
-                                                  <Mail className="w-5 h-5 text-defense-accent" />
+                                                  <Mail className="w-6 h-6 text-defense-accent" />
                                              </div>
-                                             <span className="font-mono text-lg">contact@kshatralabs.in</span>
+                                             <span className="font-mono text-[19px]">contact@kshatralabs.in</span>
                                         </button>
 
                                         <div className="flex items-center gap-4 text-white/60 p-3">
                                              <div className="p-3 bg-white/5 rounded-full">
-                                                  <MapPin className="w-5 h-5 text-defense-accent" />
+                                                  <MapPin className="w-6 h-6 text-defense-accent" />
                                              </div>
-                                             <span className="font-mono text-sm leading-relaxed">
+                                             <span className="font-mono text-[15px] leading-relaxed">
                                                   Bangalore, India <br />
-                                                  <span className="text-white/40 text-xs text-nowrap">DEFENSE INNOVATION HUB</span>
+                                                  <span className="text-white/40 text-[13px] text-nowrap">DEFENSE INNOVATION HUB</span>
                                              </span>
                                         </div>
                                    </div>

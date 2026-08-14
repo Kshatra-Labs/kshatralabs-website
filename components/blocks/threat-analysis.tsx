@@ -37,10 +37,10 @@ export function ThreatAnalysis() {
 
                               {/* Header */}
                               <div className="border-l-4 border-red-600 pl-6 space-y-4">
-                                   <div className="text-red-500 text-xs font-mono tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
+                                   <div className="text-red-500 text-[13px] font-mono tracking-[0.2em] uppercase mb-2 flex items-center gap-2">
                                         <span>{"/// THREAT VECTOR ANALYSIS"}</span>
                                    </div>
-                                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none">
+                                   <h2 className="text-[38px] md:text-[51px] lg:text-[64px] font-black uppercase tracking-tighter leading-none">
                                         NOT JUST A <span className="text-white/50">DRONE.</span> AN INTERCEPTOR.
                                    </h2>
 
@@ -73,10 +73,10 @@ export function ThreatAnalysis() {
                                         <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-50 transition-opacity">
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
-                                        <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
+                                        <h3 className="text-blue-400 font-mono text-[15px] tracking-widest mb-2 flex items-center gap-2">
                                              <span className="text-white/30">01 //</span> HIGH-SPEED AUTONOMOUS FLIGHT
                                         </h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
+                                        <p className="text-neutral-400 text-[15px] leading-relaxed max-w-md">
                                              Engineered for rapid response and high-velocity interception of hostile objects in mid-air.
                                         </p>
                                    </motion.div>
@@ -91,10 +91,10 @@ export function ThreatAnalysis() {
                                         <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-50 transition-opacity">
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
-                                        <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
+                                        <h3 className="text-blue-400 font-mono text-[15px] tracking-widest mb-2 flex items-center gap-2">
                                              <span className="text-white/30">02 //</span> REAL-TIME TARGET TRACKING
                                         </h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
+                                        <p className="text-neutral-400 text-[15px] leading-relaxed max-w-md">
                                              Advanced sensor integration for precise detection and persistent chasing of airborne threats.
                                         </p>
                                    </motion.div>
@@ -109,12 +109,12 @@ export function ThreatAnalysis() {
                                         <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-50 transition-opacity">
                                              <div className="w-2 h-2 border-t border-r border-white"></div>
                                         </div>
-                                        <h3 className="text-blue-400 font-mono text-sm tracking-widest mb-2 flex items-center gap-2">
+                                        <h3 className="text-blue-400 font-mono text-[15px] tracking-widest mb-2 flex items-center gap-2">
                                              <span className="text-white/30">03 //</span> NETWORK CAPABLE
                                         </h3>
-                                        <p className="text-neutral-400 text-sm leading-relaxed max-w-md">
+                                        <p className="text-neutral-400 text-[15px] leading-relaxed max-w-md">
                                              This system is engineered specifically to intercept and neutralize hostile objects.
-                                             <span className="text-blue-200/60 block mt-4 text-xs">
+                                             <span className="text-blue-200/60 block mt-4 text-[13px]">
                                                   Made for rapid response. Designed for protection.
                                              </span>
                                         </p>
@@ -179,10 +179,10 @@ export function ThreatAnalysis() {
                               </div>
 
                               {/* Decorative Background Decals */}
-                              <div className="absolute -top-10 -right-10 text-white/5 font-black text-9xl pointer-events-none select-none z-0">
+                              <div className="absolute -top-10 -right-10 text-white/5 font-black text-[136px] pointer-events-none select-none z-0">
                                    {"//"}
                               </div>
-                              <div className="absolute -bottom-10 -left-10 text-white/5 font-black text-9xl pointer-events-none select-none z-0">
+                              <div className="absolute -bottom-10 -left-10 text-white/5 font-black text-[136px] pointer-events-none select-none z-0">
                                    +
                               </div>
                          </div>

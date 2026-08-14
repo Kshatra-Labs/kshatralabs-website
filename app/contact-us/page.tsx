@@ -57,7 +57,7 @@ export default function ContactUsPage() {
                                    initial={{ opacity: 0, y: 30 }}
                                    animate={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 1, delay: 0.1 }}
-                                   className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-white mb-6"
+                                   className="text-[51px] md:text-[77px] font-bold uppercase tracking-tight text-white mb-6"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    Contact Us
@@ -66,7 +66,7 @@ export default function ContactUsPage() {
                                    initial={{ opacity: 0, y: 20 }}
                                    animate={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                   className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto"
+                                   className="text-[19px] md:text-[21px] text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto"
                               >
                                    For inquiries regarding defence procurement, media relations, or partnerships, please contact us through the channels below.
                               </motion.p>
@@ -88,14 +88,14 @@ export default function ContactUsPage() {
                                              className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
                                         >
                                              <div className="flex items-start justify-between gap-4">
-                                                  <Mail className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
+                                                  <Mail className="w-7 h-7 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
                                                   <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Email
                                                   </h3>
-                                                  <p className="text-lg font-bold font-mono text-black tracking-tight break-all">
+                                                  <p className="text-[19px] font-bold font-mono text-black tracking-tight break-all">
                                                        contact@kshatralabs.in
                                                   </p>
                                              </div>
@@ -107,14 +107,14 @@ export default function ContactUsPage() {
                                              className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
                                         >
                                              <div className="flex items-start justify-between gap-4">
-                                                  <Phone className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
+                                                  <Phone className="w-7 h-7 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
                                                   <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Phone no
                                                   </h3>
-                                                  <p className="text-lg font-bold font-mono text-black tracking-tight">
+                                                  <p className="text-[19px] font-bold font-mono text-black tracking-tight">
                                                        +91 97304 58528
                                                   </p>
                                              </div>
@@ -123,14 +123,14 @@ export default function ContactUsPage() {
                                         {/* 03: Global Headquarters */}
                                         <div className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px] cursor-default">
                                              <div className="flex items-start justify-between gap-4">
-                                                  <MapPin className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
+                                                  <MapPin className="w-7 h-7 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
                                                   <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Located At
                                                   </h3>
-                                                  <p className="text-base font-bold font-mono text-black leading-tight">
+                                                  <p className="text-[17px] font-bold font-mono text-black leading-tight">
                                                        Bangalore, India
                                                   </p>
                                                   <span className="text-[12px] font-mono uppercase text-neutral-600 block">
@@ -147,14 +147,14 @@ export default function ContactUsPage() {
                                              className="p-6 bg-white text-black border border-white rounded-none space-y-4 group relative transition-all duration-200 hover:bg-neutral-100 flex flex-col justify-between min-h-[160px]"
                                         >
                                              <div className="flex items-start justify-between gap-4">
-                                                  <Linkedin className="w-6 h-6 text-black transition-transform duration-200 group-hover:scale-110" />
+                                                  <Linkedin className="w-7 h-7 text-black transition-transform duration-200 group-hover:scale-110" />
                                              </div>
 
                                              <div className="space-y-1.5 pt-2">
                                                   <h3 className="font-mono text-[12px] font-bold uppercase tracking-widest text-neutral-500">
                                                        Linkedin
                                                   </h3>
-                                                  <p className="text-lg font-bold font-mono text-black tracking-tight">
+                                                  <p className="text-[19px] font-bold font-mono text-black tracking-tight">
                                                        Kshatra Labs
                                                   </p>
                                              </div>

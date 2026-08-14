@@ -57,7 +57,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                {/* Identity Header */}
                <div className="space-y-4 mb-8 text-center w-full">
                     <div className="space-y-1">
-                         <h3 className="text-2xl font-bold text-white tracking-tight group-hover:text-emerald-50 transition-colors">
+                         <h3 className="text-[26px] font-bold text-white tracking-tight group-hover:text-emerald-50 transition-colors">
                               {member.name}
                          </h3>
                     </div>
@@ -68,7 +68,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                </div>
 
                {/* Description */}
-               <p className="text-base text-white leading-relaxed font-light mb-8 flex-1 text-center">
+               <p className="text-[17px] text-white leading-relaxed font-light mb-8 flex-1 text-center">
                     &quot;{member.description}&quot;
                </p>
 
@@ -106,17 +106,17 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 //                          <Plus className="w-8 h-8 text-white/40 group-hover:text-defense-accent transition-colors" />
 //                     </div>
 //                     <div className="space-y-2">
-//                          <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-defense-accent transition-colors">
+//                          <h3 className="text-[21px] font-bold text-white tracking-tight group-hover:text-defense-accent transition-colors">
 //                               Join the Mission
 //                          </h3>
-//                          <p className="text-sm text-[#9ca3af] max-w-[200px] mx-auto">
+//                          <p className="text-[15px] text-[#9ca3af] max-w-[200px] mx-auto">
 //                               Help us build the future of autonomous defence systems.
 //                          </p>
 //                     </div>
 //                </div>
 
 //                <div className="w-full mt-6">
-//                     <span className="flex items-center justify-center gap-2 w-full h-10 rounded-lg bg-white/5 group-hover:bg-defense-accent group-hover:text-black border border-white/10 group-hover:border-transparent transition-all duration-300 text-xs font-bold uppercase tracking-widest">
+//                     <span className="flex items-center justify-center gap-2 w-full h-10 rounded-lg bg-white/5 group-hover:bg-defense-accent group-hover:text-black border border-white/10 group-hover:border-transparent transition-all duration-300 text-[13px] font-bold uppercase tracking-widest">
 //                          View Openings
 //                     </span>
 //                </div>

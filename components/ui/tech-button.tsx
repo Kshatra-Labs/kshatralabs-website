@@ -11,7 +11,7 @@ export const TechButton = React.forwardRef<HTMLButtonElement, TechButtonProps>(
                <button
                     ref={ref}
                     className={cn(
-                         "relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent text-white font-mono text-xs lg:text-sm border border-white hover:bg-white hover:text-black transition-all duration-200 group cursor-pointer flex items-center justify-center",
+                         "relative px-5 lg:px-6 py-2 lg:py-2.5 bg-transparent text-white font-mono text-[13px] lg:text-[15px] border border-white hover:bg-white hover:text-black transition-all duration-200 group cursor-pointer flex items-center justify-center",
                          className
                     )}
                     {...props}

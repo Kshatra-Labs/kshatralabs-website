@@ -72,17 +72,17 @@ export function HawkSpecs() {
                     {/* Section Header */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-neutral-800">
                          <div>
-                              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
+                              <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
                                    Technical Data Sheet
                               </span>
                               <h2 
-                                   className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white"
+                                   className="text-[38px] sm:text-[51px] lg:text-[64px] font-extrabold uppercase tracking-tight text-white"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    Technical Specifications
                               </h2>
                          </div>
-                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-[19px] text-neutral-300 font-light leading-relaxed">
                               Verified mechanical, aerodynamic, and compute parameters for the HAWK autonomous drone interceptor.
                          </p>
                     </div>
@@ -96,7 +96,7 @@ export function HawkSpecs() {
                                    <button
                                         key={group.id}
                                         onClick={() => setActiveTab(group.id)}
-                                        className={`px-8 py-5 text-left font-mono text-xs uppercase tracking-widest transition-colors relative ${
+                                        className={`px-8 py-5 text-left font-mono text-[13px] uppercase tracking-widest transition-colors relative ${
                                              isSelected ? 'text-white font-bold bg-neutral-900/60' : 'text-neutral-500 hover:text-white'
                                         }`}
                                    >
@@ -121,16 +121,16 @@ export function HawkSpecs() {
                                         <div className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 font-bold mb-1">
                                              {spec.label}
                                         </div>
-                                        <p className="text-base text-neutral-300 font-light leading-relaxed mb-4">
+                                        <p className="text-[17px] text-neutral-300 font-light leading-relaxed mb-4">
                                              {spec.note}
                                         </p>
                                    </div>
                                    <div className="flex items-baseline gap-2 mt-auto pt-3 border-t border-neutral-900/50">
-                                        <span className="text-xl sm:text-2xl font-extrabold text-white tracking-tight font-mono">
+                                        <span className="text-[21px] sm:text-[26px] font-extrabold text-white tracking-tight font-mono">
                                              {spec.value}
                                         </span>
                                         {spec.unit && (
-                                             <span className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold">
+                                             <span className="font-mono text-[13px] uppercase tracking-widest text-[#cc1414] font-bold">
                                                   / {spec.unit}
                                              </span>
                                         )}

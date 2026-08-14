@@ -88,7 +88,7 @@ const Skiper61 = () => {
     <section className="h-screen w-full snap-y snap-mandatory overflow-y-scroll bg-black text-white">
       <div className="flex h-screen w-full snap-start flex-col items-center justify-center px-5">
         <div className="grid content-start justify-items-center gap-6 text-center">
-          <span className="after:to-foreground relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
+          <span className="after:to-foreground relative max-w-[12ch] text-[13px] uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
             Mouse follow simple
           </span>
         </div>
@@ -96,7 +96,7 @@ const Skiper61 = () => {
       </div>
       <div className="flex h-screen w-full snap-start flex-col items-center justify-center px-5">
         <div className="grid content-start justify-items-center gap-6 text-center">
-          <span className="after:to-foreground relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
+          <span className="after:to-foreground relative max-w-[12ch] text-[13px] uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
             Mouse follow with Spring
           </span>
         </div>

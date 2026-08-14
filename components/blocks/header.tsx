@@ -65,15 +65,15 @@ const menuItems: NavItem[] = [
                     ]
                },
                {
-                    title: 'TRACKING SYSTEMS',
-                    items: [
-                         { name: 'HAWKEYE', href: '/products', desc: 'Advanced electro-optical/infrared tracking system for persistent threat detection and target acquisition.', comingSoon: true }
-                    ]
-               },
-               {
                     title: 'TACTICAL AUTONOMY',
                     items: [
                          { name: 'APEX', href: '/products', desc: 'Intelligent edge-compute node that processes sensor data in real-time to enable autonomous decision making.', comingSoon: true }
+                    ]
+               },
+               {
+                    title: 'TRACKING SYSTEMS',
+                    items: [
+                         { name: 'HAWKEYE', href: '/products', desc: 'Advanced electro-optical/infrared tracking system for persistent threat detection and target acquisition.', comingSoon: true }
                     ]
                }
           ]
@@ -125,7 +125,7 @@ export function Header() {
                               className="lg:hidden p-2 text-white hover:text-[#2563EB] transition-colors z-50"
                               aria-label={menuState ? 'Close menu' : 'Open menu'}
                          >
-                              {menuState ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                              {menuState ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                          </button>
 
                          {/* Desktop Nav */}
@@ -148,7 +148,7 @@ export function Header() {
                                                   {hasDropdown && (
                                                        <motion.div 
                                                             animate={{ rotate: isDropdownOpen ? 45 : 0 }}
-                                                            className="relative w-3 h-3 flex items-center justify-center"
+                                                            className="relative w-3.5 h-3.5 flex items-center justify-center"
                                                        >
                                                             <div className="absolute w-full h-[1.5px] bg-current" />
                                                             <div className="absolute h-full w-[1.5px] bg-current" />
@@ -278,7 +278,7 @@ export function Header() {
                                                        <Link
                                                             href={item.href}
                                                             onClick={() => !hasDropdown && setMenuState(false)}
-                                                            className={`text-xl font-semibold uppercase tracking-widest ${pathname === item.href ? 'text-[#2563EB]' : 'text-white'}`}
+                                                            className={`text-[21px] font-semibold uppercase tracking-widest ${pathname === item.href ? 'text-[#2563EB]' : 'text-white'}`}
                                                        >
                                                             {item.name}
                                                        </Link>
@@ -289,7 +289,7 @@ export function Header() {
                                                             >
                                                                  <motion.div 
                                                                       animate={{ rotate: isDropdownOpen ? 45 : 0 }}
-                                                                      className="relative w-4 h-4 flex items-center justify-center"
+                                                                      className="relative w-5 h-5 flex items-center justify-center"
                                                                  >
                                                                       <div className="absolute w-full h-[2px] bg-current" />
                                                                       <div className="absolute h-full w-[2px] bg-current" />
@@ -308,7 +308,7 @@ export function Header() {
                                                                  <div key={idx} className="flex flex-col gap-3">
                                                                       <div className="flex items-center gap-2">
                                                                            <div className="w-2 h-2 bg-[#2563EB]" />
-                                                                           <span className="text-xs font-bold text-white/50 uppercase tracking-widest">{col.title}</span>
+                                                                           <span className="text-[13px] font-bold text-white/50 uppercase tracking-widest">{col.title}</span>
                                                                       </div>
                                                                       <div className="flex flex-col gap-3 pl-4">
                                                                            {col.items.map((sub) => (
@@ -316,7 +316,7 @@ export function Header() {
                                                                                      key={sub.name}
                                                                                      href={sub.href}
                                                                                      onClick={() => setMenuState(false)}
-                                                                                     className="text-white/70 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider flex items-center gap-2"
+                                                                                     className="text-white/70 hover:text-white transition-colors text-[15px] font-semibold uppercase tracking-wider flex items-center gap-2"
                                                                                 >
                                                                                      <span>{sub.name}</span>
                                                                                      {sub.comingSoon && (

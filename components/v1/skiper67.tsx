@@ -143,7 +143,7 @@ export const Skiper67 = () => {
   return (
     <section className="relative flex h-full w-full items-center justify-center bg-black">
       <div className="absolute top-1/4 grid content-start justify-items-center gap-6 text-center">
-        <span className="after:to-foreground relative max-w-[12ch] text-xs uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
+        <span className="after:to-foreground relative max-w-[12ch] text-[13px] uppercase leading-tight opacity-40 after:absolute after:left-1/2 after:top-full after:h-16 after:w-px after:bg-gradient-to-b after:from-transparent after:content-['']">
           Click the video to play
         </span>
       </div>
@@ -162,7 +162,7 @@ export const Skiper67 = () => {
       >
         <motion.div
           style={{ x, y, opacity }}
-          className="relative z-20 flex w-fit select-none items-center justify-center gap-2 p-2 text-sm text-white mix-blend-exclusion"
+          className="relative z-20 flex w-fit select-none items-center justify-center gap-2 p-2 text-[15px] text-white mix-blend-exclusion"
         >
           <Play className="size-4 fill-white" /> Play
         </motion.div>

@@ -70,7 +70,7 @@ function SectionHeading({
       <div className="flex items-baseline gap-3">
         {num && (
           <span
-            className={`font-mono text-xs tracking-widest shrink-0 ${
+            className={`font-mono text-[13px] tracking-widest shrink-0 ${
               warning ? 'text-red-500' : 'text-amber-500'
             }`}
           >
@@ -78,7 +78,7 @@ function SectionHeading({
           </span>
         )}
         <h2
-          className={`text-xl md:text-2xl font-bold ${
+          className={`text-[21px] md:text-[26px] font-bold ${
             warning ? 'text-red-200' : 'text-white'
           }`}
           style={{ fontFamily: 'var(--font-space-grotesk)' }}
@@ -92,7 +92,7 @@ function SectionHeading({
 
 function SubHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="flex items-center gap-3 text-sm font-semibold text-neutral-200 mb-3 mt-7">
+    <h3 className="flex items-center gap-3 text-[15px] font-semibold text-neutral-200 mb-3 mt-7">
       <span className="w-4 h-px bg-amber-500/50 shrink-0" />
       {children}
     </h3>
@@ -131,7 +131,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
         <span className="font-mono text-[11px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
           ⚠ NOTICE
         </span>
-        <div className="text-red-200/75 text-sm leading-relaxed">{children}</div>
+        <div className="text-red-200/75 text-[15px] leading-relaxed">{children}</div>
       </div>
     </div>
   )
@@ -278,7 +278,7 @@ export default function PrivacyPolicyPage() {
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.1 }}
-                className="text-5xl md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase leading-[0.92] tracking-tight text-white mb-7"
+                className="text-[51px] md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase leading-[0.92] tracking-tight text-white mb-7"
                 style={{ fontFamily: 'var(--font-space-grotesk)' }}
               >
                 Privacy<br />
@@ -289,7 +289,7 @@ export default function PrivacyPolicyPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.25 }}
-                className="flex flex-wrap items-center gap-3 font-mono text-xs text-neutral-600 uppercase tracking-widest"
+                className="flex flex-wrap items-center gap-3 font-mono text-[13px] text-neutral-600 uppercase tracking-widest"
               >
                 <span>Last updated: 17 Jun 2026</span>
                 <span className="text-neutral-800">·</span>
@@ -303,7 +303,7 @@ export default function PrivacyPolicyPage() {
             <div className="xl:hidden mb-10">
               <button
                 onClick={() => setTocOpen((v) => !v)}
-                className="flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-500 border border-neutral-800 px-4 py-2.5 w-full hover:border-amber-500/40 hover:text-neutral-300 transition-colors uppercase"
+                className="flex items-center gap-2 text-[13px] font-mono tracking-widest text-neutral-500 border border-neutral-800 px-4 py-2.5 w-full hover:border-amber-500/40 hover:text-neutral-300 transition-colors uppercase"
               >
                 <span className="flex-1 text-left">Table of Contents</span>
                 <span className="text-amber-500/60">{tocOpen ? '▲' : '▼'}</span>
@@ -315,7 +315,7 @@ export default function PrivacyPolicyPage() {
                       key={id}
                       href={`#${id}`}
                       onClick={() => setTocOpen(false)}
-                      className="flex items-center gap-2.5 text-xs text-neutral-500 hover:text-amber-400 transition-colors py-1.5"
+                      className="flex items-center gap-2.5 text-[13px] text-neutral-500 hover:text-amber-400 transition-colors py-1.5"
                     >
                       <span className="font-mono text-amber-500/40 shrink-0">{num}</span>
                       {label}
@@ -389,7 +389,7 @@ export default function PrivacyPolicyPage() {
               <section id="who-we-are" className="scroll-mt-40">
                 <SectionHeading id="who-we-are">Who We Are (Data Fiduciary)</SectionHeading>
                 <InfoCard label="Data Fiduciary">
-                  <p className="text-neutral-300 leading-loose text-sm font-mono">
+                  <p className="text-neutral-300 leading-loose text-[15px] font-mono">
                     <span className="text-white font-semibold">Entity:</span> Kshatra Labs<br />
                     <span className="text-white font-semibold">Registered Address:</span>{' '}
                     <span className="text-neutral-500">[Insert MCA/ROC-registered legal address], Bengaluru, Karnataka, India</span><br />
@@ -1246,7 +1246,7 @@ export default function PrivacyPolicyPage() {
                   Officer:
                 </P>
                 <InfoCard label="Grievance Officer — Kshatra Labs" accent>
-                  <p className="text-neutral-300 leading-loose text-sm font-mono">
+                  <p className="text-neutral-300 leading-loose text-[15px] font-mono">
                     <span className="text-white font-semibold">Email:</span>{' '}
                     <A href="mailto:contact@kshatralabs.in">contact@kshatralabs.in</A><br />
                     <span className="text-white font-semibold">Subject line:</span>{' '}

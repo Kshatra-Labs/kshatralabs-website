@@ -92,17 +92,17 @@ export function HawkHardwareArchitecture() {
                     {/* Section Header */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-neutral-800">
                          <div>
-                              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
+                              <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
                                    Engineering Details
                               </span>
                               <h2 
-                                   className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white"
+                                   className="text-[32px] sm:text-[38px] lg:text-[51px] font-black uppercase tracking-tight text-white"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    Inside the Hardware
                               </h2>
                          </div>
-                         <p className="max-w-md text-lg text-neutral-400 font-light leading-relaxed">
+                         <p className="max-w-md text-[19px] text-neutral-400 font-light leading-relaxed">
                               Every part of HAWK is engineered to handle high-speed flight forces and track targets reliably without external help.
                          </p>
                     </div>
@@ -121,16 +121,16 @@ export function HawkHardwareArchitecture() {
                                                   <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#cc1414] font-bold block mb-1">
                                                        System Subassembly 0{system.code}
                                                   </span>
-                                                  <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-white">
+                                                  <h3 className="text-[21px] sm:text-[26px] font-extrabold uppercase tracking-tight text-white">
                                                        {system.title}
                                                   </h3>
                                              </div>
-                                             <span className="text-xs uppercase tracking-wider font-semibold text-neutral-400 font-mono bg-neutral-950 px-3 py-1.5 border border-neutral-800">
+                                             <span className="text-[13px] uppercase tracking-wider font-semibold text-neutral-400 font-mono bg-neutral-950 px-3 py-1.5 border border-neutral-800">
                                                   {system.subtitle}
                                              </span>
                                         </div>
 
-                                        <p className="text-lg text-neutral-300 leading-relaxed pt-2 font-normal">
+                                        <p className="text-[19px] text-neutral-300 leading-relaxed pt-2 font-normal">
                                              {system.desc}
                                         </p>
 
@@ -138,8 +138,8 @@ export function HawkHardwareArchitecture() {
                                         <div className="space-y-2.5 pt-2">
                                              {system.keyFeatures.map((feat, idx) => (
                                                   <div key={idx} className="flex items-start gap-3">
-                                                       <span className="font-mono text-xs text-[#cc1414] font-bold mt-0.5">•</span>
-                                                       <span className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">{feat}</span>
+                                                       <span className="font-mono text-[13px] text-[#cc1414] font-bold mt-0.5">•</span>
+                                                       <span className="text-[17px] sm:text-[19px] text-neutral-300 leading-relaxed font-normal">{feat}</span>
                                                   </div>
                                              ))}
                                         </div>
@@ -152,7 +152,7 @@ export function HawkHardwareArchitecture() {
                                         </div>
                                         <div className="border border-neutral-900 divide-y divide-neutral-900 bg-black font-mono">
                                              {system.technicalSpecs.map((spec, idx) => (
-                                                  <div key={idx} className="p-3.5 flex items-center justify-between text-base sm:text-lg">
+                                                  <div key={idx} className="p-3.5 flex items-center justify-between text-[17px] sm:text-[19px]">
                                                        <span className="uppercase tracking-wider text-neutral-400 font-medium">{spec.name}</span>
                                                        <span className="font-bold text-white tracking-tight text-right ml-4">{spec.val}</span>
                                                   </div>

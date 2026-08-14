@@ -71,17 +71,17 @@ export function HawkApplications() {
                     {/* Section Header */}
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-neutral-800">
                          <div>
-                              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
+                              <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
                                    Where HAWK Is Deployed
                               </span>
                               <h2 
-                                   className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-white"
+                                   className="text-[38px] sm:text-[51px] lg:text-[64px] font-extrabold uppercase tracking-tight text-white"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    Defense Applications
                               </h2>
                          </div>
-                         <p className="max-w-md text-lg text-neutral-300 font-light leading-relaxed">
+                         <p className="max-w-md text-[19px] text-neutral-300 font-light leading-relaxed">
                               Whether protecting remote border camps, warship decks, or critical power plants, HAWK provides reliable 24/7 drone defense across every operational environment.
                          </p>
                     </div>
@@ -95,7 +95,7 @@ export function HawkApplications() {
                               >
                                    {/* Card Header & Description */}
                                    <div className="space-y-6">
-                                        <div className="flex items-center justify-between pb-4 border-b border-neutral-900 font-mono text-xs">
+                                        <div className="flex items-center justify-between pb-4 border-b border-neutral-900 font-mono text-[13px]">
                                              <span className="text-[#cc1414] font-bold uppercase tracking-widest">
                                                   Application 0{app.number}
                                              </span>
@@ -106,25 +106,25 @@ export function HawkApplications() {
 
                                         <div>
                                              <h3 
-                                                  className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-3"
+                                                  className="text-[26px] sm:text-[32px] font-extrabold uppercase tracking-tight text-white mb-3"
                                                   style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                              >
                                                   {app.title}
                                              </h3>
-                                             <p className="text-lg sm:text-lg text-neutral-300 font-light leading-relaxed">
+                                             <p className="text-[19px] sm:text-[19px] text-neutral-300 font-light leading-relaxed">
                                                   {app.desc}
                                              </p>
                                         </div>
 
                                         {/* Key Benefits */}
                                         <div className="space-y-3 pt-2">
-                                             <div className="font-mono text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">
+                                             <div className="font-mono text-[13px] uppercase tracking-widest text-neutral-500 font-bold mb-2">
                                                   Operational Advantages
                                              </div>
                                              {app.capabilities.map((cap, idx) => (
                                                   <div key={idx} className="flex items-start gap-3">
-                                                       <span className="font-mono text-xs text-[#cc1414] font-bold mt-0.5">•</span>
-                                                       <span className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed">
+                                                       <span className="font-mono text-[13px] text-[#cc1414] font-bold mt-0.5">•</span>
+                                                       <span className="text-[17px] sm:text-[19px] text-neutral-300 font-light leading-relaxed">
                                                             {cap}
                                                        </span>
                                                   </div>
@@ -133,7 +133,7 @@ export function HawkApplications() {
                                    </div>
 
                                    {/* Card Footer */}
-                                   <div className="pt-6 border-t border-neutral-900 flex items-center justify-between font-mono text-xs">
+                                   <div className="pt-6 border-t border-neutral-900 flex items-center justify-between font-mono text-[13px]">
                                         <span className="text-neutral-500 uppercase tracking-widest">
                                              Status: <strong className="text-white font-semibold">Active Production</strong>
                                         </span>

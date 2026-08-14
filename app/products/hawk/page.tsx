@@ -14,7 +14,7 @@ import { HawkAdvisorModal } from '@/components/blocks/hawk/hawk-advisor-modal'
 
 const DownloadBrochure = dynamic(() => import('@/components/blocks/download-brochure'), {
      loading: () => (
-          <div className="h-40 flex items-center justify-center text-neutral-500 font-mono text-xs uppercase tracking-widest">
+          <div className="h-40 flex items-center justify-center text-neutral-500 font-mono text-[13px] uppercase tracking-widest">
                LOADING TECHNICAL DOCUMENTATION CANAL...
           </div>
      ),

@@ -32,7 +32,7 @@ export function PhilosophyCard() {
                                         </span>
                                    </div>
 
-                                   <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-[1.1] mb-2">
+                                   <h2 className="text-[32px] sm:text-[51px] md:text-[64px] font-bold leading-[1.1] mb-2">
                                         <span className="text-white">WE BUILD</span>
                                         <br />
                                         <span className="text-neutral-500">WHAT OTHERS</span>
@@ -43,7 +43,7 @@ export function PhilosophyCard() {
 
                               {/* Right: Description & Stats */}
                               <div className="space-y-8">
-                                   <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
+                                   <p className="text-[15px] sm:text-[17px] text-neutral-400 leading-relaxed">
                                         Modern warfare demands systems that are not just automated, but truly <span className="text-white font-medium">autonomous</span>. We engineer intelligent machines capable of operating in highly contested, GPS-denied environments without human intervention.
                                    </p>
 
@@ -51,16 +51,16 @@ export function PhilosophyCard() {
                                    <div className="grid grid-cols-2 gap-4 sm:gap-6">
                                         {/* Stat 1 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
-                                             <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">Rapid Response</div>
-                                             <div className="text-[10px] sm:text-[11px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
+                                             <div className="text-[19px] sm:text-[26px] md:text-[32px] font-bold text-white mb-1">Rapid Response</div>
+                                             <div className="text-[10px] sm:text-[11px] md:text-[13px] font-bold text-blue-500 tracking-wider uppercase">
                                                   Interception
                                              </div>
                                         </div>
 
                                         {/* Stat 2 */}
                                         <div className="border-l-2 border-blue-500/30 pl-4">
-                                             <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1">100%</div>
-                                             <div className="text-[10px] sm:text-[11px] md:text-xs font-bold text-blue-500 tracking-wider uppercase">
+                                             <div className="text-[19px] sm:text-[26px] md:text-[32px] font-bold text-white mb-1">100%</div>
+                                             <div className="text-[10px] sm:text-[11px] md:text-[13px] font-bold text-blue-500 tracking-wider uppercase">
                                                   Edge Compute (onboard)
                                              </div>
                                         </div>

@@ -138,7 +138,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
                {shouldLoad && isLoading && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/80 z-20 backdrop-blur-sm transition-opacity duration-500">
                          <HoneyCombLoader />
-                         <span className="mt-4 text-xs font-mono text-white/40 animate-pulse">
+                         <span className="mt-4 text-[13px] font-mono text-white/40 animate-pulse">
                               INITIALIZING...
                          </span>
                     </div>
@@ -150,7 +150,7 @@ export function SplineScene({ scene, className }: SplineSceneProps) {
                          <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center animate-spin-slow">
                               <div className="w-2 h-2 bg-white/50 rounded-full" />
                          </div>
-                         <span className="text-white/20 font-mono text-xs tracking-widest uppercase">
+                         <span className="text-white/20 font-mono text-[13px] tracking-widest uppercase">
                               Waiting for Data...
                          </span>
                     </div>

@@ -37,14 +37,14 @@ function Section({ num, title, children, warning = false }: SectionProps) {
         {/* Section header */}
         <div className="flex items-baseline gap-3 mb-4">
           <span
-            className={`font-mono text-xs tracking-widest shrink-0 ${
+            className={`font-mono text-[13px] tracking-widest shrink-0 ${
               warning ? 'text-red-500' : 'text-amber-500'
             }`}
           >
             §{num}
           </span>
           <h2
-            className={`text-xl md:text-2xl font-bold tracking-tight leading-snug ${
+            className={`text-[21px] md:text-[26px] font-bold tracking-tight leading-snug ${
               warning ? 'text-red-200' : 'text-white'
             }`}
             style={{ fontFamily: 'var(--font-space-grotesk)' }}
@@ -73,7 +73,7 @@ function BulletList({ items, danger = false }: BulletListProps) {
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-3">
           <span
-            className={`font-mono text-xs mt-[5px] shrink-0 select-none ${
+            className={`font-mono text-[13px] mt-[5px] shrink-0 select-none ${
               danger ? 'text-red-500' : 'text-amber-500'
             }`}
           >
@@ -109,7 +109,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
         <span className="font-mono text-[11px] tracking-widest text-red-500 uppercase shrink-0 mt-0.5">
           ⚠ NOTICE
         </span>
-        <p className="text-red-200/75 text-sm leading-relaxed">{children}</p>
+        <p className="text-red-200/75 text-[15px] leading-relaxed">{children}</p>
       </div>
     </div>
   )
@@ -117,7 +117,7 @@ function AlertBox({ children }: { children: React.ReactNode }) {
 
 function InfoCard({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="bg-neutral-900/60 border border-neutral-800 rounded-sm px-5 py-4 font-mono text-sm leading-loose">
+    <div className="bg-neutral-900/60 border border-neutral-800 rounded-sm px-5 py-4 font-mono text-[15px] leading-loose">
       <p className="font-mono text-[11px] tracking-widest uppercase text-amber-500/70 mb-3">
         {label}
       </p>
@@ -183,7 +183,7 @@ export default function TermsOfServicePage() {
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="text-5xl md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase leading-[0.92] tracking-tight text-white"
+              className="text-[51px] md:text-[4.5rem] lg:text-[5.5rem] font-black uppercase leading-[0.92] tracking-tight text-white"
               style={{ fontFamily: 'var(--font-space-grotesk)' }}
             >
               Website<br />
@@ -195,7 +195,7 @@ export default function TermsOfServicePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="font-mono text-xs text-neutral-600 tracking-widest mt-7 uppercase"
+              className="font-mono text-[13px] text-neutral-600 tracking-widest mt-7 uppercase"
             >
               Kshatra Labs &nbsp;·&nbsp; kshatralabs.in &nbsp;·&nbsp; Effective 01-Jan-2026
             </motion.p>

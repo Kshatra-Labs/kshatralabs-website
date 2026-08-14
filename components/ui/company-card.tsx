@@ -29,14 +29,14 @@ export function CompanyCard() {
 
                {/* Content */}
                <div className="flex-1 flex flex-col items-center gap-2 mb-8 w-full">
-                    <h3 className="text-2xl font-bold text-white tracking-tight uppercase" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                    <h3 className="text-[26px] font-bold text-white tracking-tight uppercase" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                          Kshatra Labs
                     </h3>
 
                     {/* Bold Line */}
                     <div className="w-12 h-1 bg-defense-accent rounded-full my-3 group-hover:w-24 transition-all duration-500" />
 
-                    <p className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase font-mono">
+                    <p className="text-[13px] font-bold text-gray-400 tracking-[0.2em] uppercase font-mono">
                          Defence Technology
                     </p>
                </div>
@@ -49,8 +49,8 @@ export function CompanyCard() {
                          rel="noopener noreferrer"
                          className="flex-1 flex items-center justify-center gap-3 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-200 group/btn"
                     >
-                         <Linkedin className="w-5 h-5 text-white/60 group-hover/btn:text-white transition-colors" />
-                         <span className="text-sm font-bold text-white/60 group-hover/btn:text-white transition-colors uppercase tracking-wider">
+                         <Linkedin className="w-6 h-6 text-white/60 group-hover/btn:text-white transition-colors" />
+                         <span className="text-[15px] font-bold text-white/60 group-hover/btn:text-white transition-colors uppercase tracking-wider">
                               LinkedIn
                          </span>
                     </a>

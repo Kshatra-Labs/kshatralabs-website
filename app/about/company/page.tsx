@@ -31,14 +31,14 @@ export default function CompanyPage() {
                                              className="flex items-center gap-2 mb-4"
                                         >
                                              <div className="w-8 h-[1px] bg-white/20"></div>
-                                             <span className="text-xs font-mono uppercase tracking-[0.4em] text-white/40">About Kshatra Labs</span>
+                                             <span className="text-[13px] font-mono uppercase tracking-[0.4em] text-white/40">About Kshatra Labs</span>
                                         </motion.div>
 
                                         <motion.h1
                                              initial={{ opacity: 0, y: 30 }}
                                              animate={{ opacity: 1, y: 0 }}
                                              transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                                             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.9]"
+                                             className="text-[51px] md:text-[77px] lg:text-[102px] font-bold tracking-tighter uppercase leading-[0.9]"
                                              style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                         >
                                              Defending <br />
@@ -49,7 +49,7 @@ export default function CompanyPage() {
                                              initial={{ opacity: 0, y: 20 }}
                                              animate={{ opacity: 1, y: 0 }}
                                              transition={{ duration: 0.8, delay: 0.3 }}
-                                             className="text-lg text-neutral-300 font-light max-w-2xl leading-relaxed drop-shadow-md"
+                                             className="text-[19px] text-neutral-300 font-light max-w-2xl leading-relaxed drop-shadow-md"
                                         >
                                              Kshatra Labs is focused on building the next generation of autonomous aerial defence systems. As drones become faster, cheaper, and more accessible, the threat they pose to critical infrastructure, military operations, and public safety continues to grow. Our goal is to develop intelligent systems capable of detecting, tracking, and neutralizing aerial threats in real time.
                                         </motion.p>
@@ -77,10 +77,10 @@ export default function CompanyPage() {
                          {/* 2. MISSION & APPROACH */}
                          <div className="grid md:grid-cols-2 gap-16">
                               <div className="space-y-6">
-                                   <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                   <h2 className="text-[32px] md:text-[38px] font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                         Our <span className="text-blue-400 text-glow-blue">Mission</span>
                                    </h2>
-                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-[21px] text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              At Kshatra Labs, we engineer true autonomous defence platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, maintaining human supervision while keeping operators entirely out of harm&apos;s way.
                                         </p>
@@ -91,10 +91,10 @@ export default function CompanyPage() {
                               </div>
 
                               <div className="space-y-6">
-                                   <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                   <h2 className="text-[32px] md:text-[38px] font-bold uppercase tracking-tight text-white mb-6" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                         Our <span className="text-emerald-500 text-glow-green">Approach</span>
                                    </h2>
-                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-[21px] text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              We focus on building systems that are autonomous, scalable, and cost-efficient.
                                         </p>
@@ -120,10 +120,10 @@ export default function CompanyPage() {
 
                               <div className="relative z-10 max-w-5xl space-y-12">
                                    <div className="space-y-4">
-                                        <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-white" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                        <h2 className="text-[38px] md:text-[51px] font-bold uppercase tracking-tighter text-white" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                              Technology Focus
                                         </h2>
-                                        <p className="text-xl text-neutral-400 leading-relaxed font-light max-w-3xl">
+                                        <p className="text-[21px] text-neutral-400 leading-relaxed font-light max-w-3xl">
                                              Kshatra Labs focuses on the development of advanced technologies at the intersection of AI, robotics, and autonomous systems.
                                         </p>
                                         <div className="h-[2px] w-24 bg-blue-500/50 group-hover:w-48 transition-all duration-700 mt-6"></div>
@@ -141,8 +141,8 @@ export default function CompanyPage() {
                                                   key={label}
                                                   className="p-6 bg-black/50 border border-white/10 backdrop-blur-xl rounded-2xl flex flex-col gap-4 hover:bg-white/5 transition-colors group/item"
                                              >
-                                                  <Icon className="w-6 h-6 text-blue-400" />
-                                                  <span className="font-mono text-sm leading-relaxed text-neutral-300 group-hover/item:text-white transition-colors">
+                                                  <Icon className="w-7 h-7 text-blue-400" />
+                                                  <span className="font-mono text-[15px] leading-relaxed text-neutral-300 group-hover/item:text-white transition-colors">
                                                        {label}
                                                   </span>
                                              </div>
@@ -156,11 +156,11 @@ export default function CompanyPage() {
                               <div className="space-y-6">
                                    <div className="flex items-center gap-4 mb-8">
                                         <Target className="w-8 h-8 text-defense-accent" />
-                                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-0" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                        <h2 className="text-[26px] md:text-[32px] font-bold uppercase tracking-tight text-white mb-0" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                              Why It Matters
                                         </h2>
                                    </div>
-                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-[21px] text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              The nature of warfare is evolving rapidly, with asymmetric threats challenging traditional defence paradigms. True deterrence now requires systems that are as adaptable and scalable as the threats they counter. Intelligent, cost-effective defence networks will form the backbone of future security.
                                         </p>
@@ -173,11 +173,11 @@ export default function CompanyPage() {
                               <div className="space-y-6">
                                    <div className="flex items-center gap-4 mb-8">
                                         <Network className="w-8 h-8 text-emerald-500" />
-                                        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-0" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                        <h2 className="text-[26px] md:text-[32px] font-bold uppercase tracking-tight text-white mb-0" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                              Future Vision
                                         </h2>
                                    </div>
-                                   <div className="text-xl text-neutral-300 leading-relaxed font-light space-y-6">
+                                   <div className="text-[21px] text-neutral-300 leading-relaxed font-light space-y-6">
                                         <p>
                                              While our immediate focus includes autonomous kinetic interception, our longer-term vision extends to a comprehensive ecosystem of intelligent, cost-effective autonomous systems. We are building the foundation for mass-manufacturable, collaborative autonomous machines capable of operating reliably in contested environments.
                                         </p>

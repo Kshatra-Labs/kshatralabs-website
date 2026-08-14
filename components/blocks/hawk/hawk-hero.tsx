@@ -114,19 +114,19 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                          <div className="lg:col-span-7 space-y-6">
                               <div className="flex items-center gap-3">
                                    <span className="w-2 h-2 bg-[#cc1414]" />
-                                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-neutral-400 font-semibold">
+                                   <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-neutral-400 font-semibold">
                                         High-Speed Drone Interceptor
                                    </span>
                               </div>
 
                               <h1 
-                                   className="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white uppercase leading-[0.9]"
+                                   className="text-[64px] sm:text-[77px] lg:text-[102px] font-extrabold tracking-tight text-white uppercase leading-[0.9]"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    HAWK
                               </h1>
 
-                              <p className="text-xl sm:text-2xl font-light text-neutral-300 max-w-2xl leading-relaxed">
+                              <p className="text-[21px] sm:text-[26px] font-light text-neutral-300 max-w-2xl leading-relaxed">
                                    Fast, reliable protection against hostile drones and incoming networks. Powered by onboard AI vision that tracks and neutralizes threats without needing GPS.
                               </p>
 
@@ -134,15 +134,15 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                    <button
                                         onClick={onRequestBriefing}
                                         style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
-                                        className="group px-8 py-4 bg-white text-black font-mono text-xs font-bold tracking-[0.2em] uppercase hover:bg-[#cc1414] hover:text-white transition-colors duration-200 flex items-center gap-3 rounded-none"
+                                        className="group px-8 py-4 bg-white text-black font-mono text-[13px] font-bold tracking-[0.2em] uppercase hover:bg-[#cc1414] hover:text-white transition-colors duration-200 flex items-center gap-3 rounded-none"
                                    >
                                         <span>Request Technical Briefing</span>
-                                        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                                        <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                                    </button>
 
                                    <a
                                         href="#how-it-works"
-                                        className="px-8 py-4 bg-transparent border border-neutral-800 text-white font-mono text-xs font-bold tracking-[0.2em] uppercase hover:border-neutral-500 transition-colors duration-200"
+                                        className="px-8 py-4 bg-transparent border border-neutral-800 text-white font-mono text-[13px] font-bold tracking-[0.2em] uppercase hover:border-neutral-500 transition-colors duration-200"
                                    >
                                         How It Works
                                    </a>
@@ -172,34 +172,34 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                      {/* Clean Key Performance Indicators */}
                     <div className="mt-20 pt-12 border-t border-neutral-900 grid grid-cols-2 lg:grid-cols-4 gap-8">
                          <div>
-                              <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                              <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
                                    300+ kmph
                               </div>
-                              <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                              <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                    Maximum Flight Speed
                               </div>
                          </div>
                           <div>
-                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                               <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
                                     &lt; 5 ms
                                </div>
-                               <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                               <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                     Target Lock Speed
                                </div>
                           </div>
                           <div>
-                               <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                               <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
                                     1/10th
                                </div>
-                               <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                               <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                     Cost of Missile Defense
                                </div>
                           </div>
                          <div>
-                              <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-mono">
+                              <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
                                    100%
                               </div>
-                              <div className="font-mono text-base uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
+                              <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
                                    Built in India
                               </div>
                          </div>
@@ -208,17 +208,17 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                     <div className="mt-24 border-t border-neutral-900 pt-16">
                          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
                               <div>
-                                   <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
+                                   <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-semibold block mb-2">
                                         Hardware Breakdown
                                    </span>
                                    <h2 
-                                        className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase tracking-tight text-white"
+                                        className="text-[32px] sm:text-[38px] lg:text-[51px] font-bold uppercase tracking-tight text-white"
                                         style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                    >
                                         How HAWK is Built
                                    </h2>
                               </div>
-                              <p className="font-mono text-base text-neutral-400 uppercase tracking-widest">
+                              <p className="font-mono text-[17px] text-neutral-400 uppercase tracking-widest">
                                    Inspect HAWK&apos;s main subsystems and design parameters below
                               </p>
                          </div>
@@ -240,7 +240,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
 
                               {/* Right Details Accordion */}
                               <div className="lg:col-span-5 flex flex-col justify-start space-y-4">
-                                   <div className="font-mono text-xs uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900 flex items-center justify-between">
+                                   <div className="font-mono text-[13px] uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900 flex items-center justify-between">
                                         <span>System Assemblies</span>
                                         <span className="text-[11px] text-neutral-500 font-normal tracking-normal">Scroll or click to inspect</span>
                                    </div>
@@ -260,7 +260,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                             onClick={() => handleHotspotClick(spot)}
                                                             className="w-full flex items-center justify-between py-3 text-left font-mono group cursor-pointer"
                                                        >
-                                                            <span className={`text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                                                            <span className={`text-[15px] font-bold uppercase tracking-wider transition-colors duration-200 ${
                                                                  isOpen ? 'text-white' : 'text-neutral-400 group-hover:text-white'
                                                             }`}>
                                                                  0{index + 1}. {spot.category}
@@ -271,9 +271,9 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                                       : 'bg-neutral-900/80 border-neutral-800 text-neutral-400 group-hover:border-neutral-600 group-hover:text-white'
                                                             }`}>
                                                                  {isOpen ? (
-                                                                      <ChevronUp className="w-4 h-4 stroke-[2.5]" />
+                                                                      <ChevronUp className="w-5 h-5 stroke-[2.5]" />
                                                                  ) : (
-                                                                      <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                                                                      <ChevronDown className="w-5 h-5 stroke-[2.5]" />
                                                                  )}
                                                             </div>
                                                        </button>
@@ -290,17 +290,17 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                                  >
                                                                       <div className="pt-3 pb-2 space-y-4">
                                                                            <h4 
-                                                                                className="text-xl font-bold uppercase tracking-tight text-white"
+                                                                                className="text-[21px] font-bold uppercase tracking-tight text-white"
                                                                                 style={{ fontFamily: 'var(--font-space-grotesk)' }}
                                                                            >
                                                                                 {spot.title}
                                                                            </h4>
-                                                                           <p className="text-lg text-neutral-300 leading-relaxed font-light">
+                                                                           <p className="text-[19px] text-neutral-300 leading-relaxed font-light">
                                                                                 {spot.desc}
                                                                            </p>
 
                                                                            {spot.specs && spot.specs.length > 0 && (
-                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-base">
+                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[17px]">
                                                                                      {spot.specs.map((spec, idx) => (
                                                                                           <div key={idx} className="flex items-center justify-between">
                                                                                                <span className="text-neutral-500 uppercase">{spec.label}</span>
