@@ -131,10 +131,10 @@ export default function ContactUsPage() {
                                                        Located At
                                                   </h3>
                                                   <p className="text-[17px] font-bold font-mono text-black leading-tight">
-                                                       Bangalore, India
+                                                       Yeswanthpur, Bengaluru
                                                   </p>
-                                                  <span className="text-[12px] font-mono uppercase text-neutral-600 block">
-                                                       Autonomous Systems Facility
+                                                  <span className="text-[12px] font-mono uppercase text-neutral-600 block leading-relaxed">
+                                                       Social Alpha, No.62, Industrial Sabar, behind Hyundai Service Station, 2nd Stage, Narasimha Layout, Yeswanthpur, Bengaluru, Karnataka 560022
                                                   </span>
                                              </div>
                                         </div>

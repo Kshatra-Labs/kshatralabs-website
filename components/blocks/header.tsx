@@ -55,17 +55,17 @@ const menuItems: NavItem[] = [
           href: '/products/hawk',
           generalInfo: {
                title: 'About',
-               desc: 'A family of autonomous systems, powered by advanced tactical AI, that provide integrated, persistent awareness and security for land regions, borders, and critical infrastructure.'
+               desc: 'A family of autonomous systems and subsystems, powered by advanced autonomy, that provide integrated, persistent awareness and security across different domains and critical infrastructure.'
           },
           megaMenuColumns: [
                {
-                    title: 'INTERCEPTORS',
+                    title: 'AERIAL INTERCEPTORS',
                     items: [
                          { name: 'HAWK', href: '/products/hawk', desc: 'Our flagship high-speed kinetic interceptor designed to neutralize aerial threats with precision and scale.' }
                     ]
                },
                {
-                    title: 'TACTICAL AUTONOMY',
+                    title: 'AUTONOMY',
                     items: [
                          { name: 'APEX', href: '/products', desc: 'Intelligent edge-compute node that processes sensor data in real-time to enable autonomous decision making.', comingSoon: true }
                     ]

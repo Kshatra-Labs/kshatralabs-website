@@ -111,21 +111,21 @@ function RoleCard({
                >
                     <div className="space-y-2">
                          <div className="flex items-center gap-3">
-                              <span className="font-mono text-[11px] uppercase tracking-widest text-defense-accent">
+                              <span className="font-mono text-[13px] uppercase tracking-widest text-defense-accent">
                                    {String(id).padStart(2, '0')} {" //"}
                               </span>
                          </div>
-                         <h3 className="text-[21px] md:text-[26px] font-bold font-mono uppercase group-hover:text-white transition-colors">
+                         <h3 className="text-[23px] md:text-[29px] font-bold font-mono uppercase group-hover:text-white transition-colors">
                               {title}
                          </h3>
-                         <div className="flex gap-4 font-mono text-[11px] uppercase tracking-widest text-white">
+                         <div className="flex gap-4 font-mono text-[13px] uppercase tracking-widest text-white">
                               <span>Bangalore</span>
                               <span>Internship</span>
                          </div>
                     </div>
 
                     <div className="flex items-center gap-4 flex-shrink-0">
-                         <span className="hidden md:inline font-mono text-[13px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">
+                         <span className="hidden md:inline font-mono text-[15px] uppercase tracking-widest text-neutral-500 group-hover:text-white transition-colors">
                               {isOpen ? 'Close' : 'View Role'}
                          </span>
                          <motion.div
@@ -151,14 +151,14 @@ function RoleCard({
                          >
                               <div className="px-6 md:px-8 pb-6 md:pb-8 border-t border-white/10">
                                    <div className="pt-6 space-y-3 mb-8">
-                                        <h4 className="font-mono text-[13px] uppercase tracking-widest text-defense-accent mb-4">
+                                        <h4 className="font-mono text-[15px] uppercase tracking-widest text-defense-accent mb-4">
                                              What You&apos;ll Work On
                                         </h4>
                                         <ul className="space-y-3">
                                              {responsibilities.map((item, idx) => {
                                                   const isHeader = item.startsWith('HEADER:');
                                                   return (
-                                                       <li key={idx} className={`flex items-start gap-3 text-neutral-300 text-[15px] leading-relaxed ${isHeader ? 'mt-6 mb-2 font-mono text-[13px] uppercase tracking-widest text-defense-accent font-bold' : ''}`}>
+                                                       <li key={idx} className={`flex items-start gap-3 text-neutral-300 text-[17px] leading-relaxed ${isHeader ? 'mt-6 mb-2 font-mono text-[15px] uppercase tracking-widest text-defense-accent font-bold' : ''}`}>
                                                             {!isHeader && <CheckCircle2 className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />}
                                                             {isHeader ? item.replace('HEADER:', '') : item}
                                                        </li>
@@ -171,7 +171,7 @@ function RoleCard({
                                         href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest cursor-pointer"
+                                        className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[17px] font-bold uppercase tracking-widest cursor-pointer"
                                    >
                                         Apply Now <ArrowRight className="w-5 h-5" />
                                    </a>
@@ -207,17 +207,17 @@ export default function CareersPage() {
 
                     {/* 1. HERO SECTION */}
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
-                         <h1 className="text-[51px] md:text-[77px] lg:text-[102px] font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                         <h1 className="text-[56px] md:text-[84px] lg:text-[110px] font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                               Build the future of <br />
                               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20 [-webkit-text-stroke:1px_rgba(255,255,255,0.3)]">Autonomous Defence</span>
                          </h1>
 
                          <div className="grid md:grid-cols-2 gap-12 mt-12 border-t border-white/10 pt-10">
-                              <p className="text-[21px] md:text-[26px] text-neutral-300 font-medium leading-relaxed">
+                              <p className="text-[23px] md:text-[29px] text-neutral-300 font-medium leading-relaxed">
                                    Join a team engineering AI-native autonomous systems designed to operate in contested environments across air, land, and sea.
                               </p>
                               <div className="space-y-8">
-                                   <p className="text-[19px] text-neutral-400 leading-relaxed font-light">
+                                   <p className="text-[21px] text-neutral-400 leading-relaxed font-light">
                                         We are building machines that sense, decide, and act at machine speed. We are an early-stage startup building the founding engineering team.
                                    </p>
                                    <a href="#open-roles" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors uppercase cursor-pointer">
@@ -232,33 +232,33 @@ export default function CareersPage() {
                      <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
                           <div className="mb-16 space-y-6 max-w-3xl">
                                <div className="space-y-4">
-                                    <h2 className="text-[32px] md:text-[51px] font-bold font-mono uppercase tracking-tight">Why Work With Us</h2>
+                                    <h2 className="text-[35px] md:text-[56px] font-bold font-mono uppercase tracking-tight">Why Work With Us</h2>
                                     <div className="h-1 w-24 bg-defense-accent"></div>
                                </div>
-                               <p className="text-[21px] text-neutral-300 font-light leading-relaxed">
+                               <p className="text-[23px] text-neutral-300 font-light leading-relaxed">
                                     We are building autonomous defence systems from the ground up — and assembling a small team of engineers capable of solving some of the hardest problems in robotics and AI.
                                </p>
                           </div>
 
                           <div className="grid md:grid-cols-2 gap-6">
                                <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
-                                    <div className="text-defense-accent font-mono text-[15px] mb-4">01 //</div>
-                                    <h3 className="text-[26px] font-bold font-mono uppercase mb-3">Mission Impact</h3>
+                                    <div className="text-defense-accent font-mono text-[17px] mb-4">01 //</div>
+                                    <h3 className="text-[29px] font-bold font-mono uppercase mb-3">Mission Impact</h3>
                                     <p className="text-neutral-400 leading-relaxed">Work on real-world autonomous systems designed to protect critical infrastructure and national security.</p>
                                </div>
                                <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
-                                    <div className="text-defense-accent font-mono text-[15px] mb-4">02 //</div>
-                                    <h3 className="text-[26px] font-bold font-mono uppercase mb-3">Frontier Engineering</h3>
+                                    <div className="text-defense-accent font-mono text-[17px] mb-4">02 //</div>
+                                    <h3 className="text-[29px] font-bold font-mono uppercase mb-3">Frontier Engineering</h3>
                                     <p className="text-neutral-400 leading-relaxed">Solve frontier engineering problems at the intersection of robotics, AI, autonomy, and aerospace.</p>
                                </div>
                                <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
-                                    <div className="text-defense-accent font-mono text-[15px] mb-4">03 //</div>
-                                    <h3 className="text-[26px] font-bold font-mono uppercase mb-3">Build From First Principles</h3>
+                                    <div className="text-defense-accent font-mono text-[17px] mb-4">03 //</div>
+                                    <h3 className="text-[29px] font-bold font-mono uppercase mb-3">Build From First Principles</h3>
                                     <p className="text-neutral-400 leading-relaxed">We build systems from first principles — tightly integrating hardware, software, and onboard intelligence.</p>
                                </div>
                                <div className="p-8 border border-white/10 bg-neutral-900/30 hover:bg-neutral-900/50 transition-colors group">
-                                    <div className="text-defense-accent font-mono text-[15px] mb-4">04 //</div>
-                                    <h3 className="text-[26px] font-bold font-mono uppercase mb-3">Small Team, Massive Impact</h3>
+                                    <div className="text-defense-accent font-mono text-[17px] mb-4">04 //</div>
+                                    <h3 className="text-[29px] font-bold font-mono uppercase mb-3">Small Team, Massive Impact</h3>
                                     <p className="text-neutral-400 leading-relaxed">Early engineers shape the architecture, capabilities, and direction of next-generation defence platforms.</p>
                                </div>
                           </div>
@@ -269,7 +269,7 @@ export default function CareersPage() {
                     {/* 
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
                          <div className="mb-16 space-y-4">
-                              <h2 className="text-[32px] md:text-[51px] font-bold font-mono uppercase tracking-tight">Engineering Autonomous Defence</h2>
+                              <h2 className="text-[35px] md:text-[56px] font-bold font-mono uppercase tracking-tight">Engineering Autonomous Defence</h2>
                               <div className="h-1 w-24 bg-red-600"></div>
                          </div>
 
@@ -277,26 +277,26 @@ export default function CareersPage() {
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Plane className="w-8 h-8 text-red-500 mb-6" />
-                                   <h3 className="text-[21px] font-bold font-mono uppercase mb-3">Autonomous UAV Interceptors</h3>
-                                   <p className="text-[15px] text-neutral-400 leading-relaxed">High-speed aerial systems designed to detect and neutralize hostile drones.</p>
+                                   <h3 className="text-[23px] font-bold font-mono uppercase mb-3">Autonomous UAV Interceptors</h3>
+                                   <p className="text-[17px] text-neutral-400 leading-relaxed">High-speed aerial systems designed to detect and neutralize hostile drones.</p>
                               </div>
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Cpu className="w-8 h-8 text-red-500 mb-6" />
-                                   <h3 className="text-[21px] font-bold font-mono uppercase mb-3">Edge AI Systems</h3>
-                                   <p className="text-[15px] text-neutral-400 leading-relaxed">Real-time perception and decision-making executed directly onboard the platform.</p>
+                                   <h3 className="text-[23px] font-bold font-mono uppercase mb-3">Edge AI Systems</h3>
+                                   <p className="text-[17px] text-neutral-400 leading-relaxed">Real-time perception and decision-making executed directly onboard the platform.</p>
                               </div>
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Network className="w-8 h-8 text-red-500 mb-6" />
-                                   <h3 className="text-[21px] font-bold font-mono uppercase mb-3">Network Intelligence</h3>
-                                   <p className="text-[15px] text-neutral-400 leading-relaxed">Multi-agent coordination enabling large-scale drone defence.</p>
+                                   <h3 className="text-[23px] font-bold font-mono uppercase mb-3">Network Intelligence</h3>
+                                   <p className="text-[17px] text-neutral-400 leading-relaxed">Multi-agent coordination enabling large-scale drone defence.</p>
                               </div>
                               <div className="relative p-8 border border-white/5 bg-black overflow-hidden group">
                                    <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                    <Eye className="w-8 h-8 text-red-500 mb-6" />
-                                   <h3 className="text-[21px] font-bold font-mono uppercase mb-3">Computer Vision for Robotics</h3>
-                                   <p className="text-[15px] text-neutral-400 leading-relaxed">High-speed vision models enabling real-time object detection and tracking.</p>
+                                   <h3 className="text-[23px] font-bold font-mono uppercase mb-3">Computer Vision for Robotics</h3>
+                                   <p className="text-[17px] text-neutral-400 leading-relaxed">High-speed vision models enabling real-time object detection and tracking.</p>
                               </div>
                          </div>
                     </section>
@@ -309,15 +309,15 @@ export default function CareersPage() {
 
                          <div className="mb-16 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                               <div className="space-y-4">
-                                   <h2 className="text-[32px] md:text-[51px] font-bold font-mono uppercase tracking-tight">Open Positions</h2>
+                                   <h2 className="text-[35px] md:text-[56px] font-bold font-mono uppercase tracking-tight">Open Positions</h2>
                                    <div className="h-1 w-24 bg-defense-accent"></div>
-                                   <p className="text-white font-mono text-[15px] uppercase tracking-widest">
+                                   <p className="text-white font-mono text-[17px] uppercase tracking-widest">
                                         Bangalore, India · Internship
                                    </p>
                               </div>
                               <Link
                                    href="/careers/jd"
-                                   className="inline-flex items-center justify-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest cursor-pointer whitespace-nowrap w-full md:w-auto mt-4 md:mt-0"
+                                   className="inline-flex items-center justify-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[17px] font-bold uppercase tracking-widest cursor-pointer whitespace-nowrap w-full md:w-auto mt-4 md:mt-0"
                               >
                                    View Full Job Description <ArrowRight className="w-5 h-5" />
                               </Link>
@@ -336,29 +336,29 @@ export default function CareersPage() {
 
                          {/* Skill Set Requirements */}
                          <div className="mt-12 p-8 border border-defense-accent/20 bg-defense-accent/5 rounded-2xl relative z-10 backdrop-blur-sm">
-                              <h3 className="text-[21px] font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
+                              <h3 className="text-[23px] font-bold font-mono uppercase mb-4 text-defense-accent">Who We Are Looking For</h3>
                               <p className="text-neutral-300 leading-relaxed font-light mb-4">
                                    As a <strong className="text-white">Defence Robotics Company</strong> our primary motive is to build bleeding-edge autonomous robotic systems second to none.
                               </p>
                               <p className="text-neutral-300 leading-relaxed font-light mb-6">
                                    You don’t need to know everything, but strong hands-on project experience in a few of the domains below will make you stand out:
                               </p>
-                              <div className="flex flex-wrap gap-2.5 font-mono text-[13px] text-neutral-400">
+                              <div className="flex flex-wrap gap-3 font-mono text-[17px] font-bold text-neutral-300">
                                    {[
                                         // Software & AI
-                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'APIs', 'Model Deployment', 'GPU Acceleration', 'Edge Computing',
+                                        'Python', 'C++', 'PyTorch/TensorFlow', 'Data Pipelines', 'Model Deployment', 'GPU Programming', 'Edge Computing', 'Computer Vision', 'SLAM',
                                         // Robotics & Controls
-                                        'ROS/ROS2', 'Gazebo', 'Control Systems', 'PX4/ArduPilot', 'Flight Controllers',
+                                        'ROS2', 'Robotics Simulation', 'Control Systems', 'PX4/ArduPilot', 'State Estimation', 'Path Planning',
                                         // Mechanical & CAD
-                                        'SolidWorks/CATIA', 'AutoCAD/FreeCAD API', 'FEA (ANSYS)', 'GD&T',
+                                        'SolidWorks/Fusion360', 'FEA/CFD', 'Structural Design', 'Manufacturing (CNC/3D Printing)',
                                         // Embedded & Hardware
-                                        'Microcontrollers', 'Sensors & Actuators', 'PCBs & Schematics', 'Hardware Debugging',
+                                        'Microcontrollers', 'Sensors & Actuators', 'PCBs', 'Power Electronics', 'Embedded Linux', 'Hardware Debugging',
                                         // RF & Comms
-                                        'SDR', 'RF Simulation', 'Antennas', 'Link Budgets',
+                                        'SDR', 'RF Simulation', 'Link Budgets', 'Wireless Protocols',
                                         // General Engineering
-                                        'Rapid Prototyping', 'Benchmarking'
+                                        'Systems Integration', 'Test & Validation'
                                    ].map(skill => (
-                                        <span key={skill} className="px-3 py-1.5 bg-black/40 border border-white/10 rounded-full hover:border-white/30 hover:text-white transition-colors cursor-default">{skill}</span>
+                                        <span key={skill} className="px-4 py-2 bg-black/40 border border-white/10 rounded-full hover:border-white/30 hover:text-white transition-colors cursor-default">{skill}</span>
                                    ))}
                               </div>
                          </div>
@@ -368,8 +368,8 @@ export default function CareersPage() {
                     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
                          <div className="grid md:grid-cols-2 gap-16 border-t border-white/10 pt-16">
                               <div>
-                                   <h2 className="text-[32px] md:text-[51px] font-bold font-mono uppercase tracking-tight mb-8">Our Engineering Culture</h2>
-                                   <div className="space-y-6 text-[19px] text-neutral-300 leading-relaxed font-light">
+                                   <h2 className="text-[35px] md:text-[56px] font-bold font-mono uppercase tracking-tight mb-8">Our Engineering Culture</h2>
+                                   <div className="space-y-6 text-[21px] text-neutral-300 leading-relaxed font-light">
                                         <p>
                                              We believe the future of defence will be autonomous, software-defined, and AI-native.
                                         </p>
@@ -379,8 +379,8 @@ export default function CareersPage() {
                                    </div>
                               </div>
                               <div className="bg-neutral-900/20 p-8 border-l border-white/10">
-                                   <h3 className="text-[15px] font-mono text-defense-accent tracking-[0.2em] uppercase mb-8">Core Principles</h3>
-                                   <ul className="space-y-6 font-mono text-white text-[15px] md:text-[17px] uppercase">
+                                   <h3 className="text-[17px] font-mono text-defense-accent tracking-[0.2em] uppercase mb-8">Core Principles</h3>
+                                   <ul className="space-y-6 font-mono text-white text-[17px] md:text-[19px] uppercase">
                                         <li className="flex items-start gap-4">
                                              <span className="text-blue-500 mt-0.5">■</span> Ship working systems, not prototypes
                                         </li>
@@ -402,7 +402,7 @@ export default function CareersPage() {
                     {/* 
                      <section className="px-6 md:px-12 max-w-7xl mx-auto mb-32">
                           <div className="mb-16 space-y-4">
-                               <h2 className="text-[32px] md:text-[51px] font-bold font-mono uppercase tracking-tight">Hiring Process</h2>
+                               <h2 className="text-[35px] md:text-[56px] font-bold font-mono uppercase tracking-tight">Hiring Process</h2>
                                <div className="h-1 w-24 bg-defense-accent"></div>
                           </div>
 
@@ -416,11 +416,11 @@ export default function CareersPage() {
                                     { step: "4", title: "Offer", desc: "Join the team building the next generation of autonomous defence systems." }
                                ].map((item) => (
                                     <div key={item.step} className="relative z-10 bg-black pt-4 md:pt-0">
-                                         <div className="w-14 h-14 bg-black border border-white/20 flex items-center justify-center font-mono text-[21px] font-bold text-defense-accent mb-6">
+                                         <div className="w-14 h-14 bg-black border border-white/20 flex items-center justify-center font-mono text-[23px] font-bold text-defense-accent mb-6">
                                               {item.step}
                                          </div>
-                                         <h3 className="text-[19px] font-bold font-mono uppercase mb-3">{item.title}</h3>
-                                         <p className="text-neutral-400 text-[15px] leading-relaxed">{item.desc}</p>
+                                         <h3 className="text-[21px] font-bold font-mono uppercase mb-3">{item.title}</h3>
+                                         <p className="text-neutral-400 text-[17px] leading-relaxed">{item.desc}</p>
                                     </div>
                                ))}
                           </div>
@@ -429,10 +429,10 @@ export default function CareersPage() {
 
                     {/* 7. FINAL CALL TO ACTION */}
                     <section className="px-6 md:px-12 max-w-4xl mx-auto text-center border-t border-white/10 pt-24">
-                         <h2 className="text-[38px] md:text-[64px] font-black font-mono tracking-tighter uppercase mb-6 drop-shadow-lg">
+                         <h2 className="text-[42px] md:text-[70px] font-black font-mono tracking-tighter uppercase mb-6 drop-shadow-lg">
                               Join <span className="text-blue-500">The Team</span>
                          </h2>
-                         <p className="text-[19px] md:text-[21px] text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                         <p className="text-[21px] md:text-[23px] text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
                               If you want to work on some of the hardest engineering problems in robotics, AI, and autonomous defence — we want to hear from you.
                          </p>
 
@@ -440,7 +440,7 @@ export default function CareersPage() {
                               <button onClick={handleApplyClick} className="px-10 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors uppercase w-full sm:w-auto text-center cursor-pointer">
                                    Apply Now
                               </button>
-                              <div className="flex flex-col items-center sm:items-start text-[15px] font-mono text-neutral-400">
+                              <div className="flex flex-col items-center sm:items-start text-[17px] font-mono text-neutral-400">
                                    <button onClick={handleApplyClick} className="hover:text-white transition-colors cursor-pointer">careers@kshatralabs.in</button>
                                    <span>Bangalore, India</span>
                               </div>
