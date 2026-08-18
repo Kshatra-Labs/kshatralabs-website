@@ -25,7 +25,7 @@ export default function HawkProductPage() {
      const [isBriefingOpen, setIsBriefingOpen] = useState(false)
 
      return (
-          <div className="relative min-h-screen bg-[#030303] text-white selection:bg-[#2563EB]/30 font-sans overflow-x-hidden">
+          <div className="relative min-h-screen bg-[#030303] text-white selection:bg-[#cc1414]/30 font-sans overflow-x-hidden">
                {/* Apple-Style Navigation Header */}
                <Header />
 

@@ -28,7 +28,7 @@ const MISSION_PHASES: MissionPhase[] = [
           stepNumber: '01',
           title: 'Target Detection & Tracking',
           subtitle: 'Ground Radar Cueing',
-          desc: 'Before launch, HAWK is cued entirely by ground-based radar. As soon as a hostile drone enters the coverage area, the radar detects and continuously tracks it, handing the live target track to HAWK ahead of launch. Onboard cameras are not part of this step — they take over later, once HAWK is airborne and closing on the target.',
+          desc: 'Before launch, HAWK is cued entirely by ground-based radar. As soon as a hostile drone enters the coverage area, the radar detects and continuously tracks it, handing the live target track to HAWK ahead of launch.',
           bulletPoints: [
                'Detection and tracking at this stage are handled entirely by ground-based radar',
                'Radar continuously tracks target position, speed, and heading in real time',

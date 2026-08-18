@@ -158,7 +158,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                          <div className="lg:col-span-5 relative flex items-center justify-center pt-8 lg:pt-0">
                               <div className="relative w-[360px] sm:w-[440px] lg:w-[500px] h-[360px] sm:h-[440px] lg:h-[500px] flex items-center justify-center">
                                    {/* Subtle Red/Blue Speed Glow behind the flying drone */}
-                                   <div className="absolute inset-0 bg-gradient-to-tr from-[#cc1414]/15 via-transparent to-[#2563EB]/15 rounded-full blur-[90px] pointer-events-none" />
+                                   <div className="absolute inset-0 bg-gradient-to-tr from-[#cc1414]/15 via-transparent to-[#FF0000]/15 rounded-full blur-[90px] pointer-events-none" />
                                    
                                    {/* Drone photo tilted vertically left to look like high-speed flight */}
                                    <div className="relative w-full h-full transform -rotate-[45deg] scale-110 hover:scale-115 hover:-rotate-[48deg] transition-all duration-700 ease-out flex items-center justify-center pointer-events-none sm:pointer-events-auto">
