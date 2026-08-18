@@ -26,15 +26,15 @@ const MISSION_PHASES: MissionPhase[] = [
      {
           id: 'detection',
           stepNumber: '01',
-          title: 'Target Detection & Tracking',
-          subtitle: 'Ground Radar Cueing',
-          desc: 'Before launch, HAWK is cued entirely by ground-based radar. As soon as a hostile drone enters the coverage area, the radar detects and continuously tracks it, handing the live target track to HAWK ahead of launch.',
+          title: 'Target Identification',
+          subtitle: 'Radar & Camera Integration',
+          desc: 'Before launch, HAWK connects directly to perimeter radars and sentry cameras. As soon as an enemy drone or incoming network enters the area, the command system tracks its exact speed and direction in real time.',
           bulletPoints: [
                'Detection and tracking at this stage are handled entirely by ground-based radar',
                'Radar continuously tracks target position, speed, and heading in real time',
                'The live target track is handed to HAWK ahead of launch'
           ],
-          videoUrl: '/video/demo.mp4',
+          videoUrl: '/video/steps/step1_25sec.mp4',
           telemetryData: [
                { label: 'Cueing Method', val: 'Ground-Based Radar Track' },
                { label: 'Handoff', val: 'Pre-Launch Target Assignment' },
@@ -44,15 +44,15 @@ const MISSION_PHASES: MissionPhase[] = [
      {
           id: 'launch',
           stepNumber: '02',
-          title: 'High-Acceleration Takeoff',
-          subtitle: 'Ground-Launched, Electric',
-          desc: 'HAWK launches from the ground — no tower, catapult, or launch tube required. Custom high-torque electric motors accelerate the interceptor toward the target, reaching 300 km/h in under three seconds.',
+          title: 'Target Tracking',
+          subtitle: 'High Performance Tracking',
+          desc: 'HAWK launches straight up from its weather-sealed container. Custom high-torque electric motors instantly vector the interceptor toward the target, reaching 300+ kmph in under two seconds.',
           bulletPoints: [
                'Ground-launched from a compact pad — deployable on the ground, rooftops, or vehicles',
                'Electric motor thrust vectors immediately in any direction after takeoff',
                'Launches reliably in high winds, extreme cold, or desert heat'
           ],
-          videoUrl: '/video/main-video.mp4',
+          videoUrl: '/video/demo.mp4',
           telemetryData: [
                { label: 'Launch Method', val: 'Ground Launch' },
                { label: 'Launch Readiness', val: '< 5 Seconds from Command' },
@@ -190,7 +190,7 @@ export function HawkMissionSimulation() {
                                         {activePhase.id === 'detection' ? 'Radar Feed' : 'Camera Feed'}: Step {activePhase.stepNumber}
                                    </div>
                                    <div className="px-3 py-1 bg-black/85 border border-neutral-800 text-[#cc1414] font-bold">
-                                        LIVE FEED
+                                        120 FPS
                                    </div>
                               </div>
                          </div>
