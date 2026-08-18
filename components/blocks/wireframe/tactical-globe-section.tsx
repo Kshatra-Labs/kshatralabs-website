@@ -25,16 +25,16 @@ export function TacticalGlobeSection({ onContactClick }: TacticalGlobeSectionPro
           <div className="relative w-full bg-[#080808] border border-[#1B1B1D] p-6 md:p-10 lg:p-12">
             
             {/* Absolute Tactical Brackets (L-shaped corners, 4px stroke length, pinned to corners) */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-zinc-500 pointer-events-none z-20" />
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-zinc-500 pointer-events-none z-20" />
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-zinc-500 pointer-events-none z-20" />
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-zinc-500 pointer-events-none z-20" />
+            <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-zinc-500 pointer-events-none z-20" />
+            <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-zinc-500 pointer-events-none z-20" />
+            <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-zinc-500 pointer-events-none z-20" />
+            <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-zinc-500 pointer-events-none z-20" />
 
             {/* Tactical Metadata & Telemetry HUD Bar (Top) */}
             <div className="flex justify-end border-b border-white/5 pb-6 mb-8 font-mono">
               {/* Bangalore HQ Locator Badge */}
               <div
-                className={`px-6 py-2.5 border transition-all duration-300 flex items-center gap-3 text-sm md:text-base tracking-[0.25em] ${
+                className={`px-6 py-2.5 border transition-all duration-300 flex items-center gap-3 text-[15px] md:text-[17px] tracking-[0.25em] ${
                   coords.isBangaloreVisible
                     ? 'border-[#FF0000]/80 bg-[#FF0000]/15 text-[#FF0000] shadow-[0_0_20px_rgba(255,0,0,0.35)] font-bold'
                     : 'border-white/10 bg-white/[0.02] text-neutral-400 font-medium'
@@ -50,11 +50,11 @@ export function TacticalGlobeSection({ onContactClick }: TacticalGlobeSectionPro
               
               {/* Left Column: Ready for the Autonomous Era? */}
               <div className="lg:col-span-5 space-y-8 text-left">
-                <h2 className="text-4xl md:text-5xl font-bold font-mono uppercase tracking-tight text-white leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                <h2 className="text-[38px] md:text-[51px] font-bold font-mono uppercase tracking-tight text-white leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                   Ready for the <span className="text-[#FF0000]">Autonomous Era?</span>
                 </h2>
 
-                <p className="text-neutral-300 text-lg md:text-xl font-light leading-relaxed font-sans">
+                <p className="text-neutral-300 text-[19px] md:text-[21px] font-light leading-relaxed font-sans">
                   Deploy systems that adapt, learn, and overcome in the world&apos;s most challenging environments.
                 </p>
 
@@ -62,12 +62,12 @@ export function TacticalGlobeSection({ onContactClick }: TacticalGlobeSectionPro
                   <button
                     onClick={onContactClick}
                     style={{ clipPath: 'polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px)' }}
-                    className="w-full sm:w-auto px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer rounded-none uppercase text-sm shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                    className="w-full sm:w-auto px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer rounded-none uppercase text-[15px] shadow-[0_0_20px_rgba(255,255,255,0.15)]"
                   >
                     REQUEST A BRIEFING →
                   </button>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 text-neutral-300 font-mono text-xs md:text-sm pt-2 border-t border-white/10">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 text-neutral-300 font-mono text-[13px] md:text-[15px] pt-2 border-t border-white/10">
                     <a href="tel:+919730458528" className="hover:text-white transition-colors flex items-center gap-2 text-white font-bold">
                       +91 9730458528
                     </a>

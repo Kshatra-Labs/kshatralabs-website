@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
-import { BackgroundPaths } from "@/components/ui/background-paths"
 import { ShinyButton } from '@/components/ui/shiny-button'
 
 export default function ProductsPage() {
@@ -19,20 +18,11 @@ export default function ProductsPage() {
 
                <main className="relative z-10 pt-32 md:pt-40 pb-24 min-h-screen flex flex-col justify-between">
                     <section className="px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
-                         <motion.div
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.8, ease: "easeOut" }}
-                              className="inline-block px-3 py-1 bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-widest text-defense-accent mb-8"
-                         >
-                              Status: Classified Development
-                         </motion.div>
-
                          <motion.h1
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                              className="text-5xl md:text-7xl lg:text-8xl font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8"
+                              className="text-[51px] md:text-[77px] lg:text-[102px] font-black font-heading uppercase tracking-tighter leading-[0.9] mb-8"
                               style={{ fontFamily: 'var(--font-space-grotesk)' }}
                          >
                               Products <br />
@@ -45,7 +35,7 @@ export default function ProductsPage() {
                               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                               className="max-w-3xl mx-auto space-y-12"
                          >
-                              <p className="text-xl md:text-2xl text-neutral-300 font-medium leading-relaxed">
+                              <p className="text-[21px] md:text-[26px] text-neutral-300 font-medium leading-relaxed">
                                    We are engineering the next generation of autonomous physical intelligence.
                               </p>
 
@@ -58,7 +48,7 @@ export default function ProductsPage() {
                                         </ShinyButton>
                                    </div>
 
-                                   <p className="text-lg text-neutral-400 leading-relaxed font-light font-mono uppercase tracking-widest px-4">
+                                   <p className="text-[19px] text-neutral-400 leading-relaxed font-light font-mono uppercase tracking-widest px-4">
                                         Our systems are currently in classified development and field testing.
                                    </p>
                               </div>
@@ -68,12 +58,12 @@ export default function ProductsPage() {
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ duration: 1.5, delay: 1 }}
-                              className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40"
+                              className="mt-24 grid grid-cols-3 gap-8 opacity-40"
                          >
-                              {['HAWK', 'HAWKEYE', 'APEX', 'NETWORK'].map((platform) => (
+                              {['HAWK', 'APEX', 'HAWKEYE'].map((platform) => (
                                    <div key={platform} className="flex flex-col items-center gap-2">
                                         <div className="w-1.5 h-1.5 bg-defense-accent rounded-full animate-pulse"></div>
-                                        <span className="font-mono text-[10px] tracking-[0.3em] font-bold">{platform}</span>
+                                        <span className="font-mono text-[11px] tracking-[0.3em] font-bold">{platform}</span>
                                    </div>
                               ))}
                          </motion.div>

@@ -21,7 +21,7 @@ export default function Partners() {
 
                {/* Header */}
                <div className="max-w-7xl mx-auto px-6 mb-10 text-center">
-                    <h2 className="text-xl md:text-2xl font-bold font-mono uppercase tracking-widest text-white/80">
+                    <h2 className="text-[21px] md:text-[26px] font-bold font-mono uppercase tracking-widest text-white/80">
                          Partners &amp; Supporters
                     </h2>
                </div>
@@ -60,7 +60,7 @@ export default function Partners() {
                                         </div>
 
                                         {/* Name */}
-                                        <span className="text-[10px] md:text-[12px] font-mono text-neutral-500 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                                        <span className="text-[13px] md:text-[15px] font-mono font-bold text-neutral-400 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                                              {partner.name}
                                         </span>
                                    </div>

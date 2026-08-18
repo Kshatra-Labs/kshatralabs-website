@@ -33,35 +33,35 @@ export default function HowToPage() {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <span className="w-2 h-2 bg-[#cc1414]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#cc1414] font-bold">
+              <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-[#cc1414] font-bold">
                 How-To Collection
               </span>
             </div>
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white"
+              className="text-[38px] sm:text-[51px] lg:text-[64px] font-black uppercase tracking-tight text-white"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Interactive Components
             </h1>
-            <p className="text-lg text-neutral-400 font-light max-w-2xl mt-4 leading-relaxed">
+            <p className="text-[19px] text-neutral-400 font-light max-w-2xl mt-4 leading-relaxed">
               Premium reverse-engineered UI components built with Framer Motion, TailwindCSS, and Media Chrome. Snappy, optimized, and ready to drop in.
             </p>
           </div>
 
           {/* Installation CLI Card */}
           <div className="w-full lg:w-auto min-w-[340px] bg-[#050505] border border-neutral-800 p-5 rounded-2xl">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase text-neutral-500 tracking-wider mb-3">
+            <div className="flex items-center gap-2 font-mono text-[11px] uppercase text-neutral-500 tracking-wider mb-3">
               <Terminal className="w-3.5 h-3.5 text-[#cc1414]" />
               <span>Shadcn CLI Trusted Registry</span>
             </div>
-            <div className="flex items-center justify-between gap-3 bg-black border border-neutral-900 p-3 rounded-lg font-mono text-xs text-neutral-200">
+            <div className="flex items-center justify-between gap-3 bg-black border border-neutral-900 p-3 rounded-lg font-mono text-[13px] text-neutral-200">
               <span className="truncate select-all">{cliCommands[activeTab]}</span>
               <button
                 onClick={() => handleCopy(cliCommands[activeTab])}
                 className="p-1.5 hover:bg-neutral-900 text-neutral-400 hover:text-white rounded transition-colors"
                 title="Copy installation command"
               >
-                {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                {copied ? <Check className="w-5 h-5 text-emerald-400" /> : <Copy className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function HowToPage() {
               setActiveTab("mouse-follower");
               setCopied(false);
             }}
-            className={`px-6 py-4 font-mono text-xs uppercase tracking-widest relative transition-all ${
+            className={`px-6 py-4 font-mono text-[13px] uppercase tracking-widest relative transition-all ${
               activeTab === "mouse-follower" ? "text-white font-bold bg-neutral-900/40" : "text-neutral-500 hover:text-white"
             }`}
           >
@@ -92,7 +92,7 @@ export default function HowToPage() {
               setActiveTab("video-player");
               setCopied(false);
             }}
-            className={`px-6 py-4 font-mono text-xs uppercase tracking-widest relative transition-all ${
+            className={`px-6 py-4 font-mono text-[13px] uppercase tracking-widest relative transition-all ${
               activeTab === "video-player" ? "text-white font-bold bg-neutral-900/40" : "text-neutral-500 hover:text-white"
             }`}
           >
@@ -111,7 +111,7 @@ export default function HowToPage() {
       <main className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Side: Interactive Component Showcase */}
         <div className="lg:col-span-8 border border-neutral-900 rounded-3xl bg-[#030303] overflow-hidden">
-          <div className="p-4 border-b border-neutral-900 bg-[#050505] flex items-center justify-between font-mono text-xs text-neutral-500">
+          <div className="p-4 border-b border-neutral-900 bg-[#050505] flex items-center justify-between font-mono text-[13px] text-neutral-500">
             <span>Interactive Workspace // {activeTab === "mouse-follower" ? "Skiper61" : "Skiper67"}</span>
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-neutral-800" />
@@ -141,12 +141,12 @@ export default function HowToPage() {
               {/* How to use */}
               <div className="space-y-4">
                 <h3
-                  className="text-xl font-bold uppercase tracking-tight text-white"
+                  className="text-[21px] font-bold uppercase tracking-tight text-white"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   How to Use
                 </h3>
-                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-xs text-neutral-300 leading-relaxed overflow-x-auto">
+                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[13px] text-neutral-300 leading-relaxed overflow-x-auto">
                   <span className="text-neutral-500 block mb-2">{"// Import Mouse Follower Components"}</span>
                   <span className="text-[#cc1414]">import</span>{" "}
                   <span>{"{"} SimpleMouseFollow, SpringMouseFollow {"}"}</span>{" "}
@@ -174,12 +174,12 @@ export default function HowToPage() {
               {/* Config parameters */}
               <div className="space-y-4">
                 <h3
-                  className="text-xl font-bold uppercase tracking-tight text-white"
+                  className="text-[21px] font-bold uppercase tracking-tight text-white"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   Parameters & Config
                 </h3>
-                <div className="border border-neutral-900 bg-[#050505] rounded-2xl divide-y divide-neutral-900 font-mono text-xs">
+                <div className="border border-neutral-900 bg-[#050505] rounded-2xl divide-y divide-neutral-900 font-mono text-[13px]">
                   <div className="p-4 flex justify-between">
                     <span className="text-neutral-500">MASS</span>
                     <span className="text-white font-bold">0.1 (Snappy Inertia)</span>
@@ -200,12 +200,12 @@ export default function HowToPage() {
               {/* How to use */}
               <div className="space-y-4">
                 <h3
-                  className="text-xl font-bold uppercase tracking-tight text-white"
+                  className="text-[21px] font-bold uppercase tracking-tight text-white"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   How to Use
                 </h3>
-                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[11px] text-neutral-300 leading-relaxed overflow-x-auto">
+                <div className="bg-[#050505] border border-neutral-800 p-5 rounded-2xl font-mono text-[12px] text-neutral-300 leading-relaxed overflow-x-auto">
                   <span className="text-neutral-500 block mb-2">{"// Import Custom Video Player Components"}</span>
                   <span className="text-[#cc1414]">import</span>{" "}
                   <span>{"{"}</span>
@@ -265,23 +265,23 @@ export default function HowToPage() {
               {/* Sub-components catalog */}
               <div className="space-y-4">
                 <h3
-                  className="text-xl font-bold uppercase tracking-tight text-white"
+                  className="text-[21px] font-bold uppercase tracking-tight text-white"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   Subcomponents
                 </h3>
-                <div className="border border-neutral-900 bg-[#050505] rounded-2xl divide-y divide-neutral-900 font-mono text-xs">
+                <div className="border border-neutral-900 bg-[#050505] rounded-2xl divide-y divide-neutral-900 font-mono text-[13px]">
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayer /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Media-Chrome controller container</div>
+                    <div className="text-neutral-500 text-[12px]">Media-Chrome controller container</div>
                   </div>
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayerContent /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Underlying HTML5 video player element</div>
+                    <div className="text-neutral-500 text-[12px]">Underlying HTML5 video player element</div>
                   </div>
                   <div className="p-3">
                     <div className="text-white font-bold mb-1">&lt;VideoPlayerControlBar /&gt;</div>
-                    <div className="text-neutral-500 text-[11px]">Bottom aligned actions bar container</div>
+                    <div className="text-neutral-500 text-[12px]">Bottom aligned actions bar container</div>
                   </div>
                 </div>
               </div>
@@ -290,14 +290,14 @@ export default function HowToPage() {
 
           {/* Notes & License Info */}
           <div className="bg-neutral-950/40 border border-neutral-900 p-6 rounded-2xl space-y-4">
-            <div className="flex items-center gap-2 text-xs font-semibold text-neutral-400 uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4 text-[#cc1414]" />
+            <div className="flex items-center gap-2 text-[13px] font-semibold text-neutral-400 uppercase tracking-wider">
+              <ShieldCheck className="w-5 h-5 text-[#cc1414]" />
               <span>License & Usage</span>
             </div>
-            <p className="text-xs text-neutral-400 leading-relaxed font-light">
+            <p className="text-[13px] text-neutral-400 leading-relaxed font-light">
               Free to use and modify in personal and commercial projects. Attribution to Skiper UI required when using free tiers.
             </p>
-            <div className="pt-2 border-t border-neutral-900 flex justify-between items-center text-[10px] font-mono text-neutral-500">
+            <div className="pt-2 border-t border-neutral-900 flex justify-between items-center text-[11px] font-mono text-neutral-500">
               <span>Skiper UI Registry 3.0</span>
               <a href="mailto:yo@gxuri.me" className="hover:text-white transition-colors flex items-center gap-1">
                 <span>yo@gxuri.me</span>

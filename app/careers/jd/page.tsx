@@ -15,13 +15,13 @@ export default function JobDescriptionsPage() {
                <div className="relative z-10 pt-32 md:pt-40 pb-24 px-6 md:px-12 max-w-5xl mx-auto">
                     
                     <div className="mb-16">
-                         <Link href="/careers" className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors font-mono text-sm uppercase tracking-widest mb-8">
-                              <ArrowLeft className="w-4 h-4" /> Back to Careers
+                         <Link href="/careers" className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors font-mono text-[15px] uppercase tracking-widest mb-8">
+                              <ArrowLeft className="w-5 h-5" /> Back to Careers
                          </Link>
-                         <h1 className="text-4xl md:text-6xl font-black font-heading uppercase tracking-tighter mb-6">
+                         <h1 className="text-[38px] md:text-[64px] font-black font-heading uppercase tracking-tighter mb-6">
                               Full Job <span className="text-defense-accent">Descriptions</span>
                          </h1>
-                         <div className="space-y-4 text-xl text-neutral-300 font-light leading-relaxed">
+                         <div className="space-y-4 text-[21px] text-neutral-300 font-light leading-relaxed">
                               <p>
                                    <strong className="text-white font-bold">Kshatra Labs</strong> is building the next generation of autonomous robotic systems across air, land, sea, and space. Starting with our flagship product: an AI-powered autonomous aerial interceptor designed for modern counter-UAS threats. Your role directly contributes to our mission of building intelligent machines that can sense, reason, and act autonomously in dynamic, high stakes environments.
                               </p>
@@ -34,7 +34,7 @@ export default function JobDescriptionsPage() {
                          <section>
                               <div className="flex items-center mb-12">
                                    <div className="bg-defense-accent px-6 py-2">
-                                        <h2 className="text-2xl font-bold font-mono uppercase tracking-widest text-black">TECHNICAL</h2>
+                                        <h2 className="text-[26px] font-bold font-mono uppercase tracking-widest text-black">TECHNICAL</h2>
                                    </div>
                                    <div className="h-px bg-white/20 flex-grow ml-6"></div>
                               </div>
@@ -43,9 +43,9 @@ export default function JobDescriptionsPage() {
                                    {/* ROBOTICS ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">Robotic Engineering</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">ROBOTICS Engineer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">Robotic Engineering</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">ROBOTICS Engineer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Working with ROS2. Work with various different Autonomy stacks.</li>
                                              <li>Writing low-level vehicle controllers.</li>
@@ -55,8 +55,8 @@ export default function JobDescriptionsPage() {
                                              <li>Work with multiple high-fidelity simulators, including Gazebo and ISAAC Sim.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -64,9 +64,9 @@ export default function JobDescriptionsPage() {
                                    {/* MECHANICAL ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">Mechanical Engineer</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Mechanical Engineer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">Mechanical Engineer</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Mechanical Engineer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Design the UAV airframe from scratch based on high-level mission and size requirements.</li>
                                              <li>Develop the external geometry with a focus on minimizing aerodynamic drag.</li>
@@ -76,8 +76,8 @@ export default function JobDescriptionsPage() {
                                              <li>Balance aerodynamic efficiency with weight, manufacturability, and structural constraints.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -85,9 +85,9 @@ export default function JobDescriptionsPage() {
                                    {/* DRONE ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">Drone Engineer</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Drone Engineer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">Drone Engineer</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Drone Engineer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Design, assemble, and integrate multirotor and fixed-wing UAV platforms, including airframe, propulsion, avionics, and payloads.</li>
                                              <li>Conduct hands-on R&D on physical drone systems, testing new configurations, materials, and components to improve performance, endurance, and reliability.</li>
@@ -97,8 +97,8 @@ export default function JobDescriptionsPage() {
                                              <li>Document builds, test results, and design changes to support continuous improvement and scale-up.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -106,9 +106,9 @@ export default function JobDescriptionsPage() {
                                    {/* SOFTWARE ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">Software Engineer</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">SOFTWARE Engineer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">Software Engineer</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">SOFTWARE Engineer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
                                         
                                         <div className="mb-8">
                                              <h4 className="text-white font-bold font-mono mb-3">Core Responsibilities:</h4>
@@ -132,38 +132,38 @@ export default function JobDescriptionsPage() {
                                         </div>
 
                                         <div className="mt-8 pt-8 border-t border-white/10">
-                                             <h4 className="text-defense-accent font-bold font-mono tracking-widest uppercase mb-6 text-sm">Notes & Specifics</h4>
+                                             <h4 className="text-defense-accent font-bold font-mono tracking-widest uppercase mb-6 text-[15px]">Notes & Specifics</h4>
                                              <div className="space-y-6">
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Architecture</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous network systems. Experience building Common Operating Picture (COP) software or modern defense tech platforms (e.g., Lattice-style sensor fusion and asset management) is highly desirable.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Architect and develop a scalable, Linux-based Command and Control (C2) platform to supervise and command autonomous network systems. Experience building Common Operating Picture (COP) software or modern defense tech platforms (e.g., Lattice-style sensor fusion and asset management) is highly desirable.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Network operation</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design the overarching network command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., &apos;form a perimeter&apos;, &apos;search this sector&apos;) into distributed tasks for the edge autonomy stacks to execute.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Design the overarching network command interfaces and state machines. You will build the backend logic that translates high-level operator commands (e.g., &apos;form a perimeter&apos;, &apos;search this sector&apos;) into distributed tasks for the edge autonomy stacks to execute.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Networks</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Develop high-performance, low-latency networking architectures in modern C++ and Python on Linux. Must have deep expertise in distributed messaging systems (ROS2) and handling telemetry over degraded or low-bandwidth networks.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Develop high-performance, low-latency networking architectures in modern C++ and Python on Linux. Must have deep expertise in distributed messaging systems (ROS2) and handling telemetry over degraded or low-bandwidth networks.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Sensor fusion</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Build resilient data pipelines to ingest, time-sync, and process external sensor data (Radar, Vision) and MAVLink telemetry from the edge nodes into a unified system state.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Build resilient data pipelines to ingest, time-sync, and process external sensor data (Radar, Vision) and MAVLink telemetry from the edge nodes into a unified system state.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Operator UI</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and build the real-time operator interface for network supervision. Must have experience visualizing high-throughput geospatial and telemetry data without performance degradation. Familiarity with modern frontend frameworks (e.g., React, Vue) and geospatial/3D rendering tools (e.g., CesiumJS, Mapbox, or WebGL) is highly preferred.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Design and build the real-time operator interface for network supervision. Must have experience visualizing high-throughput geospatial and telemetry data without performance degradation. Familiarity with modern frontend frameworks (e.g., React, Vue) and geospatial/3D rendering tools (e.g., CesiumJS, Mapbox, or WebGL) is highly preferred.</p>
                                                   </div>
                                                   <div>
                                                        <h5 className="text-white font-bold mb-2">Specifics</h5>
-                                                       <p className="text-neutral-400 font-light text-sm leading-relaxed">Design and develop a high-performance, native Linux desktop application for real-time network supervision. Extensive experience with C++ GUI frameworks (e.g., Qt/QML) or similar native toolkits is required to smoothly render low-latency geospatial data, radar tracks, and continuous network telemetry.</p>
+                                                       <p className="text-neutral-400 font-light text-[15px] leading-relaxed">Design and develop a high-performance, native Linux desktop application for real-time network supervision. Extensive experience with C++ GUI frameworks (e.g., Qt/QML) or similar native toolkits is required to smoothly render low-latency geospatial data, radar tracks, and continuous network telemetry.</p>
                                                   </div>
                                              </div>
                                         </div>
                                         
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -171,9 +171,9 @@ export default function JobDescriptionsPage() {
                                    {/* ELECTRONICS ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">Electronics engineer</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">ELECTRONICS Engineer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">Electronics engineer</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">ELECTRONICS Engineer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">This position may require, Working on:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Schematic capture, PCB layout and DFM for flight controllers, power distribution boards, sensor interface boards and RF coexistence layouts.</li>
                                              <li>Work through high-speed design constraints, impedance control, EMI/EMC mitigation and thermal considerations for small airframes.</li>
@@ -184,8 +184,8 @@ export default function JobDescriptionsPage() {
                                              <li>Coordinate with mechanical and systems engineers to ensure electrical fit, mass budget and vibration survivability.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -193,8 +193,8 @@ export default function JobDescriptionsPage() {
                                    {/* AI ENGINEER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 group-hover:bg-blue-400 transition-colors"></div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-defense-accent mb-2">AI Engineer</div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">2. AI Engineer - Computer Vision & Perception</h3>
+                                        <div className="text-[13px] font-mono uppercase tracking-widest text-defense-accent mb-2">AI Engineer</div>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">2. AI Engineer - Computer Vision & Perception</h3>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed mb-8">
                                              <li><strong className="text-white font-medium">Computer Vision:</strong> Develop and optimize real-time 3D object detection, segmentation, and tracking algorithms.</li>
                                              <li><strong className="text-white font-medium">Spatial Perception:</strong> Implement camera calibration, stereo vision, and high-accuracy depth estimation pipelines.</li>
@@ -204,7 +204,7 @@ export default function JobDescriptionsPage() {
                                              <li><strong className="text-white font-medium">Sensor Fusion:</strong> Collaborate on multi-modal fusion algorithms combining camera streams and radar data.</li>
                                         </ul>
                                         <div className="mt-8 pt-8 border-t border-white/10">
-                                             <h4 className="text-defense-accent font-bold font-mono tracking-widest uppercase mb-6 text-sm">AI Notes</h4>
+                                             <h4 className="text-defense-accent font-bold font-mono tracking-widest uppercase mb-6 text-[15px]">AI Notes</h4>
                                              <ul className="space-y-4 text-neutral-300 font-light leading-relaxed">
                                                   <li className="flex items-start gap-3"><span className="text-defense-accent mt-1">-</span><p>Proper Python skills; has worked with pytorch before.</p></li>
                                                   <li className="flex items-start gap-3"><span className="text-defense-accent mt-1">-</span><p>Decent with building novel/foundational models (theoretical knowledge) rather than just application based AI model building/usage. Most important: should have good architectural knowledge than just to train models.</p></li>
@@ -216,8 +216,8 @@ export default function JobDescriptionsPage() {
                                              </ul>
                                         </div>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -228,7 +228,7 @@ export default function JobDescriptionsPage() {
                          <section>
                               <div className="flex items-center mb-12">
                                    <div className="bg-green-500 px-6 py-2">
-                                        <h2 className="text-2xl font-bold font-mono uppercase tracking-widest text-black">MANAGEMENT</h2>
+                                        <h2 className="text-[26px] font-bold font-mono uppercase tracking-widest text-black">MANAGEMENT</h2>
                                    </div>
                                    <div className="h-px bg-white/20 flex-grow ml-6"></div>
                               </div>
@@ -243,8 +243,8 @@ export default function JobDescriptionsPage() {
                                    {/* MARKETING MANAGER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-green-500/50 group-hover:bg-green-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Marketting Manager</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Marketting Manager</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Assist in planning and executing marketing campaigns across digital channels including social media, email, and content platforms.</li>
                                              <li>Conduct market research and competitor analysis to identify trends, user behavior, and growth opportunities.</li>
@@ -253,8 +253,8 @@ export default function JobDescriptionsPage() {
                                              <li>Help manage partnerships, events, and outreach initiatives to improve brand visibility and lead generation.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -262,8 +262,8 @@ export default function JobDescriptionsPage() {
                                    {/* BUSINESS DEVELOPER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-green-500/50 group-hover:bg-green-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Business Developer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Business Developer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed mb-6">
                                              <li>Identify and pursue new business opportunities, partnerships, and strategic collaborations aligned with company goals.</li>
                                              <li>Build and maintain relationships with potential clients, partners, and key stakeholders through meetings, calls, and follow-ups.</li>
@@ -290,8 +290,8 @@ export default function JobDescriptionsPage() {
                                              </ul>
                                         </div>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -299,8 +299,8 @@ export default function JobDescriptionsPage() {
                                    {/* FOUNDER OFFICE ASSOCIATE */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-green-500/50 group-hover:bg-green-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Founder Office Associate</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Your responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Founder Office Associate</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Your responsibilities may include:</p>
                                         <ul className="list-decimal list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed">
                                              <li>Work closely with the founders on strategic initiatives across product, GTM, operations, and documentation.</li>
                                              <li>Conduct ICP mapping, market segmentation, and primary/secondary research across defense and consumer sectors.</li>
@@ -309,8 +309,8 @@ export default function JobDescriptionsPage() {
                                              <li>Coordinate with external stakeholders (government agencies, vendors, investors, customers) and take ownership of defined projects, operating effectively in ambiguity.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -321,7 +321,7 @@ export default function JobDescriptionsPage() {
                          <section>
                               <div className="flex items-center mb-12">
                                    <div className="bg-purple-500 px-6 py-2">
-                                        <h2 className="text-2xl font-bold font-mono uppercase tracking-widest text-black">CREATIVE</h2>
+                                        <h2 className="text-[26px] font-bold font-mono uppercase tracking-widest text-black">CREATIVE</h2>
                                    </div>
                                    <div className="h-px bg-white/20 flex-grow ml-6"></div>
                               </div>
@@ -330,8 +330,8 @@ export default function JobDescriptionsPage() {
                                    {/* UI/UX DESIGNER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">UI/UX Designer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">UI/UX Designer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Design intuitive user interfaces and user experiences for web and mobile products.</li>
                                              <li>Create wireframes, user flows, prototypes, and high-fidelity designs.</li>
@@ -340,8 +340,8 @@ export default function JobDescriptionsPage() {
                                              <li>Maintain and evolve design systems and visual standards.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -349,8 +349,8 @@ export default function JobDescriptionsPage() {
                                    {/* GRAPHIC DESIGNER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Graphic Designer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Graphic Designer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Create visual assets for digital and print mediums, including social media creatives, presentations, websites, and marketing materials.</li>
                                              <li>Develop and maintain consistent brand identity across all design outputs.</li>
@@ -359,8 +359,8 @@ export default function JobDescriptionsPage() {
                                              <li>Manage and organize design files, templates, and assets for efficient reuse and scaling.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -368,8 +368,8 @@ export default function JobDescriptionsPage() {
                                    {/* BLENDER/3D ARTIST */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Blender/3D Artist</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Blender/3D Artist</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Create high-quality 3D models, renders, and animations for products, concepts, or marketing use.</li>
                                              <li>Develop assets using Blender for visualization, simulations, and presentations.</li>
@@ -378,8 +378,8 @@ export default function JobDescriptionsPage() {
                                              <li>Iterate on designs based on feedback and project needs.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -387,8 +387,8 @@ export default function JobDescriptionsPage() {
                                    {/* WEB DEVELOPER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Web Developer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Web Developer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Develop, test, and maintain responsive websites and web applications.</li>
                                              <li>Translate UI/UX designs into functional, high-quality front-end or full-stack implementations.</li>
@@ -397,8 +397,8 @@ export default function JobDescriptionsPage() {
                                              <li>Debug, optimize, and document codebases.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -406,8 +406,8 @@ export default function JobDescriptionsPage() {
                                    {/* CONTENT WRITER */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Content Writer</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Content Writer</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Create clear, engaging written content for websites, blogs, social media, and marketing materials.</li>
                                              <li>Research industry topics to produce accurate and value-driven content.</li>
@@ -416,8 +416,8 @@ export default function JobDescriptionsPage() {
                                              <li>Collaborate with marketing and design teams on campaigns and narratives.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -425,8 +425,8 @@ export default function JobDescriptionsPage() {
                                    {/* VIDEO EDITOR */}
                                    <div className="border border-white/10 bg-white/5 p-8 relative overflow-hidden group flex flex-col">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-purple-500/50 group-hover:bg-purple-400 transition-colors"></div>
-                                        <h3 className="text-2xl font-bold font-mono text-white mb-6 uppercase">Video Editor</h3>
-                                        <p className="text-sm font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
+                                        <h3 className="text-[26px] font-bold font-mono text-white mb-6 uppercase">Video Editor</h3>
+                                        <p className="text-[15px] font-mono text-neutral-400 mb-4 uppercase">Responsibilities may include:</p>
                                         <ul className="list-square list-inside space-y-3 text-neutral-300 ml-2 font-light leading-relaxed flex-grow">
                                              <li>Edit and produce high-quality video content for marketing, social media, and internal use.</li>
                                              <li>Assemble raw footage, graphics, animations, and sound into polished outputs.</li>
@@ -435,8 +435,8 @@ export default function JobDescriptionsPage() {
                                              <li>Iterate edits based on feedback and performance metrics.</li>
                                         </ul>
                                         <div className="mt-8 pt-6 border-t border-white/10">
-                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-sm font-bold uppercase tracking-widest">
-                                                  Apply Now <ArrowRight className="w-4 h-4" />
+                                             <a href="https://docs.google.com/forms/d/e/1FAIpQLScosNgKSIR6HypQcaWA6JGXlxTKaBT1-VaysAabRRitcOdVuA/viewform" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors font-mono text-[15px] font-bold uppercase tracking-widest">
+                                                  Apply Now <ArrowRight className="w-5 h-5" />
                                              </a>
                                         </div>
                                    </div>
@@ -445,11 +445,11 @@ export default function JobDescriptionsPage() {
 
                          {/* ======================= INTELLIGENCE TEAM ======================= */}
                          <section className="border border-defense-accent/30 bg-defense-accent/10 p-10 md:p-12 text-center">
-                              <h2 className="text-3xl font-black font-mono uppercase tracking-widest text-defense-accent mb-6">Intelligence Team</h2>
-                              <p className="text-xl text-neutral-300 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
+                              <h2 className="text-[32px] font-black font-mono uppercase tracking-widest text-defense-accent mb-6">Intelligence Team</h2>
+                              <p className="text-[21px] text-neutral-300 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
                                    The nature of work will be confidential and challenging. Research and assume your responsibilities for this position and send us what you think it is and tell us why you are best fit for the same. 
                               </p>
-                              <p className="text-lg text-white font-medium mb-8">
+                              <p className="text-[19px] text-white font-medium mb-8">
                                    Our team will reach back to you if selected.
                               </p>
                               <a href="mailto:admin@kshatralabs.in" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-mono font-bold uppercase tracking-widest hover:bg-neutral-200 transition-colors cursor-pointer">

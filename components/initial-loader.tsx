@@ -26,8 +26,11 @@ export function InitialLoader() {
      useEffect(() => {
           const hasLoaded = sessionStorage.getItem('kshatra-loaded');
 
-          // Skip loader on repeat visits within the same session
+          // Skip loader on repeat visits within the same session.
+          // sessionStorage isn't available during SSR, so this can only be
+          // determined after mount — an effect is required here, not a lint violation.
           if (hasLoaded) {
+               // eslint-disable-next-line react-hooks/set-state-in-effect
                setProgress(100);
                setIsLoading(false);
                return;

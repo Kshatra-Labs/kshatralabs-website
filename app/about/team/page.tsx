@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Header } from '@/components/blocks/header'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { TeamGrid, TeamMember } from '@/components/ui/team-grid'
 import FooterSection from '@/components/blocks/footer-section'
 import { motion } from 'framer-motion'
@@ -45,7 +44,7 @@ export default function TeamPage() {
                                    className="inline-flex items-center gap-2 mb-4"
                               >
                                    <div className="w-8 h-[1px] bg-white/20"></div>
-                                   <span className="text-xs font-mono uppercase tracking-[0.4em] text-defense-accent">Leadership</span>
+                                   <span className="text-[13px] font-mono uppercase tracking-[0.4em] text-defense-accent">Leadership</span>
                                    <div className="w-8 h-[1px] bg-white/20"></div>
                               </motion.div>
 
@@ -53,7 +52,7 @@ export default function TeamPage() {
                                    initial={{ opacity: 0, y: 30 }}
                                    animate={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 1, delay: 0.1 }}
-                                   className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-white mb-6"
+                                   className="text-[51px] md:text-[77px] font-bold uppercase tracking-tight text-white mb-6"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
                                    Our Team
@@ -62,7 +61,7 @@ export default function TeamPage() {
                                    initial={{ opacity: 0, y: 20 }}
                                    animate={{ opacity: 1, y: 0 }}
                                    transition={{ duration: 0.8, delay: 0.2 }}
-                                   className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto"
+                                   className="text-[19px] md:text-[21px] text-neutral-400 font-light leading-relaxed max-w-2xl mx-auto"
                               >
                                    Engineers, researchers, and defence experts building the foundation for next-generation autonomous platforms.
                               </motion.p>

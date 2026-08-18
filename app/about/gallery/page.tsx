@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { Header } from '@/components/blocks/header'
 import FooterSection from '@/components/blocks/footer-section'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BackgroundPaths } from '@/components/ui/background-paths'
 import { X } from 'lucide-react'
 
 const GALLERY_IMAGES = [
@@ -49,7 +48,7 @@ export default function GalleryPage() {
                               initial={{ opacity: 0, y: 30 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 1, delay: 0.1 }}
-                              className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-white mb-6"
+                              className="text-[51px] md:text-[77px] font-bold uppercase tracking-tight text-white mb-6"
                               style={{ fontFamily: 'var(--font-space-grotesk)' }}
                          >
                               Gallery
@@ -78,16 +77,16 @@ export default function GalleryPage() {
                                              />
                                              {/* Hover overlay hint */}
                                              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                                                  <span className="font-mono text-xs uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-black/50">
+                                                  <span className="font-mono text-[13px] uppercase tracking-widest border border-white/30 px-6 py-2 rounded-full bg-black/50">
                                                        View Full Screen
                                                   </span>
                                              </div>
                                         </div>
                                         <div className="space-y-2 px-2">
-                                             <h3 className="text-lg font-bold font-mono text-white/90 uppercase tracking-wide">
+                                             <h3 className="text-[19px] font-bold font-mono text-white/90 uppercase tracking-wide">
                                                   {idx === 0 ? 'Co-Founders' : 'Presentation'}
                                              </h3>
-                                             <p className="text-sm text-neutral-400 leading-relaxed max-w-lg">
+                                             <p className="text-[15px] text-neutral-400 leading-relaxed max-w-lg">
                                                   {img.description}
                                              </p>
                                         </div>
@@ -112,7 +111,7 @@ export default function GalleryPage() {
                                    onClick={() => setSelectedImage(null)}
                                    className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 text-white"
                               >
-                                   <X className="w-6 h-6" />
+                                   <X className="w-7 h-7" />
                               </button>
 
                               <div className="relative w-full max-w-6xl aspect-[4/3] max-h-[80vh] flex flex-col items-center justify-center cursor-default" onClick={e => e.stopPropagation()}>
@@ -126,7 +125,7 @@ export default function GalleryPage() {
                                         />
                                    </div>
                                    <div className="mt-6 text-center">
-                                        <p className="text-lg text-neutral-300 font-light max-w-2xl">
+                                        <p className="text-[19px] text-neutral-300 font-light max-w-2xl">
                                              {selectedImage.description}
                                         </p>
                                    </div>

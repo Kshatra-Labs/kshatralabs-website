@@ -55,31 +55,25 @@ const menuItems: NavItem[] = [
           href: '/products/hawk',
           generalInfo: {
                title: 'About',
-               desc: 'A family of autonomous systems, powered by advanced tactical AI, that provide integrated, persistent awareness and security for land regions, borders, and critical infrastructure.'
+               desc: 'A family of autonomous systems and subsystems, powered by advanced autonomy, that provide integrated, persistent awareness and security across different domains and critical infrastructure.'
           },
           megaMenuColumns: [
                {
-                    title: 'INTERCEPTORS',
+                    title: 'AERIAL INTERCEPTORS',
                     items: [
-                         { name: 'HAWK', href: '/products/hawk', desc: 'Our flagship high-speed kinetic interceptor designed to neutralize aerial threats with precision and scale.' }
+                         { name: 'HAWK', href: '/products/hawk', desc: 'The world\'s first 3-in-1 aerial interceptor — flown as interceptor, kamikaze, or anti-interceptor — designed to neutralize aerial threats with precision and scale.' }
+                    ]
+               },
+               {
+                    title: 'AUTONOMY',
+                    items: [
+                         { name: 'APEX', href: '/products', desc: 'Our domain-agnostic autonomy architecture, the shared stack that powers real-time perception and autonomous decision-making across every Kshatra Labs platform.', comingSoon: true }
                     ]
                },
                {
                     title: 'TRACKING SYSTEMS',
                     items: [
                          { name: 'HAWKEYE', href: '/products', desc: 'Advanced electro-optical/infrared tracking system for persistent threat detection and target acquisition.', comingSoon: true }
-                    ]
-               },
-               {
-                    title: 'TACTICAL AUTONOMY',
-                    items: [
-                         { name: 'APEX', href: '/products', desc: 'Intelligent edge-compute node that processes sensor data in real-time to enable autonomous decision making.', comingSoon: true }
-                    ]
-               },
-               {
-                    title: 'COORDINATED DEFENCE',
-                    items: [
-                         { name: 'NETWORK', href: '/products', desc: 'Distributed software architecture enabling collaborative engagement across multiple autonomous nodes.', comingSoon: true }
                     ]
                }
           ]
@@ -131,7 +125,7 @@ export function Header() {
                               className="lg:hidden p-2 text-white hover:text-[#2563EB] transition-colors z-50"
                               aria-label={menuState ? 'Close menu' : 'Open menu'}
                          >
-                              {menuState ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                              {menuState ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                          </button>
 
                          {/* Desktop Nav */}
@@ -149,12 +143,12 @@ export function Header() {
                                         >
                                              <Link 
                                                   href={item.href}
-                                                  className={`flex items-center gap-2 text-[13px] font-semibold uppercase tracking-widest transition-colors duration-300 ${isDropdownOpen || isActive ? 'text-[#2563EB]' : 'text-white hover:text-[#2563EB]'}`}
+                                                  className={`flex items-center gap-2 text-[14px] font-semibold uppercase tracking-widest transition-colors duration-300 ${isDropdownOpen || isActive ? 'text-[#2563EB]' : 'text-white hover:text-[#2563EB]'}`}
                                              >
                                                   {hasDropdown && (
                                                        <motion.div 
                                                             animate={{ rotate: isDropdownOpen ? 45 : 0 }}
-                                                            className="relative w-3 h-3 flex items-center justify-center"
+                                                            className="relative w-3.5 h-3.5 flex items-center justify-center"
                                                        >
                                                             <div className="absolute w-full h-[1.5px] bg-current" />
                                                             <div className="absolute h-full w-[1.5px] bg-current" />
@@ -197,8 +191,8 @@ export function Header() {
                                                   <div key={item.name} className="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto gap-8 lg:gap-0">
                                                        {/* Left Info Panel */}
                                                        <div className="w-full lg:w-[35%] flex flex-col justify-start pr-12 lg:pr-16 lg:border-r border-white/10 mb-8 lg:mb-0 h-full min-h-[150px] lg:min-h-[180px]">
-                                                            <h3 className="text-[13px] font-semibold text-white mb-4 uppercase tracking-widest transition-opacity duration-300">{displayTitle}</h3>
-                                                            <p className="text-[15px] text-white/70 leading-relaxed font-normal transition-opacity duration-300" style={{ fontFamily: 'var(--font-space-grotesk)' }}>{displayDesc}</p>
+                                                            <h3 className="text-[14px] font-semibold text-white mb-4 uppercase tracking-widest transition-opacity duration-300">{displayTitle}</h3>
+                                                            <p className="text-[16px] text-white/70 leading-relaxed font-normal transition-opacity duration-300" style={{ fontFamily: 'var(--font-space-grotesk)' }}>{displayDesc}</p>
                                                        </div>
                                                        {/* Right Options Panel */}
                                                        <div className="w-full lg:w-[65%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:pl-12 lg:divide-x divide-white/10 gap-y-8">
@@ -208,7 +202,7 @@ export function Header() {
                                                                            <Link
                                                                                 href={col.items[0]?.href ?? '#'}
                                                                                 onClick={() => setActiveDropdown(null)}
-                                                                                className="text-[13px] font-bold uppercase tracking-[0.2em] text-white hover:text-white/80 transition-colors leading-snug"
+                                                                                className="text-[14px] font-bold uppercase tracking-[0.2em] text-white hover:text-white/80 transition-colors leading-snug"
                                                                            >
                                                                                 {col.title}
                                                                            </Link>
@@ -221,10 +215,10 @@ export function Header() {
                                                                                      onClick={() => setActiveDropdown(null)}
                                                                                      onMouseEnter={() => setHoveredProduct(sub.name)}
                                                                                      onMouseLeave={() => setHoveredProduct(null)}
-                                                                                     className="text-[15px] font-bold text-white hover:text-black hover:bg-white py-3 px-4 rounded-none transition-all duration-300 flex items-center justify-between group/link"
+                                                                                     className="text-[16px] font-bold text-white hover:text-black hover:bg-white py-3 px-4 rounded-none transition-all duration-300 flex items-center justify-between group/link"
                                                                                 >
                                                                                      <div className="flex items-center gap-3">
-                                                                                          <span className="text-[14px] text-white/50 font-normal group-hover/link:text-black/50 transition-colors">+</span>
+                                                                                          <span className="text-[15px] text-white/50 font-normal group-hover/link:text-black/50 transition-colors">+</span>
                                                                                           <span>{sub.name}</span>
                                                                                      </div>
                                                                                 </Link>
@@ -246,10 +240,10 @@ export function Header() {
                                                                  onClick={() => setActiveDropdown(null)}
                                                                  className="group/card flex flex-col p-4 md:p-5 hover:bg-white rounded-none transition-colors duration-200 h-full"
                                                             >
-                                                                 <h3 className="text-[17px] font-medium text-white/90 mb-1 tracking-tight group-hover/card:text-black transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                                                 <h3 className="text-[18px] font-medium text-white/90 mb-1 tracking-tight group-hover/card:text-black transition-colors" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                                                                       {col.items[0]?.name}
                                                                  </h3>
-                                                                 <p className="text-[13px] text-white/50 leading-relaxed font-normal group-hover/card:text-black/70 transition-colors">
+                                                                 <p className="text-[14px] text-white/50 leading-relaxed font-normal group-hover/card:text-black/70 transition-colors">
                                                                       {col.items[0]?.desc}
                                                                  </p>
                                                             </Link>
@@ -284,7 +278,7 @@ export function Header() {
                                                        <Link
                                                             href={item.href}
                                                             onClick={() => !hasDropdown && setMenuState(false)}
-                                                            className={`text-xl font-semibold uppercase tracking-widest ${pathname === item.href ? 'text-[#2563EB]' : 'text-white'}`}
+                                                            className={`text-[21px] font-semibold uppercase tracking-widest ${pathname === item.href ? 'text-[#2563EB]' : 'text-white'}`}
                                                        >
                                                             {item.name}
                                                        </Link>
@@ -295,7 +289,7 @@ export function Header() {
                                                             >
                                                                  <motion.div 
                                                                       animate={{ rotate: isDropdownOpen ? 45 : 0 }}
-                                                                      className="relative w-4 h-4 flex items-center justify-center"
+                                                                      className="relative w-5 h-5 flex items-center justify-center"
                                                                  >
                                                                       <div className="absolute w-full h-[2px] bg-current" />
                                                                       <div className="absolute h-full w-[2px] bg-current" />
@@ -314,7 +308,7 @@ export function Header() {
                                                                  <div key={idx} className="flex flex-col gap-3">
                                                                       <div className="flex items-center gap-2">
                                                                            <div className="w-2 h-2 bg-[#2563EB]" />
-                                                                           <span className="text-xs font-bold text-white/50 uppercase tracking-widest">{col.title}</span>
+                                                                           <span className="text-[13px] font-bold text-white/50 uppercase tracking-widest">{col.title}</span>
                                                                       </div>
                                                                       <div className="flex flex-col gap-3 pl-4">
                                                                            {col.items.map((sub) => (
@@ -322,11 +316,11 @@ export function Header() {
                                                                                      key={sub.name}
                                                                                      href={sub.href}
                                                                                      onClick={() => setMenuState(false)}
-                                                                                     className="text-white/70 hover:text-white transition-colors text-sm font-semibold uppercase tracking-wider flex items-center gap-2"
+                                                                                     className="text-white/70 hover:text-white transition-colors text-[15px] font-semibold uppercase tracking-wider flex items-center gap-2"
                                                                                 >
                                                                                      <span>{sub.name}</span>
                                                                                      {sub.comingSoon && (
-                                                                                          <span className="text-[10px] text-white/30 tracking-widest">
+                                                                                          <span className="text-[11px] font-bold text-white/30 tracking-widest">
                                                                                                [COMING SOON]
                                                                                           </span>
                                                                                      )}

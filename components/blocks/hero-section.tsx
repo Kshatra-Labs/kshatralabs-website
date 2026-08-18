@@ -35,15 +35,15 @@ export function HeroSection() {
                               <div className="w-full space-y-16">
 
                                    <div className="relative pt-32 md:pt-40">
-                                        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                                             Modern warfare demands systems that are not just automated — <br />
-                                             <span className="font-normal text-white/55">but truly autonomous</span>
+                                        <h1 className="text-[38px] md:text-[51px] lg:text-[64px] xl:text-[77px] font-heading font-medium tracking-tight text-white uppercase leading-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                                             Modern warfare demands systems that are <br />
+                                             <span className="font-normal text-white/55">truly autonomous.</span>
                                         </h1>
                                    </div>
                                    <div className="grid md:grid-cols-2 gap-12 items-start border-t border-white/10 pt-10">
                                         <div className="space-y-8">
-                                             <p className="text-sm text-gray-200 leading-relaxed font-light max-w-[460px] drop-shadow-md">
-                                                  <strong className="text-white font-medium">Our Mission</strong><br />
+                                             <p className="text-[17px] md:text-[19px] lg:text-[21px] text-gray-200 leading-relaxed font-light max-w-[620px] drop-shadow-md">
+                                                  <strong className="text-white text-[19px] md:text-[21px] lg:text-[26px] font-medium">Our Mission</strong><br />
                                                   At Kshatra Labs, we engineer true autonomous defence platforms. Powered by our proprietary APEX autonomy stack, our systems detect, pursue, and neutralize asymmetric aerial threats at machine speed, maintaining human supervision while keeping operators entirely out of harm&apos;s way.
                                              </p>
 
@@ -53,21 +53,17 @@ export function HeroSection() {
                                                   className="px-8 py-4 bg-white text-black font-mono font-bold tracking-widest hover:bg-neutral-200 transition-colors inline-flex items-center justify-center gap-3 cursor-pointer rounded-none"
                                              >
                                                   REQUEST A BRIEFING
-                                                  <ArrowRight className="h-4 w-4" />
+                                                  <ArrowRight className="h-5 w-5" />
                                              </button>
 
-                                             <div className="flex flex-wrap items-center gap-x-12 gap-y-4 mt-12 text-xs font-mono text-white/90 uppercase tracking-[0.2em] font-bold drop-shadow-sm">
+                                             <div className="flex flex-wrap items-center gap-x-12 gap-y-4 mt-12 text-[15px] font-mono text-white/90 uppercase tracking-[0.2em] font-bold drop-shadow-sm">
                                                   <div className="flex items-center gap-3">
                                                        <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
                                                        <span>Built in Bharat</span>
                                                   </div>
                                                   <div className="flex items-center gap-3">
                                                        <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
-                                                       <span>Contested Environments</span>
-                                                  </div>
-                                                  <div className="flex items-center gap-3">
-                                                       <div className="w-1.5 h-1.5 bg-defense-accent rounded-full shadow-[0_0_8px_rgba(47,124,255,0.4)]"></div>
-                                                       <span>Machine Speed</span>
+                                                       <span>Advanced Autonomy</span>
                                                   </div>
                                              </div>
                                         </div>
