@@ -26,7 +26,7 @@ const MISSION_PHASES: MissionPhase[] = [
      {
           id: 'detection',
           stepNumber: '01',
-          title: 'Target Detection & Tracking',
+          title: 'Target Identification',
           subtitle: 'Radar & Camera Integration',
           desc: 'Before launch, HAWK connects directly to perimeter radars and sentry cameras. As soon as an enemy drone or incoming network enters the area, the command system tracks its exact speed and direction in real time.',
           bulletPoints: [
@@ -34,7 +34,7 @@ const MISSION_PHASES: MissionPhase[] = [
                'Automatically identifies and separates incoming drone threats',
                'Target location is instantly sent to the launch container before firing'
           ],
-          videoUrl: '/video/demo.mp4',
+          videoUrl: '/video/steps/step1_25sec.mp4',
           telemetryData: [
                { label: 'Detection Range', val: '15 km Perimeter' },
                { label: 'Tracking Accuracy', val: '99.8% Multi-Sensor Lock' },
@@ -44,15 +44,15 @@ const MISSION_PHASES: MissionPhase[] = [
      {
           id: 'launch',
           stepNumber: '02',
-          title: 'High-Acceleration Takeoff',
-          subtitle: 'Fast Electric Launch',
+          title: 'Target Tracking',
+          subtitle: 'High Performance Tracking',
           desc: 'HAWK launches straight up from its weather-sealed container. Custom high-torque electric motors instantly vector the interceptor toward the target, reaching 300+ kmph in under two seconds.',
           bulletPoints: [
                'Container pods can be set up on the ground, on rooftops, or on vehicles',
                'Electric motor thrust vectors immediately in any direction after takeoff',
                'Launches reliably in high winds, extreme cold, or desert heat'
           ],
-          videoUrl: '/video/main-video.mp4',
+          videoUrl: '/video/demo.mp4',
           telemetryData: [
                { label: 'Launch Time', val: '< 0.5 seconds from command' },
                { label: 'Acceleration', val: '300 kmph in 1.8 seconds' },
@@ -189,7 +189,7 @@ export function HawkMissionSimulation() {
                                         Camera Feed: Step {activePhase.stepNumber}
                                    </div>
                                    <div className="px-3 py-1 bg-black/85 border border-neutral-800 text-[#cc1414] font-bold">
-                                        240 FPS LIVE
+                                        120 FPS
                                    </div>
                               </div>
                          </div>
