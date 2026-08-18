@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Image from 'next/image'
 import { ArrowRight, ChevronUp, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
@@ -20,48 +20,53 @@ const HAWK_HOTSPOTS: Hotspot[] = [
           id: 'seeker',
           x: 48,
           y: 22,
-          title: 'Guidance Camera & AI',
+          title: 'Optical & Thermal Tracking',
           category: 'Sensor Suite',
-          desc: 'High-definition tracking camera connected to onboard neural networks. Processes live video directly on the interceptor to lock onto target silhouettes and track them automatically.',
+          desc: 'A daylight camera fused with a thermal imager for day/night target tracking. The ground radar track is projected into the camera frame to cue acquisition, then onboard vision refines the lock through the terminal approach.',
           specs: [
-               { label: 'Target Lock Speed', value: '< 5 milliseconds' },
-               { label: 'Field of View', value: '120° Wide Tracking' },
-               { label: 'Sensors', value: 'High-Resolution Daylight Camera' }
+               { label: 'Sensor Suite', value: 'Electro-Optical / Infrared (EO/IR)' },
+               { label: 'Tracking Mode', value: 'Multi-Spectral, Day/Night' },
+               { label: 'Cueing', value: 'Radar-Cued Acq + Onboard Vision' }
           ]
      },
      {
           id: 'compute',
           x: 52,
           y: 44,
-          title: 'Onboard AI Flight Computer',
+          title: 'Onboard Autonomy Computer',
           category: 'Guidance Computer',
-          desc: 'Runs our neural guidance software locally inside the interceptor. Calculates flight path adjustments using visual tracking so it never loses lock, even if GPS or radio signals are jammed.',
-          specs: []
+          desc: 'A high-performance onboard autonomy computer runs perception, tracking, and mission decision-making locally, paired with a mission-proven flight control system. Autonomy runs entirely at the edge, so the mission continues without a live GCS connection.',
+          specs: [
+               { label: 'Autonomy Compute', value: 'Onboard Edge-AI Module' },
+               { label: 'Flight Control', value: 'Integrated Autonomy Stack' }
+          ]
      },
      {
           id: 'airframe',
           x: 42,
           y: 62,
-          title: 'Carbon Composite Frame & Modular Bay',
+          title: 'Composite Airframe & Modular Payload Bay',
           category: 'Airframe & Variants',
-          desc: 'Lightweight, ultra-strong carbon fiber body built to withstand sharp turns at high speed. Available in two distinct operational variants: Direct Kinetic Hit-to-Kill and Proximity Airburst.',
+          desc: 'A lightweight composite airframe built to withstand high-speed maneuvering, with a modular payload bay supporting configurable kinetic or explosive payloads. HAWK is the first single airframe engineered to fly all three roles — the anti-interceptor role is a first for a platform in its class, tuned for speeds of up to 500 km/h to run down enemy interceptors.',
           specs: [
-               { label: 'Available Variants', value: 'Kinetic Hit-to-Kill & Proximity Airburst' },
-               { label: 'Impact / Fuse Type', value: 'Direct Body Collision or Proximity Sensor' },
-               { label: 'Total Weight', value: '4.8 kg (Operational)' }
+               { label: 'Payload Bay', value: 'Modular; Kinetic or Explosive Config' },
+               { label: 'Payload Capacity', value: 'Up to 700 g' },
+               { label: 'Roles Supported', value: 'Interceptor / Kamikaze / Anti-Interceptor' },
+               { label: 'Anti-Interceptor Speed', value: 'Up to 500 km/h' }
           ]
      },
      {
           id: 'propulsion',
           x: 55,
           y: 82,
-          title: 'High-RPM Brushless Motors',
+          title: 'Quad Brushless Electric Propulsion',
           category: 'Electric Propulsion',
-          desc: 'Custom high-RPM brushless electric motors and carbon fiber propellers. Accelerates the interceptor instantly to its top speed to catch fast-moving loitering weapons and enemy drones.',
+          desc: 'Four high-torque brushless motors, ground-launched and sized for rapid sprint acceleration to intercept fast, maneuvering aerial threats.',
           specs: [
-               { label: 'Top Speed', value: '300+ kmph' },
-               { label: 'Acceleration', value: 'Reaches top speed in 1.8 seconds' },
-               { label: 'Power Source', value: 'High-Discharge Flight Battery' }
+               { label: 'Top Speed', value: '300 km/h (Reached in Under 3s)' },
+               { label: 'Operational Range', value: 'Up to 7 km' },
+               { label: 'Motors', value: '4x High-Torque Brushless' },
+               { label: 'Operating Temperature', value: '-20°C to +60°C' }
           ]
      }
 ]
@@ -115,11 +120,11 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               <div className="flex items-center gap-3">
                                    <span className="w-2 h-2 bg-[#cc1414]" />
                                    <span className="font-mono text-[13px] uppercase tracking-[0.25em] text-neutral-400 font-semibold">
-                                        High-Speed Drone Interceptor
+                                        World&apos;s First 3-in-1 Autonomous Aerial Interceptor
                                    </span>
                               </div>
 
-                              <h1 
+                              <h1
                                    className="text-[64px] sm:text-[77px] lg:text-[102px] font-extrabold tracking-tight text-white uppercase leading-[0.9]"
                                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
                               >
@@ -127,7 +132,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                               </h1>
 
                               <p className="text-[21px] sm:text-[26px] font-light text-neutral-300 max-w-2xl leading-relaxed">
-                                   Fast, reliable protection against hostile drones and incoming networks. Powered by onboard AI vision that tracks and neutralizes threats without needing GPS.
+                                   One airframe, three roles: Interceptor, Kamikaze, and Anti-Interceptor. Cued by ground radar and closed out by onboard optical and thermal tracking, HAWK finds, follows, and neutralizes hostile drones, engineered to keep flying through GPS jamming and denial.
                               </p>
 
                               <div className="pt-4 flex flex-wrap items-center gap-6">
@@ -161,6 +166,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                              src="/products/hawkproduct.png"
                                              alt="HAWK Interceptor In Flight"
                                              fill
+                                             sizes="(min-width: 1024px) 500px, (min-width: 640px) 440px, 360px"
                                              className="object-contain drop-shadow-[0_25px_60px_rgba(204,20,20,0.3)]"
                                              priority
                                         />
@@ -173,18 +179,18 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                     <div className="mt-20 pt-12 border-t border-neutral-900 grid grid-cols-2 lg:grid-cols-4 gap-8">
                          <div>
                               <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
-                                   300+ kmph
+                                   300 km/h
                               </div>
                               <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
-                                   Maximum Flight Speed
+                                   Top Speed
                               </div>
                          </div>
                           <div>
                                <div className="text-[38px] sm:text-[51px] font-extrabold text-white tracking-tight font-mono">
-                                    &lt; 5 ms
+                                    3-in-1
                                </div>
                                <div className="font-mono text-[17px] uppercase tracking-widest text-neutral-400 mt-2 font-semibold">
-                                    Target Lock Speed
+                                    Interceptor / Kamikaze / Anti-Interceptor
                                </div>
                           </div>
                           <div>
@@ -226,7 +232,7 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                          {/* Stable outer container with fixed min-height ensures zero layout shifts or jitter */}
                          <div ref={boxRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center border border-neutral-900 bg-[#050505] p-6 md:p-12 min-h-[580px] shadow-[0_20px_60px_rgba(0,0,0,0.9)]">
                               {/* Left Inspection Diagram (100% Clean Image Panel, Zero Overlays) */}
-                              <div className="lg:col-span-7 relative h-[480px] sm:h-[560px] w-full bg-black border border-neutral-900 flex items-center justify-center overflow-hidden">
+                              <div className="lg:col-span-6 relative h-[480px] sm:h-[560px] w-full bg-black border border-neutral-900 flex items-center justify-center overflow-hidden">
                                    {/* Blueprint-style grid background lines */}
                                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:40px_40px] opacity-30" />
                                    
@@ -234,15 +240,17 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                         src="/products/hawkproduct.png"
                                         alt="HAWK Hardware System"
                                         fill
+                                        sizes="(min-width: 1024px) 700px, 100vw"
                                         className="object-contain select-none pointer-events-none p-8 opacity-75"
+                                        priority
                                    />
                               </div>
 
                               {/* Right Details Accordion */}
-                              <div className="lg:col-span-5 flex flex-col justify-start space-y-4">
+                              <div className="lg:col-span-6 flex flex-col justify-start space-y-4">
                                    <div className="font-mono text-[13px] uppercase tracking-widest text-[#cc1414] font-bold mb-4 pb-2 border-b border-neutral-900 flex items-center justify-between">
                                         <span>System Assemblies</span>
-                                        <span className="text-[11px] text-neutral-500 font-normal tracking-normal">Scroll or click to inspect</span>
+                                        <span className="text-[11px] text-neutral-500 font-bold tracking-normal">Scroll or click to inspect</span>
                                    </div>
 
                                    <div className="space-y-2">
@@ -300,11 +308,11 @@ export function HawkHero({ onRequestBriefing }: HawkHeroProps) {
                                                                            </p>
 
                                                                            {spot.specs && spot.specs.length > 0 && (
-                                                                                <div className="space-y-2.5 pt-4 border-t border-neutral-900 font-mono text-[17px]">
+                                                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 pt-4 border-t border-neutral-900 font-mono">
                                                                                      {spot.specs.map((spec, idx) => (
-                                                                                          <div key={idx} className="flex items-center justify-between">
-                                                                                               <span className="text-neutral-500 uppercase">{spec.label}</span>
-                                                                                               <span className="font-bold text-white">{spec.value}</span>
+                                                                                          <div key={idx}>
+                                                                                               <div className="text-neutral-500 uppercase text-[12px] tracking-wider font-bold mb-1">{spec.label}</div>
+                                                                                               <div className="font-bold text-white text-[17px] leading-snug">{spec.value}</div>
                                                                                           </div>
                                                                                      ))}
                                                                                 </div>

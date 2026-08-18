@@ -61,13 +61,13 @@ const menuItems: NavItem[] = [
                {
                     title: 'AERIAL INTERCEPTORS',
                     items: [
-                         { name: 'HAWK', href: '/products/hawk', desc: 'Our flagship high-speed kinetic interceptor designed to neutralize aerial threats with precision and scale.' }
+                         { name: 'HAWK', href: '/products/hawk', desc: 'The world\'s first 3-in-1 aerial interceptor — flown as interceptor, kamikaze, or anti-interceptor — designed to neutralize aerial threats with precision and scale.' }
                     ]
                },
                {
                     title: 'AUTONOMY',
                     items: [
-                         { name: 'APEX', href: '/products', desc: 'Intelligent edge-compute node that processes sensor data in real-time to enable autonomous decision making.', comingSoon: true }
+                         { name: 'APEX', href: '/products', desc: 'Our domain-agnostic autonomy architecture, the shared stack that powers real-time perception and autonomous decision-making across every Kshatra Labs platform.', comingSoon: true }
                     ]
                },
                {
@@ -320,7 +320,7 @@ export function Header() {
                                                                                 >
                                                                                      <span>{sub.name}</span>
                                                                                      {sub.comingSoon && (
-                                                                                          <span className="text-[11px] text-white/30 tracking-widest">
+                                                                                          <span className="text-[11px] font-bold text-white/30 tracking-widest">
                                                                                                [COMING SOON]
                                                                                           </span>
                                                                                      )}

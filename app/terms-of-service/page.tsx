@@ -235,10 +235,10 @@ export default function TermsOfServicePage() {
             <Section num="01" title="Company Identification">
               <InfoCard label="Operator">
                 <p className="text-white font-semibold">KSHATRA LABS</p>
-                <p className="text-neutral-500">
+                <p className="text-neutral-500 font-bold">
                   T1403 SNN Ranka Colony, Raj Lake View Apartment, Bannerghatta Road
                 </p>
-                <p className="text-neutral-500">Bangalore South, Bangalore &ndash; 560076, Karnataka</p>
+                <p className="text-neutral-500 font-bold">Bangalore South, Bangalore &ndash; 560076, Karnataka</p>
                 <p className="text-neutral-400 mt-2">+91 97304 58528</p>
               </InfoCard>
             </Section>
@@ -542,7 +542,7 @@ export default function TermsOfServicePage() {
             <Section num="20" title="Contact">
               <InfoCard label="For Legal Enquiries">
                 <p className="text-white font-semibold">KSHATRA LABS</p>
-                <p className="text-neutral-500">
+                <p className="text-neutral-500 font-bold">
                   T1403 SNN Ranka Colony, Raj Lake View Apartment, Bannerghatta Road, Bangalore
                   South, Bangalore &ndash; 560076, Karnataka
                 </p>

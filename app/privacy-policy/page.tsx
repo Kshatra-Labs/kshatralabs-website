@@ -315,7 +315,7 @@ export default function PrivacyPolicyPage() {
                       key={id}
                       href={`#${id}`}
                       onClick={() => setTocOpen(false)}
-                      className="flex items-center gap-2.5 text-[13px] text-neutral-500 hover:text-amber-400 transition-colors py-1.5"
+                      className="flex items-center gap-2.5 text-[13px] font-bold text-neutral-500 hover:text-amber-400 transition-colors py-1.5"
                     >
                       <span className="font-mono text-amber-500/40 shrink-0">{num}</span>
                       {label}

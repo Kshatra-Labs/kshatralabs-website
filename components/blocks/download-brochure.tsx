@@ -18,7 +18,7 @@ export default function DownloadBrochure() {
                               HAWK Platform Data Sheet
                          </h2>
                          <p className="text-[17px] text-neutral-400 font-light leading-relaxed">
-                              Download the complete HAWK interceptor technical dossier, including detailed mechanical drawings, subsystem integration guides, and operational deployment envelopes.
+                              Download the complete HAWK technical brochure, including mission flow diagrams and capabilities.
                          </p>
                     </div>
 
@@ -31,7 +31,7 @@ export default function DownloadBrochure() {
                               <span>Download PDF Dossier</span>
                               <ArrowRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                          </a>
-                         <div className="font-mono text-[13px] text-neutral-500 uppercase tracking-widest">
+                         <div className="font-mono text-[13px] font-bold text-neutral-500 uppercase tracking-widest">
                               Format: PDF <br /> Size: 5.8 MB
                          </div>
                     </div>

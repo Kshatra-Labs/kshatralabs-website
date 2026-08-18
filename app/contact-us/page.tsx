@@ -133,7 +133,7 @@ export default function ContactUsPage() {
                                                   <p className="text-[17px] font-bold font-mono text-black leading-tight">
                                                        Yeswanthpur, Bengaluru
                                                   </p>
-                                                  <span className="text-[12px] font-mono uppercase text-neutral-600 block leading-relaxed">
+                                                  <span className="text-[12px] font-mono font-bold uppercase text-neutral-600 block leading-relaxed">
                                                        Social Alpha, No.62, Industrial Sabar, behind Hyundai Service Station, 2nd Stage, Narasimha Layout, Yeswanthpur, Bengaluru, Karnataka 560022
                                                   </span>
                                              </div>

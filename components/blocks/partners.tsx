@@ -60,7 +60,7 @@ export default function Partners() {
                                         </div>
 
                                         {/* Name */}
-                                        <span className="text-[11px] md:text-[13px] font-mono text-neutral-500 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                                        <span className="text-[13px] md:text-[15px] font-mono font-bold text-neutral-400 uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                                              {partner.name}
                                         </span>
                                    </div>

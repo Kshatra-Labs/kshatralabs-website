@@ -74,6 +74,11 @@ export function InterceptorSection() {
                                         INTRODUCING  <span className="text-blue-500">HAWK</span>
                                    </h3>
                                    <div className="space-y-6">
+                                        <div className="flex items-center gap-3">
+                                             <div className="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.5)]"></div>
+                                             <span className="font-mono text-[13px] font-bold uppercase tracking-widest text-blue-400">World&apos;s First 3-in-1 Autonomous Aerial Interceptor</span>
+                                        </div>
+
                                         <div className="text-blue-400 font-mono text-[15px] uppercase tracking-widest">Autonomous Aerial Electric Interceptor</div>
 
                                         <div className="space-y-4 text-[21px] text-neutral-300 font-light leading-relaxed">
@@ -88,11 +93,11 @@ export function InterceptorSection() {
                                              </div>
 
                                              <p>
-                                                  Developed by <span className="text-blue-400 font-medium">Kshatra Labs</span>, Hawk is a high-speed autonomous interceptor UAV designed to <span className="text-white">detect, pursue, and neutralize</span> hostile drones in real time, even in contested or GPS-denied environments.
+                                                  Developed by <span className="text-blue-400 font-medium">Kshatra Labs</span>, Hawk flies three roles — interceptor, kamikaze, and anti-interceptor — in a single airframe, designed to <span className="text-white">detect, pursue, and neutralize</span> hostile drones in real time, even in contested or GPS-denied environments.
                                              </p>
 
                                              <p>
-                                                  Powered by fully onboard <span className="text-blue-400 font-mono text-[15px]">EDGE AI</span>, Hawk operates independently without cloud connectivity, enabling ultra-fast response and reliable operation in electronic warfare conditions.
+                                                  Powered by fully onboard edge AI, Hawk operates independently without cloud connectivity, enabling ultra-fast response and reliable operation in electronic warfare conditions.
                                              </p>
                                         </div>
 
@@ -167,7 +172,7 @@ export function InterceptorSection() {
                                         Features
                                    </h2>
                               </div>
-                              <div className="font-mono text-[13px] uppercase text-neutral-400 border border-white/20 bg-neutral-950 px-3 py-1.5 rounded-none flex items-center gap-2">
+                              <div className="font-mono text-[13px] font-bold uppercase text-neutral-400 border border-white/20 bg-neutral-950 px-3 py-1.5 rounded-none flex items-center gap-2">
                                    <span>Hawk Interceptor</span>
                               </div>
                          </div>
@@ -185,7 +190,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:bolt-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:bolt-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [01]
                                         </span>
@@ -196,7 +201,7 @@ export function InterceptorSection() {
                                              High-Speed Interception
                                         </div>
                                         <p className="text-neutral-200 text-[15px] font-normal leading-relaxed">
-                                             Engage hostile drones at speeds exceeding 300 km/h, allowing rapid response before threats reach protected zones.
+                                             Engage hostile drones at speeds up to 300 km/h, allowing rapid response before threats reach protected zones.
                                         </p>
                                    </div>
                               </div>
@@ -210,7 +215,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:target-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:target-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [02]
                                         </span>
@@ -235,7 +240,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:cpu-bolt-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:cpu-bolt-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [03]
                                         </span>
@@ -246,7 +251,7 @@ export function InterceptorSection() {
                                              Fully Onboard Edge AI
                                         </div>
                                         <p className="text-neutral-200 text-[15px] font-normal leading-relaxed">
-                                             All perception and decision-making runs directly on the UAV, ensuring low latency and zero cloud dependency.
+                                             Ensuring low latency and true autonomy.
                                         </p>
                                    </div>
                               </div>
@@ -260,7 +265,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:satellite-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:satellite-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [04]
                                         </span>
@@ -271,7 +276,7 @@ export function InterceptorSection() {
                                              GPS-Denied Navigation
                                         </div>
                                         <p className="text-neutral-200 text-[15px] font-normal leading-relaxed">
-                                             Vision-based navigation fused with inertial sensing enables reliable operation even when GPS signals are jammed or unavailable.
+                                             Ground radar positioning fused with onboard inertial sensing keeps Hawk on track even when GPS signals are jammed or spoofed.
                                         </p>
                                    </div>
                               </div>
@@ -285,7 +290,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:shield-check-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:shield-check-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [05]
                                         </span>
@@ -293,10 +298,10 @@ export function InterceptorSection() {
 
                                    <div className="space-y-3">
                                         <div className="text-white font-mono text-[17px] uppercase tracking-wider font-bold">
-                                             Network Defence Ready
+                                             Built for Drone Swarms
                                         </div>
                                         <p className="text-neutral-200 text-[15px] font-normal leading-relaxed">
-                                             Multiple Hawk units can coordinate to intercept multiple targets and drone networks simultaneously.
+                                             Multiple Hawk units can be deployed together, each engaging its own assigned target, to defeat coordinated drone networks at scale.
                                         </p>
                                    </div>
                               </div>
@@ -310,7 +315,7 @@ export function InterceptorSection() {
                                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 pointer-events-none" />
 
                                    <div className="flex items-start justify-between gap-4">
-                                        <Icon icon="solar:tag-price-bold-duotone" className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                                        <Icon icon="solar:tag-price-bold-duotone" className="w-8 h-8 text-[#FF0000] group-hover:text-[#ff4d4d] transition-colors" />
                                         <span className="font-mono text-[13px] font-bold text-neutral-500 group-hover:text-blue-400 transition-colors">
                                              [06]
                                         </span>
